@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="cdt-Y7-SIE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJs-EU-Ryu">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E2b-sq-H4c"/>
+                                </constraints>
+                                <state key="normal" title="唤醒APP"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="DJs-EU-Ryu" secondAttribute="bottom" constant="8" id="ADx-Pf-sV8"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="4" id="GdC-sG-rrr"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="M9i-gx-hFk"/>
+                            <constraint firstItem="DJs-EU-Ryu" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="114" id="tQ3-Vi-skv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="4" id="wNM-fj-wme"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DJs-EU-Ryu" secondAttribute="trailing" constant="114" id="xbm-8n-4FD"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="100"/>
+                    <connections>
+                        <outlet property="actionButton" destination="DJs-EU-Ryu" id="dNe-Fd-5jP"/>
+                        <outlet property="actionLabel" destination="GcN-lo-r42" id="BvI-kb-YXN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3.2000000000000002" y="106.14692653673164"/>
+        </scene>
+    </scenes>
+</document>
