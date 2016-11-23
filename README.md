@@ -6,3 +6,5 @@
 3.SafariController 可以打开Passbook
 
 4.widget 数据共享
+
+5.启动时播放视频
