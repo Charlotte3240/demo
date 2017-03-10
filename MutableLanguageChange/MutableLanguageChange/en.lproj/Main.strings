@@ -1,0 +1,14 @@
+
+/* Class = "UIButton"; normalTitle = "切换"; ObjectID = "9Ln-WU-S2F"; */
+"9Ln-WU-S2F.normalTitle" = "change";
+
+/* Class = "UILabel"; text = "中文"; ObjectID = "Ul5-rl-6ZP"; */
+"Ul5-rl-6ZP.text" = "中文";
+
+/* Class = "UITabBarItem"; title = "主页"; ObjectID = "Vtm-uk-6cw"; */
+"Vtm-uk-6cw.title" = "home";
+
+/* Class = "UITabBarItem"; title = "个人"; ObjectID = "v3R-7X-XOo"; */
+"v3R-7X-XOo.title" = "个人";
+"root" = "root";
+"home" = "home";
