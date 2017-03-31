@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9EAF06E11E77A81A00D7BE3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAF06E01E77A81A00D7BE3E /* main.m */; };
+		9EAF06E41E77A81A00D7BE3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAF06E31E77A81A00D7BE3E /* AppDelegate.m */; };
+		9EAF06E71E77A81A00D7BE3E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAF06E61E77A81A00D7BE3E /* ViewController.m */; };
+		9EAF06EA1E77A81A00D7BE3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAF06E81E77A81A00D7BE3E /* Main.storyboard */; };
+		9EAF06EC1E77A81A00D7BE3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EAF06EB1E77A81A00D7BE3E /* Assets.xcassets */; };
+		9EAF06EF1E77A81A00D7BE3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAF06ED1E77A81A00D7BE3E /* LaunchScreen.storyboard */; };
+		9EAF06FA1E77A81A00D7BE3E /* Screen_saver_advertisingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAF06F91E77A81A00D7BE3E /* Screen_saver_advertisingTests.m */; };
+		9EAF07051E77A81A00D7BE3E /* Screen_saver_advertisingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAF07041E77A81A00D7BE3E /* Screen_saver_advertisingUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9EAF06F61E77A81A00D7BE3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EAF06D41E77A81A00D7BE3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9EAF06DB1E77A81A00D7BE3E;
+			remoteInfo = "Screen saver advertising";
+		};
+		9EAF07011E77A81A00D7BE3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EAF06D41E77A81A00D7BE3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9EAF06DB1E77A81A00D7BE3E;
+			remoteInfo = "Screen saver advertising";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9EAF06DC1E77A81A00D7BE3E /* Screen saver advertising.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Screen saver advertising.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EAF06E01E77A81A00D7BE3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9EAF06E21E77A81A00D7BE3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9EAF06E31E77A81A00D7BE3E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9EAF06E51E77A81A00D7BE3E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9EAF06E61E77A81A00D7BE3E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9EAF06E91E77A81A00D7BE3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9EAF06EB1E77A81A00D7BE3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9EAF06EE1E77A81A00D7BE3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9EAF06F01E77A81A00D7BE3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EAF06F51E77A81A00D7BE3E /* Screen saver advertisingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Screen saver advertisingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EAF06F91E77A81A00D7BE3E /* Screen_saver_advertisingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Screen_saver_advertisingTests.m; sourceTree = "<group>"; };
+		9EAF06FB1E77A81A00D7BE3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EAF07001E77A81A00D7BE3E /* Screen saver advertisingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Screen saver advertisingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EAF07041E77A81A00D7BE3E /* Screen_saver_advertisingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Screen_saver_advertisingUITests.m; sourceTree = "<group>"; };
+		9EAF07061E77A81A00D7BE3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9EAF06D91E77A81A00D7BE3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EAF06F21E77A81A00D7BE3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EAF06FD1E77A81A00D7BE3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9EAF06D31E77A81A00D7BE3E = {
+			isa = PBXGroup;
+			children = (
+				9EAF06DE1E77A81A00D7BE3E /* Screen saver advertising */,
+				9EAF06F81E77A81A00D7BE3E /* Screen saver advertisingTests */,
+				9EAF07031E77A81A00D7BE3E /* Screen saver advertisingUITests */,
+				9EAF06DD1E77A81A00D7BE3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9EAF06DD1E77A81A00D7BE3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9EAF06DC1E77A81A00D7BE3E /* Screen saver advertising.app */,
+				9EAF06F51E77A81A00D7BE3E /* Screen saver advertisingTests.xctest */,
+				9EAF07001E77A81A00D7BE3E /* Screen saver advertisingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9EAF06DE1E77A81A00D7BE3E /* Screen saver advertising */ = {
+			isa = PBXGroup;
+			children = (
+				9EAF06E21E77A81A00D7BE3E /* AppDelegate.h */,
+				9EAF06E31E77A81A00D7BE3E /* AppDelegate.m */,
+				9EAF06E51E77A81A00D7BE3E /* ViewController.h */,
+				9EAF06E61E77A81A00D7BE3E /* ViewController.m */,
+				9EAF06E81E77A81A00D7BE3E /* Main.storyboard */,
+				9EAF06EB1E77A81A00D7BE3E /* Assets.xcassets */,
+				9EAF06ED1E77A81A00D7BE3E /* LaunchScreen.storyboard */,
+				9EAF06F01E77A81A00D7BE3E /* Info.plist */,
+				9EAF06DF1E77A81A00D7BE3E /* Supporting Files */,
+			);
+			path = "Screen saver advertising";
+			sourceTree = "<group>";
+		};
+		9EAF06DF1E77A81A00D7BE3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9EAF06E01E77A81A00D7BE3E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9EAF06F81E77A81A00D7BE3E /* Screen saver advertisingTests */ = {
+			isa = PBXGroup;
+			children = (
+				9EAF06F91E77A81A00D7BE3E /* Screen_saver_advertisingTests.m */,
+				9EAF06FB1E77A81A00D7BE3E /* Info.plist */,
+			);
+			path = "Screen saver advertisingTests";
+			sourceTree = "<group>";
+		};
+		9EAF07031E77A81A00D7BE3E /* Screen saver advertisingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9EAF07041E77A81A00D7BE3E /* Screen_saver_advertisingUITests.m */,
+				9EAF07061E77A81A00D7BE3E /* Info.plist */,
+			);
+			path = "Screen saver advertisingUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9EAF06DB1E77A81A00D7BE3E /* Screen saver advertising */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EAF07091E77A81A00D7BE3E /* Build configuration list for PBXNativeTarget "Screen saver advertising" */;
+			buildPhases = (
+				9EAF06D81E77A81A00D7BE3E /* Sources */,
+				9EAF06D91E77A81A00D7BE3E /* Frameworks */,
+				9EAF06DA1E77A81A00D7BE3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Screen saver advertising";
+			productName = "Screen saver advertising";
+			productReference = 9EAF06DC1E77A81A00D7BE3E /* Screen saver advertising.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9EAF06F41E77A81A00D7BE3E /* Screen saver advertisingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EAF070C1E77A81A00D7BE3E /* Build configuration list for PBXNativeTarget "Screen saver advertisingTests" */;
+			buildPhases = (
+				9EAF06F11E77A81A00D7BE3E /* Sources */,
+				9EAF06F21E77A81A00D7BE3E /* Frameworks */,
+				9EAF06F31E77A81A00D7BE3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9EAF06F71E77A81A00D7BE3E /* PBXTargetDependency */,
+			);
+			name = "Screen saver advertisingTests";
+			productName = "Screen saver advertisingTests";
+			productReference = 9EAF06F51E77A81A00D7BE3E /* Screen saver advertisingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9EAF06FF1E77A81A00D7BE3E /* Screen saver advertisingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EAF070F1E77A81A00D7BE3E /* Build configuration list for PBXNativeTarget "Screen saver advertisingUITests" */;
+			buildPhases = (
+				9EAF06FC1E77A81A00D7BE3E /* Sources */,
+				9EAF06FD1E77A81A00D7BE3E /* Frameworks */,
+				9EAF06FE1E77A81A00D7BE3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9EAF07021E77A81A00D7BE3E /* PBXTargetDependency */,
+			);
+			name = "Screen saver advertisingUITests";
+			productName = "Screen saver advertisingUITests";
+			productReference = 9EAF07001E77A81A00D7BE3E /* Screen saver advertisingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9EAF06D41E77A81A00D7BE3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "com.hc-nsqk.hc";
+				TargetAttributes = {
+					9EAF06DB1E77A81A00D7BE3E = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 4PXQVRX365;
+						ProvisioningStyle = Automatic;
+					};
+					9EAF06F41E77A81A00D7BE3E = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 4PXQVRX365;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9EAF06DB1E77A81A00D7BE3E;
+					};
+					9EAF06FF1E77A81A00D7BE3E = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 4PXQVRX365;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9EAF06DB1E77A81A00D7BE3E;
+					};
+				};
+			};
+			buildConfigurationList = 9EAF06D71E77A81A00D7BE3E /* Build configuration list for PBXProject "Screen saver advertising" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9EAF06D31E77A81A00D7BE3E;
+			productRefGroup = 9EAF06DD1E77A81A00D7BE3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9EAF06DB1E77A81A00D7BE3E /* Screen saver advertising */,
+				9EAF06F41E77A81A00D7BE3E /* Screen saver advertisingTests */,
+				9EAF06FF1E77A81A00D7BE3E /* Screen saver advertisingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9EAF06DA1E77A81A00D7BE3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EAF06EF1E77A81A00D7BE3E /* LaunchScreen.storyboard in Resources */,
+				9EAF06EC1E77A81A00D7BE3E /* Assets.xcassets in Resources */,
+				9EAF06EA1E77A81A00D7BE3E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EAF06F31E77A81A00D7BE3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EAF06FE1E77A81A00D7BE3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9EAF06D81E77A81A00D7BE3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EAF06E71E77A81A00D7BE3E /* ViewController.m in Sources */,
+				9EAF06E41E77A81A00D7BE3E /* AppDelegate.m in Sources */,
+				9EAF06E11E77A81A00D7BE3E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EAF06F11E77A81A00D7BE3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EAF06FA1E77A81A00D7BE3E /* Screen_saver_advertisingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EAF06FC1E77A81A00D7BE3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EAF07051E77A81A00D7BE3E /* Screen_saver_advertisingUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9EAF06F71E77A81A00D7BE3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9EAF06DB1E77A81A00D7BE3E /* Screen saver advertising */;
+			targetProxy = 9EAF06F61E77A81A00D7BE3E /* PBXContainerItemProxy */;
+		};
+		9EAF07021E77A81A00D7BE3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9EAF06DB1E77A81A00D7BE3E /* Screen saver advertising */;
+			targetProxy = 9EAF07011E77A81A00D7BE3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9EAF06E81E77A81A00D7BE3E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9EAF06E91E77A81A00D7BE3E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9EAF06ED1E77A81A00D7BE3E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9EAF06EE1E77A81A00D7BE3E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9EAF07071E77A81A00D7BE3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9EAF07081E77A81A00D7BE3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9EAF070A1E77A81A00D7BE3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4PXQVRX365;
+				INFOPLIST_FILE = "Screen saver advertising/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.hc.Screen-saver-advertising";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9EAF070B1E77A81A00D7BE3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4PXQVRX365;
+				INFOPLIST_FILE = "Screen saver advertising/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.hc.Screen-saver-advertising";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9EAF070D1E77A81A00D7BE3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4PXQVRX365;
+				INFOPLIST_FILE = "Screen saver advertisingTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.hc.Screen-saver-advertisingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Screen saver advertising.app/Screen saver advertising";
+			};
+			name = Debug;
+		};
+		9EAF070E1E77A81A00D7BE3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4PXQVRX365;
+				INFOPLIST_FILE = "Screen saver advertisingTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.hc.Screen-saver-advertisingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Screen saver advertising.app/Screen saver advertising";
+			};
+			name = Release;
+		};
+		9EAF07101E77A81A00D7BE3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 4PXQVRX365;
+				INFOPLIST_FILE = "Screen saver advertisingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.hc.Screen-saver-advertisingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Screen saver advertising";
+			};
+			name = Debug;
+		};
+		9EAF07111E77A81A00D7BE3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 4PXQVRX365;
+				INFOPLIST_FILE = "Screen saver advertisingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.hc.Screen-saver-advertisingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Screen saver advertising";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9EAF06D71E77A81A00D7BE3E /* Build configuration list for PBXProject "Screen saver advertising" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EAF07071E77A81A00D7BE3E /* Debug */,
+				9EAF07081E77A81A00D7BE3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9EAF07091E77A81A00D7BE3E /* Build configuration list for PBXNativeTarget "Screen saver advertising" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EAF070A1E77A81A00D7BE3E /* Debug */,
+				9EAF070B1E77A81A00D7BE3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9EAF070C1E77A81A00D7BE3E /* Build configuration list for PBXNativeTarget "Screen saver advertisingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EAF070D1E77A81A00D7BE3E /* Debug */,
+				9EAF070E1E77A81A00D7BE3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9EAF070F1E77A81A00D7BE3E /* Build configuration list for PBXNativeTarget "Screen saver advertisingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EAF07101E77A81A00D7BE3E /* Debug */,
+				9EAF07111E77A81A00D7BE3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9EAF06D41E77A81A00D7BE3E /* Project object */;
+}
