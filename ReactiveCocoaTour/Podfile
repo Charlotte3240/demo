@@ -1,0 +1,8 @@
+
+
+target 'ReactiveCocoaTour' do
+
+pod 'ReactiveObjC'
+
+
+end
