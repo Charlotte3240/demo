@@ -58,7 +58,7 @@
     
 //    [self notificationUse];
     
-    [self KVO];
+//    [self KVO];
     
 }
 
