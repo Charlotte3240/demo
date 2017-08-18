@@ -14,6 +14,6 @@
 @property (nonatomic,strong)AVCaptureDeviceInput *input;
 @property (nonatomic,strong)AVCaptureMetadataOutput *output;
 @property (nonatomic,strong)AVCaptureSession *session;
-@property (nonatomic,strong)AVCaptureVideoPreviewLayer *preview;
+@property (nonatomic,strong)AVCaptureVideoPreviewLayer *preViewLayer;
 
 @end

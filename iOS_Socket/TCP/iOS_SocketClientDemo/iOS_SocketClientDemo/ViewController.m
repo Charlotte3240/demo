@@ -10,6 +10,8 @@
 
 @interface ViewController ()<NSStreamDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *mesTextField;
+@property (weak, nonatomic) IBOutlet UITextField *ipSetLabel;
+@property (weak, nonatomic) IBOutlet UITextField *portSetLabel;
 
 @end
 
@@ -23,10 +25,13 @@
     //connect server
     [self connectServer];
 }
+- (IBAction)connect:(id)sender {
+    [self connectServer];
+}
 
 - (void)connectServer{
-    NSString *host = @"192.168.50.128";
-    int port = 2333;
+    NSString *host = self.ipSetLabel.text.length >0 ? self.ipSetLabel.text : @"192.168.50.128";
+    int port = self.portSetLabel.text.intValue ? self.portSetLabel.text.intValue : 2333;
     //创建输入输出流
     CFReadStreamRef readStreamRef;
     CFWriteStreamRef writeStreamRef;
