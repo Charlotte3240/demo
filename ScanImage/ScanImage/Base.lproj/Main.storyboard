@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scan View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HCScanViewController" id="BYZ-38-t0r" customClass="HCScanViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g09-sQ-0zL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esz-sx-fry">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="esz-sx-fry" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="1xs-4P-nTZ"/>
+                            <constraint firstItem="esz-sx-fry" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9yO-rP-U7U"/>
+                            <constraint firstItem="esz-sx-fry" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L8F-8l-s7y"/>
+                            <constraint firstItem="g09-sQ-0zL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="fmj-iY-KM4"/>
+                            <constraint firstAttribute="trailing" secondItem="esz-sx-fry" secondAttribute="trailing" id="k04-fr-eHl"/>
+                            <constraint firstItem="g09-sQ-0zL" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="ryJ-99-NEo"/>
+                            <constraint firstItem="g09-sQ-0zL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tiF-Ce-We3"/>
+                            <constraint firstItem="g09-sQ-0zL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xRC-43-wXY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="holeView" destination="esz-sx-fry" id="oUP-Q1-qzv"/>
+                        <outlet property="preView" destination="g09-sQ-0zL" id="CbQ-Hp-C9r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
