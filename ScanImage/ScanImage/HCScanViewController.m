@@ -192,6 +192,8 @@
 
     _preViewLayer.frame = _preView.bounds;
     _preViewLayer.connection.videoOrientation = [self getDeviceDirection];
+    _output.rectOfInterest = _boxView.bounds;
+
     [self maskToHoleView];
 
 }
