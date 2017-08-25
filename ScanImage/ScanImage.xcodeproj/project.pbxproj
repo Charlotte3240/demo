@@ -20,6 +20,7 @@
 		9E5525A01F453B5F00531B32 /* ScanQR1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E55259C1F453B5E00531B32 /* ScanQR1@2x.png */; };
 		9E5525A11F453B5F00531B32 /* ScanQR4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E55259D1F453B5E00531B32 /* ScanQR4@2x.png */; };
 		9E5525A31F4565C300531B32 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E5525A21F4565C300531B32 /* shadow.png */; };
+		9EF9BAB21F4FC3CF00F27C17 /* HCScanImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF9BAB11F4FC3CF00F27C17 /* HCScanImage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		9E55259C1F453B5E00531B32 /* ScanQR1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScanQR1@2x.png"; sourceTree = "<group>"; };
 		9E55259D1F453B5E00531B32 /* ScanQR4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ScanQR4@2x.png"; sourceTree = "<group>"; };
 		9E5525A21F4565C300531B32 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
+		9EF9BAB11F4FC3CF00F27C17 /* HCScanImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HCScanImage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,15 +113,9 @@
 		9E5525641F45333B00531B32 /* ScanImage */ = {
 			isa = PBXGroup;
 			children = (
-				9E55259C1F453B5E00531B32 /* ScanQR1@2x.png */,
-				9E55259B1F453B5D00531B32 /* ScanQR2@2x.png */,
-				9E55259A1F453B5D00531B32 /* ScanQR3@2x.png */,
-				9E55259D1F453B5E00531B32 /* ScanQR4@2x.png */,
-				9E5525A21F4565C300531B32 /* shadow.png */,
+				9EF9BAB01F4FC39800F27C17 /* HCScan */,
 				9E5525651F45333B00531B32 /* AppDelegate.h */,
 				9E5525661F45333B00531B32 /* AppDelegate.m */,
-				9E5525971F4533E800531B32 /* HCScanViewController.h */,
-				9E5525981F4533E800531B32 /* HCScanViewController.m */,
 				9E55256B1F45333B00531B32 /* Main.storyboard */,
 				9E55256E1F45333B00531B32 /* Assets.xcassets */,
 				9E5525701F45333B00531B32 /* LaunchScreen.storyboard */,
@@ -145,6 +141,21 @@
 				9E55258B1F45333B00531B32 /* Info.plist */,
 			);
 			path = ScanImageUITests;
+			sourceTree = "<group>";
+		};
+		9EF9BAB01F4FC39800F27C17 /* HCScan */ = {
+			isa = PBXGroup;
+			children = (
+				9E55259C1F453B5E00531B32 /* ScanQR1@2x.png */,
+				9E55259B1F453B5D00531B32 /* ScanQR2@2x.png */,
+				9E55259A1F453B5D00531B32 /* ScanQR3@2x.png */,
+				9E55259D1F453B5E00531B32 /* ScanQR4@2x.png */,
+				9E5525A21F4565C300531B32 /* shadow.png */,
+				9E5525971F4533E800531B32 /* HCScanViewController.h */,
+				9E5525981F4533E800531B32 /* HCScanViewController.m */,
+				9EF9BAB11F4FC3CF00F27C17 /* HCScanImage.storyboard */,
+			);
+			path = HCScan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 				9E5525A01F453B5F00531B32 /* ScanQR1@2x.png in Resources */,
 				9E55259E1F453B5F00531B32 /* ScanQR3@2x.png in Resources */,
 				9E55256D1F45333B00531B32 /* Main.storyboard in Resources */,
+				9EF9BAB21F4FC3CF00F27C17 /* HCScanImage.storyboard in Resources */,
 				9E55259F1F453B5F00531B32 /* ScanQR2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

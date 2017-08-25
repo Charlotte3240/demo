@@ -104,7 +104,6 @@
     // Output
     _output = [[AVCaptureMetadataOutput alloc]init];
     
-    _output.rectOfInterest = _boxView.bounds;
 
     if ([_device lockForConfiguration:nil]){
         //自动白平衡
@@ -149,6 +148,9 @@
     _preViewLayer.connection.videoOrientation = [self getDeviceDirection];
     [self.preView.layer insertSublayer:self.preViewLayer atIndex:0];
 
+    _output.rectOfInterest = _boxView.bounds;
+
+    
     //启动一个timer 移动渐变图片
     _timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(moveShadowImage:) userInfo:nil repeats:YES];
     [_timer fire];
@@ -161,6 +163,7 @@
 - (void)moveShadowImage:(NSTimer *)timer
 {
     _shadowImage.frame = CGRectMake(0, -_boxView.bounds.size.height, _boxView.bounds.size.width, _boxView.bounds.size.height);
+    _output.rectOfInterest = _boxView.bounds;
 
     [UIView animateWithDuration:1.5f animations:^{
         _shadowImage.frame = CGRectMake(0, _boxView.frame.size.height, _boxView.frame.size.width, _boxView.frame.size.height);
