@@ -5,4 +5,7 @@ target 'iOS_SocketDemo' do
 
 pod 'CocoaAsyncSocket'  
 
+pod 'Fabric'
+pod 'Crashlytics'
+
 end

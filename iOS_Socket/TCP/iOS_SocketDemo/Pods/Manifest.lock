@@ -1,12 +1,19 @@
 PODS:
   - CocoaAsyncSocket (7.6.1)
+  - Crashlytics (3.8.6):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.12)
 
 DEPENDENCIES:
   - CocoaAsyncSocket
+  - Crashlytics
+  - Fabric
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 7eadd3f59e1a6c84e2aefc93e9ff7b55156fe174
+  Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
+  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
 
-PODFILE CHECKSUM: ddbd9790282b04844c22edf1bacf830ef37cacdb
+PODFILE CHECKSUM: 69df6dcc61036501ed16207d2272d2a732d62784
 
 COCOAPODS: 1.2.1
