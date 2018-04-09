@@ -11,6 +11,13 @@
 @implementation HCDownloadImage
 
 
+
++ (void)downLoadImages:(NSArray *)urls withProgress
+
+
+
+
+
 + (void)downloadImage:(NSURL *)url withCompleteBlock:(FinishDidBlock)finish andErrorBlock:(FailureBlock)failure{
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLSession *session = [NSURLSession sharedSession];

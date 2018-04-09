@@ -30,7 +30,7 @@
 }
 
 - (void)connectServer{
-    NSString *host = self.ipSetLabel.text.length >0 ? self.ipSetLabel.text : @"192.168.50.128";
+    NSString *host = self.ipSetLabel.text.length >0 ? self.ipSetLabel.text : @"10.0.1.201";
     int port = self.portSetLabel.text.intValue ? self.portSetLabel.text.intValue : 2333;
     //创建输入输出流
     CFReadStreamRef readStreamRef;
@@ -79,6 +79,13 @@
             
         case NSStreamEventErrorOccurred:
             NSLog(@"客户端连接出现错误");
+            
+        {
+            NSError *theError = [aStream streamError];
+            NSLog(@"%@",[NSString stringWithFormat:@"Error %li: %@",
+                         (long)[theError code], [theError localizedDescription]]);
+            
+        }
             break;
             
         case NSStreamEventEndEncountered:

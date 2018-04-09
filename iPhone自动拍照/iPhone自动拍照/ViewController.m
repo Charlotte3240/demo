@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "GCQiniuUploadManager.h"
 @interface ViewController ()<AVCapturePhotoCaptureDelegate>
 
 @end
@@ -47,6 +47,7 @@
     if ([self.session canAddOutput:self.imageOutput]) {
         [self.session addOutput:self.imageOutput];
     }
+    
     if ([_device lockForConfiguration:nil]){
         //自动白平衡
         if ([_device isWhiteBalanceModeSupported:AVCaptureWhiteBalanceModeContinuousAutoWhiteBalance]){
@@ -85,6 +86,22 @@
     NSData *data = [AVCapturePhotoOutput JPEGPhotoDataRepresentationForJPEGSampleBuffer:photoSampleBuffer previewPhotoSampleBuffer:previewPhotoSampleBuffer];
     UIImage *image = [UIImage imageWithData:data];
     self.displayImage.image = image;
+    
+    //上传到七牛
+    [[GCQiniuUploadManager sharedInstance] uploadData:data progress:^(float percent) {
+        NSLog(@"进度=====%f",percent);
+    } completion:^(NSError *error, NSString *link, NSInteger index) {
+        if (error) {
+            NSLog(@"error is %@",error);
+        }else{
+            NSLog(@"link is %@ index is %ld ",link,index);
+        }
+        
+    }];
+    
+    
+    
+    
     
 }
 

@@ -12,6 +12,8 @@
 typedef void(^FinishDidBlock) (NSString *location);
 typedef void(^FailureBlock) (NSError *error);
 
+
+
 + (void)downloadImage:(NSURL *)url withCompleteBlock:(FinishDidBlock)finish andErrorBlock:(FailureBlock)failure;
 
 + (BOOL)checkfolderContainFile:(NSString *)fileName;

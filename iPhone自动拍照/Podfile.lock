@@ -1,0 +1,32 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - HappyDNS (0.3.12)
+  - Qiniu (7.1.8):
+    - AFNetworking (~> 3)
+    - HappyDNS (~> 0.3)
+
+DEPENDENCIES:
+  - Qiniu (~> 7.1)
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  HappyDNS: 691a3041128055d09866f86e6e9ca90f24da1f18
+  Qiniu: 2f1b9d13904b6a7608a66a2d02c5b7b24575622a
+
+PODFILE CHECKSUM: af5667dcf524d2bea595ef3702f2d30bc2c4e5c8
+
+COCOAPODS: 1.2.1

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GCQiniuUploadManager.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[GCQiniuUploadManager sharedInstance] registerWithScope:@"cloudnapps" accessKey:@"sYt59dISszGfxhLFoEbH29W6wGdxiLTwqF9HcGli"
+                                                   secretKey:@"EA6fmrt-MT-ZZrFHFBoLztzsIMo8dFan7AgB7jyT"];
+    [[GCQiniuUploadManager sharedInstance] createToken];
     return YES;
 }
 

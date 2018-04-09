@@ -27,6 +27,8 @@
         NSLog(@"服务器开启失败 error is %@",error);
     }else{
         NSLog(@"服务器开启成功");
+        //开启后台模式 否则推到后台再回来就不能监听IP 和端口
+        [_serverSocket enableBackgroundingOnSocket];
     }
 }
 

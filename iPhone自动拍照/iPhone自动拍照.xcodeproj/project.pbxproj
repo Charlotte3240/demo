@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65C0DFBAC98E753CC0C5F264 /* libPods-iPhone自动拍照.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD572E3C8D8072D946DBDC64 /* libPods-iPhone自动拍照.a */; };
+		9E71D4731FB2FC8500F70E3D /* GCQiniuUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E71D4711FB2FC8400F70E3D /* GCQiniuUploadManager.m */; };
 		9EF9EB8E1FB2D4B7005A1B1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9EB8D1FB2D4B7005A1B1F /* AppDelegate.m */; };
 		9EF9EB911FB2D4B7005A1B1F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9EB901FB2D4B7005A1B1F /* ViewController.m */; };
 		9EF9EB941FB2D4B7005A1B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF9EB921FB2D4B7005A1B1F /* Main.storyboard */; };
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		621ED8DE8880F133926A1C55 /* Pods-iPhone自动拍照.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhone自动拍照.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPhone自动拍照/Pods-iPhone自动拍照.debug.xcconfig"; sourceTree = "<group>"; };
+		9E71D4711FB2FC8400F70E3D /* GCQiniuUploadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCQiniuUploadManager.m; sourceTree = "<group>"; };
+		9E71D4721FB2FC8400F70E3D /* GCQiniuUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCQiniuUploadManager.h; sourceTree = "<group>"; };
 		9EF9EB891FB2D4B7005A1B1F /* iPhone自动拍照.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhone自动拍照.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF9EB8C1FB2D4B7005A1B1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9EF9EB8D1FB2D4B7005A1B1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +56,8 @@
 		9EF9EBAC1FB2D4B7005A1B1F /* iPhone自动拍照UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iPhone自动拍照UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF9EBB01FB2D4B7005A1B1F /* iPhone____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "iPhone____UITests.m"; sourceTree = "<group>"; };
 		9EF9EBB21FB2D4B7005A1B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD572E3C8D8072D946DBDC64 /* libPods-iPhone自动拍照.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iPhone自动拍照.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E652C6EFF999A9E612FD5151 /* Pods-iPhone自动拍照.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhone自动拍照.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPhone自动拍照/Pods-iPhone自动拍照.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C0DFBAC98E753CC0C5F264 /* libPods-iPhone自动拍照.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C2D2B3DEF2716E7D4FFE781 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD572E3C8D8072D946DBDC64 /* libPods-iPhone自动拍照.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E71D4701FB2FC8400F70E3D /* GCQiniuUploadManager */ = {
+			isa = PBXGroup;
+			children = (
+				9E71D4711FB2FC8400F70E3D /* GCQiniuUploadManager.m */,
+				9E71D4721FB2FC8400F70E3D /* GCQiniuUploadManager.h */,
+			);
+			path = GCQiniuUploadManager;
+			sourceTree = "<group>";
+		};
 		9EF9EB801FB2D4B7005A1B1F = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +110,8 @@
 				9EF9EBA41FB2D4B7005A1B1F /* iPhone自动拍照Tests */,
 				9EF9EBAF1FB2D4B7005A1B1F /* iPhone自动拍照UITests */,
 				9EF9EB8A1FB2D4B7005A1B1F /* Products */,
+				BB8B7980BC4A5DB7FC51A822 /* Pods */,
+				5C2D2B3DEF2716E7D4FFE781 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +128,7 @@
 		9EF9EB8B1FB2D4B7005A1B1F /* iPhone自动拍照 */ = {
 			isa = PBXGroup;
 			children = (
+				9E71D4701FB2FC8400F70E3D /* GCQiniuUploadManager */,
 				9EF9EB8C1FB2D4B7005A1B1F /* AppDelegate.h */,
 				9EF9EB8D1FB2D4B7005A1B1F /* AppDelegate.m */,
 				9EF9EB8F1FB2D4B7005A1B1F /* ViewController.h */,
@@ -132,6 +160,15 @@
 			path = "iPhone自动拍照UITests";
 			sourceTree = "<group>";
 		};
+		BB8B7980BC4A5DB7FC51A822 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				621ED8DE8880F133926A1C55 /* Pods-iPhone自动拍照.debug.xcconfig */,
+				E652C6EFF999A9E612FD5151 /* Pods-iPhone自动拍照.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EF9EBB51FB2D4B7005A1B1F /* Build configuration list for PBXNativeTarget "iPhone自动拍照" */;
 			buildPhases = (
+				8ECC2E0B745E15C35B2DA97D /* [CP] Check Pods Manifest.lock */,
 				9EF9EB851FB2D4B7005A1B1F /* Sources */,
 				9EF9EB861FB2D4B7005A1B1F /* Frameworks */,
 				9EF9EB871FB2D4B7005A1B1F /* Resources */,
+				BD83955C15F7ADAC99999C28 /* [CP] Embed Pods Frameworks */,
+				C9CA19DAFAB89AA99CF860F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,12 +300,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8ECC2E0B745E15C35B2DA97D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BD83955C15F7ADAC99999C28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iPhone自动拍照/Pods-iPhone自动拍照-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9CA19DAFAB89AA99CF860F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iPhone自动拍照/Pods-iPhone自动拍照-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9EF9EB851FB2D4B7005A1B1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9EF9EB911FB2D4B7005A1B1F /* ViewController.m in Sources */,
+				9E71D4731FB2FC8500F70E3D /* GCQiniuUploadManager.m in Sources */,
 				9EF9EB9C1FB2D4B7005A1B1F /* main.m in Sources */,
 				9EF9EB8E1FB2D4B7005A1B1F /* AppDelegate.m in Sources */,
 			);
@@ -428,6 +517,7 @@
 		};
 		9EF9EBB61FB2D4B7005A1B1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 621ED8DE8880F133926A1C55 /* Pods-iPhone自动拍照.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +532,7 @@
 		};
 		9EF9EBB71FB2D4B7005A1B1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E652C6EFF999A9E612FD5151 /* Pods-iPhone自动拍照.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -15,6 +15,9 @@
 		9E0235621F330F3C0025502E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0235611F330F3C0025502E /* main.m */; };
 		9E02356C1F330F3D0025502E /* iOS_SocketClientDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E02356B1F330F3D0025502E /* iOS_SocketClientDemoTests.m */; };
 		9E0235771F330F3D0025502E /* iOS_SocketClientDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0235761F330F3D0025502E /* iOS_SocketClientDemoUITests.m */; };
+		9E5FEA3A1FC564560018A626 /* GViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FEA391FC564560018A626 /* GViewController.m */; };
+		9E5FEA401FC564CD0018A626 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FEA3C1FC564CD0018A626 /* GCDAsyncUdpSocket.m */; };
+		9E5FEA411FC564CD0018A626 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FEA3D1FC564CD0018A626 /* GCDAsyncSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		9E0235721F330F3D0025502E /* iOS_SocketClientDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_SocketClientDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E0235761F330F3D0025502E /* iOS_SocketClientDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_SocketClientDemoUITests.m; sourceTree = "<group>"; };
 		9E0235781F330F3D0025502E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E5FEA381FC564560018A626 /* GViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GViewController.h; sourceTree = "<group>"; };
+		9E5FEA391FC564560018A626 /* GViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GViewController.m; sourceTree = "<group>"; };
+		9E5FEA3C1FC564CD0018A626 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		9E5FEA3D1FC564CD0018A626 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		9E5FEA3E1FC564CD0018A626 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		9E5FEA3F1FC564CD0018A626 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +110,11 @@
 		9E0235511F330F3C0025502E /* iOS_SocketClientDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9E5FEA3B1FC564CD0018A626 /* socket */,
 				9E0235521F330F3C0025502E /* AppDelegate.h */,
 				9E0235531F330F3C0025502E /* AppDelegate.m */,
+				9E5FEA381FC564560018A626 /* GViewController.h */,
+				9E5FEA391FC564560018A626 /* GViewController.m */,
 				9E0235551F330F3C0025502E /* ViewController.h */,
 				9E0235561F330F3C0025502E /* ViewController.m */,
 				9E0235581F330F3C0025502E /* Main.storyboard */,
@@ -130,6 +142,17 @@
 				9E0235781F330F3D0025502E /* Info.plist */,
 			);
 			path = iOS_SocketClientDemoUITests;
+			sourceTree = "<group>";
+		};
+		9E5FEA3B1FC564CD0018A626 /* socket */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FEA3C1FC564CD0018A626 /* GCDAsyncUdpSocket.m */,
+				9E5FEA3D1FC564CD0018A626 /* GCDAsyncSocket.m */,
+				9E5FEA3E1FC564CD0018A626 /* GCDAsyncUdpSocket.h */,
+				9E5FEA3F1FC564CD0018A626 /* GCDAsyncSocket.h */,
+			);
+			path = socket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5FEA411FC564CD0018A626 /* GCDAsyncSocket.m in Sources */,
 				9E0235571F330F3C0025502E /* ViewController.m in Sources */,
+				9E5FEA401FC564CD0018A626 /* GCDAsyncUdpSocket.m in Sources */,
 				9E0235621F330F3C0025502E /* main.m in Sources */,
+				9E5FEA3A1FC564560018A626 /* GViewController.m in Sources */,
 				9E0235541F330F3C0025502E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
