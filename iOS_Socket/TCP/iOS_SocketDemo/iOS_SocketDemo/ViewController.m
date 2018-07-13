@@ -8,6 +8,12 @@
 
 #import "ViewController.h"
 #import "GCDAsyncSocket.h"
+
+
+//获取本机局域网ip
+#import <ifaddrs.h>
+#import <arpa/inet.h>
+
 @interface ViewController ()<GCDAsyncSocketDelegate>
 
 @end
@@ -22,13 +28,15 @@
 - (void)startChatServer{
     NSError *error;
     //开启一个可接受的ip(本机ip 注意：模拟器获取不到Ip) 和 端口
-    [_serverSocket acceptOnInterface:@"192.168.50.128" port:2333 error:&error];
+    NSString *ipString = [self getIPAddress];//@"192.168.50.128"
+    [_serverSocket disconnect];
+    [_serverSocket acceptOnInterface:ipString port:2333 error:&error];
     if (error) {
         NSLog(@"服务器开启失败 error is %@",error);
     }else{
+        //开启后台模式
+        //        [_serverSocket enableBackgroundingOnSocket];
         NSLog(@"服务器开启成功");
-        //开启后台模式 否则推到后台再回来就不能监听IP 和端口
-        [_serverSocket enableBackgroundingOnSocket];
     }
 }
 
@@ -44,11 +52,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    //开启socket 服务器
+    [self startup];
+    
+}
+
+
+- (void)reStart{
     [self initServer];
     [self startChatServer];
     
-    
 }
+
+- (void) startup{
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reStart)
+                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(disconnectAll)
+                                                 name:UIApplicationWillResignActiveNotification object:nil];
+    
+    [self initServer];
+    [self startChatServer];
+}
+
+- (void)disconnectAll{
+    [_serverSocket setDelegate:nil delegateQueue:NULL];
+    [_serverSocket disconnect];
+    _serverSocket = nil;
+}
+
 #pragma mark 有客户端建立连接的时候调用
 -(void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket{
     NSLog(@"new clientSocket is %@",newSocket.connectedHost);
@@ -75,5 +109,32 @@
 
 
 
+// Get IP Address
+- (NSString *)getIPAddress {
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0) {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL) {
+            if(temp_addr->ifa_addr->sa_family == AF_INET) {
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    // Free memory
+    freeifaddrs(interfaces);
+    return address;
+    
+}
 
 @end

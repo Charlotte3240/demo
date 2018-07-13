@@ -25,7 +25,7 @@
 
 - (void)connectServer{
     // 1.与服务器通过三次握手建立连接
-    NSString *host = @"192.168.50.128";
+    NSString *host = @"10.0.1.122";//@"192.168.50.129";
     int port = 2333;
     
     //创建一个socket对象

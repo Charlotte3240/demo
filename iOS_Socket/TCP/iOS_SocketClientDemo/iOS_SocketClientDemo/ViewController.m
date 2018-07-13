@@ -22,16 +22,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    NSString *hostString = [[NSUserDefaults standardUserDefaults]objectForKey:@"host"];
+    NSNumber *portNum = [[NSUserDefaults standardUserDefaults]objectForKey:@"port"];
+    
+    self.ipSetLabel.text = hostString;
+    self.portSetLabel.text = [NSString stringWithFormat:@"%ld",portNum.integerValue];
+    
     //connect server
     [self connectServer];
 }
 - (IBAction)connect:(id)sender {
+    
+    if (self.ipSetLabel.text.length <= 0) {
+        return;
+    }
+    
+    if (self.portSetLabel.text.length <= 0) {
+        return;
+    }
+    
+    
     [self connectServer];
 }
 
 - (void)connectServer{
-    NSString *host = self.ipSetLabel.text.length >0 ? self.ipSetLabel.text : @"10.0.1.201";
-    int port = self.portSetLabel.text.intValue ? self.portSetLabel.text.intValue : 2333;
+    
+    NSString *host = self.ipSetLabel.text;
+    int port = self.portSetLabel.text.intValue;
+    
+    NSNumber *savePort = [NSNumber numberWithInt:port];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:host forKey:@"host"];
+    [[NSUserDefaults standardUserDefaults] setObject:savePort forKey:@"port"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
     //创建输入输出流
     CFReadStreamRef readStreamRef;
     CFWriteStreamRef writeStreamRef;
