@@ -9,37 +9,71 @@
 #import "HCScanViewController.h"
 
 @interface HCScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
-@property (weak, nonatomic) IBOutlet UIView *preView; //预览层加载的view
-@property (weak, nonatomic) IBOutlet UIView *holeView; //黑色半透明
 
 @end
 
 @implementation HCScanViewController{
-    CGRect _holeRect;
-    UIView *_boxView; //preView 上的
+    CGRect _holeRect; //从半透明中扣出透明的区域
+    UIView *_boxView; //preView 上的限制扫码view
     NSString *_stringValue;  //二维码信息
     UIImageView *_shadowImage; //渐变图片
-    NSTimer *_timer;
+    NSTimer *_timer; //控制扫码动画的时间
+    UIView *_preView; //预览层加载的view
+    UIView *_holeView; //黑色半透明
+}
+
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+    //设置UI
+    [self maskToHoleView];
     
+    //相机设置
+    [self cameraSetting];
+
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //相机设置
-    [self cameraSetting];
 
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    
+    //调整旋转方向
     [self doRotateAction:nil];
+
 
 }
 //扣出中间扫码区域
 - (void)maskToHoleView{
-    NSInteger kRadius = 150; //边长
-    CGRect bounds = self.holeView.bounds;
+    
+
+    if (_preView == nil) {
+        _preView = [[UIView alloc] init];
+        _preView.bounds = self.view.bounds;
+        [self.view addSubview:_preView];
+
+    }
+    _preView.center = self.view.center;
+    
+    if (_holeView == nil) {
+        _holeView = [[UIView alloc]init];
+        _holeView.bounds = self.view.bounds;
+        _holeView.backgroundColor = [UIColor blackColor];
+        _holeView.alpha = 0.5;
+        [self.view addSubview:_holeView];
+
+    }
+    _holeView.center = self.view.center;
+    
+
+    
+    
+    NSInteger kRadius = 150; //边长的一半
+    CGRect bounds = _holeView.bounds;
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame = bounds;
     maskLayer.fillColor = [UIColor blackColor].CGColor;
@@ -51,7 +85,7 @@
     [path appendPath:[UIBezierPath bezierPathWithRect:bounds]];
     maskLayer.path = path.CGPath;
     maskLayer.fillRule = kCAFillRuleEvenOdd;
-    self.holeView.layer.mask = maskLayer;
+    _holeView.layer.mask = maskLayer;
     _holeRect = circleRect;
    
     UIImageView *topLeftImageView;
@@ -77,7 +111,7 @@
         [_boxView addSubview:_shadowImage];
         _boxView.layer.masksToBounds = YES;
         //添加boxview
-        [self.preView addSubview:_boxView];
+        [_preView addSubview:_boxView];
     }else{
         _boxView.frame = _holeRect;
     }
@@ -92,7 +126,7 @@
 
     // Device
     if (@available(iOS 10.0, *)) {
-        AVCaptureDeviceDiscoverySession *devicesIOS10 = [AVCaptureDeviceDiscoverySession  discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera] mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
+        AVCaptureDeviceDiscoverySession *devicesIOS10 = [AVCaptureDeviceDiscoverySession  discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera] mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionFront];
         NSArray *devices  = devicesIOS10.devices;
         _device = devices.lastObject;
     } else {
@@ -104,6 +138,12 @@
     // Output
     _output = [[AVCaptureMetadataOutput alloc]init];
     
+    
+    //设置感兴趣的区域  或者说是 扫描区域 （y,x,w,h） y、x、w、h 为比例
+    
+    CGSize size = self.view.bounds.size;
+    _output.rectOfInterest = CGRectMake(_holeRect.origin.y/size.height, _holeRect.origin.x/size.width, _holeRect.size.width/size.width, _holeRect.size.height/size.height);
+
 
     if ([_device lockForConfiguration:nil]){
         //自动白平衡
@@ -146,9 +186,8 @@
     _preViewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     _preViewLayer.frame = _preView.bounds;
     _preViewLayer.connection.videoOrientation = [self getDeviceDirection];
-    [self.preView.layer insertSublayer:self.preViewLayer atIndex:0];
+    [_preView.layer insertSublayer:self.preViewLayer atIndex:0];
 
-    _output.rectOfInterest = _boxView.bounds;
 
     
     //启动一个timer 移动渐变图片
@@ -177,27 +216,32 @@
     {
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
         _stringValue = metadataObject.stringValue;
+        
+        
+        [_session stopRunning];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:_stringValue preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [_session startRunning];
+            
+        }];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+
     }
     
-    [_session stopRunning];
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:_stringValue preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [_session startRunning];
-
-    }];
-    [alert addAction:action];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
 - (void)doRotateAction:(NSNotification *)notification {
+
 
     _preViewLayer.frame = _preView.bounds;
     _preViewLayer.connection.videoOrientation = [self getDeviceDirection];
     _output.rectOfInterest = _boxView.bounds;
 
     [self maskToHoleView];
+
 
 }
 - (AVCaptureVideoOrientation)getDeviceDirection{
