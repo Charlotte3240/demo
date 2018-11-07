@@ -36,11 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E7281EB210076E300C348EF /* BrigeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrigeHeader.h; sourceTree = "<group>"; };
 		9EBAE97F1E14AA9100C0B5DD /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
 		9EBAE9801E14AA9100C0B5DD /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
 		9EBAE9811E14AA9100C0B5DD /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
 		9EBAE9821E14AA9100C0B5DD /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
-		9EBAE98A1E14AC9300C0B5DD /* MOEWiki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOEWiki-Bridging-Header.h"; sourceTree = "<group>"; };
 		9EC47CE41E07C44D00695ADF /* MoeWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoeWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC47CE71E07C44D00695ADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EC47CE91E07C44D00695ADF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				9EBAE97E1E14AA9100C0B5DD /* NJKWebViewProgress */,
 				9EC47CE71E07C44D00695ADF /* AppDelegate.swift */,
 				9EC47CE91E07C44D00695ADF /* ViewController.swift */,
-				9EBAE98A1E14AC9300C0B5DD /* MOEWiki-Bridging-Header.h */,
+				9E7281EB210076E300C348EF /* BrigeHeader.h */,
 				9EC47CEB1E07C44D00695ADF /* Main.storyboard */,
 				9EC47CEE1E07C44D00695ADF /* Assets.xcassets */,
 				9EC47CF01E07C44D00695ADF /* LaunchScreen.storyboard */,
@@ -442,8 +442,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.hc.MoeWiki";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Charlotte/Desktop/MoeWiki/MoeWiki/MOEWiki-Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-MOEWiki-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/Charlotte/Documents/selfGitProject/demo/MoeWiki/MoeWiki/BrigeHeader.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-BrigeHeader.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -458,8 +458,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.hc.MoeWiki";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Charlotte/Desktop/MoeWiki/MoeWiki/MOEWiki-Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-MOEWiki-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/Charlotte/Documents/selfGitProject/demo/MoeWiki/MoeWiki/BrigeHeader.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-BrigeHeader.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

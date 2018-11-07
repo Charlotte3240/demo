@@ -81,7 +81,7 @@
     NSString *msg = self.mesTextField.text;
     NSData *msgData = [msg dataUsingEncoding:NSUTF8StringEncoding];
     [_outputStream write:msgData.bytes maxLength:msgData.length];
-    self.mesTextField.text = @"";
+//    self.mesTextField.text = @"";
     NSLog(@"客户端发送消息:%@",msg);
  
 }

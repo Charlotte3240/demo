@@ -1,0 +1,2970 @@
+ [
+  {
+  "children": [
+               {
+               "children": [
+                            {
+                            "id": 3900,
+                            "leaf": true,
+                            "name": "安神类药",
+                            "parentId": 3880
+                            },
+                            {
+                            "id": 3901,
+                            "leaf": true,
+                            "name": "骨质疏松",
+                            "parentId": 3880
+                            },
+                            {
+                            "id": 3902,
+                            "leaf": true,
+                            "name": "滋补肝肾",
+                            "parentId": 3880
+                            },
+                            {
+                            "id": 3904,
+                            "leaf": true,
+                            "name": "益气养阴",
+                            "parentId": 3880
+                            },
+                            {
+                            "id": 3905,
+                            "leaf": true,
+                            "name": "补气类药",
+                            "parentId": 3880
+                            },
+                            {
+                            "id": 3906,
+                            "leaf": true,
+                            "name": "补血类",
+                            "parentId": 3880
+                            },
+                            {
+                            "id": 3907,
+                            "leaf": true,
+                            "name": "体虚乏力",
+                            "parentId": 3880
+                            },
+                            {
+                            "id": 3908,
+                            "leaf": true,
+                            "name": "肢体麻木",
+                            "parentId": 3880
+                            },
+                            {
+                            "id": 3910,
+                            "leaf": true,
+                            "name": "心慌心悸",
+                            "parentId": 3880
+                            },
+                            {
+                            "id": 3911,
+                            "leaf": true,
+                            "name": "自汗盗汗",
+                            "parentId": 3880
+                            }
+                            ],
+               "id": 3880,
+               "leaf": false,
+               "name": "补益安神",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 3909,
+                            "leaf": true,
+                            "name": "补肾类药",
+                            "parentId": 3881
+                            },
+                            {
+                            "id": 3912,
+                            "leaf": true,
+                            "name": "前列腺类",
+                            "parentId": 3881
+                            },
+                            {
+                            "id": 3913,
+                            "leaf": true,
+                            "name": "补肾壮阳",
+                            "parentId": 3881
+                            },
+                            {
+                            "id": 3914,
+                            "leaf": true,
+                            "name": "性功能障碍",
+                            "parentId": 3881
+                            },
+                            {
+                            "id": 3915,
+                            "leaf": true,
+                            "name": "滋阴补肾",
+                            "parentId": 3881
+                            },
+                            {
+                            "id": 3916,
+                            "leaf": true,
+                            "name": "其他用药",
+                            "parentId": 3881
+                            },
+                            {
+                            "id": 4361,
+                            "leaf": true,
+                            "name": "男性不育",
+                            "parentId": 3881
+                            }
+                            ],
+               "id": 3881,
+               "leaf": false,
+               "name": "男科用药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 3917,
+                            "leaf": true,
+                            "name": "高血压类",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3918,
+                            "leaf": true,
+                            "name": "高血脂类",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3919,
+                            "leaf": true,
+                            "name": "中风偏瘫",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3920,
+                            "leaf": true,
+                            "name": "冠心病",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3921,
+                            "leaf": true,
+                            "name": "低血压",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3922,
+                            "leaf": true,
+                            "name": "心肌病",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3923,
+                            "leaf": true,
+                            "name": "肺动脉高压",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3924,
+                            "leaf": true,
+                            "name": "心律不齐",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3925,
+                            "leaf": true,
+                            "name": "外周血管疾病",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3926,
+                            "leaf": true,
+                            "name": "动脉硬化",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3927,
+                            "leaf": true,
+                            "name": "心力衰竭",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3928,
+                            "leaf": true,
+                            "name": "其他用药",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3929,
+                            "leaf": true,
+                            "name": "心绞痛",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3930,
+                            "leaf": true,
+                            "name": "脑血管病",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3931,
+                            "leaf": true,
+                            "name": "静脉曲张",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3932,
+                            "leaf": true,
+                            "name": "低钾血症",
+                            "parentId": 3882
+                            },
+                            {
+                            "id": 3933,
+                            "leaf": true,
+                            "name": "动脉闭塞症",
+                            "parentId": 3882
+                            }
+                            ],
+               "id": 3882,
+               "leaf": false,
+               "name": "心血管科",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 3903,
+                            "leaf": true,
+                            "name": "口燥咽干",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3934,
+                            "leaf": true,
+                            "name": "急慢性咽炎",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3935,
+                            "leaf": true,
+                            "name": "鼻炎",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3936,
+                            "leaf": true,
+                            "name": "中耳炎",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3937,
+                            "leaf": true,
+                            "name": "口臭口苦",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3938,
+                            "leaf": true,
+                            "name": "口腔溃疡",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3939,
+                            "leaf": true,
+                            "name": "牙龈牙周炎",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3940,
+                            "leaf": true,
+                            "name": "耳鸣耳聋",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3941,
+                            "leaf": true,
+                            "name": "鼻塞流涕",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3942,
+                            "leaf": true,
+                            "name": "抗视疲劳",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3943,
+                            "leaf": true,
+                            "name": "抗菌消炎",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3944,
+                            "leaf": true,
+                            "name": "白内障",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3945,
+                            "leaf": true,
+                            "name": "干眼症",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3946,
+                            "leaf": true,
+                            "name": "青光眼",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3947,
+                            "leaf": true,
+                            "name": "视物昏花",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3948,
+                            "leaf": true,
+                            "name": "眼部病变",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3949,
+                            "leaf": true,
+                            "name": "其他用药",
+                            "parentId": 3883
+                            },
+                            {
+                            "id": 3950,
+                            "leaf": true,
+                            "name": "急慢性扁桃体炎",
+                            "parentId": 3883
+                            }
+                            ],
+               "id": 3883,
+               "leaf": false,
+               "name": "五官用药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 3954,
+                            "leaf": true,
+                            "name": "中药降糖",
+                            "parentId": 3884
+                            },
+                            {
+                            "id": 3955,
+                            "leaf": true,
+                            "name": "西药降糖",
+                            "parentId": 3884
+                            },
+                            {
+                            "id": 3956,
+                            "leaf": true,
+                            "name": "营养调节",
+                            "parentId": 3884
+                            },
+                            {
+                            "id": 3957,
+                            "leaf": true,
+                            "name": "预防病变",
+                            "parentId": 3884
+                            }
+                            ],
+               "id": 3884,
+               "leaf": false,
+               "name": "糖尿病科",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 3958,
+                            "leaf": true,
+                            "name": "跌打损伤内服",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3959,
+                            "leaf": true,
+                            "name": "跌打损伤外用",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3960,
+                            "leaf": true,
+                            "name": "风湿骨痛内服",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3961,
+                            "leaf": true,
+                            "name": "风湿骨痛外用",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3962,
+                            "leaf": true,
+                            "name": "骨质增生",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3963,
+                            "leaf": true,
+                            "name": "骨质疏松",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3964,
+                            "leaf": true,
+                            "name": "颈椎病",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3965,
+                            "leaf": true,
+                            "name": "痛风",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3966,
+                            "leaf": true,
+                            "name": "肩周炎",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3967,
+                            "leaf": true,
+                            "name": "坐骨神经痛",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3968,
+                            "leaf": true,
+                            "name": "腰肌劳损",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3969,
+                            "leaf": true,
+                            "name": "腰椎间盘突出",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3970,
+                            "leaf": true,
+                            "name": "类风湿性关节炎",
+                            "parentId": 3885
+                            },
+                            {
+                            "id": 3971,
+                            "leaf": true,
+                            "name": "强直性脊柱炎",
+                            "parentId": 3885
+                            }
+                            ],
+               "id": 3885,
+               "leaf": false,
+               "name": "风湿关节",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 3972,
+                            "leaf": true,
+                            "name": "肝癌",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3973,
+                            "leaf": true,
+                            "name": "肺癌",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3974,
+                            "leaf": true,
+                            "name": "胃肠癌",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3975,
+                            "leaf": true,
+                            "name": "鼻咽癌",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3976,
+                            "leaf": true,
+                            "name": "乳腺癌",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3977,
+                            "leaf": true,
+                            "name": "卵巢癌",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3978,
+                            "leaf": true,
+                            "name": "宫颈癌",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3979,
+                            "leaf": true,
+                            "name": "白血病",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3980,
+                            "leaf": true,
+                            "name": "淋巴癌",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3981,
+                            "leaf": true,
+                            "name": "食管癌",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3982,
+                            "leaf": true,
+                            "name": "前列腺癌",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3983,
+                            "leaf": true,
+                            "name": "其他",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3984,
+                            "leaf": true,
+                            "name": "器官移植",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3985,
+                            "leaf": true,
+                            "name": "营养支持",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3986,
+                            "leaf": true,
+                            "name": "癌症止痛",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 3987,
+                            "leaf": true,
+                            "name": "化疗止痛",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 4024,
+                            "leaf": true,
+                            "name": "肝炎用药",
+                            "parentId": 3886
+                            },
+                            {
+                            "id": 4129,
+                            "leaf": true,
+                            "name": "癌症疼痛",
+                            "parentId": 3886
+                            }
+                            ],
+               "id": 3886,
+               "leaf": false,
+               "name": "肿瘤科药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 3988,
+                            "leaf": true,
+                            "name": "烧烫创伤",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3989,
+                            "leaf": true,
+                            "name": "皮肤过敏",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3990,
+                            "leaf": true,
+                            "name": "扁平苔癣",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3991,
+                            "leaf": true,
+                            "name": "生发乌发",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3992,
+                            "leaf": true,
+                            "name": "酒糟鼻",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3993,
+                            "leaf": true,
+                            "name": "治裂防冻",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3994,
+                            "leaf": true,
+                            "name": "褥疮溃烂",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3995,
+                            "leaf": true,
+                            "name": "痱子晒伤",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3996,
+                            "leaf": true,
+                            "name": "鸡眼",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3997,
+                            "leaf": true,
+                            "name": "甲沟炎",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3998,
+                            "leaf": true,
+                            "name": "花斑癣",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 3999,
+                            "leaf": true,
+                            "name": "多汗腋臭",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4000,
+                            "leaf": true,
+                            "name": "皮肤瘙痒",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4001,
+                            "leaf": true,
+                            "name": "手足癣病",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4002,
+                            "leaf": true,
+                            "name": "带状疱疹",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4003,
+                            "leaf": true,
+                            "name": "蚊虫叮咬",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4004,
+                            "leaf": true,
+                            "name": "皮炎湿疹",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4005,
+                            "leaf": true,
+                            "name": "银屑病",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4006,
+                            "leaf": true,
+                            "name": "痤疮",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4007,
+                            "leaf": true,
+                            "name": "疥疮",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4008,
+                            "leaf": true,
+                            "name": "白癜风",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4009,
+                            "leaf": true,
+                            "name": "麻风病",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4010,
+                            "leaf": true,
+                            "name": "尖锐湿疣",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4011,
+                            "leaf": true,
+                            "name": "皮肤感染",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4012,
+                            "leaf": true,
+                            "name": "祛斑类",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4013,
+                            "leaf": true,
+                            "name": "头皮糠疹",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4014,
+                            "leaf": true,
+                            "name": "其他用药",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4015,
+                            "leaf": true,
+                            "name": "荨麻疹",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4016,
+                            "leaf": true,
+                            "name": "青春痘",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4017,
+                            "leaf": true,
+                            "name": "手足皲裂",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4018,
+                            "leaf": true,
+                            "name": "痈疽疔疮",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4019,
+                            "leaf": true,
+                            "name": "祛除疤痕",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4020,
+                            "leaf": true,
+                            "name": "灰指甲",
+                            "parentId": 3887
+                            },
+                            {
+                            "id": 4021,
+                            "leaf": true,
+                            "name": "艾滋病",
+                            "parentId": 3887
+                            }
+                            ],
+               "id": 3887,
+               "leaf": false,
+               "name": "皮肤科药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4022,
+                            "leaf": true,
+                            "name": "解酒护肝",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4023,
+                            "leaf": true,
+                            "name": "乙肝用药",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4025,
+                            "leaf": true,
+                            "name": "肝硬化类",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4026,
+                            "leaf": true,
+                            "name": "胆囊炎",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4027,
+                            "leaf": true,
+                            "name": "疏肝理气",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4028,
+                            "leaf": true,
+                            "name": "脂肪肝类",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4029,
+                            "leaf": true,
+                            "name": "黄疸类药",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4030,
+                            "leaf": true,
+                            "name": "胆结石",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4031,
+                            "leaf": true,
+                            "name": "肝癌类药",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4032,
+                            "leaf": true,
+                            "name": "降转氨酶",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4033,
+                            "leaf": true,
+                            "name": "胰腺炎",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4034,
+                            "leaf": true,
+                            "name": "胰腺癌",
+                            "parentId": 3888
+                            },
+                            {
+                            "id": 4035,
+                            "leaf": true,
+                            "name": "其他用药",
+                            "parentId": 3888
+                            }
+                            ],
+               "id": 3888,
+               "leaf": false,
+               "name": "肝胆科药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4036,
+                            "leaf": true,
+                            "name": "解暑化湿",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4037,
+                            "leaf": true,
+                            "name": "痔疮用药",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4038,
+                            "leaf": true,
+                            "name": "肠道菌群紊乱",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4039,
+                            "leaf": true,
+                            "name": "胃炎用药",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4040,
+                            "leaf": true,
+                            "name": "腹痛腹泻",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4041,
+                            "leaf": true,
+                            "name": "消化不良",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4042,
+                            "leaf": true,
+                            "name": "泛酸打嗝",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4043,
+                            "leaf": true,
+                            "name": "驱虫类药",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4044,
+                            "leaf": true,
+                            "name": "便秘",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4045,
+                            "leaf": true,
+                            "name": "胃肠道感染",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4046,
+                            "leaf": true,
+                            "name": "胃痛胀气",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4047,
+                            "leaf": true,
+                            "name": "恶心呕吐",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4048,
+                            "leaf": true,
+                            "name": "胃及十二指肠溃疡",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4049,
+                            "leaf": true,
+                            "name": "消化道肿瘤",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4050,
+                            "leaf": true,
+                            "name": "其他用药",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4051,
+                            "leaf": true,
+                            "name": "胃食管返流",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4052,
+                            "leaf": true,
+                            "name": "厌食",
+                            "parentId": 3889
+                            },
+                            {
+                            "id": 4053,
+                            "leaf": true,
+                            "name": "结肠炎",
+                            "parentId": 3889
+                            }
+                            ],
+               "id": 3889,
+               "leaf": false,
+               "name": "胃肠用药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4055,
+                            "leaf": true,
+                            "name": "神经衰弱",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4056,
+                            "leaf": true,
+                            "name": "帕金森类",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4057,
+                            "leaf": true,
+                            "name": "精神分裂",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4058,
+                            "leaf": true,
+                            "name": "老年痴呆",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4059,
+                            "leaf": true,
+                            "name": "眩晕失眠",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4060,
+                            "leaf": true,
+                            "name": "焦虑症",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4061,
+                            "leaf": true,
+                            "name": "抑郁症类",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4062,
+                            "leaf": true,
+                            "name": "肌无力类",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4063,
+                            "leaf": true,
+                            "name": "面瘫癫痫",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4064,
+                            "leaf": true,
+                            "name": "其他用药",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4065,
+                            "leaf": true,
+                            "name": "偏头疼类",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4066,
+                            "leaf": true,
+                            "name": "记忆减退",
+                            "parentId": 3890
+                            },
+                            {
+                            "id": 4067,
+                            "leaf": true,
+                            "name": "戒毒",
+                            "parentId": 3890
+                            }
+                            ],
+               "id": 3890,
+               "leaf": false,
+               "name": "神经科药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4068,
+                            "leaf": true,
+                            "name": "化痰止咳",
+                            "parentId": 3891
+                            },
+                            {
+                            "id": 4069,
+                            "leaf": true,
+                            "name": "哮喘用药",
+                            "parentId": 3891
+                            },
+                            {
+                            "id": 4070,
+                            "leaf": true,
+                            "name": "感冒咳嗽",
+                            "parentId": 3891
+                            },
+                            {
+                            "id": 4071,
+                            "leaf": true,
+                            "name": "呼吸道感染",
+                            "parentId": 3891
+                            },
+                            {
+                            "id": 4072,
+                            "leaf": true,
+                            "name": "咳血盗汗",
+                            "parentId": 3891
+                            },
+                            {
+                            "id": 4073,
+                            "leaf": true,
+                            "name": "胸腔积液",
+                            "parentId": 3891
+                            },
+                            {
+                            "id": 4074,
+                            "leaf": true,
+                            "name": "抗结核",
+                            "parentId": 3891
+                            },
+                            {
+                            "id": 4075,
+                            "leaf": true,
+                            "name": "肺癌",
+                            "parentId": 3891
+                            },
+                            {
+                            "id": 4076,
+                            "leaf": true,
+                            "name": "气管炎",
+                            "parentId": 3891
+                            },
+                            {
+                            "id": 4077,
+                            "leaf": true,
+                            "name": "肺炎",
+                            "parentId": 3891
+                            }
+                            ],
+               "id": 3891,
+               "leaf": false,
+               "name": "呼吸科药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4078,
+                            "leaf": true,
+                            "name": "尿路感染",
+                            "parentId": 3892
+                            },
+                            {
+                            "id": 4079,
+                            "leaf": true,
+                            "name": "肾炎",
+                            "parentId": 3892
+                            },
+                            {
+                            "id": 4080,
+                            "leaf": true,
+                            "name": "尿路结石",
+                            "parentId": 3892
+                            },
+                            {
+                            "id": 4081,
+                            "leaf": true,
+                            "name": "尿崩症",
+                            "parentId": 3892
+                            },
+                            {
+                            "id": 4082,
+                            "leaf": true,
+                            "name": "肾病综合症",
+                            "parentId": 3892
+                            },
+                            {
+                            "id": 4083,
+                            "leaf": true,
+                            "name": "尿毒症",
+                            "parentId": 3892
+                            },
+                            {
+                            "id": 4084,
+                            "leaf": true,
+                            "name": "泌尿系统肿瘤",
+                            "parentId": 3892
+                            }
+                            ],
+               "id": 3892,
+               "leaf": false,
+               "name": "泌尿科药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4085,
+                            "leaf": true,
+                            "name": "除湿止带",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4086,
+                            "leaf": true,
+                            "name": "月经不调",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4087,
+                            "leaf": true,
+                            "name": "乳腺疾病",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4088,
+                            "leaf": true,
+                            "name": "产后疾病",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4089,
+                            "leaf": true,
+                            "name": "保胎促孕",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4090,
+                            "leaf": true,
+                            "name": "妇科炎症",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4091,
+                            "leaf": true,
+                            "name": "活血类",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4092,
+                            "leaf": true,
+                            "name": "更年期综合症",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4093,
+                            "leaf": true,
+                            "name": "卵巢疾病",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4094,
+                            "leaf": true,
+                            "name": "妇科栓剂",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4095,
+                            "leaf": true,
+                            "name": "贫血类",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4096,
+                            "leaf": true,
+                            "name": "妇科洗液",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4097,
+                            "leaf": true,
+                            "name": "霉菌性阴道炎",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4098,
+                            "leaf": true,
+                            "name": "盆腔炎",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4099,
+                            "leaf": true,
+                            "name": "滴虫性阴道炎",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4100,
+                            "leaf": true,
+                            "name": "宫颈糜烂",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4101,
+                            "leaf": true,
+                            "name": "附件炎",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4102,
+                            "leaf": true,
+                            "name": "细菌性阴道炎",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4103,
+                            "leaf": true,
+                            "name": "痛经",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4104,
+                            "leaf": true,
+                            "name": "宫颈炎",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4105,
+                            "leaf": true,
+                            "name": "紧急避孕",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4106,
+                            "leaf": true,
+                            "name": "妇科出血",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4107,
+                            "leaf": true,
+                            "name": "子宫肌瘤",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4108,
+                            "leaf": true,
+                            "name": "短效避孕",
+                            "parentId": 3893
+                            },
+                            {
+                            "id": 4109,
+                            "leaf": true,
+                            "name": "不孕症",
+                            "parentId": 3893
+                            }
+                            ],
+               "id": 3893,
+               "leaf": false,
+               "name": "妇科用药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4110,
+                            "leaf": true,
+                            "name": "感冒发热",
+                            "parentId": 3894
+                            },
+                            {
+                            "id": 4111,
+                            "leaf": true,
+                            "name": "补钙铁锌",
+                            "parentId": 3894
+                            },
+                            {
+                            "id": 4112,
+                            "leaf": true,
+                            "name": "消化不良",
+                            "parentId": 3894
+                            },
+                            {
+                            "id": 4113,
+                            "leaf": true,
+                            "name": "维生素类",
+                            "parentId": 3894
+                            },
+                            {
+                            "id": 4114,
+                            "leaf": true,
+                            "name": "小儿祛火",
+                            "parentId": 3894
+                            },
+                            {
+                            "id": 4115,
+                            "leaf": true,
+                            "name": "五官疾病",
+                            "parentId": 3894
+                            },
+                            {
+                            "id": 4116,
+                            "leaf": true,
+                            "name": "抗菌消炎",
+                            "parentId": 3894
+                            },
+                            {
+                            "id": 4117,
+                            "leaf": true,
+                            "name": "小儿外伤",
+                            "parentId": 3894
+                            },
+                            {
+                            "id": 4118,
+                            "leaf": true,
+                            "name": "腹泻便秘",
+                            "parentId": 3894
+                            },
+                            {
+                            "id": 4119,
+                            "leaf": true,
+                            "name": "咳嗽哮喘",
+                            "parentId": 3894
+                            }
+                            ],
+               "id": 3894,
+               "leaf": false,
+               "name": "儿科用药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4054,
+                            "leaf": true,
+                            "name": "晕车晕船",
+                            "parentId": 3895
+                            },
+                            {
+                            "id": 4120,
+                            "leaf": true,
+                            "name": "感冒发烧",
+                            "parentId": 3895
+                            },
+                            {
+                            "id": 4121,
+                            "leaf": true,
+                            "name": "清热解毒",
+                            "parentId": 3895
+                            },
+                            {
+                            "id": 4122,
+                            "leaf": true,
+                            "name": "抗菌消炎",
+                            "parentId": 3895
+                            },
+                            {
+                            "id": 4123,
+                            "leaf": true,
+                            "name": "眼部用药",
+                            "parentId": 3895
+                            },
+                            {
+                            "id": 4124,
+                            "leaf": true,
+                            "name": "口腔疾病",
+                            "parentId": 3895
+                            }
+                            ],
+               "id": 3895,
+               "leaf": false,
+               "name": "日常用药",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4125,
+                            "leaf": true,
+                            "name": "感冒发热",
+                            "parentId": 3896
+                            },
+                            {
+                            "id": 4126,
+                            "leaf": true,
+                            "name": "头痛牙痛",
+                            "parentId": 3896
+                            },
+                            {
+                            "id": 4127,
+                            "leaf": true,
+                            "name": "肌肉关节",
+                            "parentId": 3896
+                            },
+                            {
+                            "id": 4128,
+                            "leaf": true,
+                            "name": "风湿",
+                            "parentId": 3896
+                            },
+                            {
+                            "id": 4130,
+                            "leaf": true,
+                            "name": "创伤疼痛",
+                            "parentId": 3896
+                            },
+                            {
+                            "id": 4131,
+                            "leaf": true,
+                            "name": "其他用药",
+                            "parentId": 3896
+                            }
+                            ],
+               "id": 3896,
+               "leaf": false,
+               "name": "解热镇痛",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4132,
+                            "leaf": true,
+                            "name": "补钙补锌",
+                            "parentId": 3897
+                            },
+                            {
+                            "id": 4133,
+                            "leaf": true,
+                            "name": "维生素类",
+                            "parentId": 3897
+                            },
+                            {
+                            "id": 4134,
+                            "leaf": true,
+                            "name": "多种维生素矿物质",
+                            "parentId": 3897
+                            },
+                            {
+                            "id": 4135,
+                            "leaf": true,
+                            "name": "电解质",
+                            "parentId": 3897
+                            },
+                            {
+                            "id": 4136,
+                            "leaf": true,
+                            "name": "补钾类",
+                            "parentId": 3897
+                            },
+                            {
+                            "id": 4137,
+                            "leaf": true,
+                            "name": "营养类",
+                            "parentId": 3897
+                            },
+                            {
+                            "id": 4138,
+                            "leaf": true,
+                            "name": "补铁补硒",
+                            "parentId": 3897
+                            },
+                            {
+                            "id": 4139,
+                            "leaf": true,
+                            "name": "叶酸",
+                            "parentId": 3897
+                            }
+                            ],
+               "id": 3897,
+               "leaf": false,
+               "name": "维矿物质",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4140,
+                            "leaf": true,
+                            "name": "牙龈肿痛",
+                            "parentId": 3898
+                            },
+                            {
+                            "id": 4141,
+                            "leaf": true,
+                            "name": "抗菌消炎",
+                            "parentId": 3898
+                            },
+                            {
+                            "id": 4142,
+                            "leaf": true,
+                            "name": "祛火通便",
+                            "parentId": 3898
+                            },
+                            {
+                            "id": 4143,
+                            "leaf": true,
+                            "name": "疮疡肿痛",
+                            "parentId": 3898
+                            },
+                            {
+                            "id": 4144,
+                            "leaf": true,
+                            "name": "其他用药",
+                            "parentId": 3898
+                            },
+                            {
+                            "id": 4145,
+                            "leaf": true,
+                            "name": "中药消炎类",
+                            "parentId": 3898
+                            },
+                            {
+                            "id": 4146,
+                            "leaf": true,
+                            "name": "抗病毒",
+                            "parentId": 3898
+                            },
+                            {
+                            "id": 4147,
+                            "leaf": true,
+                            "name": "抗真菌",
+                            "parentId": 3898
+                            }
+                            ],
+               "id": 3898,
+               "leaf": false,
+               "name": "清热解毒",
+               "parentId": 3874
+               },
+               {
+               "children": [
+                            {
+                            "id": 4148,
+                            "leaf": true,
+                            "name": "青霉素类",
+                            "parentId": 3899
+                            },
+                            {
+                            "id": 4149,
+                            "leaf": true,
+                            "name": "头孢类",
+                            "parentId": 3899
+                            },
+                            {
+                            "id": 4150,
+                            "leaf": true,
+                            "name": "喹诺酮类",
+                            "parentId": 3899
+                            },
+                            {
+                            "id": 4151,
+                            "leaf": true,
+                            "name": "大环内酯类",
+                            "parentId": 3899
+                            },
+                            {
+                            "id": 4152,
+                            "leaf": true,
+                            "name": "四环素类",
+                            "parentId": 3899
+                            },
+                            {
+                            "id": 4153,
+                            "leaf": true,
+                            "name": "氨基糖甙类",
+                            "parentId": 3899
+                            },
+                            {
+                            "id": 4154,
+                            "leaf": true,
+                            "name": "其他用药",
+                            "parentId": 3899
+                            }
+                            ],
+               "id": 3899,
+               "leaf": false,
+               "name": "抗生素",
+               "parentId": 3874
+               }
+               ],
+  "id": 3874,
+  "leaf": false,
+  "name": "中西药品",
+  "parentId": 1
+  },
+  {
+  "children": [
+               {
+               "children": [
+                            {
+                            "id": 4160,
+                            "leaf": true,
+                            "name": "女用转珠",
+                            "parentId": 4155
+                            },
+                            {
+                            "id": 4161,
+                            "leaf": true,
+                            "name": "女用仿真",
+                            "parentId": 4155
+                            },
+                            {
+                            "id": 4162,
+                            "leaf": true,
+                            "name": "G点按摩",
+                            "parentId": 4155
+                            },
+                            {
+                            "id": 4163,
+                            "leaf": true,
+                            "name": "刺激乳头",
+                            "parentId": 4155
+                            },
+                            {
+                            "id": 4164,
+                            "leaf": true,
+                            "name": "情趣套装",
+                            "parentId": 4155
+                            }
+                            ],
+               "id": 4155,
+               "leaf": false,
+               "name": "女用器具",
+               "parentId": 3875
+               },
+               {
+               "children": [
+                            {
+                            "id": 4167,
+                            "leaf": true,
+                            "name": "便携器具",
+                            "parentId": 4156
+                            },
+                            {
+                            "id": 4168,
+                            "leaf": true,
+                            "name": "男用仿真",
+                            "parentId": 4156
+                            },
+                            {
+                            "id": 4169,
+                            "leaf": true,
+                            "name": "充气娃娃",
+                            "parentId": 4156
+                            },
+                            {
+                            "id": 4170,
+                            "leaf": true,
+                            "name": "延时系列",
+                            "parentId": 4156
+                            }
+                            ],
+               "id": 4156,
+               "leaf": false,
+               "name": "男用器具",
+               "parentId": 3875
+               },
+               {
+               "children": [
+                            {
+                            "id": 4171,
+                            "leaf": true,
+                            "name": "套裙服饰",
+                            "parentId": 4157
+                            },
+                            {
+                            "id": 4172,
+                            "leaf": true,
+                            "name": "制服",
+                            "parentId": 4157
+                            },
+                            {
+                            "id": 4173,
+                            "leaf": true,
+                            "name": "吊带",
+                            "parentId": 4157
+                            },
+                            {
+                            "id": 4174,
+                            "leaf": true,
+                            "name": "内裤",
+                            "parentId": 4157
+                            },
+                            {
+                            "id": 4175,
+                            "leaf": true,
+                            "name": "三点式类",
+                            "parentId": 4157
+                            }
+                            ],
+               "id": 4157,
+               "leaf": false,
+               "name": "情趣内衣",
+               "parentId": 3875
+               },
+               {
+               "children": [
+                            {
+                            "id": 4176,
+                            "leaf": true,
+                            "name": "丰胸商品",
+                            "parentId": 4158
+                            },
+                            {
+                            "id": 4177,
+                            "leaf": true,
+                            "name": "美乳商品",
+                            "parentId": 4158
+                            },
+                            {
+                            "id": 4178,
+                            "leaf": true,
+                            "name": "美体装",
+                            "parentId": 4158
+                            }
+                            ],
+               "id": 4158,
+               "leaf": false,
+               "name": "丰胸美体",
+               "parentId": 3875
+               },
+               {
+               "children": [
+                            {
+                            "id": 4179,
+                            "leaf": true,
+                            "name": "安全套",
+                            "parentId": 4159
+                            },
+                            {
+                            "id": 4180,
+                            "leaf": true,
+                            "name": "润滑剂",
+                            "parentId": 4159
+                            },
+                            {
+                            "id": 4181,
+                            "leaf": true,
+                            "name": "怀孕检测",
+                            "parentId": 4159
+                            },
+                            {
+                            "id": 4182,
+                            "leaf": true,
+                            "name": "排卵检测",
+                            "parentId": 4159
+                            },
+                            {
+                            "id": 4183,
+                            "leaf": true,
+                            "name": "避孕栓剂",
+                            "parentId": 4159
+                            },
+                            {
+                            "id": 4184,
+                            "leaf": true,
+                            "name": "情趣用品",
+                            "parentId": 4159
+                            },
+                            {
+                            "id": 4185,
+                            "leaf": true,
+                            "name": "口服避孕",
+                            "parentId": 4159
+                            },
+                            {
+                            "id": 4186,
+                            "leaf": true,
+                            "name": "紧急避孕",
+                            "parentId": 4159
+                            }
+                            ],
+               "id": 4159,
+               "leaf": false,
+               "name": "计生用品",
+               "parentId": 3875
+               }
+               ],
+  "id": 3875,
+  "leaf": false,
+  "name": "成人用品",
+  "parentId": 1
+  },
+  {
+  "children": [
+               {
+               "children": [
+                            {
+                            "id": 4192,
+                            "leaf": true,
+                            "name": "改善补益",
+                            "parentId": 4187
+                            },
+                            {
+                            "id": 4193,
+                            "leaf": true,
+                            "name": "补充钙类",
+                            "parentId": 4187
+                            },
+                            {
+                            "id": 4194,
+                            "leaf": true,
+                            "name": "改善记忆",
+                            "parentId": 4187
+                            },
+                            {
+                            "id": 4195,
+                            "leaf": true,
+                            "name": "改善睡眠",
+                            "parentId": 4187
+                            },
+                            {
+                            "id": 4196,
+                            "leaf": true,
+                            "name": "改善贫血",
+                            "parentId": 4187
+                            },
+                            {
+                            "id": 4197,
+                            "leaf": true,
+                            "name": "改善视力",
+                            "parentId": 4187
+                            },
+                            {
+                            "id": 4198,
+                            "leaf": true,
+                            "name": "骨质疏松",
+                            "parentId": 4187
+                            },
+                            {
+                            "id": 4199,
+                            "leaf": true,
+                            "name": "缓解疲劳",
+                            "parentId": 4187
+                            },
+                            {
+                            "id": 4200,
+                            "leaf": true,
+                            "name": "保肝降脂",
+                            "parentId": 4187
+                            },
+                            {
+                            "id": 4201,
+                            "leaf": true,
+                            "name": "降糖降压",
+                            "parentId": 4187
+                            },
+                            {
+                            "id": 4202,
+                            "leaf": true,
+                            "name": "清咽润喉",
+                            "parentId": 4187
+                            }
+                            ],
+               "id": 4187,
+               "leaf": false,
+               "name": "改善补益",
+               "parentId": 3876
+               },
+               {
+               "children": [
+                            {
+                            "id": 4203,
+                            "leaf": true,
+                            "name": "减肥瘦身",
+                            "parentId": 4188
+                            },
+                            {
+                            "id": 4204,
+                            "leaf": true,
+                            "name": "润肠通便",
+                            "parentId": 4188
+                            },
+                            {
+                            "id": 4205,
+                            "leaf": true,
+                            "name": "美容养颜",
+                            "parentId": 4188
+                            }
+                            ],
+               "id": 4188,
+               "leaf": false,
+               "name": "美容塑身",
+               "parentId": 3876
+               },
+               {
+               "children": [
+                            {
+                            "id": 4206,
+                            "leaf": true,
+                            "name": "维生素类",
+                            "parentId": 4189
+                            },
+                            {
+                            "id": 4207,
+                            "leaf": true,
+                            "name": "提高免疫",
+                            "parentId": 4189
+                            },
+                            {
+                            "id": 4208,
+                            "leaf": true,
+                            "name": "生长发育",
+                            "parentId": 4189
+                            },
+                            {
+                            "id": 4209,
+                            "leaf": true,
+                            "name": "参茸饮片",
+                            "parentId": 4189
+                            }
+                            ],
+               "id": 4189,
+               "leaf": false,
+               "name": "补充营养",
+               "parentId": 3876
+               },
+               {
+               "children": [
+                            {
+                            "id": 4210,
+                            "leaf": true,
+                            "name": "戒烟解酒",
+                            "parentId": 4190
+                            },
+                            {
+                            "id": 4211,
+                            "leaf": true,
+                            "name": "补肾壮阳",
+                            "parentId": 4190
+                            },
+                            {
+                            "id": 4212,
+                            "leaf": true,
+                            "name": "男士营养",
+                            "parentId": 4190
+                            }
+                            ],
+               "id": 4190,
+               "leaf": false,
+               "name": "男性健康",
+               "parentId": 3876
+               },
+               {
+               "children": [
+                            {
+                            "id": 4213,
+                            "leaf": true,
+                            "name": "女性营养",
+                            "parentId": 4191
+                            },
+                            {
+                            "id": 4214,
+                            "leaf": true,
+                            "name": "调节内分泌",
+                            "parentId": 4191
+                            },
+                            {
+                            "id": 4215,
+                            "leaf": true,
+                            "name": "孕妇营养",
+                            "parentId": 4191
+                            }
+                            ],
+               "id": 4191,
+               "leaf": false,
+               "name": "女性健康",
+               "parentId": 3876
+               }
+               ],
+  "id": 3876,
+  "leaf": false,
+  "name": "保健养生",
+  "parentId": 1
+  },
+  {
+  "children": [
+               {
+               "children": [
+                            {
+                            "id": 4224,
+                            "leaf": true,
+                            "name": "血糖仪",
+                            "parentId": 4216
+                            },
+                            {
+                            "id": 4225,
+                            "leaf": true,
+                            "name": "血糖试纸",
+                            "parentId": 4216
+                            },
+                            {
+                            "id": 4226,
+                            "leaf": true,
+                            "name": "血糖分析仪",
+                            "parentId": 4216
+                            }
+                            ],
+               "id": 4216,
+               "leaf": false,
+               "name": "糖友用品",
+               "parentId": 3877
+               },
+               {
+               "children": [
+                            {
+                            "id": 4227,
+                            "leaf": true,
+                            "name": "血压计",
+                            "parentId": 4217
+                            },
+                            {
+                            "id": 4228,
+                            "leaf": true,
+                            "name": "听诊器",
+                            "parentId": 4217
+                            },
+                            {
+                            "id": 4229,
+                            "leaf": true,
+                            "name": "体温计",
+                            "parentId": 4217
+                            },
+                            {
+                            "id": 4230,
+                            "leaf": true,
+                            "name": "雅培瞬感",
+                            "parentId": 4217
+                            }
+                            ],
+               "id": 4217,
+               "leaf": false,
+               "name": "日常检测",
+               "parentId": 3877
+               },
+               {
+               "children": [
+                            {
+                            "id": 4231,
+                            "leaf": true,
+                            "name": "轮椅",
+                            "parentId": 4218
+                            },
+                            {
+                            "id": 4232,
+                            "leaf": true,
+                            "name": "拐杖",
+                            "parentId": 4218
+                            },
+                            {
+                            "id": 4233,
+                            "leaf": true,
+                            "name": "助行器",
+                            "parentId": 4218
+                            }
+                            ],
+               "id": 4218,
+               "leaf": false,
+               "name": "轮椅拐杖",
+               "parentId": 3877
+               },
+               {
+               "children": [
+                            {
+                            "id": 4234,
+                            "leaf": true,
+                            "name": "制氧机",
+                            "parentId": 4219
+                            },
+                            {
+                            "id": 4235,
+                            "leaf": true,
+                            "name": "氧气袋",
+                            "parentId": 4219
+                            }
+                            ],
+               "id": 4219,
+               "leaf": false,
+               "name": "制氧",
+               "parentId": 3877
+               },
+               {
+               "children": [
+                            {
+                            "id": 4236,
+                            "leaf": true,
+                            "name": "按摩器",
+                            "parentId": 4220
+                            },
+                            {
+                            "id": 4237,
+                            "leaf": true,
+                            "name": "足浴盆",
+                            "parentId": 4220
+                            },
+                            {
+                            "id": 4238,
+                            "leaf": true,
+                            "name": "按摩垫",
+                            "parentId": 4220
+                            },
+                            {
+                            "id": 4239,
+                            "leaf": true,
+                            "name": "颈椎牵引器",
+                            "parentId": 4220
+                            },
+                            {
+                            "id": 4240,
+                            "leaf": true,
+                            "name": "其他保健",
+                            "parentId": 4220
+                            }
+                            ],
+               "id": 4220,
+               "leaf": false,
+               "name": "保健按摩",
+               "parentId": 3877
+               },
+               {
+               "children": [
+                            {
+                            "id": 4241,
+                            "leaf": true,
+                            "name": "助听器",
+                            "parentId": 4221
+                            },
+                            {
+                            "id": 4242,
+                            "leaf": true,
+                            "name": "静脉曲张袜",
+                            "parentId": 4221
+                            },
+                            {
+                            "id": 4243,
+                            "leaf": true,
+                            "name": "电动牙刷",
+                            "parentId": 4221
+                            },
+                            {
+                            "id": 4244,
+                            "leaf": true,
+                            "name": "拔罐用品",
+                            "parentId": 4221
+                            },
+                            {
+                            "id": 4245,
+                            "leaf": true,
+                            "name": "家用药箱",
+                            "parentId": 4221
+                            },
+                            {
+                            "id": 4246,
+                            "leaf": true,
+                            "name": "手套",
+                            "parentId": 4221
+                            },
+                            {
+                            "id": 4247,
+                            "leaf": true,
+                            "name": "理疗产品",
+                            "parentId": 4221
+                            },
+                            {
+                            "id": 4248,
+                            "leaf": true,
+                            "name": "创伤用品",
+                            "parentId": 4221
+                            },
+                            {
+                            "id": 4249,
+                            "leaf": true,
+                            "name": "物理降温",
+                            "parentId": 4221
+                            },
+                            {
+                            "id": 4250,
+                            "leaf": true,
+                            "name": "日常护理",
+                            "parentId": 4221
+                            },
+                            {
+                            "id": 4251,
+                            "leaf": true,
+                            "name": "隐形眼镜",
+                            "parentId": 4221
+                            }
+                            ],
+               "id": 4221,
+               "leaf": false,
+               "name": "日常护理",
+               "parentId": 3877
+               },
+               {
+               "children": [
+                            {
+                            "id": 4252,
+                            "leaf": true,
+                            "name": "防褥疮垫",
+                            "parentId": 4222
+                            },
+                            {
+                            "id": 4253,
+                            "leaf": true,
+                            "name": "座厕护理",
+                            "parentId": 4222
+                            }
+                            ],
+               "id": 4222,
+               "leaf": false,
+               "name": "特殊护理",
+               "parentId": 3877
+               },
+               {
+               "children": [
+                            {
+                            "id": 4254,
+                            "leaf": true,
+                            "name": "低频治疗仪",
+                            "parentId": 4223
+                            },
+                            {
+                            "id": 4255,
+                            "leaf": true,
+                            "name": "电磁波治疗仪",
+                            "parentId": 4223
+                            }
+                            ],
+               "id": 4223,
+               "leaf": false,
+               "name": "治疗仪",
+               "parentId": 3877
+               }
+               ],
+  "id": 3877,
+  "leaf": false,
+  "name": "医疗器械",
+  "parentId": 1
+  },
+  {
+  "children": [
+               {
+               "children": [
+                            {
+                            "id": 4263,
+                            "leaf": true,
+                            "name": "洗发水",
+                            "parentId": 4256
+                            },
+                            {
+                            "id": 4264,
+                            "leaf": true,
+                            "name": "护发素",
+                            "parentId": 4256
+                            },
+                            {
+                            "id": 4265,
+                            "leaf": true,
+                            "name": "护发套装",
+                            "parentId": 4256
+                            }
+                            ],
+               "id": 4256,
+               "leaf": false,
+               "name": "头发护理",
+               "parentId": 3878
+               },
+               {
+               "children": [
+                            {
+                            "id": 4266,
+                            "leaf": true,
+                            "name": "BB霜",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4267,
+                            "leaf": true,
+                            "name": "眼影",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4268,
+                            "leaf": true,
+                            "name": "睫毛膏",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4269,
+                            "leaf": true,
+                            "name": "粉底遮瑕",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4270,
+                            "leaf": true,
+                            "name": "唇膏唇彩",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4271,
+                            "leaf": true,
+                            "name": "腮红",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4272,
+                            "leaf": true,
+                            "name": "美甲",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4273,
+                            "leaf": true,
+                            "name": "粉饼散粉",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4274,
+                            "leaf": true,
+                            "name": "眉笔眉粉",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4275,
+                            "leaf": true,
+                            "name": "彩妆工具",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4276,
+                            "leaf": true,
+                            "name": "彩妆套装",
+                            "parentId": 4257
+                            },
+                            {
+                            "id": 4277,
+                            "leaf": true,
+                            "name": "眼线",
+                            "parentId": 4257
+                            }
+                            ],
+               "id": 4257,
+               "leaf": false,
+               "name": "时尚彩妆",
+               "parentId": 3878
+               },
+               {
+               "children": [
+                            {
+                            "id": 4278,
+                            "leaf": true,
+                            "name": "洁面",
+                            "parentId": 4258
+                            },
+                            {
+                            "id": 4279,
+                            "leaf": true,
+                            "name": "爽肤",
+                            "parentId": 4258
+                            },
+                            {
+                            "id": 4285,
+                            "leaf": true,
+                            "name": "须后水",
+                            "parentId": 4258
+                            },
+                            {
+                            "id": 4286,
+                            "leaf": true,
+                            "name": "男士套装",
+                            "parentId": 4258
+                            },
+                            {
+                            "id": 4287,
+                            "leaf": true,
+                            "name": "须泡",
+                            "parentId": 4258
+                            }
+                            ],
+               "id": 4258,
+               "leaf": false,
+               "name": "男士护肤",
+               "parentId": 3878
+               },
+               {
+               "children": [
+                            {
+                            "id": 4288,
+                            "leaf": true,
+                            "name": "女士香水",
+                            "parentId": 4259
+                            },
+                            {
+                            "id": 4289,
+                            "leaf": true,
+                            "name": "男士香水",
+                            "parentId": 4259
+                            },
+                            {
+                            "id": 4290,
+                            "leaf": true,
+                            "name": "中性香水",
+                            "parentId": 4259
+                            },
+                            {
+                            "id": 4291,
+                            "leaf": true,
+                            "name": "迷你香水",
+                            "parentId": 4259
+                            }
+                            ],
+               "id": 4259,
+               "leaf": false,
+               "name": "魅力香水",
+               "parentId": 3878
+               },
+               {
+               "children": [
+                            {
+                            "id": 4292,
+                            "leaf": true,
+                            "name": "润体乳and霜",
+                            "parentId": 4260
+                            },
+                            {
+                            "id": 4293,
+                            "leaf": true,
+                            "name": "精油",
+                            "parentId": 4260
+                            },
+                            {
+                            "id": 4294,
+                            "leaf": true,
+                            "name": "脱毛",
+                            "parentId": 4260
+                            },
+                            {
+                            "id": 4295,
+                            "leaf": true,
+                            "name": "瘦身纤体",
+                            "parentId": 4260
+                            },
+                            {
+                            "id": 4296,
+                            "leaf": true,
+                            "name": "去角质and磨砂",
+                            "parentId": 4260
+                            },
+                            {
+                            "id": 4297,
+                            "leaf": true,
+                            "name": "按摩膏",
+                            "parentId": 4260
+                            }
+                            ],
+               "id": 4260,
+               "leaf": false,
+               "name": "塑身美体",
+               "parentId": 3878
+               },
+               {
+               "children": [
+                            {
+                            "id": 4298,
+                            "leaf": true,
+                            "name": "洁面",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4299,
+                            "leaf": true,
+                            "name": "卸妆",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4300,
+                            "leaf": true,
+                            "name": "精华",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4301,
+                            "leaf": true,
+                            "name": "防晒隔离",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4302,
+                            "leaf": true,
+                            "name": "面霜and乳液",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4303,
+                            "leaf": true,
+                            "name": "面膜",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4304,
+                            "leaf": true,
+                            "name": "祛痘",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4305,
+                            "leaf": true,
+                            "name": "喷雾",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4306,
+                            "leaf": true,
+                            "name": "眼霜and眼膜",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4307,
+                            "leaf": true,
+                            "name": "爽肤水and化妆水",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4308,
+                            "leaf": true,
+                            "name": "护唇",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4309,
+                            "leaf": true,
+                            "name": "去角质and磨砂",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4310,
+                            "leaf": true,
+                            "name": "T区护理",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4311,
+                            "leaf": true,
+                            "name": "护肤套装",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4312,
+                            "leaf": true,
+                            "name": "口服美容",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4313,
+                            "leaf": true,
+                            "name": "祛痘印痘坑",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4314,
+                            "leaf": true,
+                            "name": "祛斑",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4315,
+                            "leaf": true,
+                            "name": "祛皱",
+                            "parentId": 4261
+                            },
+                            {
+                            "id": 4316,
+                            "leaf": true,
+                            "name": "祛黑头",
+                            "parentId": 4261
+                            }
+                            ],
+               "id": 4261,
+               "leaf": false,
+               "name": "春夏护肤",
+               "parentId": 3878
+               },
+               {
+               "children": [
+                            {
+                            "id": 4317,
+                            "leaf": true,
+                            "name": "香皂",
+                            "parentId": 4262
+                            },
+                            {
+                            "id": 4318,
+                            "leaf": true,
+                            "name": "湿纸巾",
+                            "parentId": 4262
+                            },
+                            {
+                            "id": 4319,
+                            "leaf": true,
+                            "name": "手部护理",
+                            "parentId": 4262
+                            },
+                            {
+                            "id": 4320,
+                            "leaf": true,
+                            "name": "足部护理",
+                            "parentId": 4262
+                            },
+                            {
+                            "id": 4321,
+                            "leaf": true,
+                            "name": "走珠香氛and止汗",
+                            "parentId": 4262
+                            },
+                            {
+                            "id": 4322,
+                            "leaf": true,
+                            "name": "沐浴露",
+                            "parentId": 4262
+                            },
+                            {
+                            "id": 4323,
+                            "leaf": true,
+                            "name": "牙膏and牙粉",
+                            "parentId": 4262
+                            },
+                            {
+                            "id": 4324,
+                            "leaf": true,
+                            "name": "口喷and漱口",
+                            "parentId": 4262
+                            }
+                            ],
+               "id": 4262,
+               "leaf": false,
+               "name": "个人护理",
+               "parentId": 3878
+               }
+               ],
+  "id": 3878,
+  "leaf": false,
+  "name": "时尚美妆",
+  "parentId": 1
+  },
+  {
+  "children": [
+               {
+               "children": [
+                            {
+                            "id": 4330,
+                            "leaf": true,
+                            "name": "产后喂养",
+                            "parentId": 4325
+                            },
+                            {
+                            "id": 4331,
+                            "leaf": true,
+                            "name": "产后调理",
+                            "parentId": 4325
+                            },
+                            {
+                            "id": 4332,
+                            "leaf": true,
+                            "name": "产后护理",
+                            "parentId": 4325
+                            },
+                            {
+                            "id": 4333,
+                            "leaf": true,
+                            "name": "产后塑身",
+                            "parentId": 4325
+                            }
+                            ],
+               "id": 4325,
+               "leaf": false,
+               "name": "新妈妈",
+               "parentId": 3879
+               },
+               {
+               "children": [
+                            {
+                            "id": 4334,
+                            "leaf": true,
+                            "name": "宝贝沐浴",
+                            "parentId": 4326
+                            },
+                            {
+                            "id": 4335,
+                            "leaf": true,
+                            "name": "宝贝洗发",
+                            "parentId": 4326
+                            },
+                            {
+                            "id": 4336,
+                            "leaf": true,
+                            "name": "宝贝润肤",
+                            "parentId": 4326
+                            },
+                            {
+                            "id": 4337,
+                            "leaf": true,
+                            "name": "宝贝湿巾",
+                            "parentId": 4326
+                            },
+                            {
+                            "id": 4338,
+                            "leaf": true,
+                            "name": "防蚊祛痱",
+                            "parentId": 4326
+                            },
+                            {
+                            "id": 4339,
+                            "leaf": true,
+                            "name": "爽身粉",
+                            "parentId": 4326
+                            }
+                            ],
+               "id": 4326,
+               "leaf": false,
+               "name": "沐浴护肤",
+               "parentId": 3879
+               },
+               {
+               "children": [
+                            {
+                            "id": 4340,
+                            "leaf": true,
+                            "name": "配方奶粉",
+                            "parentId": 4327
+                            },
+                            {
+                            "id": 4341,
+                            "leaf": true,
+                            "name": "提高免疫",
+                            "parentId": 4327
+                            },
+                            {
+                            "id": 4342,
+                            "leaf": true,
+                            "name": "生长发育",
+                            "parentId": 4327
+                            },
+                            {
+                            "id": 4343,
+                            "leaf": true,
+                            "name": "补充维生素",
+                            "parentId": 4327
+                            },
+                            {
+                            "id": 4344,
+                            "leaf": true,
+                            "name": "调节肠胃",
+                            "parentId": 4327
+                            },
+                            {
+                            "id": 4345,
+                            "leaf": true,
+                            "name": "大脑发育",
+                            "parentId": 4327
+                            },
+                            {
+                            "id": 4346,
+                            "leaf": true,
+                            "name": "宝贝辅食",
+                            "parentId": 4327
+                            }
+                            ],
+               "id": 4327,
+               "leaf": false,
+               "name": "宝贝营养品",
+               "parentId": 3879
+               },
+               {
+               "children": [
+                            {
+                            "id": 4347,
+                            "leaf": true,
+                            "name": "保胎护孕",
+                            "parentId": 4328
+                            },
+                            {
+                            "id": 4348,
+                            "leaf": true,
+                            "name": "补钙产品",
+                            "parentId": 4328
+                            },
+                            {
+                            "id": 4349,
+                            "leaf": true,
+                            "name": "补充营养",
+                            "parentId": 4328
+                            },
+                            {
+                            "id": 4350,
+                            "leaf": true,
+                            "name": "叶酸",
+                            "parentId": 4328
+                            },
+                            {
+                            "id": 4351,
+                            "leaf": true,
+                            "name": "孕妇奶粉",
+                            "parentId": 4328
+                            }
+                            ],
+               "id": 4328,
+               "leaf": false,
+               "name": "准妈妈",
+               "parentId": 3879
+               },
+               {
+               "children": [
+                            {
+                            "id": 4352,
+                            "leaf": true,
+                            "name": "纸尿片",
+                            "parentId": 4329
+                            },
+                            {
+                            "id": 4353,
+                            "leaf": true,
+                            "name": "喂养用具",
+                            "parentId": 4329
+                            },
+                            {
+                            "id": 4354,
+                            "leaf": true,
+                            "name": "体温计",
+                            "parentId": 4329
+                            },
+                            {
+                            "id": 4355,
+                            "leaf": true,
+                            "name": "保温消毒",
+                            "parentId": 4329
+                            },
+                            {
+                            "id": 4356,
+                            "leaf": true,
+                            "name": "婴儿寝居",
+                            "parentId": 4329
+                            },
+                            {
+                            "id": 4357,
+                            "leaf": true,
+                            "name": "口腔清洁",
+                            "parentId": 4329
+                            },
+                            {
+                            "id": 4358,
+                            "leaf": true,
+                            "name": "启智玩具",
+                            "parentId": 4329
+                            }
+                            ],
+               "id": 4329,
+               "leaf": false,
+               "name": "健康成长",
+               "parentId": 3879
+               }
+               ],
+  "id": 3879,
+  "leaf": false,
+  "name": "母婴专区",
+  "parentId": 1
+  }
+  ]
