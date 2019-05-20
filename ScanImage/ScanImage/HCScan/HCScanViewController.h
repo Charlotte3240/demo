@@ -9,11 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+typedef void(^ScanResultBlock) (NSString* result);
+
+
 @interface HCScanViewController : UIViewController
 @property (nonatomic,strong)AVCaptureDevice *device;
 @property (nonatomic,strong)AVCaptureDeviceInput *input;
 @property (nonatomic,strong)AVCaptureMetadataOutput *output;
 @property (nonatomic,strong)AVCaptureSession *session;
 @property (nonatomic,strong)AVCaptureVideoPreviewLayer *preViewLayer;
+
+@property (nonatomic,copy)ScanResultBlock callBack;
+
 
 @end

@@ -126,7 +126,7 @@
 
     // Device
     if (@available(iOS 10.0, *)) {
-        AVCaptureDeviceDiscoverySession *devicesIOS10 = [AVCaptureDeviceDiscoverySession  discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera] mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionFront];
+        AVCaptureDeviceDiscoverySession *devicesIOS10 = [AVCaptureDeviceDiscoverySession  discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera] mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
         NSArray *devices  = devicesIOS10.devices;
         _device = devices.lastObject;
     } else {
@@ -220,13 +220,20 @@
         
         [_session stopRunning];
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:_stringValue preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [_session startRunning];
-            
-        }];
-        [alert addAction:action];
-        [self presentViewController:alert animated:YES completion:nil];
+        NSLog(@"scan result is %@",_stringValue);
+        if (self.callBack != nil){
+            self.callBack(metadataObject.stringValue);
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+        
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:_stringValue preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction *action  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            [_session startRunning];
+//
+//        }];
+//        [alert addAction:action];
+//        [self presentViewController:alert animated:YES completion:nil];
 
     }
     
