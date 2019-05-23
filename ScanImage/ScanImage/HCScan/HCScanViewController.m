@@ -23,21 +23,61 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-
-    //设置UI
-    [self maskToHoleView];
-    
-    //相机设置
-    [self cameraSetting];
-
-
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    //查看是否支持相机
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您的设备不支持相机" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }else{
+        
+        
+        AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+        if (status == AVAuthorizationStatusRestricted || status == AVAuthorizationStatusDenied)
+        {
+            // 无权限
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您没有授权相机使用权限" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self.navigationController popViewControllerAnimated:YES];
+                
+            }];
+            [alert addAction:action];
+            
+            UIAlertAction *authAction = [UIAlertAction actionWithTitle:@"去授权" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                if (@available(iOS 10.0,*)){
+                    
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:^(BOOL success) {
+                    }];
+                    
+                }else{
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                }
+                
+                
+                
+            }];
+            [alert addAction:authAction];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+            
+        }else{
+            //设置UI
+            [self maskToHoleView];
+            
+            //相机设置
+            [self cameraSetting];
+            
+        }
+        
+        
+    }
 }
 
 - (void)viewDidLayoutSubviews{

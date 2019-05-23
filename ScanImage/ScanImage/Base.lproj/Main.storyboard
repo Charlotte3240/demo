@@ -41,8 +41,8 @@
                                     <action selector="showScanAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mim-bw-WUk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描结果" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLe-V5-Kg8">
-                                <rect key="frame" x="153" y="164" width="69.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描结果" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLe-V5-Kg8">
+                                <rect key="frame" x="10" y="164" width="355" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,6 +54,8 @@
                             <constraint firstItem="4UF-PA-SPi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cuk-eW-yX1"/>
                             <constraint firstItem="hLe-V5-Kg8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gAa-MH-SiO"/>
                             <constraint firstItem="4UF-PA-SPi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l7K-C7-Mlc"/>
+                            <constraint firstItem="hLe-V5-Kg8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="utf-l9-2vc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hLe-V5-Kg8" secondAttribute="trailing" constant="10" id="xzs-3E-YUo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
