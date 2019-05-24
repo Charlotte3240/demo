@@ -41,7 +41,7 @@
         AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
         if (status == AVAuthorizationStatusRestricted || status == AVAuthorizationStatusDenied)
         {
-            // 无权限
+            // 无权限 跳转去授权页面
             
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您没有授权相机使用权限" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *action  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
