@@ -18,6 +18,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(openOnSafari)];
+    
+    
+}
+
+
+- (void)openOnSafari{
+    
+    
+    NSURL *url = [[NSURL alloc]initWithString:self.resultLabel.text];
+    
+    if (url == nil){ return ; }
+    
+    if (@available(iOS 10.0,*)){
+        
+        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+        }];
+        
+    }else{
+        [[UIApplication sharedApplication] openURL:url];
+    }
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
