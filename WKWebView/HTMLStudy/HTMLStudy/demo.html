@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            iOS js应用
+        </title>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            alert("first alert");
+            alert("second alert");
+            confirm('comfirm');
+            var str = prompt('message','default');
+            alert(str);
+        </script>
+    </head>
+
+    <body>
+        <h1>加载本地html测试</h1>
+
+        <button onclick="javascript:window.webkit.messageHandlers['getLoaclData'].postMessage('js message');">js调用原生代码</button>
+
+        <noscript>不支持js</noscript>
+    </body>
+</html>
