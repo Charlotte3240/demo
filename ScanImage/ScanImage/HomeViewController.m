@@ -47,7 +47,6 @@
     if ([segue.identifier isEqualToString:@"showScan"]){
         HCScanViewController *scanVc = segue.destinationViewController;
         scanVc.callBack = ^(NSString *result) {
-            NSLog(@"%@", result);
             self.resultLabel.text = result;
         };
     }
