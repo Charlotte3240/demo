@@ -81,6 +81,20 @@ class WKWebViewController: UIViewController {
     }
     
     
+    func webviewWriteLocalStoryage(){
+        
+        self.webView.evaluateJavaScript("localStorage.setItem('iOSApp','true')") {  (res, error) in
+            
+            print("evalute js  res is \(res)")
+            if error != nil{
+                print(error)
+            }
+        }
+        
+        
+    }
+    
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "title"{
             self.navigationItem.title = self.webView.title
@@ -221,10 +235,34 @@ extension WKWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         print("webview did finish load")
+        
+        //write local storyage when webview  load finish
+//        self.webviewWriteLocalStoryage()
+        
+        
+//        let jsString = """
+//        <script src="./node_modules/_vconsole@3.3.2@vconsole/dist/vconsole.min.js"></script>
+//        <script>
+//            var vConsole = new VConsole();
+//            console.log('Hello world');
+//
+//        </script>
+//"""
+//
+//        webView.evaluateJavaScript(jsString) { (res, error) in
+//
+//            print("evalute js  res is \(res)")
+//            if error != nil{
+//                print(error)
+//            }
+//        }
+        
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print("webview did start nav")
+        
+        self.webviewWriteLocalStoryage()
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {

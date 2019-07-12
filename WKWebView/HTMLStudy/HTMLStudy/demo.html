@@ -5,14 +5,22 @@
         <title>
             iOS js应用
         </title>
-        <meta charset="utf-8">
-        <script type="text/javascript">
-            alert("first alert");
-            alert("second alert");
-            confirm('comfirm');
-            var str = prompt('message','default');
-            alert(str);
+        <meta charset="utf-8">     
+      
+        <script src="/Users/Charlotte/Documents/demo/WKWebView/HTMLStudy/HTMLStudy/node_modules/_vconsole@3.3.2@vconsole/dist/vconsole.min.js"></script>
+        <!-- <script src="https://github.com/Tencent/vConsole/blob/f0e936e763ac64850fcf14803134fb494f9bcebf/dist/vconsole.min.js"></script> -->
+        <script>
+            var vConsole = new VConsole();
+            console.log('Hello world');
+
         </script>
+<!--        <script type="text/javascript">-->
+<!--            alert("first alert");-->
+<!--            alert("second alert");-->
+<!--            confirm('comfirm');-->
+<!--            var str = prompt('message','default');-->
+<!--            alert(str);-->
+<!--        </script>-->
     </head>
 
     <body>
@@ -21,5 +29,11 @@
         <button onclick="javascript:window.webkit.messageHandlers['getLoaclData'].postMessage('js message');">js调用原生代码</button>
 
         <noscript>不支持js</noscript>
+
+        <button onclick="javascript:window.location.href='https://www.baidu.com'">跳转页面</button>
+
+        
     </body>
+
+
 </html>
