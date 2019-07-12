@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftUI
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -27,8 +27,6 @@ class ViewController: UIViewController {
         let treetableView  = TreeTableView.init(frame: self.view.bounds, style: .plain)
         self.view.addSubview(treetableView)
         treetableView.nodeData = json
-        
-        
         
         
 

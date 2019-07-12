@@ -109,7 +109,7 @@ class TreeTableView: UITableView , UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    override init(frame: CGRect, style: UITableViewStyle) {
+    override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         
         self.register(UINib.init(nibName: "TreeCell", bundle: nil), forCellReuseIdentifier: "TreeCell")
@@ -239,12 +239,12 @@ class TreeTableView: UITableView , UITableViewDelegate, UITableViewDataSource {
                     indexPathArray.append(tempIndexPath!)
                 }
 
-                self.insertRows(at: indexPathArray, with: UITableViewRowAnimation.none)
+                self.insertRows(at: indexPathArray, with: UITableView.RowAnimation.none)
 
             }
 
 
-            self.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
+            self.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
             self.selectRow(at: indexPath, animated: false, scrollPosition: .none)
 
         }
