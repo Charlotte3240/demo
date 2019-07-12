@@ -12,7 +12,7 @@
 
 
 
-+ (void)downLoadImages:(NSArray *)urls withProgress
+//+ (void)downLoadImages:(NSArray *)urls withProgress
 
 
 

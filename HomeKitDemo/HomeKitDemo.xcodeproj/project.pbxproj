@@ -352,6 +352,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -620,7 +621,7 @@
 				CODE_SIGN_ENTITLEMENTS = HomeKitDemo/HomeKitDemo.entitlements;
 				DEVELOPMENT_TEAM = 4PXQVRX365;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/Charlotte/Desktop/HomeKitDemo/HomeKitDemo/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Charlotte/Documents/demo/HomeKitDemo/HomeKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = HomeKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.hc.HomeKitDemo";
@@ -638,7 +639,7 @@
 				CODE_SIGN_ENTITLEMENTS = HomeKitDemo/HomeKitDemo.entitlements;
 				DEVELOPMENT_TEAM = 4PXQVRX365;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/Charlotte/Desktop/HomeKitDemo/HomeKitDemo/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Charlotte/Documents/demo/HomeKitDemo/HomeKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = HomeKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.hc.HomeKitDemo";
