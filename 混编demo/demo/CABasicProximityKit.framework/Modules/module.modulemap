@@ -1,6 +1,0 @@
-framework module CABasicProximityKit {
-  umbrella header "CABasicProximityKit.h"
-
-  export *
-  module * { export * }
-}

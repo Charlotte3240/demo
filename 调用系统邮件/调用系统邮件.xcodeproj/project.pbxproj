@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47A4ECAE1B83232400E5FF4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A4ECAD1B83232400E5FF4D /* main.m */; };
+		47A4ECB11B83232400E5FF4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A4ECB01B83232400E5FF4D /* AppDelegate.m */; };
+		47A4ECB41B83232400E5FF4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A4ECB31B83232400E5FF4D /* ViewController.m */; };
+		47A4ECB71B83232400E5FF4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A4ECB51B83232400E5FF4D /* Main.storyboard */; };
+		47A4ECB91B83232400E5FF4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47A4ECB81B83232400E5FF4D /* Images.xcassets */; };
+		47A4ECBC1B83232400E5FF4D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47A4ECBA1B83232400E5FF4D /* LaunchScreen.xib */; };
+		47A4ECC81B83232400E5FF4D /* ______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A4ECC71B83232400E5FF4D /* ______Tests.m */; };
+		47A4ECD21B83234100E5FF4D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A4ECD11B83234100E5FF4D /* MessageUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47A4ECC21B83232400E5FF4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47A4ECA01B83232400E5FF4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47A4ECA71B83232400E5FF4D;
+			remoteInfo = "调用系统邮件";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		47A4ECA81B83232400E5FF4D /* 调用系统邮件.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "调用系统邮件.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A4ECAC1B83232400E5FF4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47A4ECAD1B83232400E5FF4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		47A4ECAF1B83232400E5FF4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		47A4ECB01B83232400E5FF4D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		47A4ECB21B83232400E5FF4D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		47A4ECB31B83232400E5FF4D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		47A4ECB61B83232400E5FF4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		47A4ECB81B83232400E5FF4D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		47A4ECBB1B83232400E5FF4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		47A4ECC11B83232400E5FF4D /* 调用系统邮件Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "调用系统邮件Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A4ECC61B83232400E5FF4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47A4ECC71B83232400E5FF4D /* ______Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "______Tests.m"; sourceTree = "<group>"; };
+		47A4ECD11B83234100E5FF4D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47A4ECA51B83232400E5FF4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A4ECD21B83234100E5FF4D /* MessageUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A4ECBE1B83232400E5FF4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47A4EC9F1B83232400E5FF4D = {
+			isa = PBXGroup;
+			children = (
+				47A4ECD11B83234100E5FF4D /* MessageUI.framework */,
+				47A4ECAA1B83232400E5FF4D /* 调用系统邮件 */,
+				47A4ECC41B83232400E5FF4D /* 调用系统邮件Tests */,
+				47A4ECA91B83232400E5FF4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		47A4ECA91B83232400E5FF4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47A4ECA81B83232400E5FF4D /* 调用系统邮件.app */,
+				47A4ECC11B83232400E5FF4D /* 调用系统邮件Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47A4ECAA1B83232400E5FF4D /* 调用系统邮件 */ = {
+			isa = PBXGroup;
+			children = (
+				47A4ECAF1B83232400E5FF4D /* AppDelegate.h */,
+				47A4ECB01B83232400E5FF4D /* AppDelegate.m */,
+				47A4ECB21B83232400E5FF4D /* ViewController.h */,
+				47A4ECB31B83232400E5FF4D /* ViewController.m */,
+				47A4ECB51B83232400E5FF4D /* Main.storyboard */,
+				47A4ECB81B83232400E5FF4D /* Images.xcassets */,
+				47A4ECBA1B83232400E5FF4D /* LaunchScreen.xib */,
+				47A4ECAB1B83232400E5FF4D /* Supporting Files */,
+			);
+			path = "调用系统邮件";
+			sourceTree = "<group>";
+		};
+		47A4ECAB1B83232400E5FF4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47A4ECAC1B83232400E5FF4D /* Info.plist */,
+				47A4ECAD1B83232400E5FF4D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47A4ECC41B83232400E5FF4D /* 调用系统邮件Tests */ = {
+			isa = PBXGroup;
+			children = (
+				47A4ECC71B83232400E5FF4D /* ______Tests.m */,
+				47A4ECC51B83232400E5FF4D /* Supporting Files */,
+			);
+			path = "调用系统邮件Tests";
+			sourceTree = "<group>";
+		};
+		47A4ECC51B83232400E5FF4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47A4ECC61B83232400E5FF4D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47A4ECA71B83232400E5FF4D /* 调用系统邮件 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47A4ECCB1B83232400E5FF4D /* Build configuration list for PBXNativeTarget "调用系统邮件" */;
+			buildPhases = (
+				47A4ECA41B83232400E5FF4D /* Sources */,
+				47A4ECA51B83232400E5FF4D /* Frameworks */,
+				47A4ECA61B83232400E5FF4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "调用系统邮件";
+			productName = "调用系统邮件";
+			productReference = 47A4ECA81B83232400E5FF4D /* 调用系统邮件.app */;
+			productType = "com.apple.product-type.application";
+		};
+		47A4ECC01B83232400E5FF4D /* 调用系统邮件Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47A4ECCE1B83232400E5FF4D /* Build configuration list for PBXNativeTarget "调用系统邮件Tests" */;
+			buildPhases = (
+				47A4ECBD1B83232400E5FF4D /* Sources */,
+				47A4ECBE1B83232400E5FF4D /* Frameworks */,
+				47A4ECBF1B83232400E5FF4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47A4ECC31B83232400E5FF4D /* PBXTargetDependency */,
+			);
+			name = "调用系统邮件Tests";
+			productName = "调用系统邮件Tests";
+			productReference = 47A4ECC11B83232400E5FF4D /* 调用系统邮件Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47A4ECA01B83232400E5FF4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "红尘";
+				TargetAttributes = {
+					47A4ECA71B83232400E5FF4D = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					47A4ECC01B83232400E5FF4D = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 47A4ECA71B83232400E5FF4D;
+					};
+				};
+			};
+			buildConfigurationList = 47A4ECA31B83232400E5FF4D /* Build configuration list for PBXProject "调用系统邮件" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47A4EC9F1B83232400E5FF4D;
+			productRefGroup = 47A4ECA91B83232400E5FF4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47A4ECA71B83232400E5FF4D /* 调用系统邮件 */,
+				47A4ECC01B83232400E5FF4D /* 调用系统邮件Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47A4ECA61B83232400E5FF4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A4ECB71B83232400E5FF4D /* Main.storyboard in Resources */,
+				47A4ECBC1B83232400E5FF4D /* LaunchScreen.xib in Resources */,
+				47A4ECB91B83232400E5FF4D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A4ECBF1B83232400E5FF4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47A4ECA41B83232400E5FF4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A4ECB41B83232400E5FF4D /* ViewController.m in Sources */,
+				47A4ECB11B83232400E5FF4D /* AppDelegate.m in Sources */,
+				47A4ECAE1B83232400E5FF4D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A4ECBD1B83232400E5FF4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A4ECC81B83232400E5FF4D /* ______Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47A4ECC31B83232400E5FF4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47A4ECA71B83232400E5FF4D /* 调用系统邮件 */;
+			targetProxy = 47A4ECC21B83232400E5FF4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		47A4ECB51B83232400E5FF4D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47A4ECB61B83232400E5FF4D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		47A4ECBA1B83232400E5FF4D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47A4ECBB1B83232400E5FF4D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		47A4ECC91B83232400E5FF4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47A4ECCA1B83232400E5FF4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47A4ECCC1B83232400E5FF4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "调用系统邮件/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		47A4ECCD1B83232400E5FF4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "调用系统邮件/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		47A4ECCF1B83232400E5FF4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "调用系统邮件Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/调用系统邮件.app/调用系统邮件";
+			};
+			name = Debug;
+		};
+		47A4ECD01B83232400E5FF4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "调用系统邮件Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/调用系统邮件.app/调用系统邮件";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47A4ECA31B83232400E5FF4D /* Build configuration list for PBXProject "调用系统邮件" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47A4ECC91B83232400E5FF4D /* Debug */,
+				47A4ECCA1B83232400E5FF4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47A4ECCB1B83232400E5FF4D /* Build configuration list for PBXNativeTarget "调用系统邮件" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47A4ECCC1B83232400E5FF4D /* Debug */,
+				47A4ECCD1B83232400E5FF4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		47A4ECCE1B83232400E5FF4D /* Build configuration list for PBXNativeTarget "调用系统邮件Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47A4ECCF1B83232400E5FF4D /* Debug */,
+				47A4ECD01B83232400E5FF4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47A4ECA01B83232400E5FF4D /* Project object */;
+}
