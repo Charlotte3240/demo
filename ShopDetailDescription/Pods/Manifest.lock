@@ -1,0 +1,30 @@
+PODS:
+  - Kingfisher (5.7.0)
+  - SDCycleScrollView (1.80):
+    - SDWebImage (>= 5.0.0)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+  - SnapKit (5.0.0)
+
+DEPENDENCIES:
+  - Kingfisher
+  - SDCycleScrollView (>= 1.80)
+  - SnapKit (~> 5.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Kingfisher
+    - SDCycleScrollView
+    - SDWebImage
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
+  SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+
+PODFILE CHECKSUM: 455f45fede8360af517d4510e15021f3dc8d0a5b
+
+COCOAPODS: 1.7.4
