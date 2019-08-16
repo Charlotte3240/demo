@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单下</title>
+</head>
+<body>
+    
+    <form action="" method="GET" id="fm">
+
+        <!--
+            autofocus 等于 begin first resigner
+            required  必填字段 校验的一部分 可与使用novalidate去除限制
+            
+            datalist 标签使用时 要有 id 值 配合 list 属性使用，才可以有数据列表的效果
+
+        -->
+        <input type="text" value="" name="txt" autofocus placeholder="输入一些东西" required>
+
+        <input type="text" name="dataList" list="urlList">
+
+        <datalist id="urlList">
+            <option value="http://www.baidu.com">
+                百度4
+            </option>
+            <option value="http://www.baidu.com">
+                百度1
+            </option>
+            <option value="http://www.baidu.com">
+                百度3
+            </option>
+            <option value="http://www.baidu.com">
+                百度2
+            </option>
+
+        </datalist>
+
+
+        <input type="submit">
+
+    </form>
+
+    <input type="text" name="name" form="fm">
+
+</body>
+</html>

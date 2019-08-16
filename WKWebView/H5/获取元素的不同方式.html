@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获取元素方式</title>
+
+    <style>
+            .cls2{
+                background-color: brown;
+            }
+    
+    </style>
+</head>
+<body>
+    
+    <div>
+        <p class="cls">
+            first p
+        </p>
+
+        <ul>
+            <li>
+                <p class="cls2">...</p>
+            </li>
+            <p class="cls">ddd</p>
+        </ul>
+    </div>
+
+    <p id="di">di  p </p>
+    <button id="btn1">btn1</button>
+    <button id="btn2">btn2</button>
+    <button id="btn3">btn3</button>
+    <button id="btn4">btn4</button>
+
+
+    <div id="userinfo" data-username="username" data-pwd="passwrod" data-sex="male"></div>
+
+
+    <script>
+        // document querySelector 只能获取一个（第一个）标签
+        document.querySelector('div p').style.backgroundColor = 'yellow';
+        // 获取多个标签
+        var items = document.querySelectorAll('div p');
+        for(var i = 0;i<items.length;i ++ ){
+            items[i].style.backgroundColor = 'red';
+        }
+
+        // 获取多个标签根据 class
+        var items = Array.from(document.getElementsByClassName('cls'))
+        items.forEach(element => {
+            element.style.backgroundColor = 'blue';
+        });
+        // for (var i = 0; i< items.length;i++){
+        //     items[i].style.backgroundColor =  'blue';
+        // }
+
+        function my$(id){
+            return document.getElementById(id)
+        }
+
+        my$('btn1').onclick = function(){
+            my$('di').classList.add('cls2');
+            console.log(my$('di'));
+        }
+        my$('btn2').onclick = function(){
+            my$('di').classList.remove('cls2');
+        }
+        my$('btn3').onclick = function(){
+            my$('di').classList.toggle('cls2');
+        }
+        my$('btn4').onclick = function(){
+            var containResult = my$('di').classList.contains('cls2');
+            console.log(containResult);
+        }
+
+        // 获取对象
+        var user  = document.getElementById('userinfo').dataset
+
+        console.log(user.username)
+        console.log(user.pwd)
+        console.log(user.sex)
+        console.log(user['pwd'])
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多媒体</title>
+</head>
+<body>
+    <!--
+        mute 静音
+        autoplay 自动播放 Chrome 不支持
+        controls 显示控制面板
+        loop 循环
+
+        视频 加上静音后可以自动播放
+    -->
+    <audio src="./src/demoMusic.mp3" controls autoplay muted loop></audio>
+    <video src="https://media.w3.org/2010/05/sintel/trailer.mp4" controls muted  autoplay>
+        <!--设置兼容访问视频源  会按照次序来访问源-->
+        <source src=".mp4">
+        <source src=".avi">
+            不支持的提示写在这里
+    </video>
+</body>
+</html>
