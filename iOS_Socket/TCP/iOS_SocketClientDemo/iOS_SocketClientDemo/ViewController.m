@@ -121,9 +121,10 @@
             [_inputStream close];
             [_outputStream close];
             
-            //从主运行循环移除
-            [_inputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-            [_outputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+            
+            // if add on runloop , remove form runloop when close
+//            [_inputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+//            [_outputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
             break;
         default:
             break;
