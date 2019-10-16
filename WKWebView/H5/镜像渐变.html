@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>镜像渐变</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    
+<canvas width="500" height="500"></canvas>
+
+<script>
+    // get canvas tag
+    let canvas = document.querySelector("canvas");
+
+    let ctx = canvas.getContext("2d");
+    // x,y ,radius x1,y1,radius1
+    let gradient = ctx.createRadialGradient(100,100,20,300,100,100);
+
+    gradient.addColorStop(0,"red");
+
+    gradient.addColorStop(1,"blue");
+
+    // ctx.strokeStyle = gradient;
+    ctx.fillStyle = gradient;
+
+    // ctx.stroke();
+
+    ctx.moveTo(0,100);
+    ctx.lineTo(500,0);
+    ctx.lineTo(500,500);
+    ctx.lineTo(0,500);
+    ctx.closePath();
+
+    ctx.fill();
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文件读取</title>
+</head>
+<body>
+    
+    <input type="file" name="" id="uploadFile">
+
+    <input type="file" id="uploadFile2">
+
+
+    <div id="dv1"></div>
+
+    <script>
+        // 读取文件标签对象
+
+        var f1 = document.querySelector("#uploadFile");
+        // 上传文件的 触发事件
+        // 只要上传文件就会触发的事件
+        f1.onchange=function(){
+            console.dir(this)
+            // 获取上传的文件
+            var file = this.files[0];
+            // 创建读取文件的对象
+            var fileReader =new FileReader();
+
+            fileReader.readAsText(file);
+
+            
+
+            fileReader.onload=function(){
+                var readResult = fileReader.result;
+
+                console.log(readResult)    
+
+                var textTag = document.createElement('p')
+
+                textTag.innerHTML = readResult
+
+                document.querySelector("#dv1").appendChild(textTag)
+            }
+
+
+        }
+
+    </script>
+
+</body>
+</html>

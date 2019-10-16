@@ -19,6 +19,7 @@
 		84C9DBBA22A8E6D000972D23 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9DBB922A8E6D000972D23 /* Utility.swift */; };
 		84C9DBC022A8EB4600972D23 /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C9DBBF22A8EB4500972D23 /* demo.html */; };
 		9E15DB6522D46A63000ECB5B /* node_modules in Resources */ = {isa = PBXBuildFile; fileRef = 9E15DB6422D46A62000ECB5B /* node_modules */; };
+		9E227191230A2DF300FE521A /* YH1.1 in Resources */ = {isa = PBXBuildFile; fileRef = 9E227190230A2DF300FE521A /* YH1.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		84C9DBB922A8E6D000972D23 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		84C9DBBF22A8EB4500972D23 /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		9E15DB6422D46A62000ECB5B /* node_modules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = node_modules; sourceTree = "<group>"; };
+		9E227190230A2DF300FE521A /* YH1.1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YH1.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				84C9DBAC22A8E5A200972D23 /* WKWebViewController.swift */,
 				84C9DBB822A8E61A00972D23 /* OCBridge.h */,
 				84C9DBBF22A8EB4500972D23 /* demo.html */,
+				9E227190230A2DF300FE521A /* YH1.1 */,
 				9E15DB6422D46A62000ECB5B /* node_modules */,
 				84C9DBAD22A8E5A200972D23 /* WebviewProgressView */,
 				84C9DB8222A8E3BA00972D23 /* Main.storyboard */,
@@ -258,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E227191230A2DF300FE521A /* YH1.1 in Resources */,
 				84C9DB8922A8E3BC00972D23 /* LaunchScreen.storyboard in Resources */,
 				84C9DBC022A8EB4600972D23 /* demo.html in Resources */,
 				84C9DB8622A8E3BC00972D23 /* Assets.xcassets in Resources */,

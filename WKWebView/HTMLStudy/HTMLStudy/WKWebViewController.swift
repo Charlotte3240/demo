@@ -23,18 +23,21 @@ class WKWebViewController: UIViewController {
         
         configuration.selectionGranularity = WKSelectionGranularity.character
         
-        //自适应 没有适配的HTML 写入一个meta
-        let jsScript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
-        let wkUserScript = WKUserScript.init(source: jsScript, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        let wkUserContentController = WKUserContentController.init()
-        wkUserContentController.addUserScript(wkUserScript)
+//        //自适应 没有适配的HTML 写入一个meta
+//        let jsScript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
+//        let wkUserScript = WKUserScript.init(source: jsScript, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+//        let wkUserContentController = WKUserContentController.init()
+//        wkUserContentController.addUserScript(wkUserScript)
 
         
         //WKUserContentController() //如果已经适配过移动端给一个初始值就可以了
-        configuration.userContentController = wkUserContentController
+        configuration.userContentController = WKUserContentController()//wkUserContentController
         
         // 给webview与swift交互方法起名字，webview给swift发消息的时候会用到
         configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "getLoaclData")
+        
+        configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "jumpDetail")
+
         
         var webView = WKWebView(frame: CGRect(x: 0,
                                               y: 0,
@@ -62,10 +65,21 @@ class WKWebViewController: UIViewController {
         
         self.webView.uiDelegate = self
         
-        let fileString = Bundle.main.path(forResource: "demo", ofType: "html")!
+        let filePath = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "YH1.1/") ?? ""
+            
+        let fileUrl = URL.init(fileURLWithPath: filePath)
 
-        self.webView.loadFileURL(URL.init(fileURLWithPath: fileString), allowingReadAccessTo: Bundle.main.bundleURL)
         
+        
+//        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"feedback" ofType:@"html" inDirectory:@"FeedbackH5/pages"];
+//        NSURL *pathURL = [NSURL fileURLWithPath:filePath];
+
+
+//        let fileString = Bundle.main.path(forResource: "index", ofType: "html")!
+
+//        self.webView.loadFileURL(URL.init(fileURLWithPath: fileString), allowingReadAccessTo: Bundle.main.bundleURL)
+        self.webView.loadFileURL(fileUrl, allowingReadAccessTo: Bundle.main.bundleURL)
+
 
         // 监听title
         self.webView.addObserver(self, forKeyPath: "title", options: NSKeyValueObservingOptions.new, context: nil)
@@ -137,6 +151,8 @@ class WKWebViewController: UIViewController {
     
     deinit {
         self.webView.configuration.userContentController.removeScriptMessageHandler(forName: "getLoaclData")
+        self.webView.configuration.userContentController.removeScriptMessageHandler(forName: "jumpDetail")
+
         self.webView.removeObserver(self, forKeyPath: "title")
         self.webView.removeObserver(self, forKeyPath: "estimatedProgress")
         
@@ -205,6 +221,8 @@ extension WKWebViewController: WKScriptMessageHandler{
         case "getLoaclData":
             self.getLocalData(str: message.body as? String ?? "")
             
+        case "jumpDetail":
+            self.showMessage(msg: message.body as? String ?? "")
         default:
             break
             

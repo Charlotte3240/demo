@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas 使用</title>
+</head>
+<body>
+    <script>
+        // 1. 创建画布  宽度和高度 不能通过css 来设置
+        // 2. 创建绘图对象
+        // 3. 利用绘图对象 画图 
+    
+
+    </script>
+
+    <style>
+        canvas{
+            border: 1px solid green;
+        }
+    
+    </style>
+
+    <canvas width="500" height="500">
+
+    </canvas>
+
+    <script>
+        var c = document.querySelector("canvas")
+
+        var ctx = c.getContext("2d")
+
+        ctx.moveTo(100,100)
+
+        ctx.lineTo(300,100)
+
+        // line color 
+        ctx.strokeStyle = 'green'
+
+        // line width 
+        // ctx.lineWidth = 5;
+
+        // ctx.stroke();
+
+        // // 重置路径
+        // ctx.beginPath();
+
+
+        // ctx.moveTo(300,100)
+
+        ctx.lineTo(300,300)
+
+        // line color 
+        ctx.strokeStyle = 'blue'
+
+        // line width 
+        ctx.lineWidth = 15;
+
+        // 设置连接处 圆角   尖角 和 平角
+        // round  miter  bevel
+        ctx.lineJoin = "bevel";
+
+        // 设置起始点的  round  和 square
+        ctx.lineCap = "square";
+
+        ctx.stroke();
+
+
+
+    </script>
+
+
+</body>
+</html>
