@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self cameraSetting];
+    [self takePhotoAction:nil];
 }
 
 
@@ -88,16 +89,16 @@
     self.displayImage.image = image;
     
     //上传到七牛
-    [[GCQiniuUploadManager sharedInstance] uploadData:data progress:^(float percent) {
-        NSLog(@"进度=====%f",percent);
-    } completion:^(NSError *error, NSString *link, NSInteger index) {
-        if (error) {
-            NSLog(@"error is %@",error);
-        }else{
-            NSLog(@"link is %@ index is %ld ",link,index);
-        }
-        
-    }];
+//    [[GCQiniuUploadManager sharedInstance] uploadData:data progress:^(float percent) {
+//        NSLog(@"进度=====%f",percent);
+//    } completion:^(NSError *error, NSString *link, NSInteger index) {
+//        if (error) {
+//            NSLog(@"error is %@",error);
+//        }else{
+//            NSLog(@"link is %@ index is %ld ",link,index);
+//        }
+//
+//    }];
     
     
     
