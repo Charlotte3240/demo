@@ -20,6 +20,7 @@
 		84C9DBC022A8EB4600972D23 /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C9DBBF22A8EB4500972D23 /* demo.html */; };
 		9E15DB6522D46A63000ECB5B /* node_modules in Resources */ = {isa = PBXBuildFile; fileRef = 9E15DB6422D46A62000ECB5B /* node_modules */; };
 		9E227191230A2DF300FE521A /* YH1.1 in Resources */ = {isa = PBXBuildFile; fileRef = 9E227190230A2DF300FE521A /* YH1.1 */; };
+		9EFF745A25007B2E00EBBD2A /* WKWebViewSnapEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFF745925007B2E00EBBD2A /* WKWebViewSnapEX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		84C9DBBF22A8EB4500972D23 /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		9E15DB6422D46A62000ECB5B /* node_modules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = node_modules; sourceTree = "<group>"; };
 		9E227190230A2DF300FE521A /* YH1.1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YH1.1; sourceTree = "<group>"; };
+		9EFF745925007B2E00EBBD2A /* WKWebViewSnapEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewSnapEX.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				84C9DB7E22A8E3BA00972D23 /* AppDelegate.swift */,
 				84C9DBB922A8E6D000972D23 /* Utility.swift */,
+				9EFF745925007B2E00EBBD2A /* WKWebViewSnapEX.swift */,
 				84C9DBAC22A8E5A200972D23 /* WKWebViewController.swift */,
 				84C9DBB822A8E61A00972D23 /* OCBridge.h */,
 				84C9DBBF22A8EB4500972D23 /* demo.html */,
@@ -293,6 +296,7 @@
 			files = (
 				84C9DBBA22A8E6D000972D23 /* Utility.swift in Sources */,
 				84C9DBB222A8E5A200972D23 /* WKWebViewController.swift in Sources */,
+				9EFF745A25007B2E00EBBD2A /* WKWebViewSnapEX.swift in Sources */,
 				84C9DBB322A8E5A200972D23 /* DKProgressLayer.m in Sources */,
 				84C9DB7F22A8E3BA00972D23 /* AppDelegate.swift in Sources */,
 				84C9DBB422A8E5A200972D23 /* UIWebView+DKProgress.m in Sources */,
@@ -473,7 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M29Y8582X5;
 				INFOPLIST_FILE = HTMLStudy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,7 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M29Y8582X5;
 				INFOPLIST_FILE = HTMLStudy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

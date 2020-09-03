@@ -26,7 +26,11 @@
     <body>
         <h1>加载本地html测试</h1>
 
-        <button onclick="javascript:window.webkit.messageHandlers['getLoaclData'].postMessage('js message');">js调用原生代码</button>
+        
+        <button onclick="javascript:window.webkit.messageHandlers['getLoaclData'].postMessage({key:value});">js调用原生代码有参数</button>
+
+        <button onclick="javascript:window.webkit.messageHandlers['getLoaclData'].postMessage({});">js调用原生代码无参数</button>
+        <button onclick="javascript:window.webkit.messageHandlers['getLoaclData'].postMessage('字符串');">js调用原生代码字符串参数</button>
 
         <noscript>不支持js</noscript>
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Photos
 class WKWebViewController: UIViewController {
     lazy var webView: WKWebView = {
         
@@ -56,6 +57,7 @@ class WKWebViewController: UIViewController {
         return progress
     }()
 
+    var isShoting = false
     
     
     override func viewDidLoad() {
@@ -65,9 +67,9 @@ class WKWebViewController: UIViewController {
         
         self.webView.uiDelegate = self
         
-        let filePath = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "YH1.1/") ?? ""
-            
-        let fileUrl = URL.init(fileURLWithPath: filePath)
+//        let filePath = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "YH1.1/") ?? ""
+//
+//        let fileUrl = URL.init(fileURLWithPath: filePath)
 
         
         
@@ -75,10 +77,10 @@ class WKWebViewController: UIViewController {
 //        NSURL *pathURL = [NSURL fileURLWithPath:filePath];
 
 
-//        let fileString = Bundle.main.path(forResource: "index", ofType: "html")!
-
+//        let fileString = Bundle.main.path(forResource: "demo", ofType: "html")!
+//
 //        self.webView.loadFileURL(URL.init(fileURLWithPath: fileString), allowingReadAccessTo: Bundle.main.bundleURL)
-        self.webView.loadFileURL(fileUrl, allowingReadAccessTo: Bundle.main.bundleURL)
+//        self.webView.loadFileURL(fileUrl, allowingReadAccessTo: Bundle.main.bundleURL)
 
 
         // 监听title
@@ -91,7 +93,49 @@ class WKWebViewController: UIViewController {
         self.navigationController?.navigationBar.layer.addSublayer(progressLayer)
 
         
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .refresh, target: self, action: #selector(refreshWebview))
+        
+        
+        self.webView.load(URLRequest.init(url: URL.init(string: "https://www.jianshu.com")!))
+        
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "截图", style: .done, target: self, action: #selector(snapShot))
+        
        
+    }
+    
+    @objc func snapShot(){
+        webView.getScreenShot { (image) in
+            self.writePhotos(image: image)
+        }
+    }
+    
+    func writePhotos(image : UIImage?){
+        guard let image = image else {
+            return
+        }
+        PHPhotoLibrary.shared().performChanges({
+
+        _ = PHAssetChangeRequest.creationRequestForAsset(from: image)}, completionHandler: { (success, error) in
+            DispatchQueue.main.async {
+                if error != nil{
+                    // 失败
+                    self.showMessage(msg: error?.localizedDescription ?? "")
+                }else{
+                    // 成功
+                    self.showMessage(msg: "保存成功")
+                }
+            }
+        })
+    }
+    
+    @objc func writeComplete(){
+        print("write complete")
+    }
+    
+    @objc fileprivate func refreshWebview() {
+        self.webView.reload()
     }
     
     
@@ -219,7 +263,7 @@ extension WKWebViewController: WKScriptMessageHandler{
         switch message.name {
             
         case "getLoaclData":
-            self.getLocalData(str: message.body as? String ?? "")
+            self.getLocalData(str: message.body as? String ?? "不是字符串")
             
         case "jumpDetail":
             self.showMessage(msg: message.body as? String ?? "")
@@ -280,7 +324,7 @@ extension WKWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print("webview did start nav")
         
-        self.webviewWriteLocalStoryage()
+//        self.webviewWriteLocalStoryage()
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
@@ -295,27 +339,31 @@ extension WKWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         
         // FIXME: - write cookie if you need
-        return
-        
-        webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { (cookies) in
-           let already = cookies.filter({ (cookie) -> Bool in
-                if cookie.name == "customerId" || cookie.name == "token" || cookie.name == "userId"{
-                    return true
-                }else{
-                    return false
-                }
-            })
-            
-            if already.count == 0{
-                self.createCookies().forEach { (cookie) in
-                    webView.evaluateJavaScript("document.cookie = '\(cookie?.name ?? "")=\(cookie?.value ?? "")';") { (res, error) in
-                        if error != nil{
-                            print("set cookie res is \(res ?? "") error is \(String(describing: error))")
+        if #available(iOS 11.0, *) {
+            return
+                
+                webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { (cookies) in
+                    let already = cookies.filter({ (cookie) -> Bool in
+                        if cookie.name == "customerId" || cookie.name == "token" || cookie.name == "userId"{
+                            return true
+                        }else{
+                            return false
+                        }
+                    })
+                    
+                    if already.count == 0{
+                        self.createCookies().forEach { (cookie) in
+                            webView.evaluateJavaScript("document.cookie = '\(cookie?.name ?? "")=\(cookie?.value ?? "")';") { (res, error) in
+                                if error != nil{
+                                    print("set cookie res is \(res ?? "") error is \(String(describing: error))")
+                                }
+                            }
+                            
                         }
                     }
-                    
-                }
             }
+        } else {
+            // Fallback on earlier versions
         }
         
         
