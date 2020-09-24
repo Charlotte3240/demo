@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E20816B251C27E2002AAE6B /* shanghai.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9E20816A251C27E2002AAE6B /* shanghai.gpx */; };
 		9EDF68EC2510570000DBD97D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF68EB2510570000DBD97D /* AppDelegate.swift */; };
 		9EDF68EE2510570000DBD97D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF68ED2510570000DBD97D /* SceneDelegate.swift */; };
 		9EDF68F02510570000DBD97D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF68EF2510570000DBD97D /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E20816A251C27E2002AAE6B /* shanghai.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shanghai.gpx; sourceTree = "<group>"; };
 		9EDF68E82510570000DBD97D /* SignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDF68EB2510570000DBD97D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EDF68ED2510570000DBD97D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				9EDF68EF2510570000DBD97D /* ViewController.swift */,
 				9EDF6900251059F300DBD97D /* ConvertLocation.h */,
 				9EDF6901251059F300DBD97D /* ConvertLocation.m */,
+				9E20816A251C27E2002AAE6B /* shanghai.gpx */,
 				9EDF68F12510570000DBD97D /* Main.storyboard */,
 				9EDF68F42510570200DBD97D /* Assets.xcassets */,
 				9EDF68F62510570200DBD97D /* LaunchScreen.storyboard */,
@@ -132,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E20816B251C27E2002AAE6B /* shanghai.gpx in Resources */,
 				9EDF68F82510570200DBD97D /* LaunchScreen.storyboard in Resources */,
 				9EDF68F52510570200DBD97D /* Assets.xcassets in Resources */,
 				9EDF68F32510570000DBD97D /* Main.storyboard in Resources */,
