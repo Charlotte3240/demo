@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="PHPicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfg-Tp-iAz">
+                                <rect key="frame" x="176" y="89" width="62" height="30"/>
+                                <state key="normal" title="选择照片"/>
+                                <connections>
+                                    <action selector="chooseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5xd-u9-jEF"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fdp-bD-qKM">
+                                <rect key="frame" x="0.0" y="182" width="414" height="680"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiA-g4-DgN">
+                                <rect key="frame" x="145.5" y="51" width="123" height="30"/>
+                                <state key="normal" title="选择更多限制照片"/>
+                                <connections>
+                                    <action selector="chooseMoreLimitedPhotos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W9w-7e-U0Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRX-cC-5m3">
+                                <rect key="frame" x="176" y="139" width="62" height="30"/>
+                                <state key="normal" title="写入照片"/>
+                                <connections>
+                                    <action selector="writePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="66f-xi-C0a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xRX-cC-5m3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0e6-Kr-LSb"/>
+                            <constraint firstItem="fdp-bD-qKM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3a0-tb-4oI"/>
+                            <constraint firstItem="Nfg-Tp-iAz" firstAttribute="top" secondItem="TiA-g4-DgN" secondAttribute="bottom" constant="8" id="6rs-6y-3Qj"/>
+                            <constraint firstItem="fdp-bD-qKM" firstAttribute="top" secondItem="Nfg-Tp-iAz" secondAttribute="bottom" constant="63" id="Bg0-XF-cWF"/>
+                            <constraint firstItem="TiA-g4-DgN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Erb-P4-2qv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fdp-bD-qKM" secondAttribute="bottom" id="Jal-pV-yzt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fdp-bD-qKM" secondAttribute="trailing" id="M3M-9W-3nl"/>
+                            <constraint firstItem="xRX-cC-5m3" firstAttribute="top" secondItem="Nfg-Tp-iAz" secondAttribute="bottom" constant="20" id="RSF-VU-CTx"/>
+                            <constraint firstItem="Nfg-Tp-iAz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TX4-Rz-z12"/>
+                            <constraint firstItem="Nfg-Tp-iAz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="W4G-lj-Mv5"/>
+                            <constraint firstItem="fdp-bD-qKM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qic-nl-I3N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chooseBtn" destination="Nfg-Tp-iAz" id="SXa-iA-kog"/>
+                        <outlet property="displayImageView" destination="fdp-bD-qKM" id="KgW-a6-XdE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="103"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
