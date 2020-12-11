@@ -26,9 +26,9 @@ class ViewController: UIViewController {
     
     func convertLocation() {
         //船舶大厦121.511064,31.23859
-        let location = CLLocationCoordinate2D.init(latitude: 31.23859, longitude: 121.511064)
+//        let location = CLLocationCoordinate2D.init(latitude: 31.23859, longitude: 121.511064)
         //巨洋大厦121.534119,31.241564
-//        let location = CLLocationCoordinate2D.init(latitude: 31.241564, longitude: 121.534119)
+        let location = CLLocationCoordinate2D.init(latitude: 31.241564, longitude: 121.534119)
 
         let convertLocatin = ConvertLocation.gcj02(toWgs84: location)
         

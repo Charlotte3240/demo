@@ -301,13 +301,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M29Y8582X5;
+				DEVELOPMENT_TEAM = JQL36BK968;
 				INFOPLIST_FILE = SignIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.charlotte.SignIn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charlotte.SignIn.demo.hc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SignIn/SignIn-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -323,13 +323,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M29Y8582X5;
+				DEVELOPMENT_TEAM = JQL36BK968;
 				INFOPLIST_FILE = SignIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.charlotte.SignIn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charlotte.SignIn.demo.hc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SignIn/SignIn-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

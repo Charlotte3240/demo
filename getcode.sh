@@ -9,7 +9,7 @@ if [ -d "$1/$file2" ];then
 #echo "$1/$file2"
 list_alldir "$1/$file2"
 elif [ -f  "$1/$file2" ];then
-    #2.如果后缀是.java，合并文件
+    #2.如果后缀是.swift，合并文件
     if [[ "$1/$file2" == *.swift ]] ;then
     #echo "\n" >> out.txt
     #echo "$1/$file2" >> out.txt
