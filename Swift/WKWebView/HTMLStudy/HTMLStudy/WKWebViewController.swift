@@ -63,6 +63,14 @@ class WKWebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        let array = [1,2,3,4,5]
+        
+        for (index,value) in array.enumerated() {
+            print(index,value)
+        }
+        
+        
         self.view.addSubview(self.webView)
         
         self.webView.uiDelegate = self

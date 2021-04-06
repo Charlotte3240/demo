@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #spec {
+        position: absolute;
+        background-color: red;
+        left: 0;
+        top: 0;
+      }
+
+      #back {
+        position: absolute;
+        background-color: yellow;
+        z-index: 3;
+      }
+      body {
+        padding: 200px;
+      }
+      ul{
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          width: 200px;
+      }
+
+      li{
+          border: 1px solid #ddd;
+          width: 200px;
+      }
+
+      li:nth-of-type(odd){
+        background-color: yellow;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="back">hhhhhhhhhh</div>
+
+    <div id="spec">ccccccddddddd</div>
+    <div>ssss</div>
+    <div>ssss</div>
+    <input type="text" name="hc" />
+    <ul></ul>
+    <script>
+      let obj = {
+        data: new Set(),
+        set keywords(word) {
+          this.data.add(word);
+        },
+        show() {
+          let ul = document.querySelector("ul");
+          ul.innerHTML = "";
+          this.data.forEach((v) => {
+            ul.innerHTML += `<li>${v}</li>`;
+          });
+        },
+      };
+
+      let input = document.querySelector("[name='hc']");
+
+      input.addEventListener("blur", function () {
+        console.log(this.value);
+        obj.keywords = this.value;
+        obj.show();
+      });
+
+      console.log(input);
+    </script>
+  </body>
+</html>

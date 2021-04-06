@@ -1,21 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
 
-    <div class="flexChild" id="camera-container">
-        <div class="camera-box">
-          <video id="received_video" autoplay></video>
-          <video id="local_video" autoplay muted></video>
-          <button id="hangup-button" onclick="hangUpCall();" disabled>
-            Hang Up
-          </button>
-        </div>
-    </div>
-    
-</body>
+    <style>
+      .msgBox {
+        width: 242px;
+      }
+      .msgBox p {
+        padding-left: 82px;
+        background-position: 25px center;
+        background-repeat: no-repeat;
+      }
+    </style>
+
+    <!-- <script src="./questions.js"></script> -->
+    <script src="./currying.js"></script>
+  </head>
+  <body>
+    <section></section>
+    <input type="text" />
+
+    <div id="hcdiv" style="background-color: aqua"></div>
+    <button>change BG color</button>
+    <script>
+      console.log(document.nodeType);
+    </script>
+
+    <script>
+      function displayMessages(msgText, msgType) {
+        const html = document.querySelector("body");
+
+        const panel = document.createElement("div");
+        panel.setAttribute("class", "msgBox");
+        html.appendChild(panel);
+
+        const msg = document.createElement("p");
+        msg.textContent = msgText;
+        panel.appendChild(msg);
+
+        const closeBtn = document.createElement("button");
+        closeBtn.textContent = "x";
+        panel.appendChild(closeBtn);
+
+        closeBtn.onclick = function () {
+          panel.parentNode.removeChild(panel);
+        };
+
+        if (msgType === "warning") {
+          msg.style.backgroundImage = "url(./icons/warning.png)";
+          panel.style.backgroundColor = "red";
+        } else if (msgType === "chat") {
+          msg.style.backgroundImage = "url(icons/chat.png)";
+          panel.style.backgroundColor = "aqua";
+        } else {
+          msg.style.paddingLeft = "20px";
+        }
+      }
+      // displayMessages('Your inbox is almost full — delete some mails', 'warning');
+      // displayMessages('Brian: Hi there, how are you today?','chat');
+
+      function randomCount(length) {
+        return Math.floor(Math.random() * length);
+      }
+
+      function randomNames() {
+        let section = document.getElementsByTagName("section")[0];
+
+        let names = [
+          "Chris",
+          "Li Kang",
+          "Anne",
+          "Francesca",
+          "Mustafa",
+          "Tina",
+          "Bert",
+          "Jada",
+        ];
+        let para = document.createElement("p");
+
+        // Add your code here
+        console.log(names[randomCount(names.length)]);
+        para.textContent = names[randomCount(names.length)];
+        // Don't edit the code below here!
+        section.innerHTML = " ";
+
+        section.appendChild(para);
+      }
+      randomNames();
+
+      // 阶乘
+      function factorial(num) {
+        var x = num;
+        while (x > 1) {
+          num = num * (x - 1);
+          x -= 1;
+        }
+        return num;
+      }
+      function squared(num) {
+        return num * num;
+      }
+
+      function cubed(num) {
+        return num * num * num;
+      }
+
+      let input = document.getElementsByTagName("input")[0];
+      let para = document.createElement("p");
+      document.getElementsByTagName("body")[0].appendChild(para);
+      input.onchange = function () {
+        var num = input.value;
+        if (isNaN(num)) {
+          para.textContent = "You need to enter a number!";
+        } else {
+          para.textContent =
+            num +
+            " squared is " +
+            squared(num) +
+            ". " +
+            num +
+            " cubed is " +
+            cubed(num) +
+            ". " +
+            num +
+            " factorial is " +
+            factorial(num) +
+            ".";
+        }
+      };
+
+      // 检测是否有这个函数
+      if ("square" === typeof window.noFunc) {
+        console.log("not found function");
+      } else {
+        console.log("find this function");
+      }
+
+      let btn = document.querySelector("button");
+      btn.onclick = () => {
+        const rndCol =
+          "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+        document.body.style.backgroundColor = rndCol;
+      };
+
+      function random(number) {
+        return Math.floor(Math.random() * (number + 1));
+      }
+    </script>
+    <!-- <script src="./polling.js"></script> -->
+    <!-- <script src="./taskSplit.js"></script> -->
+  </body>
 </html>

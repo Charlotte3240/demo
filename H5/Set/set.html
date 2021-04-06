@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set</title>
+  </head>
+  <body>
+
+    <iframe allow="camera; microphone; fullscreen; display-capture" src="https://voiptest.360-jr.com/3211" style="height: 500px; width: 100%; border: 0px;"></iframe>
+    <script>
+      // // set中不能包含相同的值，可以去重
+      //   let set = new Set();
+      //   set.add(1);
+      //   set.add("2");
+      //   set.add(1);
+      //   console.log(set);
+
+      //   let arr = new Array();
+      //   arr.push(1);
+      //   arr.push("2");
+      //   arr.push(1)
+      //   console.log(arr);
+
+      // // 字典/对象中的key相同会被后面的覆盖
+      //   let dic = {
+      //     1:'charlotte',
+      //     "1":'charlotte1'
+      //   }
+      //   console.log(dic);
+
+      //   let dic2 = {
+      //       [dic]:"new str"
+      //   }
+      //   console.log(`111 ${dic}`);
+      //   console.log(dic2);
+      //   console.log(dic2[dic.toString()]);//console.log(dic2[`${dic}`]);
+
+      //   let set = new Set("charlotte");
+      //   set.delete('c')
+      //   set.clear()
+      //   console.log(set.size);
+      //   console.log(set.has('az'));
+      //   console.log(set);
+      //   console.log(set.values());
+
+      // set转成其他类型
+      //   let set = new Set("123456789");
+      //   console.log(Array.from(set));
+      //   console.log([...set]);
+
+      //   let newRes = [...set].filter((v) => v < 6);
+      //   console.log(newRes);
+
+      // 利用set 去重
+    //   let array = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+    //   console.log(array);
+
+      //   let set = new Set(array);
+      //   //   console.log(Array.from(set));
+      //   array = Array.from(set);
+
+    //   array = [...new Set(array)];
+
+    //   console.log(array);
+
+        // set 的遍历
+        // let set = new Set('charlotte')
+        // console.log(set.keys());
+        // console.log(set.entries());
+
+        // set 并集 交集 差集
+        let set1 = new Set([1,2,3,4,5])
+        let set2 = new Set([3,4,5,6,0])
+
+        // 并集
+        console.log(new Set([...set1,...set2]));
+
+    </script>
+  </body>
+</html>

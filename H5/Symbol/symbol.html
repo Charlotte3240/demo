@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbol</title>
+  </head>
+  <body>
+    <script>
+      // 使用Symbol隐藏类中的属性
+
+      let site = Symbol("邮箱");
+
+      class User {
+        constructor(name) {
+          this.name = name;
+          this[site] = "momo_sad@hc-nsqk.com";
+        }
+
+        getName(){
+            return `姓名:${this.name} , 邮箱:${this[site]}`
+        }
+      }
+
+      let user = new User('charlotte')
+
+      console.log(user.getName());//姓名:charlotte , 邮箱:momo_sad@hc-nsqk.com
+
+
+      for (const item in user) {
+          console.log(item);
+      }//name
+
+    </script>
+  </body>
+</html>
