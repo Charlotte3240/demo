@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div></div>
+    <div></div>
+
+    <script>
+        let set1 = new Set([1,2,3,5,6])
+
+        let set2 = new Set([3,4,5,2,78])
+
+        
+
+        // 并集
+        console.log(new Set([...set1,...set2]))
+        
+        // 差集
+        console.log(
+            [...set1].filter(item => {
+                return !set2.has(item)
+            })
+        )
+
+        // 交集
+        console.log(
+            [...set1].filter(item => {
+                return set2.has(item)
+            })
+        )
+
+        let obj1 = {}
+        let obj2 = {}
+
+        // weakSet 和set 类似  但是只能添加引用类型
+        // let errorWeakSet = new WeakSet(['ddd','aaa'])
+        // Uncaught TypeError: Invalid value used in weak set
+        //     at WeakSet.add (<anonymous>)
+        //     at new WeakSet (<anonymous>)
+        //     at Set.html:37
+        // (anonymous) @ Set.html:37
+
+        // let weakSet = new WeakSet([obj1,obj2])
+        // console.log(weakSet)
+        let weakSet = new WeakSet()
+
+        // let divs = document.querySelectorAll('div')
+
+        // divs.forEach(e => {
+        //     weakSet.add(e)
+        // })
+        // weakSet.delete(divs[0])
+
+        // console.log(weakSet)
+
+        // 弱引用
+        let obj = {
+            name : 'charlotte',
+            age : 18
+        }
+
+        let stu = obj
+         
+        let person = obj
+
+        weakSet.add(obj)
+
+        stu = null
+        
+        person = null
+        obj = null
+
+        console.log(weakSet)
+
+
+
+    </script>
+    
+</body>
+</html>

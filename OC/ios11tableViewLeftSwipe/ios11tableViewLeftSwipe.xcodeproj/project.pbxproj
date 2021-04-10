@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E59AC402591CB270046BAC5 /* LeftSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E59AC3F2591CB270046BAC5 /* LeftSwipeTableViewCell.m */; };
+		9E59AC462591D15E0046BAC5 /* ShowEditAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E59AC452591D15E0046BAC5 /* ShowEditAction.swift */; };
 		9EF9EB4C1FB00564005A1B1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9EB4B1FB00564005A1B1F /* AppDelegate.m */; };
 		9EF9EB4F1FB00564005A1B1F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9EB4E1FB00564005A1B1F /* ViewController.m */; };
 		9EF9EB521FB00564005A1B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF9EB501FB00564005A1B1F /* Main.storyboard */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E59AC3E2591CB270046BAC5 /* LeftSwipeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftSwipeTableViewCell.h; sourceTree = "<group>"; };
+		9E59AC3F2591CB270046BAC5 /* LeftSwipeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftSwipeTableViewCell.m; sourceTree = "<group>"; };
+		9E59AC442591D15E0046BAC5 /* ios11tableViewLeftSwipe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios11tableViewLeftSwipe-Bridging-Header.h"; sourceTree = "<group>"; };
+		9E59AC452591D15E0046BAC5 /* ShowEditAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEditAction.swift; sourceTree = "<group>"; };
 		9EF9EB471FB00564005A1B1F /* ios11tableViewLeftSwipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios11tableViewLeftSwipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF9EB4A1FB00564005A1B1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9EF9EB4B1FB00564005A1B1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,11 +111,15 @@
 				9EF9EB4B1FB00564005A1B1F /* AppDelegate.m */,
 				9EF9EB4D1FB00564005A1B1F /* ViewController.h */,
 				9EF9EB4E1FB00564005A1B1F /* ViewController.m */,
+				9E59AC3E2591CB270046BAC5 /* LeftSwipeTableViewCell.h */,
+				9E59AC3F2591CB270046BAC5 /* LeftSwipeTableViewCell.m */,
+				9E59AC452591D15E0046BAC5 /* ShowEditAction.swift */,
 				9EF9EB501FB00564005A1B1F /* Main.storyboard */,
 				9EF9EB531FB00564005A1B1F /* Assets.xcassets */,
 				9EF9EB551FB00564005A1B1F /* LaunchScreen.storyboard */,
 				9EF9EB581FB00564005A1B1F /* Info.plist */,
 				9EF9EB591FB00564005A1B1F /* main.m */,
+				9E59AC442591D15E0046BAC5 /* ios11tableViewLeftSwipe-Bridging-Header.h */,
 			);
 			path = ios11tableViewLeftSwipe;
 			sourceTree = "<group>";
@@ -199,6 +209,7 @@
 				TargetAttributes = {
 					9EF9EB461FB00564005A1B1F = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1230;
 						ProvisioningStyle = Automatic;
 					};
 					9EF9EB5E1FB00564005A1B1F = {
@@ -266,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EF9EB4F1FB00564005A1B1F /* ViewController.m in Sources */,
+				9E59AC402591CB270046BAC5 /* LeftSwipeTableViewCell.m in Sources */,
 				9EF9EB5A1FB00564005A1B1F /* main.m in Sources */,
+				9E59AC462591D15E0046BAC5 /* ShowEditAction.swift in Sources */,
 				9EF9EB4C1FB00564005A1B1F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,12 +443,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PXQVRX365;
 				INFOPLIST_FILE = ios11tableViewLeftSwipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cloudnapps.ios11tableViewLeftSwipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios11tableViewLeftSwipe/ios11tableViewLeftSwipe-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -444,12 +461,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PXQVRX365;
 				INFOPLIST_FILE = ios11tableViewLeftSwipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cloudnapps.ios11tableViewLeftSwipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios11tableViewLeftSwipe/ios11tableViewLeftSwipe-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -457,6 +477,7 @@
 		9EF9EB771FB00565005A1B1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PXQVRX365;
@@ -472,6 +493,7 @@
 		9EF9EB781FB00565005A1B1F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PXQVRX365;
@@ -487,6 +509,7 @@
 		9EF9EB7A1FB00565005A1B1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PXQVRX365;
 				INFOPLIST_FILE = ios11tableViewLeftSwipeUITests/Info.plist;
@@ -501,6 +524,7 @@
 		9EF9EB7B1FB00565005A1B1F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PXQVRX365;
 				INFOPLIST_FILE = ios11tableViewLeftSwipeUITests/Info.plist;
