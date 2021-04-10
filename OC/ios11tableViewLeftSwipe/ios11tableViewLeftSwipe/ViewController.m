@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "LeftSwipeTableViewCell.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UITableView *myTableview;
@@ -22,6 +22,7 @@
 - (UITableView *)myTableview{
     if (_myTableview == nil) {
         _myTableview = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        [_myTableview registerClass:[LeftSwipeTableViewCell class] forCellReuseIdentifier:@"leftswipecell"];
         _myTableview.delegate = self;
         _myTableview.dataSource = self;
     }
@@ -44,9 +45,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *iden = @"leftswipecell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:iden];
+    LeftSwipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:iden];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:iden];
+        cell = [[LeftSwipeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:iden];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"%@",_dataList[indexPath.row]];
     return cell;

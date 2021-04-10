@@ -65,7 +65,7 @@ const PreviewLayout = ({
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        marginTop:8,
+        marginTop:30,
         backgroundColor:'aliceblue'
     },
     box:{
@@ -75,11 +75,14 @@ const styles = StyleSheet.create({
     label:{
         textAlign:'center',
         marginBottom:10,
-        fontSize:24
+        fontSize:24,
+        height:30
     },
     row:{
         flexDirection:'row',
-        flexWrap:'wrap'
+        flexWrap:'wrap',
+        height:30
+
     },
     button:{
         paddingHorizontal:8,
