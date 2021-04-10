@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>类型转换</title>
+  </head>
+  <body>
+    <script>
+      let map = new Map([
+        ["name", "charlotte"],
+        ["age", "28"],
+        ["score", "111"],
+      ]);
+
+      // map 转数组
+      // console.log([...map]);
+      // console.log([...map.values()]);
+      // console.log([...map.keys()]);
+
+      let arr = [...map]; //这里转成了数组
+      arr = arr.filter((item) => {
+        return item[1].includes("charlotte");
+      });
+
+      // 从数组再转回map
+      let newMap = new Map(arr);
+      console.log(...newMap.values());
+    </script>
+  </body>
+</html>

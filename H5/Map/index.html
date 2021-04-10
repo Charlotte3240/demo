@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+    <script>
+        // key 都会转成字符串
+        let o = {
+            name1 :'charlotte'
+        }
+
+        let j = {
+            name1:'hc-ds'
+        }
+
+        // [o] [j]都会转成 [object Object]，会产生覆盖
+        // [j.key] 会把value取出来
+        let obj = {
+            name : '123456',
+            'name':'456789',
+            [o]:'objc',
+            [j.name1]:'swift'
+        }
+        console.log(obj);
+
+
+    </script>
+
+
+</body>
+</html>

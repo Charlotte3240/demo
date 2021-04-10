@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // map 的key 可以为任意类型，对象只能是字符串
+
+
+        let map = new Map();
+        map.set('name','charlotte')
+        
+
+        map.set(function (){},'func value')
+
+        map.set({},'obj value')
+
+        // null 和 undefined  都可以做为key
+        map.set(null,'undefined value')
+
+        // 遍历
+        map.forEach((v,k) => {
+            console.log(k,v);
+        })
+
+
+
+        console.log('keys');
+        // keys
+        console.log(map.keys());
+
+        console.log(map[null]);
+
+
+        // 构造方法
+        let m = new Map([['name','charlotte'],['age','28']])
+
+        m.set('key1','value').set('key2','value2')
+
+        console.log(m.get('name'));
+        m.delete('age')
+        console.log(m.has('age'));
+        m.clear()
+        console.log(m);
+
+    </script>
+  </body>
+</html>

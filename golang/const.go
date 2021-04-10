@@ -41,7 +41,7 @@ func main() {
 	fmt.Println(a,b,c,d,e,f,g,h,i)
 
 	fmt.Println(x,y,z)
-
+	fmt.Println("log jklm")
 	fmt.Println(j,k,l,m)
 
 	var jr = 123

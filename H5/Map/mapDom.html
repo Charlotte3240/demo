@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用map管理dom节点</title>
+  </head>
+  <body>
+    <div name="div1">div1 content</div>
+
+    <div name="div2">div2 content</div>
+
+    <script>
+      let map = new Map();
+      let divs = document.querySelectorAll("div").forEach((v) => {
+        map.set(v, {
+          content: v.getAttribute("name"),
+        });
+      });
+      //map foreach 时 value 在前面
+      map.forEach((value, key) => {
+        console.log(value);
+        console.log(key);
+        //这里的key 就是div, 给div加上一个点击事件
+        key.addEventListener("click", () => {
+          console.log("点击了div", value.content);
+          alert(value.content);
+        });
+      });
+
+      console.log(map);
+    </script>
+  </body>
+</html>

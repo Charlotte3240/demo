@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历</title>
+</head>
+<body>
+    <script>
+        let map  = new Map([['name','charlotte'],['age','28'],['socre','111']])
+
+        //获取所有的key
+        console.log(map.keys());
+        //获取所有的value
+        console.log(map.values());
+        //获取所有的元素
+        console.log(map.entries());
+        // 遍历元素
+        for (const [key,value] of map.entries()) {
+            console.log(key,value);
+        }
+        // // 遍历key 
+        // for (const key of map.keys()) {
+        //     console.log(key);
+        // }
+        // // 遍历value
+        // for (const value of map.values()) {
+        //     console.log(value);
+        // }
+        // 使用foreach
+        console.log('for each ');
+        map.forEach((k,v) => {
+            console.log(k,v);
+        })
+
+
+    </script>
+</body>
+</html>
