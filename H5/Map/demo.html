@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        p span{
+            background-color: antiquewhite;
+        }
+    </style>
+
+  </head>
+  <body>
+    <ul>
+      <li><span>js</span><a href="javascript:;">+</a></li>
+      <li><span>css</span><a href="javascript:;">+</a></li>
+      <li><span>html</span><a href="javascript:;">+</a></li>
+    </ul>
+
+    <div>
+      <strong id="count">总共选了0门课程</strong>
+      <p id="lists"></p>
+    </div>
+
+    <script>
+      class Lesson {
+        constructor() {
+          this.lis = document.querySelectorAll("ul>li");
+          this.count = document.getElementById("count");
+          this.lists = document.getElementById("lists");
+          this.map = new WeakMap();
+        }
+
+        run() {
+          //给a标签加上事件
+          this.lis.forEach((li) => {
+            // 找到li中的a标签
+            li.querySelector("a").addEventListener("click", (event) => {
+              // 找到a的父元素 li
+              // console.log(event.target.parentElement)
+              // console.log(li)
+              // 在箭头函数里面找到a
+              const a = event.target;
+              // 获取属性
+              if (a.getAttribute("select")) {
+                this.map.delete(li);
+                a.removeAttribute("select");
+                a.innerHTML = "+";
+                a.style.backgroundColor = "green";
+              } else {
+                this.map.set(li);
+                a.setAttribute("select", true);
+                a.innerHTML = "-";
+                a.style.backgroundColor = "red";
+              }
+              this.render();
+            });
+          });
+        }
+        countLesson() {
+            return [...this.lis].reduce((pre,cur,index) =>{
+                return (pre += this.map.has(cur) ? 1 : 0)
+            },0);
+        }
+
+        listsLesson(){
+            return [...this.lis].filter(ele => {
+               return this.map.has(ele)
+            }).map(ele => {
+                return `<span>${ele.querySelector('span').innerHTML}</span>`;
+            }).join(' ')
+        }
+
+
+        render() {
+          this.count.innerHTML = `已经选了${this.countLesson()}门课程`;
+          this.lists.innerHTML = this.listsLesson();
+        }
+      }
+
+      let lesson = new Lesson();
+      lesson.run();
+    </script>
+  </body>
+</html>

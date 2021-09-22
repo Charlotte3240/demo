@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weakmap</title>
+</head>
+<body>
+    <div>charlotte</div>
+    <div>momo_sad@hc-nsqk.com</div>
+
+
+
+    <script>
+
+        /*
+            // 1. weakmap 的key 只能为对象
+            // 与weak set 相似，weakset 中的元素只能为对象
+            let map = new WeakMap()
+            // 这里的key 为 字符串会出现抱错
+            // Uncaught TypeError: Invalid value used as weak map key
+            // map.set('name','charlotte');
+            let divs = document.querySelectorAll('div');
+            divs.forEach(ele => {
+                map.set(ele,ele.innerHTML);
+            });
+
+            console.log(map)
+        */
+
+        // let arr = [];
+        // let map = new WeakMap()
+        // map.set(arr,'charlotte');
+        // // 删除
+        // // map.delete(arr)
+        // console.log(map)
+        // // 判断是否有这个key
+        // console.log(map.has(arr));
+
+        // 在weakmap中  有一些map中的方法不能使用 
+        // keys  values
+        // Uncaught TypeError: map.values is not a function
+        // console.log(map.values())
+        // Uncaught TypeError: map.keys is not a function
+        // console.log(map.keys())
+        // Uncaught TypeError: map.size is not a function
+        // console.log(map.size())
+        // Uncaught TypeError: map is not iterable(可迭代的)
+        // for (const [key,value] of map) {
+        //     console.log(key,value)
+        // }
+       /*
+             // 2. weakMap 的主要作用 弱引用
+            // 引用计数不进行 加1 ， 与oc 的引用计数类似，不过这里比oc多了一些空安全的判断
+            let dic = {
+                name : 'charlotte'
+            }
+            // 增加一次引用计数
+            obj = dic;
+            
+
+            let map = new WeakMap();
+            map.set(dic,'dic value')
+
+
+            // 减少引用计数
+            dic = null;
+            obj = null;
+            // 这里打印的时候会看到值，但是展开就发现里面并没有entry
+            console.log(map)
+
+            // 这里延迟了1s打印，就什么都没有了
+            setTimeout(() => {
+                console.log(map)
+            }, 1000);
+
+            let div = document.querySelectorAll('div')[0]
+            div.addEventListener('click',event => {
+                // 找到父元素,这里应该是body
+                console.log(event.target.parentElement);
+            })
+       */
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
