@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mapform</title>
+</head>
+<body>
+
+    <form action="http://www.baidu.com" onsubmit="return post()">
+        接受协议
+        <input type="checkbox" name="agree" error="请接受协议">
+        我是学生
+        <input type="checkbox" name="stu" error="学生开放">
+
+        <input type="submit">
+    </form>
+
+
+
+    <script>
+        function post(){
+            let map = new Map()
+            let inputs = document.querySelectorAll("[error]");
+            inputs.forEach( input => {
+                map.set(input,{
+                    error:input.getAttribute('error'),
+                    status:input.checked
+                })
+            });
+            // 利用map 来遍历表单
+            return [...map].every(([item , obj]) => {
+                // 利用 || 来 判断status 是否为false  如果是false 就执行后面的，如果是true 就不会执行后面的语句了
+                // 可以用来 判断前置条件为 false 时 执行后面的语句
+                obj.status || alert(obj.error);
+                return obj.status
+            });
+        }
+
+    </script>
+    
+</body>
+</html>
