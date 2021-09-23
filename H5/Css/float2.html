@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            border: 1px solid #ddd;
+            display: block;
+            width:330px;
+            padding: 10px;
+            /*清除浮动*/
+            overflow: auto;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ddd;
+        }
+        .green{
+            float: left;
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+            float: right;
+        }
+        /* main::after{
+            content:"";
+            display: block;
+            clear: both;
+        } */
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </main>
+    <div class="red"></div>
+    
+</body>
+</html>

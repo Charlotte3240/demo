@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body {
+            padding-left:200px;
+            padding-top: 200px;
+        }
+        article{
+            width:150px;
+            position: relative;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+        }
+        article div{
+            height: 50px;
+            border: 1px  solid  #ddd;
+            text-align:center;
+            line-height: 3.5em;
+        }
+        article div:nth-of-type(1){
+            z-index: 1;
+            background:white;
+        }
+        article:hover div:nth-of-type(1){
+            border-color: #333;
+            border-bottom: none;
+
+        }
+        article:hover div:nth-of-type(2){
+            display: block;
+            border-color: #333;
+
+        }
+        article div:nth-of-type(2){
+            width: 300px;
+            position: absolute;
+            right: 0px;
+            top: 50px;
+            display: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>购物车</div>
+        <div>购物车中暂无商品</div>
+    </article>
+</body>
+</html>

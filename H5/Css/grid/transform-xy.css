@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+main {
+  width: 400px;
+  height: 400px;
+  border: 1px solid red;
+}
+main div {
+  width: 200px;
+  height: 200px;
+  color: red;
+  font-size: 35px;
+  position: absolute;
+  transform: translate(50%, 50%);
+}
+main div:first-child {
+  background-color: blueviolet;
+  transform: translate(-100%, -100%);
+  transform: translate(-50%, -50%);
+  transition: 2s;
+}
+main div:first-child:hover {
+  transform: translate(-100px, -100px);
+}
+main div:last-child {
+  background-color: lemonchiffon;
+  transform: translate(100%, 100%);
+  transition: 2s;
+}

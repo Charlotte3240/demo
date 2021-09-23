@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+//        var arr : String? = nil
+//        let dic = ["string":arr!]
+        
+//        let arr = [1,2,3,4]
+//        print(arr[8])
+        
     }
 
 

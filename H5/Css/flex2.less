@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding-left: 100px;
+  padding-top: 100px;
+
+  article {
+    border: solid 1px blueviolet;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    // 排列方向 正向 逆向
+    flex-direction: column;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+
+
+    align-items: flex-start;
+    align-content: space-evenly;
+    
+    section{
+      flex: 1 0 100px;
+      border: 1px solid #D9D9D9;
+      padding: 10px;
+      text-align: center;
+      min-width: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+
+    div {
+      // width: 100px;
+      // height: 100px;
+      // background-color: red;
+      // border: solid 1px silver;
+      font-size: 25px;
+      // padding: 10px;
+      // box-sizing: border-box;
+      // background-clip: content-box;
+
+      // 内容弹性 扩充剩余空间
+      // flex-grow: 1;
+      // 压缩已有的空间
+      // flex-shrink: 1;
+
+      // 基准尺寸 根据row-direction 来控制宽度或者高度
+      // row 时控制宽度， column 时控制高度
+      // flex-basis: 120px;
+
+      // max-width 权重比 flex-basis 高
+      max-width: 110px;
+      // flex-grow、 flex-shrink、 flex-basis
+      // 这三个的集合 缩写
+      // flex: 0 0 120px;
+
+      flex: 1;
+      background-color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size:25px;
+      color: white;
+    }
+    /*
+    200 - 3*100 = 50
+    //缩放比例
+    50/(100*0 + 100*1 + 100*3) = 0.125
+
+    100*0.125*1 = 12.5 =>87.5
+    100*0.125*3 = 37.5 =>62.5
+    */
+
+    // & :first-child{
+    //   flex-shrink: 0;
+    // }
+    // & :nth-child(2){
+    //   flex-shrink: 1;
+    // }
+    // & :nth-child(3){
+    //   flex-shrink: 3;
+    // }
+
+    // flex-grow
+    // & :first-child {
+    //   align-self: flex-end;
+    //   // flex-grow: 0;
+    // }
+    // & :nth-child(2) {
+    //   align-self: flex-start;
+    // }
+    // & :nth-child(3) {
+    //   align-self: center;
+    //   // flex-grow: 3;
+    // }
+
+
+    span{
+      color: white;
+      background-color:blueviolet;
+    }
+  }
+}

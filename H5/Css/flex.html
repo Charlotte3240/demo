@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        /* main{
+            height:100vh;
+            background-color:#ddd;
+        } */
+        /* footer{
+            position: fixed;
+            height: 50px;
+            width: 100vw;
+            bottom: 0;
+            background-color:gray;
+            border-top: solid 1px #555;
+        }
+
+        footer div{
+            float: left;
+            width: 33vw;
+            height: 100vh;
+            border-top: solid 1px black;
+            line-height:3rem;
+            text-align: center;
+        }
+        footer div:nth-of-type(n+2){
+            border-left: solid 1px #ddd;
+        } */
+        main{
+            display: flex;
+            flex: 1;
+            background-color:blueviolet;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        footer{
+            height:60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        footer div{
+            text-align: center;
+            line-height: 3.5rem;
+            background-color:lightcyan;
+            flex: 1;
+        }
+        footer div:nth-of-type(n+2){
+            border-left: solid 1px #ddd;
+        }
+       
+    </style>
+</head> 
+<body>
+    <main>111</main>
+    <footer>
+        <div>dd</div>
+        <div>ss</div>
+        <div>ff</div>
+        <div>jj</div>
+    </footer>
+</body>
+</html>

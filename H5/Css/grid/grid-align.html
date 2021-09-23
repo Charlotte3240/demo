@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      article {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows:  60px 1fr 60px;
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+          "header header"
+          "nav main"
+          "footer footer";
+      }
+
+      header,nav,main,footer {
+          background-color: aqua;
+          padding: 10px;
+          background-clip: content-box;
+      }
+      header{
+          grid-area: header;
+      }
+      nav {
+          grid-area: nav;
+      }
+      main{
+          grid-area: main;
+      }
+      footer {
+          grid-area: footer;
+          display: grid;
+          grid-template-columns: repeat(4,60px);
+          /*内容对齐 和 flex一样*/
+          justify-content: center;
+          align-items: center;
+      }
+
+      div{
+          text-align: center;
+          font-size: 1.4em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <article>
+        <header></header>
+        <nav></nav>
+        <main></main>
+        <footer>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </footer>
+
+
+      <!-- <nav>nav</nav>
+      <aside>left</aside>
+      <aside>right</aside>
+      <div>bottom</div> -->
+    </article>
+  </body>
+</html>

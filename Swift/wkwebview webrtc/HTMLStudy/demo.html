@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <body>
+        <h1>加载本地html测试</h1>
+
+        <button onclick="javascript:sendMsgToNative()">js调用原生代码</button>
+
+
+        <button onclick="javascript:openVC()">打开视频会议</button>
+        <button onclick="javascript:closeVC()">关闭视频会议</button>
+        <button onclick="javascript:exitSDK()">关闭网页/退出sdk</button>
+
+
+
+        <noscript>不支持js</noscript>
+
+        <script>
+
+            // iOS给h5 传递信息
+            function receiveMessageFromiOS(message){
+                alert(message)
+            }
+            // h5给iOS 传递消息
+            function sendMsgToNative(){
+                //sendMessageToiOS : iOS开放的接口名称
+                window.webkit.messageHandlers['sendMessageToiOS'].postMessage('参数');
+            }
+
+            // 打开视频
+            function openVC() {
+                window.webkit.messageHandlers['openVC'].postMessage({});
+            }
+
+            // 关闭视频
+            function closeVC() {
+                window.webkit.messageHandlers['closeVC'].postMessage({});
+            }
+
+            // 关闭网页
+            function exitSDK() {
+                window.webkit.messageHandlers['exitSDK'].postMessage({});
+            }
+
+        </script>
+
+        
+    </body>
+
+
+</html>

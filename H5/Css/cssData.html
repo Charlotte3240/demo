@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @import url(./cssData.css);
+        table caption{
+            background:red;
+            color:white;
+            border:1px solid #ddd;
+            /* 设置caption的位置 */
+            caption-side: bottom;
+        }
+        table{
+            width: 100%;
+            background:#fda;
+            /*单元格间距*/
+            /* border-spacing: 0px; */
+            /* border-collapse: collapse; */
+            empty-cells:hide;
+        }
+        table tr td {
+            height:100px;
+            text-align:center;
+            vertical-align:middle;
+        }
+        /* table tbody tr:first-child{
+            background:blue;
+        } */
+        /* table tr td{
+            background:green;
+        } */
+        /*odd 奇数行*/
+        table td {
+            font-size: 18px;
+        }
+
+        /* table tbody tr:nth-child(odd){
+            background:blue;
+            color: white;
+        } */
+    </style>
+    
+</head>
+<body>
+    <article class="table">
+        <nav>标题</nav>
+        <section>
+            <ul>
+                <li>标题</li>
+                <li>编号</li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <li>1</li>
+                <li>css</li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <li>2</li>
+                <li>css data</li>
+            </ul>
+        </section>
+    </article>
+
+    <table border="1">
+        <thead>
+            <!-- <caption>标题</caption> -->
+            <tr>
+                <td>编号</td>
+                <td>标题</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>css</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>css data</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>css data</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>css data</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+
+</body>
+</html>

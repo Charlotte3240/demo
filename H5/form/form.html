@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" enctype="multipart/form-data" autocomplete="off">
+        <fieldset>
+            <legend>单选</legend>
+            <input type="radio" id="male" name="sex" value="male" checked>
+            <label for="name">男</label>
+
+            <input type="radio" id="sex" name="sex" value="female">
+            <label for="sex">女</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>多选</legend>
+            <!-- 如果name 相同后面加上 [] 就可以按照数组的结构方式提交 -->
+            <input type="checkbox" name="game" id="game" value="game">
+            <label for="game">游戏</label>
+
+            <input type="checkbox" name="music" id="music" value="music">
+            <label for="music">音乐</label>
+
+            <input type="checkbox" name="game" id="game" value="game">
+            <label for="game">游戏</label>
+
+            <input type="checkbox" name="music" id="music" value="music">
+            <label for="music">音乐</label>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>文件上传</legend>
+            <!-- 上传文件需要设置form的 enctype="multipart/form-data" -->
+            <!-- 还可以设置 multiple 为多选 name 也要相应的后面加上[] -->
+            <!-- 对于限制格式，可以添加 accept="image/png,image/jpeg" -->
+            <input type="file" name="image" id="" accept=".png,.jpeg,.sh">
+        </fieldset>
+        
+        <fieldset>
+            <legend>时间和日期</legend>
+            <input type="date" name="date" id="date" min="2021-03-05" max="2022-01-01" step="3">
+            <input type="time" name="time" id="time">
+            <input type="week" name="" id="">
+            <input type="month" name="" id="">
+            <!-- 全部都有 -->
+            <input type="datetime-local" name="" id="">
+        </fieldset>
+
+        <fieldset>
+            <legend>搜索</legend>
+            <!-- 如果想关闭历史的搜索记录可以在 form 中声明 autocomplete="off" -->
+            <input type="search" name="search" id="search" list="searchSuggestion" >
+            <datalist id="searchSuggestion">
+                <option value="12dd3">subtitle</option>
+                <option value="45dd6"></option>
+            </datalist>
+        </fieldset>
+
+    </form>
+</body>
+</html>

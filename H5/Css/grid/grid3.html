@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ddd;
+            display: grid;
+            /* grid-template-rows: repeat(3,100px);
+            grid-template-columns: repeat(3,100px); */
+            /* grid-template-rows: repeat(2,1fr);
+            grid-template-columns: repeat(2,1fr); */
+            /* 给格子边线命名 */
+            /* grid-template-rows: [r1-start] 100px [r1-end r2-start] 100px [r2-end r3-start] 100px [r3-end];
+            grid-template-columns: [c1-start] 100px [c1-end c2-start] 100px [c2-end c3-start] 100px [c3-end]; */
+            grid-template-rows: repeat(3, [r-start] 1fr [r-end]);
+            grid-template-columns: repeat(3, [c-start] 1fr [c-end]);
+        }
+        /* 放置规则矩形 */
+        /* 
+        div:first-child{X
+            grid-row-start: 2;
+            grid-row-end: 3;
+
+            grid-column-start: 2;
+            grid-column-end: 3;
+
+            background-color: aqua;
+        } 
+        */
+        /* 放置不一样大小的矩形 */
+        div{
+            background-color: aqua;
+            border: 1px solid red;
+        }
+        /* div:first-child{
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 1;
+        } */
+        /* 使用repeat 生成的命名来 规定 start end*/
+        /* div:nth-child(1){
+            background-color:aquamarine;
+            grid-row-start: r-start 1;
+            grid-row-end: r-end 3;
+            grid-column-start: c-start 1;
+            grid-column-end: c-end 3;
+        } */
+        /* 格子偏移量 */
+        /* div:first-child{
+            grid-row-start: 3;
+            grid-column-start : 3;
+            grid-column-end: span 1;
+            grid-row-end : span 1;
+        } */
+
+        /* 简写 */
+        div:first-child{
+            /* grid-row : 1/4;
+            grid-column: 1/1; */
+            /* grid-row : 1/ span 3;
+            grid-column: 1/1; */
+            /*居中*/
+            grid-row : 1/span 3;
+            grid-column: 1/span 1;
+        }
+        div:nth-child(2){
+            grid-row-end: span 2;
+            grid-column-end: span 2;
+            /* grid-row: 1/ span 2;
+            grid-column: 2 / span 2; */
+        }
+        div:nth-child(3){
+            /* grid-row : 3 / span 1;
+            grid-column: 2 / span 2; */
+            grid-column-end: span 2 ;
+        }
+
+
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+
+</body>
+</html>

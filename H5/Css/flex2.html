@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex2</title>
+    <link rel="stylesheet" href="./flex2.css">
+</head>
+<body>
+    <article>
+        <section><div>11</div><span onclick="upAction(this)">up</span></section>
+        <section><div>22</div><span onclick="upAction(this)">up</span></section>
+        <section><div>33</div><span onclick="upAction(this)">up</span></section>
+    </article>
+
+    <script>
+        function upAction(ele){
+            let order = ele.parentNode.style.order;
+            ele.parentNode.style.order = order - 1;
+            console.log(ele.parentNode.style.order);
+        }
+    </script>
+</body>
+</html>

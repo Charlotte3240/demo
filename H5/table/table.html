@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <caption>表格的标题</caption>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>标题</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>不知道</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!-- 设置colspan 来代表横向占几个单元格 -->
+                <!-- 设置rowspan 来代表纵向占几个单元格 -->
+                <td colspan="2">底部title1</td>
+                <td>底部title2</td>
+            </tr>
+            <tr>
+                <td rowspan="2">底部title3</td>
+                <td>底部title4</td>
+            </tr>
+            <tr>
+                <td>底部title3</td>
+                <td>底部title4</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+article {
+  border: 5px solid #D9D9D9;
+  width: 400px;
+  height: 500px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+article * {
+  background-color: blueviolet;
+  background-clip: content-box;
+  flex: 1;
+  padding: 10px;
+  font-size: 35px;
+  color: white;
+}
+article :nth-of-type(1) {
+  order: 0;
+  background-color: red;
+}
+article :nth-child(2) {
+  order: -1;
+  background-color: blue;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      article {
+        border: 5px solid #ddd;
+        width: 300px;
+        height: 500px;
+        display: grid;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(3,1fr);
+        /* 使用列排序 */
+        grid-auto-flow: row dense;
+        grid-auto-rows:50px;
+        grid-auto-columns: 200px;
+      }
+
+      div{
+        border: 1px solid red;
+      /* }
+      div:nth-child(1){
+          grid-column: 1/ span 2;
+      }
+      div:nth-child(2){
+          grid-column: 2/ span 2;
+      } */
+    </style>
+  </head>
+  <body>
+    <article>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+    </article>
+  </body>
+</html>

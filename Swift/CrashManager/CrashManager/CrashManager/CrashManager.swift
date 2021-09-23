@@ -22,7 +22,7 @@ func crashHandle(crashContentAction:@escaping ([String])->Void){
             //如果崩溃信息不为空，则对崩溃信息进行下一步处理
             crashContentAction(CrashManager.readAllCrashInfo())
         }
-        CrashManager.deleteAllCrashFile()
+//        CrashManager.deleteAllCrashFile()
     }
     //注册signal,捕获相关crash
     registerSignalHandler()
@@ -93,7 +93,7 @@ class func CrashFileList(crashPathStr:CrashPathEnum) -> [String] {
         for signalPathStr in CrashFileList(crashPathStr: .signalCrashPath){
             if let content = try? String(contentsOfFile: signalPathStr, encoding: .utf8) {
                 crashInfoArr.append(content)
-                //cmDebugPrint(content)
+//                cmDebugPrint(content)
             }
         }
         //删除NSexception崩溃文件

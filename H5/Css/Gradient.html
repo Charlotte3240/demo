@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 线性渐变 */
+        div{
+            height: 100px;
+            /* background: linear-gradient(90deg,red,green, blue); */
+            /* background: linear-gradient(to top right,red,green, blue); */
+            /* background: linear-gradient(45deg, red 30%,blue 80% ); */
+            /* background: linear-gradient(45deg, red 50%,blue 50% ); */
+            background: linear-gradient(45deg, red,60%,blue );
+        }
+        nav{
+            height: 50px;
+            background: linear-gradient(90deg ,#39af6f 30%,#1d9854 40%,#39af6f 80% );
+        }
+        /* 镜像渐变 */
+        article{
+            height: 300px;
+            width: 300px;
+            background: radial-gradient(at center, red 30%,green 50%,black 70%);
+        }
+        
+        /* 渐变重复 */
+        .progress{
+            height: 5px;
+            background: repeating-linear-gradient(45deg,blue,5px,yellow 5px,red 10px);
+        }
+
+        aside{
+            height: 200px;
+            width: 200px;
+            background: repeating-radial-gradient(10px 10px ,red ,yellow 5px,red 20px);
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+    </nav>
+    <div>
+    </div>
+    <article></article>
+    <div class="progress"></div>
+    <aside>
+
+    </aside>
+</body>
+</html>

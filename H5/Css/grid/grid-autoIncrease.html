@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        main {
+          width: 100vw;
+          height: 100vh;
+          display: grid;
+          grid:
+            'header header right ' 50px
+            'nav main right' 4fr
+            'footer footer right' 1fr/60px 1fr 90px ;
+        }
+        div {
+          border: solid 1px #ddd;
+          color: white;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+        div:nth-child(1) {
+          background-color: #3498db;
+          grid-area: header;
+        }
+        div:nth-child(2) {
+          background-color: #f1c40f;
+          grid-area: nav;
+        }
+        div:nth-child(3) {
+          background-color: #2ecc71;
+          grid-area: main;
+        }
+        div:nth-child(4) {
+          background-color: #9b59b6;
+          grid-area: footer;
+        }
+        div:nth-child(5){
+            background-color: #2ecc71;
+            grid-area: right;
+        }
+      </style>
+
+    <!-- area 名称 ｜ 行高
+    area 名称 ｜ 行高
+    area 名称 ｜ 行高 /   auto-flow dense    -->
+
+<!-- <'grid-template'> | <'grid-template-rows'> /
+ [ auto-flow && dense? ] <'grid-auto-columns'>? | [ auto-flow && dense? ] <'grid-auto-rows'>? /
+  <'grid-template-columns'> -->
+
+</head>
+<body>
+    <main>
+        <div href="">后盾人</div>
+        <div href="">向军老师</div>
+        <div href="">HDCMS</div>
+        <div href="">后盾人</div>
+        <div>mainright</div>
+      </main>
+</body>
+</html>

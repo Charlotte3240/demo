@@ -141,9 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				9E18367E216C62A50070F906 /* CrashManager.swift */,
+				9E183681216C62A50070F906 /* SlideAdressTool.h */,
 				9E18367F216C62A50070F906 /* SlideAdressTool.m */,
 				9E183680216C62A50070F906 /* crashNSExceptionManager.swift */,
-				9E183681216C62A50070F906 /* SlideAdressTool.h */,
 				9E183682216C62A50070F906 /* crashSignalManager.swift */,
 			);
 			path = CrashManager;
@@ -461,15 +461,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4PXQVRX365;
+				DEVELOPMENT_TEAM = M29Y8582X5;
 				INFOPLIST_FILE = CrashManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.CrashManager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Charlotte/Documents/selfGitProject/demo/CrashManager/CrashManager/CrashManager-Bridging-Header.h.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jr/Documents/demo/Swift/CrashManager/CrashManager/CrashManager-Bridging-Header.h.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -480,15 +481,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4PXQVRX365;
+				DEVELOPMENT_TEAM = M29Y8582X5;
 				INFOPLIST_FILE = CrashManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hc-nsqk.CrashManager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Charlotte/Documents/selfGitProject/demo/CrashManager/CrashManager/CrashManager-Bridging-Header.h.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jr/Documents/demo/Swift/CrashManager/CrashManager/CrashManager-Bridging-Header.h.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
