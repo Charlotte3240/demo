@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 300px;
+            border: 1px solid #ddd;
+        }
+        main > ul{
+            display: flex;
+            list-style:none;
+        }
+        ul li{
+            margin-right: 10px;
+        }
+
+        ul li strong{
+            padding: 5px 30px;
+            background-color: #27ae60;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+            cursor: pointer;
+        }
+        ul li strong+div{
+            position: relative;
+            display:flex;
+            flex-direction: column;
+            background-color: #95a5a6;
+            padding:10px;
+            transform:scale(0);
+            z-index: -1;
+            transform-origin: top left;
+        }
+        ul li:hover strong+div{
+            transform:scale(1,1);
+            transition:1.5s;
+        }
+
+        ul li strong+div a {
+            color: white;
+            text-decoration: none;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <ul>
+            <li>
+                <strong>销量</strong>
+                <div>
+                    <a href="">递增</a>
+                    <a href="">递减</a>
+                </div>
+            </li>
+            <li>
+                <strong>距离</strong>
+                <div>
+                    <a href="">最近</a>
+                    <a href="">最远</a>
+                </div>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

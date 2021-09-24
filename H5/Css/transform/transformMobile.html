@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      body::after {
+        content: "Charlotte";
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        font-size: 5em;
+        opacity: 0.5;
+      }
+
+      main {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+      }
+      nav {
+        height: 8vh;
+        background-color: #34495e;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      nav a {
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.2em;
+        opacity: 0.8;
+        flex: 1;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      nav a:nth-child(2) {
+        border-right: 1px solid silver;
+        border-left: 1px solid silver;
+      }
+
+      main > div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-100%);
+        transition: 0.3s;
+      }
+      main > div:target {
+        transform: translateY(0);
+      }
+      main > div:nth-child(1):target {
+        background-color: #27ae60;
+      }
+      main > div:nth-child(2):target {
+        background-color: #e67e22;
+      }
+      main > div:nth-child(3):target {
+        background-color: #2980b9;
+      }
+      div i[class^="fa"] {
+        color: #fff;
+        font-size: 8em;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div id="home">
+        <i class="fa fa-home" aria-hidden="true"></i>
+      </div>
+      <div id="video">
+        <i class="fa fa-vimeo" aria-hidden="true"></i>
+      </div>
+      <div id="live">
+        <i class="fa fa-viadeo" aria-hidden="true"></i>
+      </div>
+    </main>
+    <nav>
+      <a href="#home">home</a>
+      <a href="#video">video</a>
+      <a href="#live">live</a>
+    </nav>
+  </body>
+</html>
