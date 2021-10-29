@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn" type="button">开始idle检测</button>
+    <script>
+
+        // 只能用在扩展里面
+    const main = async () => {
+        // Feature detection.
+        if (!('IdleDetector' in window)) {
+          return console.log('IdleDetector is not available.');
+        }
+        // Request permission to use the feature.
+        if ((await IdleDetector.requestPermission() !== 'granted')) {
+          return console.log('Idle detection permission not granted.');
+        }
+        try {
+          const controller = new AbortController();
+          const signal = controller.signal;
+
+          const idleDetector = new IdleDetector();
+          idleDetector.addEventListener('change', () => {
+            console.log(`Idle change: ${idleDetector.userState}, ${idleDetector.screenState}.`);
+          });
+          await idleDetector.start({
+            threshold: 60000,
+            signal,
+          });
+          console.log('IdleDetector is active.');
+
+          window.setTimeout(() => {
+            controller.abort();
+            console.log('IdleDetector is stopped.');
+          }, 120000);
+        } catch (err) {
+          // Deal with initialization errors like permission denied,
+          // running outside of top-level frame, etc.
+          console.error(err.name, err.message);
+        }
+    };
+
+    main();
+    </script>
+  </body>
+</html>

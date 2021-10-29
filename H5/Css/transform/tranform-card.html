@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            height: 200px;
+            width: 400px;
+            border: 1px solid #ddd;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        main>div:first-child{
+            background-color: blueviolet;
+        }
+        main>div:last-child{
+            background-color: antiquewhite;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <div>left</div>
+        <div>right</div>
+    </main>
+</body>
+</html>

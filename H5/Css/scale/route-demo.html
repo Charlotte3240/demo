@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            background: #2c3e50;
+        }
+        main>div{
+            color: white;
+            font-size: 3.5rem;
+        }
+        main>div>strong{
+            /* 要变成块元素才可以进行旋转 */
+            display: inline-block;
+            transition: 1s;
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            text-align: center;
+        }
+
+        main div>strong:nth-child(1){
+            background-color:blueviolet;
+        }
+        main div>strong:nth-child(2){
+            background-color:orange;
+        }
+
+        main div:hover>strong:nth-child(1){
+            transform: rotate(360deg);
+        }
+        main div:hover>strong:nth-child(2){
+            transform: rotate(-360deg);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <strong>C</strong>harlott<strong>E</strong>
+        </div>
+    </main>
+</body>
+</html>

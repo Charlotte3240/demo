@@ -1,0 +1,5 @@
+mode: set
+testdemo/split.go:6.43,8.17 2 1
+testdemo/split.go:16.2,16.8 1 1
+testdemo/split.go:8.17,12.17 4 1
+testdemo/split.go:12.17,14.4 1 1

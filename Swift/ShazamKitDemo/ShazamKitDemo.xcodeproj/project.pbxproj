@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2B7CCFC926CCB5CA00C83A98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCFC826CCB5CA00C83A98 /* AppDelegate.swift */; };
-		2B7CCFCB26CCB5CA00C83A98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCFCA26CCB5CA00C83A98 /* SceneDelegate.swift */; };
 		2B7CCFCD26CCB5CA00C83A98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7CCFCC26CCB5CA00C83A98 /* ViewController.swift */; };
 		2B7CCFD026CCB5CA00C83A98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7CCFCE26CCB5CA00C83A98 /* Main.storyboard */; };
 		2B7CCFD226CCB5CE00C83A98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7CCFD126CCB5CE00C83A98 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		2B7CCFC526CCB5CA00C83A98 /* ShazamKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShazamKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7CCFC826CCB5CA00C83A98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B7CCFCA26CCB5CA00C83A98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2B7CCFCC26CCB5CA00C83A98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B7CCFCF26CCB5CA00C83A98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B7CCFD126CCB5CE00C83A98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				2B7CCFC826CCB5CA00C83A98 /* AppDelegate.swift */,
-				2B7CCFCA26CCB5CA00C83A98 /* SceneDelegate.swift */,
 				2B7CCFCC26CCB5CA00C83A98 /* ViewController.swift */,
 				2B7CCFCE26CCB5CA00C83A98 /* Main.storyboard */,
 				2B7CCFD126CCB5CE00C83A98 /* Assets.xcassets */,
@@ -139,7 +136,6 @@
 			files = (
 				2B7CCFCD26CCB5CA00C83A98 /* ViewController.swift in Sources */,
 				2B7CCFC926CCB5CA00C83A98 /* AppDelegate.swift in Sources */,
-				2B7CCFCB26CCB5CA00C83A98 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +285,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M29Y8582X5;
 				INFOPLIST_FILE = ShazamKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo.ShazamKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M29Y8582X5;
 				INFOPLIST_FILE = ShazamKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +313,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo.ShazamKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,0 +1,16 @@
+syntax = "proto3"; //版本号
+package services; // 生成的文件的包名
+
+option go_package = ".;services";
+
+message SayHelloRequest{
+  string name = 1;
+}
+
+message HelloReplay{
+  string message = 1;
+}
+
+service HelloWorld{
+  rpc HelloRPC (SayHelloRequest) returns (HelloReplay){}
+}

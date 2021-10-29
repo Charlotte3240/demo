@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        main>a{
+            text-decoration: none;
+            color: white;
+            font-size: 2.5rem;
+            border: 3px solid green;
+            height: 60px;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+
+        }
+        .btn::after{
+            content:"";
+            width: 0%;
+            height: 100%;
+            position: absolute;
+            transform: skew(45deg);
+            transition: 0.5s;
+            background-color:red;
+            z-index: -1;
+        }
+        .btn:hover::after{
+            width: 200%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <a href="" class="btn">hc-nsqk.com</a>
+    </main>
+    
+</body>
+</html>
