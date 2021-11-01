@@ -17,5 +17,5 @@ func (s *HelloService) mustEmbedUnimplementedHelloWorldServer() {
 func (s *HelloService) HelloRPC(ctx context.Context, req *SayHelloRequest) (*HelloReplay, error) {
 	// 获取传递过来的参数
 	fmt.Println(req.Name)
-	return &HelloReplay{Message: `charlotte`},nil
+	return &HelloReplay{Message: req.Name},nil
 }

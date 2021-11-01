@@ -3,6 +3,8 @@ package services; // 生成的文件的包名
 
 option go_package = ".;services";
 
+import "google/api/annotations.proto";
+
 message SayHelloRequest{
   string name = 1;
 }
@@ -12,5 +14,9 @@ message HelloReplay{
 }
 
 service HelloWorld{
-  rpc HelloRPC (SayHelloRequest) returns (HelloReplay){}
+  rpc HelloRPC (SayHelloRequest) returns (HelloReplay){
+    option (google.api.http) = {
+      get: "/v1/hello/{name}"
+    };
+  }
 }
