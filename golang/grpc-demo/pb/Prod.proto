@@ -1,0 +1,54 @@
+syntax = "proto3"; //版本号
+package services; // 生成的文件的包名
+
+option go_package = ".;services"; //用来覆盖上面的package名称 ;前面是路径
+
+import "google/api/annotations.proto"; // 导入外部的proto文件
+import "Models.proto";
+
+
+message ProdRequest{
+  int32 prod_id = 1; // 商品id
+  ProdAreas prod_area = 2; // 商品区域
+}
+
+message ProdResponse{
+  int32 prod_stock = 1; // 库存
+}
+
+message QuerySize{
+  int32 size = 1; //页尺寸
+}
+
+message ProdResponseList{ // 返回商品库存列表
+  repeated ProdResponse prodres = 1;
+}
+
+enum ProdAreas{
+  tobacco = 0; // 烟草
+  drinks = 1; // 酒水
+  food = 2; // 食品
+}
+
+
+service ProdService{
+
+  rpc GetProdStock(ProdRequest) returns (ProdResponse){
+    option (google.api.http) = {
+      get: "/v1/prod/{prod_id}"
+    };
+  }
+
+  rpc GetProdStocks(QuerySize) returns (ProdResponseList){
+    option (google.api.http) = {
+      get: "/v1/prods/{size}"
+    };
+  }
+
+  rpc GetProdDetail(ProdRequest) returns (ProdModel){
+    option (google.api.http) = {
+      get: "/v1/prodDetail/{prod_id}"
+    };
+  }
+
+}

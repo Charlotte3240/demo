@@ -1,0 +1,32 @@
+syntax = "proto3";
+package services;
+option go_package = ".;services";
+
+import "google/protobuf/timestamp.proto"; // 引入时间类型
+
+// 商品模型
+message ProdModel{
+  int32 prod_id = 1;
+  string prod_name = 2;
+  float prod_price = 3;
+
+}
+
+// 订单信息
+message OrderInfo{
+  int32 order_id = 1; // 订单id
+  int32 order_no = 2; // 订单编号
+  int32 order_userId = 3; // 订单用户id
+  float order_price = 4; // 订单金额
+  google.protobuf.Timestamp order_time = 5;// 订单时间
+  repeated OrderDetail order_details = 6; // 拆分的一些订单
+
+}
+// 拆分订单
+message OrderDetail{
+  int32 order_detail_id = 1; //拆分订单id
+  int32 order_detail_no = 2; //拆分订单号
+  int32 order_no = 3; // 主订单no
+  int32 order_type = 4; // 订单类型
+  int32 order_num = 5; // 订单物品数量
+}

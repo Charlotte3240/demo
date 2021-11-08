@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 	"nsqk.com/rpc/helper"
-	"nsqk.com/rpc/services"
+	"nsqk.com/rpc/services/Gateway"
 )
 
 func main() {
@@ -23,8 +23,19 @@ func main() {
 	// 注册并且设置http的handler，这里传入的endpoint 是gRPC server的地址
 	err := services.RegisterHelloWorldHandlerFromEndpoint(ctx,gwmux,"localhost:2333",opt)
 	if err != nil{
-		log.Fatalln("启动grpc转发失败:",err)
+		log.Fatalln("注册hello grpc转发失败:",err)
 	}
+	err = services.RegisterProdServiceHandlerFromEndpoint(ctx,gwmux,"localhost:2333",opt)
+	if err != nil{
+		log.Fatalln("注册prod grpc转发失败:",err)
+	}
+
+	err = services.RegisterOrderServiceHandlerFromEndpoint(ctx,gwmux,"localhost:2333",opt)
+	if err != nil{
+		log.Fatalln("注册order grpc转发失败")
+	}
+
+
 	httpServer := &http.Server{
 		Addr: ":23333",
 		Handler: gwmux,
@@ -35,4 +46,11 @@ func main() {
 	}
 
 
+}
+
+
+func wssHandler(){
+	http.HandleFunc("/v1/ws", func(writer http.ResponseWriter, request *http.Request) {
+		conn , _ := websocket.u
+	})
 }

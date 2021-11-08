@@ -26,6 +26,8 @@ func startTwoWayCertGRPCServer() {
 	}
 	s := grpc.NewServer(grpc.Creds(helper.GetServerCreds()))
 	services.RegisterHelloWorldServer(s, new(services.HelloService))
+	services.RegisterProdServiceServer(s,new(services.ProdService))
+	services.RegisterOrderServiceServer(s,new(services.OrderService))
 
 	reflection.Register(s)
 

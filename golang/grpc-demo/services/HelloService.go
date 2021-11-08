@@ -2,7 +2,7 @@ package services
 
 import (
 	"context"
-	"fmt"
+	"log"
 )
 
 type HelloService struct {}
@@ -16,6 +16,6 @@ func (s *HelloService) mustEmbedUnimplementedHelloWorldServer() {
 
 func (s *HelloService) HelloRPC(ctx context.Context, req *SayHelloRequest) (*HelloReplay, error) {
 	// 获取传递过来的参数
-	fmt.Println(req.Name)
+	log.Println(req.Name)
 	return &HelloReplay{Message: req.Name},nil
 }

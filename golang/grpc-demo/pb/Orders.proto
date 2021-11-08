@@ -1,0 +1,26 @@
+syntax = "proto3"; //版本号
+package services; // 生成的文件的包名
+
+option go_package = ".;services"; //用来覆盖上面的package名称 ;前面是路径
+
+import "google/api/annotations.proto"; // 导入外部的proto文件
+import "Models.proto";
+
+
+message OrderRequest{
+  OrderInfo orderInfo = 1;
+}
+
+message OrderResponse{
+  string status = 1;
+  string msg = 2;
+}
+
+service OrderService {
+  rpc NewOrder(OrderRequest) returns (OrderResponse){
+    option (google.api.http) = {
+      post: "/v1/createOrder"
+      body : "orderInfo"
+    };
+  }
+}
