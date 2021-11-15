@@ -7,13 +7,15 @@ import (
 	"log"
 	"net/http"
 	"nsqk.com/rpc/helper"
-	"nsqk.com/rpc/services/Gateway"
+	"nsqk.com/rpc/services"
+
 )
 
 func main() {
 	ctx := context.Background()
 	ctx,cancel := context.WithCancel(ctx)
 	defer cancel()
+
 
 	// 创建一个gateway mux
 	gwmux := runtime.NewServeMux()
@@ -48,9 +50,3 @@ func main() {
 
 }
 
-
-func wssHandler(){
-	http.HandleFunc("/v1/ws", func(writer http.ResponseWriter, request *http.Request) {
-		conn , _ := websocket.u
-	})
-}

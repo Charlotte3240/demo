@@ -28,6 +28,7 @@ func startTwoWayCertGRPCServer() {
 	services.RegisterHelloWorldServer(s, new(services.HelloService))
 	services.RegisterProdServiceServer(s,new(services.ProdService))
 	services.RegisterOrderServiceServer(s,new(services.OrderService))
+	services.RegisterUserServiceServer(s,new(services.UserService))
 
 	reflection.Register(s)
 

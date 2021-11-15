@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="96ceb427-63b8-4cc2-9914-0d5b43653351" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../goWsServer/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../goWsServer/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../goWsServer/utilities/utilities.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../goWsServer/utilities/utilities_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../goWsServer/websocket" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../goWsServer/ws/client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../goWsServer/ws/hub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../goWsServer/ws/websocket.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../goWsServer/ws/wstest/wsTest.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../goWsServer/ws/wstest/wstest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/Users.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/Users_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../grpc-demo/pb/Users.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../grpc-demo/pb/validate/BUILD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../grpc-demo/pb/validate/validate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../grpc-demo/pb/validate/validate.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../grpc-demo/pb/validate/validate.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../grpc-demo/services/Models.pb.validate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../grpc-demo/services/UserService.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../grpc-demo/services/Users.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../grpc-demo/services/Users_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goTour/Slice.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goTour/Slice.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc" beforeDir="false" afterPath="$PROJECT_DIR$/rpc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/HelloService.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/Models.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/Models.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/OrderService.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/Orders.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/Orders.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/Orders_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/Orders_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/ProdService.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/gRPCServer/gRPCServer" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/gRPCServer/gRPCServer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/gRPCServer/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/gRPCServer/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/genPb.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/genPb.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/httpServer/httpServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/httpServer/httpServer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/pb/Models.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/pb/Models.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/services/Gateway/Hello.pb.gw.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/services/Hello.pb.gw.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/services/Gateway/Orders.pb.gw.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/services/Orders.pb.gw.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/services/Gateway/Prod.pb.gw.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/services/Prod.pb.gw.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grpc-demo/services/Models.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/services/Models.pb.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="20oCKEYpxqEKoXLpjpRP23sxQxu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/services" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package services;
+
+import "Models.proto";
+
+option go_package = ".;services";
+
+// 用户信息req
+message UserScoreRequest {
+    repeated UserInfo userInfos = 1;
+}
+// 用户信息res
+message UserScoreResponse {
+    repeated UserInfo userInfos = 1;
+}
+
+// 请求用户信息rpc接口
+service UserService {
+    rpc QueryUserScore(UserScoreRequest) returns (UserScoreResponse);
+    rpc QueryUserScoreByServerStream (UserScoreRequest) returns (stream UserScoreResponse);
+    rpc QueryUserScoreByClientStream (stream UserScoreRequest) returns (UserScoreResponse);
+    rpc QueryUserScoreByTWS (stream UserScoreRequest) returns (stream UserScoreResponse);
+}

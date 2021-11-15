@@ -18,7 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type OrderServiceClient interface {
-	NewOrder(ctx context.Context, in *OrderInfo, opts ...grpc.CallOption) (*OrderResponse, error)
+	NewOrder(ctx context.Context, in *OrderRequest, opts ...grpc.CallOption) (*OrderResponse, error)
 }
 
 type orderServiceClient struct {
@@ -29,7 +29,7 @@ func NewOrderServiceClient(cc grpc.ClientConnInterface) OrderServiceClient {
 	return &orderServiceClient{cc}
 }
 
-func (c *orderServiceClient) NewOrder(ctx context.Context, in *OrderInfo, opts ...grpc.CallOption) (*OrderResponse, error) {
+func (c *orderServiceClient) NewOrder(ctx context.Context, in *OrderRequest, opts ...grpc.CallOption) (*OrderResponse, error) {
 	out := new(OrderResponse)
 	err := c.cc.Invoke(ctx, "/services.OrderService/NewOrder", in, out, opts...)
 	if err != nil {
@@ -42,7 +42,7 @@ func (c *orderServiceClient) NewOrder(ctx context.Context, in *OrderInfo, opts .
 // All implementations must embed UnimplementedOrderServiceServer
 // for forward compatibility
 type OrderServiceServer interface {
-	NewOrder(context.Context, *OrderInfo) (*OrderResponse, error)
+	NewOrder(context.Context, *OrderRequest) (*OrderResponse, error)
 	mustEmbedUnimplementedOrderServiceServer()
 }
 
@@ -50,7 +50,7 @@ type OrderServiceServer interface {
 type UnimplementedOrderServiceServer struct {
 }
 
-func (UnimplementedOrderServiceServer) NewOrder(context.Context, *OrderInfo) (*OrderResponse, error) {
+func (UnimplementedOrderServiceServer) NewOrder(context.Context, *OrderRequest) (*OrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NewOrder not implemented")
 }
 func (UnimplementedOrderServiceServer) mustEmbedUnimplementedOrderServiceServer() {}
@@ -67,7 +67,7 @@ func RegisterOrderServiceServer(s grpc.ServiceRegistrar, srv OrderServiceServer)
 }
 
 func _OrderService_NewOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(OrderInfo)
+	in := new(OrderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -79,7 +79,7 @@ func _OrderService_NewOrder_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: "/services.OrderService/NewOrder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServiceServer).NewOrder(ctx, req.(*OrderInfo))
+		return srv.(OrderServiceServer).NewOrder(ctx, req.(*OrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
