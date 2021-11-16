@@ -21,6 +21,10 @@ func (u *UserService) QueryUserScoreByTWS(stream UserService_QueryUserScoreByTWS
 			log.Println("no data")
 			return nil
 		}
+		if stream.Context().Err() == context.Canceled{
+			log.Println("链接被取消了")
+			return err
+		}
 		if err != nil {
 			return err
 		}

@@ -5,51 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96ceb427-63b8-4cc2-9914-0d5b43653351" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../goWsServer/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../goWsServer/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../goWsServer/utilities/utilities.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../goWsServer/utilities/utilities_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../goWsServer/websocket" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../goWsServer/ws/client.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../goWsServer/ws/hub.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../goWsServer/ws/websocket.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../goWsServer/ws/wstest/wsTest.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../goWsServer/ws/wstest/wstest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/Users.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/Users_grpc.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../grpc-demo/pb/Users.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../grpc-demo/pb/validate/BUILD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../grpc-demo/pb/validate/validate.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../grpc-demo/pb/validate/validate.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../grpc-demo/pb/validate/validate.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../grpc-demo/services/Models.pb.validate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../grpc-demo/services/UserService.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../grpc-demo/services/Users.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../grpc-demo/services/Users_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goTour/Slice.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goTour/Slice.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc" beforeDir="false" afterPath="$PROJECT_DIR$/rpc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/HelloService.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/Models.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/Models.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/OrderService.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/Orders.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/Orders.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/Orders_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/Orders_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/ProdService.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/gRPCServer/gRPCServer" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/gRPCServer/gRPCServer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/gRPCServer/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/gRPCServer/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/genPb.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/genPb.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/httpServer/httpServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/httpServer/httpServer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/pb/Models.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/pb/Models.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/services/Gateway/Hello.pb.gw.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/services/Hello.pb.gw.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/services/Gateway/Orders.pb.gw.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/services/Orders.pb.gw.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/services/Gateway/Prod.pb.gw.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/services/Prod.pb.gw.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../grpc-demo/services/Models.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/../grpc-demo/services/Models.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
