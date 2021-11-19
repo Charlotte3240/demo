@@ -91,3 +91,26 @@ func BenchmarkSplit(b *testing.B) {
 		ok  	testdemo	1.293s
 	*/
 }
+
+
+
+
+
+
+func BenchmarkMd51(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Md51()
+	}
+}
+
+func BenchmarkMd52(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Md52()
+	}
+}
+
+func BenchmarkMd53(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Md53()
+	}
+}

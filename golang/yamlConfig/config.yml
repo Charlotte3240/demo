@@ -1,0 +1,4 @@
+# py拼音 grpc 地址
+pypinyinAddr: 47.96.228.29:50051
+# tfs grpc 地址
+tfsAddr: 47.96.228.29:8500
