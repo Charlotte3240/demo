@@ -1,0 +1,6 @@
+framework module Pods_HCLog {
+  umbrella header "Pods-HCLog-umbrella.h"
+
+  export *
+  module * { export * }
+}
