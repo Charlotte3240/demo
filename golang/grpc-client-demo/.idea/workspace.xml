@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96ceb427-63b8-4cc2-9914-0d5b43653351" name="Changes" comment="" />
+    <list default="true" id="96ceb427-63b8-4cc2-9914-0d5b43653351" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../gin-tour/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../gin-tour/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gin-tour/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../gin-tour/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goTour/Flag.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goTour/Flag.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goTour/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../goTour/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goTour/time.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goTour/time.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +59,25 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/services" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="grpc-client-demo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="grpc-client-demo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">

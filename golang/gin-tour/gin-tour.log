@@ -1,0 +1,5 @@
+2021-11-24T11:41:07.174+0800	INFO	gin-tour/main.go:25	hello world
+2021-11-24T11:44:38.181+0800	INFO	gin-tour/main.go:31	hello world
+2021-11-24T11:44:43.795+0800	INFO	gin-tour/main.go:31	hello world
+2021-11-24T11:45:00.178+0800	INFO	gin-tour/main.go:31	hello world
+2021-11-24T11:45:16.599+0800	INFO	gin-tour/main.go:31	hello world

@@ -24,26 +24,27 @@ func main() {
 	// 使用openfile写入文件
 	//writeFile1()
 	// 使用bufio写入文件
-	//writeFile2()
+	writeFile2()
 
 	// 使用ioutil 来写入文件
-	writeFile3()
+	// writeFile3()
 }
+
 // writeFile3 使用ioutil 写入文件
-func writeFile3(){
+func writeFile3() {
 	err := ioutil.WriteFile("./log.txt", []byte("ioutil 写入的内1容"), 0777)
 	if err != nil {
-		log.Println("ioutil write file err",err.Error())
+		log.Println("ioutil write file err", err.Error())
 		return
 	}
 }
 
 //writeFile2 使用bufio 写入文件
-func writeFile2(){
-	fileObj,err := os.OpenFile("./log.txt",os.O_WRONLY|os.O_APPEND| os.O_CREATE,0777)
+func writeFile2() {
+	fileObj, err := os.OpenFile("./log.txt", os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0777)
 	defer fileObj.Close()
-	if err != nil{
-		log.Println("open file err",err.Error())
+	if err != nil {
+		log.Println("open file err", err.Error())
 		return
 	}
 
@@ -55,19 +56,18 @@ func writeFile2(){
 	w.Flush()
 }
 
-
-func writeFile1(){
+func writeFile1() {
 	/*
-	os.O_WRONLY 只写
-	os.O_APPEND 追加
-	os.O_TRUNC  清空
-	os.O_CREATE 创建
+		os.O_WRONLY 只写
+		os.O_APPEND 追加
+		os.O_TRUNC  清空
+		os.O_CREATE 创建
 	*/
 
-	fileObj,err := os.OpenFile("./log.txt",os.O_WRONLY|os.O_APPEND| os.O_CREATE,0777)
+	fileObj, err := os.OpenFile("./log.txt", os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0777)
 	defer fileObj.Close()
-	if err != nil{
-		log.Println("open file err",err.Error())
+	if err != nil {
+		log.Println("open file err", err.Error())
 		return
 	}
 	fileObj.Write([]byte("new line content \n"))
@@ -75,23 +75,22 @@ func writeFile1(){
 }
 
 // readfile3 使用ioutil
-func readfile3(){
-	content,err := ioutil.ReadFile("./fileOp.go")
-	if err != nil{
+func readfile3() {
+	content, err := ioutil.ReadFile("./fileOp.go")
+	if err != nil {
 		log.Println(err)
 		return
 	}
 	log.Println(string(content))
 }
 
-
 // 使用bufio来读取
 func openFile2(path string) {
 
 	// file obj
-	fileObj ,err := os.Open(path)
-	if err != nil{
-		log.Println("open file fail ",err.Error())
+	fileObj, err := os.Open(path)
+	if err != nil {
+		log.Println("open file fail ", err.Error())
 		return
 	}
 
@@ -101,12 +100,12 @@ func openFile2(path string) {
 	reader := bufio.NewReader(fileObj)
 	for {
 		content, err := reader.ReadString('\n')
-		if err == io.EOF{
+		if err == io.EOF {
 			log.Println("read complete")
 			return
 		}
-		if err != nil{
-			log.Println("read from file fail",err.Error())
+		if err != nil {
+			log.Println("read from file fail", err.Error())
 			return
 		}
 		fmt.Printf(content)

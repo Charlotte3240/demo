@@ -1,1 +1,3 @@
-ioutil 写入的内1容
+write 
+write string 
+b😓
