@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct LandMarkRow : View {
+    @EnvironmentObject var modelData : ModelData
+    
+    var landmarkIndex : Int{
+        modelData.landmarks.firstIndex(where: {$0.id == landmark.id})!
+    }
     
     var landmark : LandMark
     
@@ -19,7 +24,8 @@ struct LandMarkRow : View {
             Text(landmark.name)
             Spacer()
             
-            FavoriteButton(isSet: .constant(landmark.isFavorite))
+            FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                .buttonStyle(.plain) // 加上了button style 之后 就可以比navigationLink 优先级高
         }
     }
 }
