@@ -3,3 +3,9 @@
 2021-11-24T11:44:43.795+0800	INFO	gin-tour/main.go:31	hello world
 2021-11-24T11:45:00.178+0800	INFO	gin-tour/main.go:31	hello world
 2021-11-24T11:45:16.599+0800	INFO	gin-tour/main.go:31	hello world
+2022-01-14T14:52:33.099+0800	INFO	gin-tour/main.go:29		{"token": "dsadsa"}
+2022-01-14T14:52:45.400+0800	ERROR	gin-tour/main.go:32	no such key from url query param
+2022-01-14T16:13:43.773+0800	INFO	gin-tour/main.go:30	login	{"userName": "123", "pwd": "321"}
+2022-01-14T16:14:46.428+0800	INFO	gin-tour/main.go:30	login	{"userName": "chunqi.liu", "pwd": "liuchunqi"}
+2022-01-14T16:16:32.652+0800	INFO	gin-tour/main.go:30	login	{"userName": "12", "pwd": "321"}
+2022-01-14T16:17:14.423+0800	INFO	gin-tour/main.go:31	login	{"userName": "321", "pwd": "123"}
