@@ -54,6 +54,7 @@ func writeFile2() {
 	w.WriteByte('b')
 	w.WriteRune(rune('😓'))
 	w.Flush()
+
 }
 
 func writeFile1() {

@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/gorilla/websocket"
 	"log"
-	. "nsqk.com/websocket/utilities"
 	"sync"
 	"time"
+
+	"github.com/gorilla/websocket"
+	. "nsqk.com/websocket/utilities"
 )
 
 var wg sync.WaitGroup
@@ -76,9 +77,9 @@ func (wc *WSClientManager) sendMsg() {
 			// 处理ping
 			go func() { wc.sendMsgCH <- "ping" }()
 		case msg := <-wc.sendMsgCH:
-			if msg == "ping"{
+			if msg == "ping" {
 				wc.conn.WriteMessage(websocket.PingMessage, nil)
-			}else {
+			} else {
 				wc.conn.WriteMessage(websocket.TextMessage, Str2bytes(msg))
 			}
 

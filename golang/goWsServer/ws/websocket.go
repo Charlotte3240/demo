@@ -2,7 +2,6 @@ package ws
 
 import (
 	"github.com/gin-gonic/gin"
-	"log"
 	//_ "net/http/pprof" //性能监控
 )
 

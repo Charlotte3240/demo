@@ -17,11 +17,11 @@ func (u *UserService) QueryUserScoreByTWS(stream UserService_QueryUserScoreByTWS
 	for {
 		// read data from client
 		recv, err := stream.Recv()
-		if err == io.EOF{
+		if err == io.EOF {
 			log.Println("no data")
 			return nil
 		}
-		if stream.Context().Err() == context.Canceled{
+		if stream.Context().Err() == context.Canceled {
 			log.Println("链接被取消了")
 			return err
 		}
@@ -33,8 +33,8 @@ func (u *UserService) QueryUserScoreByTWS(stream UserService_QueryUserScoreByTWS
 			recv.UserInfos[index].UserScore = float32(rand.Intn(100))
 		}
 		// send data to client
-		if err := stream.Send(&UserScoreResponse{UserInfos: recv.UserInfos}); err !=nil{
-			log.Println("send data to client error ",err.Error())
+		if err := stream.Send(&UserScoreResponse{UserInfos: recv.UserInfos}); err != nil {
+			log.Println("send data to client error ", err.Error())
 			return err
 		}
 	}
