@@ -9,3 +9,23 @@
 2022-01-14T16:14:46.428+0800	INFO	gin-tour/main.go:30	login	{"userName": "chunqi.liu", "pwd": "liuchunqi"}
 2022-01-14T16:16:32.652+0800	INFO	gin-tour/main.go:30	login	{"userName": "12", "pwd": "321"}
 2022-01-14T16:17:14.423+0800	INFO	gin-tour/main.go:31	login	{"userName": "321", "pwd": "123"}
+2022-03-15T16:41:27.321+0800	INFO	gin-tour/main.go:42	get request
+2022-03-15T16:42:00.995+0800	INFO	gin-tour/main.go:42	get request
+2022-03-15T16:42:26.364+0800	INFO	gin-tour/main.go:44	PUT
+2022-03-15T16:42:36.661+0800	INFO	gin-tour/main.go:44	POST
+2022-03-15T16:48:20.961+0800	INFO	gin-tour/main.go:42	get request
+2022-03-22T17:56:12.179+0800	INFO	gin-tour/main.go:95	test middleware
+2022-03-22T17:58:20.982+0800	INFO	gin-tour/main.go:95	test middleware
+2022-03-22T17:58:20.983+0800	INFO	gin-tour/main.go:99	后续处理逻辑已经执行完了
+2022-03-22T17:59:31.365+0800	INFO	gin-tour/main.go:95	test middleware
+2022-03-22T17:59:31.366+0800	INFO	gin-tour/main.go:102	后续处理逻辑已经执行完了
+2022-03-22T18:00:00.556+0800	INFO	gin-tour/main.go:95	test middleware
+2022-03-22T18:00:00.557+0800	INFO	gin-tour/main.go:102	后续处理逻辑已经执行完了
+2022-03-22T18:00:01.807+0800	INFO	gin-tour/main.go:95	test middleware
+2022-03-22T18:00:01.807+0800	INFO	gin-tour/main.go:102	后续处理逻辑已经执行完了
+2022-03-22T18:00:13.982+0800	INFO	gin-tour/main.go:95	test middleware
+2022-03-22T18:00:35.860+0800	INFO	gin-tour/main.go:95	test middleware
+2022-03-22T18:04:15.160+0800	INFO	gin-tour/main.go:96	test middleware
+2022-03-22T18:04:15.161+0800	INFO	gin-tour/main.go:102	后续处理逻辑已经执行完了	{"cost": 0}
+2022-03-22T18:04:37.146+0800	INFO	gin-tour/main.go:96	test middleware
+2022-03-22T18:04:37.146+0800	INFO	gin-tour/main.go:102	后续处理逻辑已经执行完了	{"cost": 0}

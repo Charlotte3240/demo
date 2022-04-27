@@ -16,11 +16,11 @@ import (
 )
 
 func init() {
-	LoggerSetting()
+	Setting()
 }
 
-// LoggerSetting log 日志设置
-func LoggerSetting() {
+// Setting log 日志设置
+func Setting() {
 	writerSyncer := getLogWriter()
 	encoder := getEncoder()
 
@@ -131,24 +131,4 @@ func GinRecovery(logger *zap.Logger, stack bool) gin.HandlerFunc {
 		}()
 		c.Next()
 	}
-}
-
-func Example() {
-	// 只能结构化日志，不能进行格式化
-	zap.L().Info("this is logger info log",
-		zap.Int("keyInt", 2333),
-		zap.String("keyString", "string value"),
-		zap.Duration("keyDuration", time.Second*3),
-	)
-
-	// 可以格式化日志，结构化日志，速度较慢
-	m := 333
-	zap.L().Sugar().Info("info level log")
-	zap.L().Sugar().Infow("infow log",
-		"count", m,
-		"url", "https://www.baidu.com",
-	)
-	zap.L().Sugar().Infof("this is a  sugar %v message", "info")
-
-	zap.L().Sugar().Error("this is an error log")
 }
