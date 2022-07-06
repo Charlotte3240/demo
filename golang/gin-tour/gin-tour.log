@@ -29,3 +29,25 @@
 2022-03-22T18:04:15.161+0800	INFO	gin-tour/main.go:102	后续处理逻辑已经执行完了	{"cost": 0}
 2022-03-22T18:04:37.146+0800	INFO	gin-tour/main.go:96	test middleware
 2022-03-22T18:04:37.146+0800	INFO	gin-tour/main.go:102	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T16:54:55.835+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T16:54:55.836+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T16:56:55.793+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T16:56:55.794+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T16:57:26.244+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T16:57:26.247+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T16:59:56.541+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T16:59:56.542+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T17:00:14.030+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T17:00:14.030+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T17:48:14.831+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T17:48:14.834+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T17:49:03.698+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T17:49:03.698+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T17:49:17.656+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T17:49:17.657+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T17:57:15.971+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T17:57:15.972+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T17:57:46.476+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T17:57:46.477+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}
+2022-06-16T17:59:08.822+0800	INFO	gin-tour/main.go:136	test middleware
+2022-06-16T17:59:08.823+0800	INFO	gin-tour/main.go:142	后续处理逻辑已经执行完了	{"cost": 0}

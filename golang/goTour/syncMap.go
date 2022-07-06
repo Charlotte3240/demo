@@ -19,6 +19,7 @@ var (
 )
 
 func main() {
+
 	for i := 0; i < 30; i++ {
 		wg.Add(2)
 		go setMapvalue(i, i+1)

@@ -93,7 +93,9 @@ func main() {
 	// 全局注册中间件
 	r.Use(testMiddleWare)
 
-	r.Run(":9090")
+	r.GET("/movie", movie)
+
+	r.Run(":10010")
 }
 
 func authMiddleware(doCheck bool) gin.HandlerFunc {
@@ -109,6 +111,25 @@ func authMiddleware(doCheck bool) gin.HandlerFunc {
 		}
 
 	}
+}
+
+type Movie struct {
+	Name string `json:"name"`
+	Year string `json:"year"`
+}
+
+func movie(c *gin.Context) {
+	ret := []Movie{
+		{
+			Name: "asd",
+			Year: "2021",
+		},
+		{
+			Name: "qwe",
+			Year: "2022",
+		},
+	}
+	c.JSON(http.StatusOK, ret)
 }
 
 func testMiddleWare(c *gin.Context) {
