@@ -12,24 +12,22 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text(content.isEmpty ? "Hello, world!" : content)
-            
             Button {
-                WidgetCenter.shared.reloadTimelines(ofKind: "RainbowFartLarge")
                 WidgetCenter.shared.reloadTimelines(ofKind: "RainbowFartSmall")
+                WidgetCenter.shared.reloadTimelines(ofKind: "RainbowFartLarge")
             } label: {
-                Text("refresh")
+                Text("refresh rainbow fart")
             }
-
-            
+                        
         }
         .padding()
         .onOpenURL { url in
             debugPrint(url.absoluteString)
-            content = url.relativeString
+            if url.scheme == "alipays" || url.scheme == "weixin"{
+                UIApplication.shared.open(url)
+            }else{
+                content = url.relativeString
+            }
         }
 
     }

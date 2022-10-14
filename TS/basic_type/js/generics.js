@@ -28,3 +28,14 @@ function getLengthFull(arg) {
     return arg.length;
 }
 console.log(getLengthFull("first"));
+class Collection {
+    constructor() {
+        this.data = [];
+    }
+    push(...items) {
+        this.data.push(...items);
+    }
+    shift() {
+        return this.data.shift();
+    }
+}

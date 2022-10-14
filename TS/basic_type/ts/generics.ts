@@ -35,3 +35,15 @@ function getLengthFull<T extends {length : number}>(arg : T) : number{
 }
 console.log(getLengthFull("first"))
 
+
+
+class Collection <T> {
+    data : T[] = []
+    public push(...items :T[]){
+        this.data.push(...items)
+    }
+    public shift(){
+        return this.data.shift()
+    }
+}
+

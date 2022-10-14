@@ -12,7 +12,7 @@ type UserService struct {
 }
 
 // QueryUserScoreByTWS
-//双向流模式
+// 双向流模式
 func (u *UserService) QueryUserScoreByTWS(stream UserService_QueryUserScoreByTWSServer) error {
 	for {
 		// read data from client
@@ -26,6 +26,7 @@ func (u *UserService) QueryUserScoreByTWS(stream UserService_QueryUserScoreByTWS
 			return err
 		}
 		if err != nil {
+			log.Println("grpc recv an error ", err)
 			return err
 		}
 		// biz dealWith code
@@ -41,7 +42,7 @@ func (u *UserService) QueryUserScoreByTWS(stream UserService_QueryUserScoreByTWS
 	return nil
 }
 
-//QueryUserScoreByClientStream
+// QueryUserScoreByClientStream
 // 客户端流模式
 func (u *UserService) QueryUserScoreByClientStream(stream UserService_QueryUserScoreByClientStreamServer) error {
 	res := make([]*UserInfo, 0)
@@ -73,7 +74,7 @@ func (u *UserService) QueryUserScoreByClientStream(stream UserService_QueryUserS
 	return nil
 }
 
-//QueryUserScoreByServerStream
+// QueryUserScoreByServerStream
 // 服务端流处理模式
 func (u *UserService) QueryUserScoreByServerStream(req *UserScoreRequest, stream UserService_QueryUserScoreByServerStreamServer) error {
 	res := make([]*UserInfo, 0)

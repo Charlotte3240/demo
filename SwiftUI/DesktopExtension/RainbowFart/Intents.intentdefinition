@@ -3,51 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>INEnums</key>
-	<array>
-		<dict>
-			<key>INEnumDisplayName</key>
-			<string>Built In</string>
-			<key>INEnumDisplayNameID</key>
-			<string>KopSa4</string>
-			<key>INEnumGeneratesHeader</key>
-			<true/>
-			<key>INEnumName</key>
-			<string>BuiltIn</string>
-			<key>INEnumType</key>
-			<string>Regular</string>
-			<key>INEnumValues</key>
-			<array>
-				<dict>
-					<key>INEnumValueDisplayName</key>
-					<string>是兄弟就来砍我</string>
-					<key>INEnumValueDisplayNameID</key>
-					<string>7x40hD</string>
-					<key>INEnumValueName</key>
-					<string>unknown</string>
-				</dict>
-				<dict>
-					<key>INEnumValueDisplayName</key>
-					<string>贪玩蓝月</string>
-					<key>INEnumValueDisplayNameID</key>
-					<string>E12rqi</string>
-					<key>INEnumValueIndex</key>
-					<integer>1</integer>
-					<key>INEnumValueName</key>
-					<string>value</string>
-				</dict>
-			</array>
-		</dict>
-	</array>
+	<array/>
 	<key>INIntentDefinitionModelVersion</key>
 	<string>1.2</string>
 	<key>INIntentDefinitionNamespace</key>
 	<string>KkZs02</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>21G72</string>
+	<string>21G115</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>14A5294g</string>
+	<string>14A400</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>14.0</string>
+	<string>14.0.1</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
@@ -69,7 +35,7 @@
 					<key>INIntentParameterConfigurable</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
-					<string>输入标题</string>
+					<string>标题</string>
 					<key>INIntentParameterDisplayNameID</key>
 					<string>ao8tiS</string>
 					<key>INIntentParameterDisplayPriority</key>
@@ -101,86 +67,11 @@
 							<key>INIntentParameterPromptDialogType</key>
 							<string>Primary</string>
 						</dict>
-						<dict>
-							<key>INIntentParameterPromptDialogCustom</key>
-							<true/>
-							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>There are ${count} options matching ‘${inputTitle}’.</string>
-							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>YIsZi6</string>
-							<key>INIntentParameterPromptDialogType</key>
-							<string>DisambiguationIntroduction</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterPromptDialogCustom</key>
-							<true/>
-							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>Just to confirm, you wanted ‘${inputTitle}’?</string>
-							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>Xf2slx</string>
-							<key>INIntentParameterPromptDialogType</key>
-							<string>Confirmation</string>
-						</dict>
 					</array>
 					<key>INIntentParameterTag</key>
 					<integer>8</integer>
 					<key>INIntentParameterType</key>
 					<string>String</string>
-				</dict>
-				<dict>
-					<key>INIntentParameterConfigurable</key>
-					<true/>
-					<key>INIntentParameterDisplayName</key>
-					<string>Type</string>
-					<key>INIntentParameterDisplayNameID</key>
-					<string>r7xiVA</string>
-					<key>INIntentParameterDisplayPriority</key>
-					<integer>2</integer>
-					<key>INIntentParameterEnumType</key>
-					<string>BuiltIn</string>
-					<key>INIntentParameterEnumTypeNamespace</key>
-					<string>KkZs02</string>
-					<key>INIntentParameterName</key>
-					<string>type</string>
-					<key>INIntentParameterPromptDialogs</key>
-					<array>
-						<dict>
-							<key>INIntentParameterPromptDialogCustom</key>
-							<true/>
-							<key>INIntentParameterPromptDialogType</key>
-							<string>Configuration</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterPromptDialogCustom</key>
-							<true/>
-							<key>INIntentParameterPromptDialogType</key>
-							<string>Primary</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterPromptDialogCustom</key>
-							<true/>
-							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>There are ${count} options matching ‘${type}’.</string>
-							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>VXtWc8</string>
-							<key>INIntentParameterPromptDialogType</key>
-							<string>DisambiguationIntroduction</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterPromptDialogCustom</key>
-							<true/>
-							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>Just to confirm, you wanted ‘${type}’?</string>
-							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>pvIBOW</string>
-							<key>INIntentParameterPromptDialogType</key>
-							<string>Confirmation</string>
-						</dict>
-					</array>
-					<key>INIntentParameterTag</key>
-					<integer>6</integer>
-					<key>INIntentParameterType</key>
-					<string>Integer</string>
 				</dict>
 			</array>
 			<key>INIntentResponse</key>

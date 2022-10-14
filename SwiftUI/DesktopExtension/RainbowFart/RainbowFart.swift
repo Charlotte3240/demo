@@ -8,6 +8,9 @@
 import WidgetKit
 import SwiftUI
 
+private let avatar : UIImage = UIImage(named: "avatar") ?? UIImage()
+
+
 @main
 struct AllWidget : WidgetBundle{
     @Environment(\.widgetFamily) var family : WidgetFamily
@@ -15,11 +18,34 @@ struct AllWidget : WidgetBundle{
     var body: some Widget{
         RainbowFartWidgetSmall()
         RainbowFartWidgetLarge()
+        SuishenmaAcessCircleWidget()
+        XingchengmaAcessCircleWidget()
     }
 }
 
 
 //MARK: - widget
+
+struct SuishenmaAcessCircleWidget : Widget{
+    let kind : String = "suishenma"
+    var body: some WidgetConfiguration{
+        IntentConfiguration(kind: kind, intent:RainbowFartIntent.self, provider: Provider()) { entry in
+            SuishenmaView()
+        }
+        .supportedFamilies([.accessoryCircular])
+    }
+}
+struct XingchengmaAcessCircleWidget : Widget{
+    let kind : String = "xingchengma"
+    var body: some WidgetConfiguration{
+        IntentConfiguration(kind: kind, intent:RainbowFartIntent.self, provider: Provider()) { entry in
+            XingchengmaView()
+        }
+        .supportedFamilies([.accessoryCircular])
+    }
+}
+
+
 struct RainbowFartWidgetSmall: Widget {
     @Environment(\.widgetFamily) var family : WidgetFamily
     let kind: String = "RainbowFartSmall"
@@ -27,8 +53,8 @@ struct RainbowFartWidgetSmall: Widget {
         IntentConfiguration(kind: kind, intent: RainbowFartIntent.self, provider: Provider()) { entry in
             RainbowFartEntryView(entry: entry)
         }
-        .configurationDisplayName("RainbowFartSmall Widget")
-        .description("This is an small widget.")
+        .configurationDisplayName("小号彩虹屁")
+        .description("小尺寸显示彩虹屁")
         .supportedFamilies([.systemSmall])
     }
 }
@@ -41,8 +67,8 @@ struct RainbowFartWidgetLarge: Widget {
         IntentConfiguration(kind: kind, intent: RainbowFartIntent.self, provider: Provider()) { entry in
             RainbowFartEntryNotSmallView(entry: entry)
         }
-        .configurationDisplayName("RainbowFartLarge Widget")
-        .description("This is an large widget.")
+        .configurationDisplayName("大号彩虹屁")
+        .description("较大尺寸的显示彩虹屁")
         .supportedFamilies([.systemMedium,.systemLarge,.systemExtraLarge])
     }
 }
@@ -55,15 +81,22 @@ struct RainbowFartWidgetLarge: Widget {
 struct Provider: IntentTimelineProvider {
 
     func placeholder(in context: Context) -> RainbowFartEntry {
-        let rainbowFart = RainbowFart(data: RData(type: "彩虹屁",text: "窗前明月光，疑似地上霜"))
+        let rainbowFart = RainbowFart(data: RData(type: "一剪梅",text: "春赏百花冬观雪，醒亦念卿，梦亦念卿"))
         return RainbowFartEntry(date: Date(),fart: rainbowFart, configuration: RainbowFartIntent())
     }
     
     func getSnapshot(for configuration: RainbowFartIntent, in context: Context, completion: @escaping (RainbowFartEntry) -> ()) {
-        let rainbowFart = RainbowFart(data: RData(type: "彩虹屁",text: "窗前明月光，疑似地上霜"))
-        let entry = RainbowFartEntry(date: Date(),fart: rainbowFart, configuration: configuration)
-        completion(entry)
+        Task{
+            if let data = try? await Api.getContent(){
+                let entry = RainbowFartEntry(date: Date(),fart: data, configuration: configuration,image: Api.getImage())
+                completion(entry)
+            }else{
+                let rainbowFart = RainbowFart(data: RData(type: "一剪梅·雨打梨花深闭门",text: "春赏百花冬观雪，醒亦念卿，梦亦念卿"))
+                let entry = RainbowFartEntry(date: Date(),fart: rainbowFart, configuration: configuration)
+                completion(entry)
 
+            }
+        }
     }
     
     func getTimeline(for configuration: RainbowFartIntent, in context: Context, completion: @escaping (Timeline<RainbowFartEntry>) -> ()) {
@@ -75,11 +108,10 @@ struct Provider: IntentTimelineProvider {
                 var entry : RainbowFartEntry
                 if let data = try? await Api.getContent(){
                     entry = RainbowFartEntry(date: updateDate,fart: data, configuration: configuration,image: Api.getImage())
-                }else{
-                    let rainbowFart = RainbowFart(data: RData(type: "彩虹屁",text: "窗前明月光，疑似地上霜"))
-                    entry = RainbowFartEntry(date: updateDate,fart: rainbowFart, configuration: configuration)
+                    if data.data?.text?.contains("访问太快") == false{
+                        entrys.append(entry)
+                    }
                 }
-                entrys.append(entry)
             }
             let timeline = Timeline(entries: entrys, policy: .atEnd)
             completion(timeline)
@@ -118,14 +150,15 @@ class Api {
         request.httpMethod = "GET"
         let (data,_) = try await URLSession.shared.data(for: request)
         let caihongpi = try JSONDecoder().decode(RainbowFart.self, from: data)
+        debugPrint(caihongpi)
         return caihongpi
     }
     
     static func getImage() -> UIImage{
-        if let imageData = try? Data(contentsOf: URL(string: "http://cdn.ivy4ever.com/tuchuang/IMG_5253.GIF")!){
-            return UIImage(data: imageData) ?? UIImage()
-        }
-        return UIImage()
+//        if let imageData = try? Data(contentsOf: URL(string: "https://cdn.ivy4ever.com/tuchuang/IMG_5253.jpg")!){
+//            return UIImage(data: imageData) ?? UIImage()
+//        }
+        return avatar
     }
 }
 
@@ -134,6 +167,27 @@ class Api {
 //MARK: - View
 
 public let backGroundLine : LinearGradient = LinearGradient(gradient: Gradient(colors: [.init(red: Double(144 / 255.0), green: Double(252 / 255.0), blue: Double(231 / 255.0)), .init(red: Double(50 / 204), green: Double(188 / 255.0), blue: Double(231 / 255.0))]), startPoint: .topLeading, endPoint: .bottomTrailing)
+
+
+struct SuishenmaView : View{
+    var body: some View{
+        
+        Image(uiImage: UIImage.init(named: "jiankangma")!)
+            .resizable()
+            .frame(width: 50,height: 50)
+            .widgetURL(URL(string: "alipays://platformapi/startapp?appId=2019072665939857&page=pages%2Fmy-station-type%2Fmy-station-type"))
+    }
+    
+}
+struct XingchengmaView : View{
+    var body: some View{
+        Image(uiImage: UIImage.init(named: "xingchengma")!)
+            .resizable()
+            .frame(width: 55,height: 55)
+            .widgetURL(URL(string: "alipays://platformapi/startapp?appId=2021002170600786"))
+    }
+    
+}
 
 
 struct RainbowFartEntryView : View {
@@ -167,7 +221,7 @@ struct RainbowFartEntryNotSmallView : View {
                 .widgetURL(URL(string: "https://www.ivy4ever.com/imageClick"))
             VStack(alignment: .leading, spacing: 4){
                 Link(destination: URL(string: "https://www.ivy4ever.com/buttonClick")!) {
-                    Text(entry.configuration.inputTitle ?? "输入的标题")
+                    Text(entry.configuration.inputTitle ?? "彩虹屁")
                 }
                 .padding() // 非small 大小的可以用link
                 .bold()
@@ -195,6 +249,8 @@ struct RainbowFartView_Previews: PreviewProvider {
             
             RainbowFartEntryNotSmallView(entry: RainbowFartEntry(date: Date(), configuration: RainbowFartIntent()))
                 .previewContext(WidgetPreviewContext(family: .systemLarge))
+            SuishenmaView()
+                .previewContext(WidgetPreviewContext(family: .accessoryCircular))
 
         }
     }

@@ -11,14 +11,15 @@ import (
 	//. "nsqk.com/rpc/services"
 	"context"
 	"fmt"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/protobuf/types/known/timestamppb"
 	"io"
 	"log"
 	"nskq.com/rpc/helper"
-	. "nskq.com/rpc/services"
 	"time"
+
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
+	"google.golang.org/protobuf/types/known/timestamppb"
+	. "nskq.com/rpc/services"
 )
 
 func main() {
@@ -29,7 +30,7 @@ func main() {
 
 }
 
-//MARK: - 使用双向认证证书
+// MARK: - 使用双向认证证书
 func useClientPemFile() {
 	creds := helper.GetClientCreds()
 
@@ -132,7 +133,7 @@ func normalGPRCMode(ctx context.Context, userClient UserServiceClient, usersReq 
 	}
 }
 
-//clientStreamMode 客户端流模式
+// clientStreamMode 客户端流模式
 func clientStreamMode(ctx context.Context, userClient UserServiceClient, usersReq *UserScoreRequest) {
 	//客户端流模式
 	// 创建流模式客户端
@@ -161,7 +162,7 @@ func clientStreamMode(ctx context.Context, userClient UserServiceClient, usersRe
 	log.Println("client stream result:", clientStreamRes)
 }
 
-//serverStreamMode 服务端流模式
+// serverStreamMode 服务端流模式
 func serverStreamMode(ctx context.Context, userClient UserServiceClient, usersReq *UserScoreRequest) {
 	// 改用服务端流的 service
 	stream, err := userClient.QueryUserScoreByServerStream(ctx, usersReq)
@@ -187,7 +188,7 @@ func serverStreamMode(ctx context.Context, userClient UserServiceClient, usersRe
 
 }
 
-//bidStreamMode 双向流模式
+// bidStreamMode 双向流模式
 func bidStreamMode(ctx context.Context, userClient UserServiceClient, usersReq *UserScoreRequest) {
 	stream, err := userClient.QueryUserScoreByTWS(ctx)
 	if err != nil {
@@ -197,12 +198,12 @@ func bidStreamMode(ctx context.Context, userClient UserServiceClient, usersReq *
 	// read from server stream
 	go func() {
 		for {
-			res,err := stream.Recv()
-			if err != nil{
-				log.Println("get data from server stream error ",err.Error())
+			res, err := stream.Recv()
+			if err != nil {
+				log.Println("get data from server stream error ", err.Error())
 				continue
 			}
-			log.Println("userInfos is ",res)
+			log.Println("userInfos is ", res)
 		}
 	}()
 	// send data to server use stream
@@ -212,9 +213,14 @@ func bidStreamMode(ctx context.Context, userClient UserServiceClient, usersReq *
 		}
 		time.Sleep(time.Second)
 	}
+	// time.Sleep(10 * time.Second)
+	// if err := stream.CloseSend(); err != nil {
+	// 	log.Println("close send err ", err)
+	// }
+
 }
 
-//MARK: - 使用服务端证书
+// MARK: - 使用服务端证书
 func useServerPemFile() {
 	// 加载证书，创建credentials
 	// 这里的serverNameOverride 要填写服务端的地址

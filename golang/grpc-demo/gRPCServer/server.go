@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/reflection"
 	"log"
 	"net"
 	"net/http"
+
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
+	"google.golang.org/grpc/reflection"
 	"nsqk.com/rpc/helper"
 	"nsqk.com/rpc/services"
 )
@@ -26,14 +27,13 @@ func startTwoWayCertGRPCServer() {
 	}
 	s := grpc.NewServer(grpc.Creds(helper.GetServerCreds()))
 	services.RegisterHelloWorldServer(s, new(services.HelloService))
-	services.RegisterProdServiceServer(s,new(services.ProdService))
-	services.RegisterOrderServiceServer(s,new(services.OrderService))
-	services.RegisterUserServiceServer(s,new(services.UserService))
+	services.RegisterProdServiceServer(s, new(services.ProdService))
+	services.RegisterOrderServiceServer(s, new(services.OrderService))
+	services.RegisterUserServiceServer(s, new(services.UserService))
 
 	reflection.Register(s)
-
-	err = s.Serve(lis)
 	fmt.Println("gRPC starting")
+	err = s.Serve(lis)
 	if err != nil {
 		fmt.Println("启动grpc失败 err:", err)
 	} else {
