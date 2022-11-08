@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="BroadcastDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tX-YG-yIJ">
+                                <rect key="frame" x="128.66666666666666" y="254" width="132.99999999999997" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="133" id="gX3-er-9wO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="开始/结束直播"/>
+                                <connections>
+                                    <action selector="startOrStopBroadcast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtI-gr-xCg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXp-h3-ZiP">
+                                <rect key="frame" x="32" y="150" width="94" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="开始录制"/>
+                                <connections>
+                                    <action selector="startInAppRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RMd-uT-FeN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4V-vn-ZqT">
+                                <rect key="frame" x="198" y="150" width="94" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="结束录制"/>
+                                <connections>
+                                    <action selector="stopInAppRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JEt-7I-9Rl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxq-mE-vS8">
+                                <rect key="frame" x="174" y="87" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Oc-m3-9Hm">
+                                <rect key="frame" x="150" y="315" width="92" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="退出SDK"/>
+                                <connections>
+                                    <action selector="exitSDK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pQb-D0-opS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jef-06-B20">
+                                <rect key="frame" x="149" y="211" width="94" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="准备直播"/>
+                                <connections>
+                                    <action selector="preparBroadcast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vmQ-ir-5Oh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sxq-mE-vS8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="83c-JP-Jra"/>
+                            <constraint firstItem="uXp-h3-ZiP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="103" id="bJC-3H-VP7"/>
+                            <constraint firstItem="uXp-h3-ZiP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="dIX-re-OR2"/>
+                            <constraint firstItem="9Oc-m3-9Hm" firstAttribute="top" secondItem="2tX-YG-yIJ" secondAttribute="bottom" constant="26" id="fhM-aG-86a"/>
+                            <constraint firstItem="sxq-mE-vS8" firstAttribute="centerX" secondItem="2tX-YG-yIJ" secondAttribute="centerX" id="h6b-vM-UxT"/>
+                            <constraint firstItem="m4V-vn-ZqT" firstAttribute="leading" secondItem="uXp-h3-ZiP" secondAttribute="trailing" constant="72" id="k3g-3j-og6"/>
+                            <constraint firstItem="9Oc-m3-9Hm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="m7g-0w-rdf"/>
+                            <constraint firstItem="2tX-YG-yIJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="207" id="rKp-Cq-FDH"/>
+                            <constraint firstItem="2tX-YG-yIJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vY8-fS-MRb"/>
+                            <constraint firstItem="uXp-h3-ZiP" firstAttribute="baseline" secondItem="m4V-vn-ZqT" secondAttribute="baseline" id="vjw-2e-Mqb"/>
+                            <constraint firstItem="9Oc-m3-9Hm" firstAttribute="centerX" secondItem="2tX-YG-yIJ" secondAttribute="centerX" id="z7p-L6-OGL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="timeLabel" destination="sxq-mE-vS8" id="6xN-0X-EEC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

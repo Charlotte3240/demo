@@ -14,6 +14,7 @@ import (
 	"io"
 	"log"
 	"nskq.com/rpc/helper"
+	proto "nskq.com/rpc/vmatch"
 	"time"
 
 	"google.golang.org/grpc"
@@ -24,9 +25,40 @@ import (
 
 func main() {
 	//使用双向验证证书
-	useClientPemFile()
+	//useClientPemFile()
 	// 使用服务器证书
 	//useServerPemFile()
+
+	testAsv()
+}
+
+func testAsv() {
+	ctx := context.Background()
+	ctx, cancel := context.WithCancel(ctx)
+	defer cancel()
+	conn, err := grpc.Dial(":50053", grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+	client := proto.NewSpeechMatchClient(conn)
+
+	res, err := client.Init(ctx, &proto.InitRequest{
+		Session: "123456",
+		AudioInfo: &proto.AudioSpec{
+			ReversesBytes: false,
+			NumChannels:   2,
+			SampleRate:    8000,
+			BitsPerSample: 200,
+		},
+		AppCode:  "no_web_video",
+		Customer: "1234",
+	})
+	if err != nil {
+		log.Println("client init fail", err)
+		return
+	}
+	log.Printf("get init res : %#v \n", res)
 
 }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B093D6428F6BCDD001EDD9D /* jiankangma1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B093D6328F6BCDD001EDD9D /* jiankangma1.png */; };
 		2B85CC6928B4721E008B8648 /* DesktopExtensionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B85CC6828B4721E008B8648 /* DesktopExtensionApp.swift */; };
 		2B85CC6B28B4721E008B8648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B85CC6A28B4721E008B8648 /* ContentView.swift */; };
 		2B85CC6D28B4721F008B8648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B85CC6C28B4721F008B8648 /* Assets.xcassets */; };
@@ -46,7 +45,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2B093D6328F6BCDD001EDD9D /* jiankangma1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiankangma1.png; sourceTree = "<group>"; };
 		2B85CC6528B4721E008B8648 /* DesktopExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesktopExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B85CC6828B4721E008B8648 /* DesktopExtensionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopExtensionApp.swift; sourceTree = "<group>"; };
 		2B85CC6A28B4721E008B8648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				2B85CC9028B4DC76008B8648 /* Info.plist */,
 				2B85CC6828B4721E008B8648 /* DesktopExtensionApp.swift */,
 				2B85CC6A28B4721E008B8648 /* ContentView.swift */,
-				2B093D6328F6BCDD001EDD9D /* jiankangma1.png */,
 				2B85CC6C28B4721F008B8648 /* Assets.xcassets */,
 				2B85CC6E28B4721F008B8648 /* Preview Content */,
 			);
@@ -224,7 +221,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B85CC7028B4721F008B8648 /* Preview Assets.xcassets in Resources */,
-				2B093D6428F6BCDD001EDD9D /* jiankangma1.png in Resources */,
 				2B85CC6D28B4721F008B8648 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
