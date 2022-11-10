@@ -15,7 +15,6 @@
 		2B4465D32909284E0099F995 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4465D22909284E0099F995 /* Atomic.swift */; };
 		2B4465D4290929B20099F995 /* SocketConnectionWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4465B529090D8A0099F995 /* SocketConnectionWrite.swift */; };
 		2B4465D5290929B20099F995 /* HCNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4465B729090EB40099F995 /* HCNotificationCenter.swift */; };
-		2B4465D7290BD7320099F995 /* SampleUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4465D6290BD7320099F995 /* SampleUploader.swift */; };
 		2B91721429024466000AD045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91721329024466000AD045 /* AppDelegate.swift */; };
 		2B91721829024466000AD045 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91721729024466000AD045 /* ViewController.swift */; };
 		2B91721B29024466000AD045 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B91721929024466000AD045 /* Main.storyboard */; };
@@ -25,6 +24,9 @@
 		2B91723129028B2B000AD045 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91723029028B2B000AD045 /* SampleHandler.swift */; };
 		2B91724429028B2B000AD045 /* broadcast.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2B91722B29028B2B000AD045 /* broadcast.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2BA67292291A527600658E5A /* SampleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA67291291A527600658E5A /* SampleMessage.swift */; };
+		2BA67294291BA32100658E5A /* SampleUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA67293291BA32100658E5A /* SampleUploader.swift */; };
+		2BA67297291BA33300658E5A /* SocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA67295291BA33300658E5A /* SocketConnection.m */; };
+		2BA67298291BA33300658E5A /* SocketConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA67296291BA33300658E5A /* SocketConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BDB01FB2913AAD70070DCFC /* SocketConnectionRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB01FA2913AAD70070DCFC /* SocketConnectionRead.swift */; };
 		D0BBED296BF7EF1571483491 /* Pods_BroadcastDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6173C7EFAF58737C5668940B /* Pods_BroadcastDemo.framework */; };
 		E45106F74B98A173F996CB9C /* Pods_broadcast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF670A63213C49FCDD46ADC /* Pods_broadcast.framework */; };
@@ -82,7 +84,6 @@
 		2B4465C3290911AA0099F995 /* VideoConference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoConference.h; sourceTree = "<group>"; };
 		2B4465C4290911AA0099F995 /* VideoConference.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = VideoConference.docc; sourceTree = "<group>"; };
 		2B4465D22909284E0099F995 /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
-		2B4465D6290BD7320099F995 /* SampleUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleUploader.swift; path = ../../../../SampleUploader.swift; sourceTree = "<group>"; };
 		2B91721029024466000AD045 /* BroadcastDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BroadcastDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B91721329024466000AD045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B91721729024466000AD045 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +99,9 @@
 		2BA6728F291A41C600658E5A /* BroadcastDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BroadcastDemo.entitlements; sourceTree = "<group>"; };
 		2BA67290291A42AD00658E5A /* broadcast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = broadcast.entitlements; sourceTree = "<group>"; };
 		2BA67291291A527600658E5A /* SampleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMessage.swift; sourceTree = "<group>"; };
+		2BA67293291BA32100658E5A /* SampleUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleUploader.swift; sourceTree = "<group>"; };
+		2BA67295291BA33300658E5A /* SocketConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketConnection.m; sourceTree = "<group>"; };
+		2BA67296291BA33300658E5A /* SocketConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketConnection.h; sourceTree = "<group>"; };
 		2BDB01FA2913AAD70070DCFC /* SocketConnectionRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketConnectionRead.swift; sourceTree = "<group>"; };
 		6173C7EFAF58737C5668940B /* Pods_BroadcastDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroadcastDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E143F15B57A477C8FB7A0C /* Pods-broadcastSetupUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-broadcastSetupUI.debug.xcconfig"; path = "Target Support Files/Pods-broadcastSetupUI/Pods-broadcastSetupUI.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,10 +148,12 @@
 				2B4465BA290910F20099F995 /* VCMeet.swift */,
 				2B4465D22909284E0099F995 /* Atomic.swift */,
 				2B4465B529090D8A0099F995 /* SocketConnectionWrite.swift */,
-				2B4465D6290BD7320099F995 /* SampleUploader.swift */,
 				2BA67291291A527600658E5A /* SampleMessage.swift */,
+				2BA67293291BA32100658E5A /* SampleUploader.swift */,
 				2BDB01FA2913AAD70070DCFC /* SocketConnectionRead.swift */,
 				2B4465B729090EB40099F995 /* HCNotificationCenter.swift */,
+				2BA67296291BA33300658E5A /* SocketConnection.h */,
+				2BA67295291BA33300658E5A /* SocketConnection.m */,
 				2B4465C4290911AA0099F995 /* VideoConference.docc */,
 			);
 			path = VideoConference;
@@ -232,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B4465C6290911AA0099F995 /* VideoConference.h in Headers */,
+				2BA67298291BA33300658E5A /* SocketConnection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +315,7 @@
 				TargetAttributes = {
 					2B4465C0290911AA0099F995 = {
 						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1410;
 					};
 					2B91720F29024466000AD045 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -418,10 +426,11 @@
 			files = (
 				2B4465D5290929B20099F995 /* HCNotificationCenter.swift in Sources */,
 				2BDB01FB2913AAD70070DCFC /* SocketConnectionRead.swift in Sources */,
+				2BA67297291BA33300658E5A /* SocketConnection.m in Sources */,
 				2B4465C5290911AA0099F995 /* VideoConference.docc in Sources */,
 				2B4465D32909284E0099F995 /* Atomic.swift in Sources */,
-				2B4465D7290BD7320099F995 /* SampleUploader.swift in Sources */,
 				2BA67292291A527600658E5A /* SampleMessage.swift in Sources */,
+				2BA67294291BA32100658E5A /* SampleUploader.swift in Sources */,
 				2B4465D4290929B20099F995 /* SocketConnectionWrite.swift in Sources */,
 				2B4465CF290911C50099F995 /* VCMeet.swift in Sources */,
 			);
@@ -482,6 +491,7 @@
 		2B4465CC290911AA0099F995 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -509,6 +519,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -519,6 +530,7 @@
 		2B4465CD290911AA0099F995 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

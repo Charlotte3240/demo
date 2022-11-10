@@ -17,6 +17,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var previewImageView: UIImageView!
+    
+    var message : SampleMessage?
+    var readLength = Constants.bufferMaxLength
+    
+    var connection : SocketConnection?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.timeLabel.text = "\(timeNum)"
@@ -50,15 +57,19 @@ class ViewController: UIViewController {
 //
 //        })
                 
-        
+        startedScreenShare()
         
     }
     
     
     
     func startedScreenShare(){
-        let socket = HCSocketConnectionRead(path: "")
-        socket?.openWithStreamDelegate(delegate: self)
+        let sharedContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.charlotte.liu.broadcast")
+        let socketFilePath = sharedContainer?.appendingPathComponent("rtc_SSFD").path ?? ""
+
+        self.connection = SocketConnection.init(filePath: socketFilePath)
+        self.connection?.open(with: self)
+                
     }
     
     
@@ -66,7 +77,7 @@ class ViewController: UIViewController {
     // Object is the UIScreen which changed. [object isCaptured] is the new value of captured property.
     // 监控当前屏幕的录屏状态变化， 进入/退出录屏 都会收到通知
     @objc func scrrenCaptureDidChange (notification : Notification){
-        debugPrint("screen capture did change : ",UIScreen.main.isCaptured)
+//        debugPrint("screen capture did change : ",UIScreen.main.isCaptured)
     }
     
     @IBAction func preparBroadcast(_ sender: Any) {
@@ -88,7 +99,7 @@ class ViewController: UIViewController {
             }
         })
         
-        self.startedScreenShare()
+//        self.startedScreenShare()
         
     }
     
@@ -144,7 +155,8 @@ extension ViewController : StreamDelegate{
             
         case .errorOccurred:
             debugPrint("server stream error encountered:\(String(describing: aStream.streamError))")
-        default: break
+        default:
+            debugPrint("server stream other eventcode :",eventCode)
         }
 
     }
@@ -160,6 +172,55 @@ extension ViewController : StreamDelegate{
             // 没有字节可以读
             debugPrint("no bytes available")
             return
+        }
+        if self.message == nil{
+            self.message = SampleMessage()
+            readLength = Constants.bufferMaxLength
+            
+            self.message?.didComplete = {[weak self] (success , buffer , orientation) in
+                if success{
+                    self?.sendVideoCapture(buffer: buffer, orientation: CGImagePropertyOrientation(rawValue: UInt32(orientation ?? 1)))
+                }else{
+                    debugPrint("recv image fail")
+                }
+                self?.message = nil
+            }
+        }
+        let bufferSize = Constants.bufferMaxLength
+        let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: bufferSize)
+        
+        let numberOfBytesRead = inputStream.read(buffer, maxLength: readLength)
+        if numberOfBytesRead < 0{
+            debugPrint("reading bytes from stream error: ",numberOfBytesRead)
+            return
+        }
+
+        
+
+        //FIXME: - Thread 8: EXC_RESOURCE RESOURCE_TYPE_MEMORY (limit=2098 MB, unused=0x0)
+        autoreleasepool {
+            readLength = self.message!.appentBytes(buffer: buffer, length: numberOfBytesRead)
+            
+            if readLength == -1 || readLength > Constants.bufferMaxLength {
+                readLength = Constants.bufferMaxLength
+            }
+            buffer.deallocate()
+        }
+        
+        
+    }
+    
+    func sendVideoCapture(buffer : CVPixelBuffer?, orientation : CGImagePropertyOrientation?){
+        guard let buffer = buffer, let orientation = orientation else {
+            debugPrint("buffer is ",buffer)
+            debugPrint("orientation is ",orientation)
+            return
+        }
+        let image = CIImage(cvPixelBuffer: buffer)
+
+        DispatchQueue.main.async {
+            let uiimage = UIImage(ciImage: image)
+            self.previewImageView.image = uiimage
         }
         
         

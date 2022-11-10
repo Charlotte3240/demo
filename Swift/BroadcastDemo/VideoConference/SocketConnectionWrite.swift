@@ -35,7 +35,7 @@ public class HCSocketConnectionWrite :NSObject{
         if let path = path, path.isEmpty == false{
             filepath = path
         }else{
-            let sharedContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: VCMeet.shared.groupId ?? "")
+            let sharedContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.charlotte.liu.broadcast")
             let socketFilePath = sharedContainer?.appendingPathComponent("rtc_SSFD").path ?? ""
             filepath = socketFilePath
         }
@@ -51,12 +51,12 @@ public class HCSocketConnectionWrite :NSObject{
         debugPrint("open socket connection")
         
         guard FileManager.default.fileExists(atPath: filepath) else {
-            debugPrint("socket file missing")
+            debugPrint("client socket file missing")
             return false
         }
         
         guard setupAddress() else{
-            debugPrint("socket setup address fail")
+            debugPrint("client socket setup address fail")
             return false
         }
         
@@ -64,6 +64,12 @@ public class HCSocketConnectionWrite :NSObject{
             debugPrint("connect socket fail")
             return false
         }
+        
+        setupStreams()
+                
+        inputStream?.open()
+        outputStream?.open()
+
         
         
         return true
@@ -99,9 +105,9 @@ extension HCSocketConnectionWrite : StreamDelegate{
             }
         case .hasBytesAvailable:
             if aStream == inputStream{
-                var buffer : UInt8 = 0
+                var buffer: UInt8 = 0
                 let numberOfBytesRead = inputStream?.read(&buffer, maxLength: 1)
-                if numberOfBytesRead == 0 && aStream.streamStatus == .atEnd{
+                if numberOfBytesRead == 0 && aStream.streamStatus == .atEnd {
                     debugPrint("server socket closed")
                     close()
                     notifyDidClose(error: nil)
@@ -115,7 +121,8 @@ extension HCSocketConnectionWrite : StreamDelegate{
             debugPrint("client stream error occurred : \(String(describing: aStream.streamError))")
             close()
             notifyDidClose(error: aStream.streamError)
-        default: break
+        default:
+            debugPrint("other stream event code : ",eventCode)
         }
     }
 }
@@ -158,7 +165,7 @@ extension HCSocketConnectionWrite {
     }
     
     
-    public func setupStream (){
+    public func setupStreams (){
         var readStream : Unmanaged<CFReadStream>?
         var writeStream : Unmanaged<CFWriteStream>?
         
@@ -168,6 +175,10 @@ extension HCSocketConnectionWrite {
         inputStream?.delegate = self
         inputStream?.setProperty(kCFBooleanTrue, forKey: Stream.PropertyKey(kCFStreamPropertyShouldCloseNativeSocket as String))
         
+        outputStream = writeStream?.takeRetainedValue()
+        outputStream?.delegate = self
+        outputStream?.setProperty(kCFBooleanTrue, forKey: Stream.PropertyKey(kCFStreamPropertyShouldCloseNativeSocket as String))
+
         scheduleStreams()
         
     }

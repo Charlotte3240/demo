@@ -16,8 +16,6 @@ enum BroadcastError : Error{
     case unknowErr
 }
 
-
-
 class SampleHandler: RPBroadcastSampleHandler {
     
     private var uploader : SamplerUploader?
@@ -111,11 +109,13 @@ extension SampleHandler{
     func openConnection(){
         let queue = DispatchQueue(label: "Broadcast.connectTimer.hc")
         let timer = DispatchSource.makeTimerSource(queue: queue)
-        timer.schedule(deadline: .now(),repeating: .milliseconds(100),leeway: .milliseconds(500))
+        timer.schedule(deadline: .now(), repeating: .milliseconds(100), leeway: .milliseconds(500))
         timer.setEventHandler {[weak self] in
-            guard self?.connection?.connectSocket() == true else{
+            guard self?.connection?.open() == true else{
                 return
             }
+            debugPrint("connect success")
+            timer.cancel()
         }
         timer.resume()
         

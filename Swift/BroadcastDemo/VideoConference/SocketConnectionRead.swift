@@ -123,10 +123,6 @@ extension HCSocketConnectionRead {
     
     func setupSocketServer() -> Bool{
         debugPrint("opening sock server")
-        guard FileManager.default.fileExists(atPath: filePath) else{
-            debugPrint("sock sever file missing")
-            return false
-        }
         
         guard setupAddress() else {
             debugPrint("socket server setup address fail")
@@ -135,6 +131,11 @@ extension HCSocketConnectionRead {
         
         guard bind() else{
             debugPrint("socket server bind address fail")
+            return false
+        }
+        
+        guard FileManager.default.fileExists(atPath: filePath) else{
+            debugPrint("sock sever file missing")
             return false
         }
         
@@ -149,7 +150,11 @@ extension HCSocketConnectionRead {
             print("failure: fd path is too long")
             return false
         }
-
+        // unlink
+        _ = withUnsafeMutablePointer(to: &filePath) { ptr in
+            Darwin.unlink(ptr)
+        }
+        // copy
         _ = withUnsafeMutablePointer(to: &addr.sun_path.0) { ptr in
             filePath.withCString {
                 strncpy(ptr, $0, filePath.count)
