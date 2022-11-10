@@ -9,33 +9,21 @@ import Foundation
 import CoreVideo
 import CoreImage
 
-//public struct Message {
-//    public var imagebuffer : CVImageBuffer?
-//    public var imageOrientation : Int?
-//}
-
-
 var imageContext : CIContext = CIContext()
 
 
 public class SampleMessage :NSObject{
 
     private var framedMessage : CFHTTPMessage?
-//    var message : Message?
-    
     private var imageBuffer : CVImageBuffer?
     private var imageOrientation : Int?
     
-    
-    
     public typealias CompleteBlock = (_ success : Bool , _ buffer : CVImageBuffer? , _ imageOrientation : Int?) -> Void
-    
     public var didComplete : CompleteBlock?
     
     
     public override init() {
         super.init()
-//        self.message = nil
     }
     
     // 返回缺失的字节数，如果长度不够返回 -1
@@ -66,13 +54,6 @@ public class SampleMessage :NSObject{
             if self.didComplete != nil{
                 self.didComplete?(success,self.imageBuffer, self.imageOrientation)
             }
-
-//            if let buffer = self.imageBuffer, let imageOrientation = self.imageOrientation{
-//                let message = Message(imagebuffer: buffer, imageOrientation: imageOrientation)
-//                if self.didComplete != nil{
-//                    self.didComplete?(success,self)
-//                }
-//            }
             
             self.imageBuffer = nil
             self.imageOrientation = nil

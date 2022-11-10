@@ -27,7 +27,6 @@
 		2BA67294291BA32100658E5A /* SampleUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA67293291BA32100658E5A /* SampleUploader.swift */; };
 		2BA67297291BA33300658E5A /* SocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA67295291BA33300658E5A /* SocketConnection.m */; };
 		2BA67298291BA33300658E5A /* SocketConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA67296291BA33300658E5A /* SocketConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2BDB01FB2913AAD70070DCFC /* SocketConnectionRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB01FA2913AAD70070DCFC /* SocketConnectionRead.swift */; };
 		D0BBED296BF7EF1571483491 /* Pods_BroadcastDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6173C7EFAF58737C5668940B /* Pods_BroadcastDemo.framework */; };
 		E45106F74B98A173F996CB9C /* Pods_broadcast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF670A63213C49FCDD46ADC /* Pods_broadcast.framework */; };
 /* End PBXBuildFile section */
@@ -102,7 +101,6 @@
 		2BA67293291BA32100658E5A /* SampleUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleUploader.swift; sourceTree = "<group>"; };
 		2BA67295291BA33300658E5A /* SocketConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketConnection.m; sourceTree = "<group>"; };
 		2BA67296291BA33300658E5A /* SocketConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketConnection.h; sourceTree = "<group>"; };
-		2BDB01FA2913AAD70070DCFC /* SocketConnectionRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketConnectionRead.swift; sourceTree = "<group>"; };
 		6173C7EFAF58737C5668940B /* Pods_BroadcastDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroadcastDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E143F15B57A477C8FB7A0C /* Pods-broadcastSetupUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-broadcastSetupUI.debug.xcconfig"; path = "Target Support Files/Pods-broadcastSetupUI/Pods-broadcastSetupUI.debug.xcconfig"; sourceTree = "<group>"; };
 		B6DEF5CC9DC9319E9C053AE2 /* Pods-broadcast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-broadcast.release.xcconfig"; path = "Target Support Files/Pods-broadcast/Pods-broadcast.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				2B4465B529090D8A0099F995 /* SocketConnectionWrite.swift */,
 				2BA67291291A527600658E5A /* SampleMessage.swift */,
 				2BA67293291BA32100658E5A /* SampleUploader.swift */,
-				2BDB01FA2913AAD70070DCFC /* SocketConnectionRead.swift */,
 				2B4465B729090EB40099F995 /* HCNotificationCenter.swift */,
 				2BA67296291BA33300658E5A /* SocketConnection.h */,
 				2BA67295291BA33300658E5A /* SocketConnection.m */,
@@ -425,7 +422,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B4465D5290929B20099F995 /* HCNotificationCenter.swift in Sources */,
-				2BDB01FB2913AAD70070DCFC /* SocketConnectionRead.swift in Sources */,
 				2BA67297291BA33300658E5A /* SocketConnection.m in Sources */,
 				2B4465C5290911AA0099F995 /* VideoConference.docc in Sources */,
 				2B4465D32909284E0099F995 /* Atomic.swift in Sources */,
