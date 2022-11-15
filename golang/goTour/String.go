@@ -112,6 +112,8 @@ b
 
 	// strings.builder 拼接字符串 ，节省内存，防止 + 拼接时生成新的字符串 占用新的内存空间
 	var builder strings.Builder
+	// builder.Grow(3 * len(str)) // 扩大内存占用，以免后面再进行扩容 浪费执行时间
+
 	n, err := builder.WriteString("a")
 	if err != nil {
 		panic(err)
