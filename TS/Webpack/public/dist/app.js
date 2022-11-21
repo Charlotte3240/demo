@@ -1,0 +1,1 @@
+(()=>{"use strict";var o,l;!function(o){o.name="charlotte"}(o||(o={})),l||(l={}),console.log("hello world"),console.log(o.name)})();
