@@ -8,9 +8,14 @@ import (
 	"os"
 )
 
+type Stu struct {
+	Name string
+}
+
 func main() {
 	ErrorFCode()
 
+	log.Println("formatter")
 	/*
 		%v => 值的默认展示方式
 		%+v => 对比上面，加上了键值
@@ -20,9 +25,10 @@ func main() {
 		%b => 二进制
 		%q => 带双引号的形式
 	*/
-	m := map[string]string{
-		"title": "value",
-	}
+	//m := map[string]string{
+	//	"title": "value",
+	//}
+	m := Stu{Name: "hc"}
 	log.Printf("%v", m)                     // map[title:value]
 	log.Printf("%+v", m)                    // map[title:value]
 	log.Printf("%#v", m)                    // map[string]string{"title":"value"}

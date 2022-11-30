@@ -29,7 +29,7 @@ func waitFunc(args string, c *sync.Cond) {
 		// 调用wait后 会自动释放锁，然后挂起goroutine,当触发signal/broadcast, goroutine被唤醒时 再加锁
 		c.Wait()
 	}
-	log.Println("数据已经准备好了")
+	log.Println("数据已经准备好了: ", args)
 	c.L.Unlock()
 }
 
@@ -40,9 +40,9 @@ func prepareFunc(args string, c *sync.Cond) {
 	flag = true
 	c.L.Unlock()
 	log.Println("broadcast all goroutine")
+	//c.Broadcast() // 全部唤醒
 	for i := 0; i < 3; i++ {
 		time.Sleep(time.Second)
 		c.Signal() // 唤醒一个
 	}
-	c.Broadcast() // 全部唤醒
 }
