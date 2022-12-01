@@ -11,25 +11,41 @@ struct ContentView: View {
     @State var content : String = "Hello world!"
     
     var body: some View {
-        VStack {
-            Button {
-                WidgetCenter.shared.reloadTimelines(ofKind: "RainbowFartSmall")
-                WidgetCenter.shared.reloadTimelines(ofKind: "RainbowFartLarge")
-            } label: {
-                Text("refresh rainbow fart")
+        NavigationView {
+            VStack {
+                NavigationLink(destination: {
+                    QRView()
+                        .navigationBarHidden(true)
+//                        .navigationTitle("second title")
+                }) {
+                    Text("二维码")
+                }
+                Spacer()
+                            
+                Button {
+                    WidgetCenter.shared.reloadTimelines(ofKind: "RainbowFartSmall")
+                    WidgetCenter.shared.reloadTimelines(ofKind: "RainbowFartLarge")
+                } label: {
+                    Text("refresh rainbow fart")
+                }
+                            
             }
-                        
-        }
-        .padding()
-        .onOpenURL { url in
-            debugPrint(url.absoluteString)
-            if url.scheme == "alipays" || url.scheme == "weixin"{
-                UIApplication.shared.open(url)
-            }else{
-                content = url.relativeString
-            }
-        }
+            .navigationTitle("导航栏")
+//            .navigationBarHidden(true)  // 隐藏导航栏
+            .navigationBarTitleDisplayMode(.inline)
 
+            .frame(height: 400)
+            .padding()
+            // wiget open urls
+            .onOpenURL { url in
+                debugPrint(url.absoluteString)
+                if url.scheme == "alipays" || url.scheme == "weixin"{
+                    UIApplication.shared.open(url)
+                }else{
+                    content = url.relativeString
+                }
+            }
+        }
     }
 }
 

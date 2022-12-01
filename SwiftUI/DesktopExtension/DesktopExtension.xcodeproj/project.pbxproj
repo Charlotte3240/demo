@@ -18,6 +18,7 @@
 		2B85CC8828B472C9008B8648 /* RainbowFartExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2B85CC7A28B472C7008B8648 /* RainbowFartExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2B85CC8E28B4DC6D008B8648 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2B85CC8D28B4DC6D008B8648 /* Intents.intentdefinition */; };
 		2B85CC8F28B4DC6D008B8648 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2B85CC8D28B4DC6D008B8648 /* Intents.intentdefinition */; };
+		2BDF91A729388066001A867C /* QRPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF91A629388066001A867C /* QRPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		2B85CC8528B472C9008B8648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B85CC8D28B4DC6D008B8648 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		2B85CC9028B4DC76008B8648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2BDF91A629388066001A867C /* QRPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				2B85CC9028B4DC76008B8648 /* Info.plist */,
 				2B85CC6828B4721E008B8648 /* DesktopExtensionApp.swift */,
 				2B85CC6A28B4721E008B8648 /* ContentView.swift */,
+				2BDF91A629388066001A867C /* QRPage.swift */,
 				2B85CC6C28B4721F008B8648 /* Assets.xcassets */,
 				2B85CC6E28B4721F008B8648 /* Preview Content */,
 			);
@@ -243,6 +246,7 @@
 				2B85CC8E28B4DC6D008B8648 /* Intents.intentdefinition in Sources */,
 				2B85CC6B28B4721E008B8648 /* ContentView.swift in Sources */,
 				2B85CC6928B4721E008B8648 /* DesktopExtensionApp.swift in Sources */,
+				2BDF91A729388066001A867C /* QRPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
