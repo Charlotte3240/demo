@@ -2,11 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>使用相机进行扫描二维码</string>
-	<key>NSUserActivityTypes</key>
-	<array>
-		<string>RainbowFartIntent</string>
-	</array>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ScanImage.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
 </dict>
 </plist>

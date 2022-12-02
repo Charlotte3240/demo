@@ -53,20 +53,25 @@ class QRViewController : UIViewController{
         
         
         
-        //MARK: - 简单哀悼模式 注意只能在iOS12以上使用
-        let aidaoView = UIView()
-        aidaoView.frame = UIScreen.main.bounds
-        aidaoView.isUserInteractionEnabled = false
-        aidaoView.backgroundColor = UIColor.lightGray
-        aidaoView.layer.compositingFilter = "saturationBlendMode"
-        // 在最上层加上这个view 蒙版
-        self.view.addSubview(aidaoView)
+//        //MARK: - 简单哀悼模式 注意只能在iOS12以上使用
+//        let aidaoView = UIView()
+//        aidaoView.frame = UIScreen.main.bounds
+//        aidaoView.isUserInteractionEnabled = false
+//        aidaoView.backgroundColor = UIColor.lightGray
+//        aidaoView.layer.compositingFilter = "saturationBlendMode"
+//        // 在最上层加上这个view 蒙版
+//        self.view.addSubview(aidaoView)
         
+                
         
     }
     
     @objc func swipBack (){
-        self.goBack?()
+//        self.goBack?()
+        let scanVc = QRScanViewController()
+        scanVc.modalPresentationStyle = .fullScreen
+        self.present(scanVc, animated: true)
+
     }
     
 }

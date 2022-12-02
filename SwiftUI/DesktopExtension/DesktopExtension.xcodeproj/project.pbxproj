@@ -19,6 +19,8 @@
 		2B85CC8E28B4DC6D008B8648 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2B85CC8D28B4DC6D008B8648 /* Intents.intentdefinition */; };
 		2B85CC8F28B4DC6D008B8648 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2B85CC8D28B4DC6D008B8648 /* Intents.intentdefinition */; };
 		2BDF91A729388066001A867C /* QRPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF91A629388066001A867C /* QRPage.swift */; };
+		2BDF91A92939D0A8001A867C /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF91A82939D0A8001A867C /* QRScanViewController.swift */; };
+		2BDF91AB2939FBFE001A867C /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF91AA2939FBFE001A867C /* shadow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		2B85CC8D28B4DC6D008B8648 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		2B85CC9028B4DC76008B8648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2BDF91A629388066001A867C /* QRPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPage.swift; sourceTree = "<group>"; };
+		2BDF91A82939D0A8001A867C /* QRScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
+		2BDF91AA2939FBFE001A867C /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				2B85CC6828B4721E008B8648 /* DesktopExtensionApp.swift */,
 				2B85CC6A28B4721E008B8648 /* ContentView.swift */,
 				2BDF91A629388066001A867C /* QRPage.swift */,
+				2BDF91A82939D0A8001A867C /* QRScanViewController.swift */,
+				2BDF91AA2939FBFE001A867C /* shadow.png */,
 				2B85CC6C28B4721F008B8648 /* Assets.xcassets */,
 				2B85CC6E28B4721F008B8648 /* Preview Content */,
 			);
@@ -225,6 +231,7 @@
 			files = (
 				2B85CC7028B4721F008B8648 /* Preview Assets.xcassets in Resources */,
 				2B85CC6D28B4721F008B8648 /* Assets.xcassets in Resources */,
+				2BDF91AB2939FBFE001A867C /* shadow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +253,7 @@
 				2B85CC8E28B4DC6D008B8648 /* Intents.intentdefinition in Sources */,
 				2B85CC6B28B4721E008B8648 /* ContentView.swift in Sources */,
 				2B85CC6928B4721E008B8648 /* DesktopExtensionApp.swift in Sources */,
+				2BDF91A92939D0A8001A867C /* QRScanViewController.swift in Sources */,
 				2BDF91A729388066001A867C /* QRPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
