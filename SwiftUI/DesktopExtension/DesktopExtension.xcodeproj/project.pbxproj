@@ -21,6 +21,7 @@
 		2BDF91A729388066001A867C /* QRPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF91A629388066001A867C /* QRPage.swift */; };
 		2BDF91A92939D0A8001A867C /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF91A82939D0A8001A867C /* QRScanViewController.swift */; };
 		2BDF91AB2939FBFE001A867C /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF91AA2939FBFE001A867C /* shadow.png */; };
+		2BDF91AF293E05A8001A867C /* flashLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF91AE293E05A8001A867C /* flashLight.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		2BDF91A629388066001A867C /* QRPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPage.swift; sourceTree = "<group>"; };
 		2BDF91A82939D0A8001A867C /* QRScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
 		2BDF91AA2939FBFE001A867C /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
+		2BDF91AE293E05A8001A867C /* flashLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashLight.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				2B85CC6A28B4721E008B8648 /* ContentView.swift */,
 				2BDF91A629388066001A867C /* QRPage.swift */,
 				2BDF91A82939D0A8001A867C /* QRScanViewController.swift */,
+				2BDF91AE293E05A8001A867C /* flashLight.png */,
 				2BDF91AA2939FBFE001A867C /* shadow.png */,
 				2B85CC6C28B4721F008B8648 /* Assets.xcassets */,
 				2B85CC6E28B4721F008B8648 /* Preview Content */,
@@ -232,6 +235,7 @@
 				2B85CC7028B4721F008B8648 /* Preview Assets.xcassets in Resources */,
 				2B85CC6D28B4721F008B8648 /* Assets.xcassets in Resources */,
 				2BDF91AB2939FBFE001A867C /* shadow.png in Resources */,
+				2BDF91AF293E05A8001A867C /* flashLight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +411,7 @@
 				INFOPLIST_FILE = DesktopExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Charlotte's widget";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSCameraUsageDescription = "使用相机进行扫描二维码";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -439,6 +444,7 @@
 				INFOPLIST_FILE = DesktopExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Charlotte's widget";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSCameraUsageDescription = "使用相机进行扫描二维码";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
