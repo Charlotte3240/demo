@@ -33,6 +33,7 @@ func main() {
 
 	// sync.Map 在并发读写时不需要加锁
 	concurrentMap()
+
 }
 
 func concurrentMap() {
@@ -46,6 +47,7 @@ func concurrentMap() {
 		}(i)
 	}
 	wg.Wait()
+	// 遍历 sync.map
 	m2.Range(func(key, value interface{}) bool {
 		fmt.Println(key, value)
 		return true
@@ -98,4 +100,14 @@ func setMapvalue(key, value int) {
 	m[key] = value
 	rwlock.Unlock()
 	defer wg.Done()
+}
+
+// enumerate 遍历sync.map
+func enumerateMap() {
+	m2.Range(enumerateCallback)
+}
+
+func enumerateCallback(key, value any) bool {
+	// 返回false 时停止遍历
+	return true
 }
