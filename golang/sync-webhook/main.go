@@ -19,7 +19,7 @@ func main() {
 	r.GET("/simp", simp)
 	r.GET("/reloadSimpRecord", saveRedis)
 
-	if err := r.Run(`:2334`); err != nil {
+	if err := r.Run(`:2333`); err != nil {
 		panic(err)
 	}
 }
@@ -35,10 +35,17 @@ func syncDoc(c *gin.Context) {
 	defer c.Request.Body.Close()
 
 	c.JSON(http.StatusOK, nil)
-	cmd := `../hc-doc/
+	cmd := `cd ../hc-doc/
 git pull
 `
 	executeSync(cmd)
+
+	cpCmd := `
+	cd /root/
+	cp -rf ./hc-doc /etc/alist/temp/
+	`
+	executeSync(cpCmd)
+
 }
 
 // executeSync 执行bash操作
