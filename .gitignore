@@ -1,2 +1,4 @@
 /WKWebView/H5/src/source/
 **/node_modules/
+
+.idea/
