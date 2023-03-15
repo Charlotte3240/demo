@@ -3,18 +3,20 @@ package main
 import (
 	"bufio"
 	"bytes"
-	"github.com/gin-gonic/gin"
 	"hc-doc/sync/cache"
 	"io"
 	"log"
 	"net/http"
 	"os"
 	"os/exec"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
+	r.ForwardedByClientIP = true
 	r.POST("/docSync", syncDoc)
 	r.GET("/simp", simp)
 	r.GET("/reloadSimpRecord", saveRedis)
@@ -71,8 +73,11 @@ func simp(c *gin.Context) {
 		c.String(http.StatusBadGateway, "")
 		return
 	}
+
+	log.Println("ip:", c.ClientIP())
+	log.Println("header:", c.Request.Header)
 	// 返回舔狗日记一条数据
-	c.String(http.StatusOK, simpStr)
+	c.String(http.StatusOK, simpStr+c.ClientIP())
 }
 
 func saveRedis(c *gin.Context) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B4F3AD629AF333E00B28ED4 /* libswiftCore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4F3AD529AF330700B28ED4 /* libswiftCore.tbd */; };
 		84C9DB7F22A8E3BA00972D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9DB7E22A8E3BA00972D23 /* AppDelegate.swift */; };
 		84C9DB8422A8E3BA00972D23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C9DB8222A8E3BA00972D23 /* Main.storyboard */; };
 		84C9DB8622A8E3BC00972D23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C9DB8522A8E3BC00972D23 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B4F3AD529AF330700B28ED4 /* libswiftCore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCore.tbd; path = usr/lib/swift/libswiftCore.tbd; sourceTree = SDKROOT; };
 		84C9DB7B22A8E3BA00972D23 /* HTMLStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTMLStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C9DB7E22A8E3BA00972D23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C9DB8322A8E3BA00972D23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4F3AD629AF333E00B28ED4 /* libswiftCore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B4F3AD429AF330600B28ED4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B4F3AD529AF330700B28ED4 /* libswiftCore.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84C9DB7222A8E3BA00972D23 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +109,7 @@
 				84C9DB9222A8E3BC00972D23 /* HTMLStudyTests */,
 				84C9DB9D22A8E3BC00972D23 /* HTMLStudyUITests */,
 				84C9DB7C22A8E3BA00972D23 /* Products */,
+				2B4F3AD429AF330600B28ED4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -473,6 +485,7 @@
 		84C9DBA422A8E3BC00972D23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M29Y8582X5;
@@ -482,9 +495,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.charrlotte.HTMLStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/Charlotte/Documents/demo/Swift/WKWebView/HTMLStudy/HTMLStudy/OCBridge.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jr/Documents/demo/Swift/WKWebView/HTMLStudy/HTMLStudy/OCBridge.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -493,6 +510,7 @@
 		84C9DBA522A8E3BC00972D23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M29Y8582X5;
@@ -502,9 +520,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.charrlotte.HTMLStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/Charlotte/Documents/demo/Swift/WKWebView/HTMLStudy/HTMLStudy/OCBridge.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jr/Documents/demo/Swift/WKWebView/HTMLStudy/HTMLStudy/OCBridge.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

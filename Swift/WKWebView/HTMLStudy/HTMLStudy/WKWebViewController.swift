@@ -38,6 +38,8 @@ class WKWebViewController: UIViewController {
         configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "getLoaclData")
         
         configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "jumpDetail")
+        configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "recvJsMsg")
+        configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "alert")
 
         
         var webView = WKWebView(frame: CGRect(x: 0,
@@ -105,7 +107,7 @@ class WKWebViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .refresh, target: self, action: #selector(refreshWebview))
         
         
-        self.webView.load(URLRequest.init(url: URL.init(string: "https://www.jianshu.com")!))
+        self.webView.load(URLRequest.init(url: URL.init(string: "https://www.hc-nsqk.com/appMessage/")!))
         
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "截图", style: .done, target: self, action: #selector(snapShot))
@@ -204,7 +206,10 @@ class WKWebViewController: UIViewController {
     deinit {
         self.webView.configuration.userContentController.removeScriptMessageHandler(forName: "getLoaclData")
         self.webView.configuration.userContentController.removeScriptMessageHandler(forName: "jumpDetail")
+        self.webView.configuration.userContentController.removeScriptMessageHandler(forName: "recvJsMsg")
+        self.webView.configuration.userContentController.removeScriptMessageHandler(forName: "alert")
 
+        
         self.webView.removeObserver(self, forKeyPath: "title")
         self.webView.removeObserver(self, forKeyPath: "estimatedProgress")
         
@@ -275,6 +280,16 @@ extension WKWebViewController: WKScriptMessageHandler{
             
         case "jumpDetail":
             self.showMessage(msg: message.body as? String ?? "")
+        case "alert":
+            let alert = UIAlertController(title: "from js", message: message.body as? String ?? "", preferredStyle: .alert)
+            let action = UIAlertAction(title: "ok", style: .default)
+            alert.addAction(action)
+            self.present(alert, animated: true)
+        case "recvJsMsg":
+            debugPrint(message.body)
+            if let promiseObj = message.body as?String{
+                self.webView.evaluateJavaScript("\(promiseObj)('asd');")
+            }
         default:
             break
             
@@ -393,4 +408,121 @@ class WeakScriptMessageDelegate: NSObject, WKScriptMessageHandler {
     deinit {
         print("WeakScriptMessageDelegate is deinit")
     }
+}
+
+
+
+enum InterviewResult{
+    case success
+    case failed
+    case null
+}
+
+class WtfqScene {
+    
+    /// 当前场景审核结果
+    var interviewResult :InterviewResult = .null
+    
+    /// 计时器秒数
+    var timerCount = 0
+    
+    /// 录制按钮
+    var recordBtn : UIButton?
+    
+    /// 收到标签时间
+//    var successTimerCount : Int = 0
+
+    
+    /// 是否展示了录制成功, 2s后退出的弹窗
+    var isShownSuccess : Bool = false
+
+    
+    /// webRTC 链接成功
+    func onWebRTCConnected(){
+        recordBtn?.isEnabled.toggle()
+    }
+    
+    
+    /// 结束录制按钮点击
+    func endBtnAction(){
+        if self.interviewResult == .success{
+            self.showSuccessAlert()
+        }
+    }
+    
+    
+    /// 计时器回调
+    func timerHandler() {
+        self.timerCount += 1
+        if self.timerCount > 15 && self.interviewResult == .null{
+            //未检测到大声朗读，请在安静环境中录制，并确保本人操作
+            self.showErrorAndRestart()
+        }
+    }
+    
+    
+    /// 接收后端tag推送结果
+    /// - Parameter result: tag结构体
+    func recvInterviewResult(result : InterviewResult){
+        // 判断tag结果
+        if result == .success && self.timerCount <= 15{
+            // 暂存tag 结果
+            self.interviewResult = result
+            // 按钮可点击
+            recordBtn?.isEnabled.toggle()
+            // 记录收到success时间
+//            self.successTimerCount = self.timerCount
+            
+            if self.timerCount <= 13{ // 13s内收到成功标签
+                // 延迟2s展示成功弹窗
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    if self.isShownSuccess{
+                        return
+                    }
+                    self.showSuccessAlert()
+                }
+            }else { // 在13s ～ 15s之间
+                // 延迟5s展示成功弹窗
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    if self.isShownSuccess{
+                        return
+                    }
+                    self.showSuccessAlert()
+                }
+            }
+        }else if result == .failed{
+            // 展示带重录按钮的弹窗，展示内容为tagInfo
+            showErrorAndRestart()
+        }
+        
+    }
+    
+    /// 展示成功信息弹窗
+    func showSuccessAlert(){
+        self.releaseTimer()
+        self.isShownSuccess = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            if self.isShownSuccess{
+                return
+            }
+            self.exitScene()
+        }
+    }
+    
+    /// 取消定时器
+    func releaseTimer(){
+        
+    }
+    
+    /// 展示带重录按钮的弹窗
+    func showErrorAndRestart(){
+        
+    }
+    
+    /// 退出sdk
+    func exitScene(){
+        
+    }
+    
+    
 }
