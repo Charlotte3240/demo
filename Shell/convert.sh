@@ -14,8 +14,8 @@ do
   # 构建输出文件名
   output="${filename%.flac}.wav"
 
-  # 转换文件
-#   ffmpeg -i "$filename" "$output"
+  # 转换文件 -c:a pcm_s24le 转换为24位
+  ffmpeg -i "$filename" -c:a pcm_s24le "$output"
 
   # 检查转换是否成功
   if [ $? -eq 0 ]; then
