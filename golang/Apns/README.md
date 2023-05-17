@@ -1,0 +1,3 @@
+- Name:AVDemoKey
+- Key ID:K7AYSC553X
+- Services:Apple Push Notifications service (APNs)

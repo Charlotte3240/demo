@@ -1,0 +1,25 @@
+2023-05-17 10:34:29.015	INFO	Apns/main.go:29	log init Success !
+2023-05-17 14:15:08.964	INFO	Apns/main.go:19	log init Success !
+2023-05-17 14:15:43.935	INFO	Apns/main.go:19	log init Success !
+2023-05-17 14:16:21.214	INFO	Apns/main.go:19	log init Success !
+2023-05-17 14:17:35.429	INFO	services/service.go:67	select result is:	{"res": []}
+2023-05-17 14:31:23.044	INFO	Apns/main.go:19	log init Success !
+2023-05-17 14:54:35.218	INFO	Apns/main.go:19	log init Success !
+2023-05-17 14:55:19.645	INFO	services/dao.go:62	select result is:	{"res": []}
+2023-05-17 14:55:30.456	INFO	services/dao.go:62	select result is:	{"res": []}
+2023-05-17 14:56:13.876	INFO	services/dao.go:62	select result is:	{"res": [{"env":0,"iden":"xx","deviceToken":"asdbsad","bundleId":"dasdasdsa"}]}
+2023-05-17 14:56:15.297	INFO	services/service.go:174	token no effect:	{"reason": "BadDeviceToken"}
+2023-05-17 14:56:43.832	INFO	Apns/main.go:19	log init Success !
+2023-05-17 15:03:02.534	INFO	Apns/main.go:19	log init Success !
+2023-05-17 15:03:06.361	INFO	services/dao.go:62	select result is:	{"res": [{"env":0,"iden":"xx","deviceToken":"asdbsad","bundleId":"dasdasdsa"}]}
+2023-05-17 15:03:07.618	ERROR	services/service.go:179	del token fail	{"error": "SQL logic error: no such column: token (1)"}
+2023-05-17 15:03:07.618	INFO	services/service.go:181	token no effect:	{"res": {"StatusCode":400,"Reason":"BadDeviceToken","ApnsID":"A8E78F18-83F7-E878-941D-D73A4FA354D9","Timestamp":"0001-01-01T00:00:00Z"}}
+2023-05-17 15:05:08.983	INFO	Apns/main.go:19	log init Success !
+2023-05-17 15:05:12.132	INFO	services/dao.go:62	select result is:	{"res": [{"env":0,"iden":"xx","deviceToken":"asdbsad","bundleId":"dasdasdsa"}]}
+2023-05-17 15:05:13.109	INFO	services/service.go:181	token no effect:	{"res": {"StatusCode":400,"Reason":"BadDeviceToken","ApnsID":"2049327B-EF19-EC7E-493B-134BFB891B08","Timestamp":"0001-01-01T00:00:00Z"}}
+2023-05-17 15:06:28.623	INFO	Apns/main.go:19	log init Success !
+2023-05-17 15:06:43.683	INFO	services/dao.go:63	select result is:	{"res": [{"env":0,"iden":"xx","deviceToken":"asdbsad1111","bundleId":"dasdasadsa"},{"env":0,"iden":"xx","deviceToken":"asdbsad111","bundleId":"dasdasadsa"}]}
+2023-05-17 15:06:44.632	INFO	services/dao.go:54	deleted record 	{"token": "asdbsad1111"}
+2023-05-17 15:06:44.632	INFO	services/service.go:181	token no effect:	{"res": {"StatusCode":400,"Reason":"BadDeviceToken","ApnsID":"24104D83-39E3-BF91-1078-19AF744EF1C2","Timestamp":"0001-01-01T00:00:00Z"}}
+2023-05-17 15:06:44.633	INFO	services/dao.go:54	deleted record 	{"token": "asdbsad111"}
+2023-05-17 15:06:44.633	INFO	services/service.go:181	token no effect:	{"res": {"StatusCode":400,"Reason":"BadDeviceToken","ApnsID":"4F45BC80-2027-4DCF-1AC5-1DC087949D8D","Timestamp":"0001-01-01T00:00:00Z"}}
