@@ -2,13 +2,14 @@ package services
 
 import (
 	"errors"
+	"log"
+	"net/http"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/sideshow/apns2"
 	"github.com/sideshow/apns2/token"
 	"go.uber.org/zap"
-	"log"
-	"net/http"
-	"time"
 )
 
 var _apnsService *ApnsService
@@ -182,7 +183,6 @@ func (a *ApnsService) pushResult() {
 			} else {
 				zap.L().Info("Not Sent:", zap.Any("response", res))
 			}
-		default:
 
 		}
 	}
