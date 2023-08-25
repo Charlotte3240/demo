@@ -47,3 +47,9 @@ func Md53() string {
 	md5Str := hex.EncodeToString(h2.Sum(nil))
 	return md5Str
 }
+
+type Demo struct{}
+
+func (d *Demo) foo() string {
+	return fmt.Sprintf("ddasda")
+}

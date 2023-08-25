@@ -24,6 +24,12 @@ import (
 //
 //}
 
+func TestFoo(t *testing.T) {
+	d := Demo{}
+	d.foo()
+
+}
+
 func TestSplit(t *testing.T) {
 	type test struct {
 		input string
@@ -58,12 +64,11 @@ func TestSplit(t *testing.T) {
 
 }
 
-
-//MARK: - 性能基准测试
+// MARK: - 性能基准测试
 func BenchmarkSplit(b *testing.B) {
 	// b.N 不是一个固定的数
 	for i := 0; i < b.N; i++ {
-		Split("charlotte","l")
+		Split("charlotte", "l")
 	}
 	// commond line
 	// go test -bench=Split
@@ -91,11 +96,6 @@ func BenchmarkSplit(b *testing.B) {
 		ok  	testdemo	1.293s
 	*/
 }
-
-
-
-
-
 
 func BenchmarkMd51(b *testing.B) {
 	for i := 0; i < b.N; i++ {

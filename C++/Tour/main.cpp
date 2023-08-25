@@ -11,6 +11,18 @@ int add(int num1,int num2);
 
 #include "const_ptr.h"
 #include "arr_ptr.h"
+
+struct Worker{
+    int id;
+    string name;
+};
+
+struct Leader{
+    int id;
+    string  name;
+    Worker w;
+};
+
 int main() {
 
     //输出完整类型名称
@@ -65,16 +77,30 @@ int main() {
 //    return 0;
 //    const_ptr_foo();
 //    arr_ptr();
-    int a = 10;
-    int b = 20;
-    HCRes res = swap_hc2(&a,&b);
-    cout << "swaped: r1:" << *res.r1 << " r2:"<< *res.r2 << endl;
-    cout << *res.r1<<endl;
-    cout << *res.r2<<endl;
+//    int a = 10;
+//    int b = 20;
+//    HCRes res = swap_hc2(&a,&b);
+//    cout << "swaped: r1:" << *res.r1 << " r2:"<< *res.r2 << endl;
+//    cout << *res.r1<<endl;
+//    cout << *res.r2<<endl;
 
-    
+    Leader leader;
+    leader.id = 100;
+    leader.name = "leader";
+
+    Worker w;
+    w.id = 1000;
+    w.name = "worker";
+
+    leader.w = w;
+
+    std::cout << leader.name << " " << leader.w.name << endl;
+
 
 }
+
+
+
 
 int add(int num1,int num2){
     return  num1 + num2;

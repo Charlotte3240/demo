@@ -2,7 +2,7 @@
 //  QRPage.swift
 //  DesktopExtension
 //
-//  Created by 360-jr on 2022/12/1.
+//  Created by Charlotte on 2022/12/1.
 //
 
 import UIKit

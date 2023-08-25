@@ -2,7 +2,7 @@
 //  HexagonParameters.swift
 //  FirstProject
 //
-//  Created by 360-jr on 2022/1/6.
+//  Created by Charlotte on 2022/1/6.
 //
 
 import SwiftUI

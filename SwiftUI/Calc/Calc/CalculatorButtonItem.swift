@@ -2,7 +2,7 @@
 //  CalculatorButtonItem.swift
 //  Calc
 //
-//  Created by 360-jr on 2023/6/13.
+//  Created by Charlotte on 2023/6/13.
 //
 
 import Foundation

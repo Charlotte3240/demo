@@ -2,7 +2,7 @@
 //  PlayerViewContoller.swift
 //  studyTools
 //
-//  Created by 360-jr on 2023/6/14.
+//  Created by Charlotte on 2023/6/14.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ let perChinaCharacterSecond = 4.0
 class PlayerViewController : UIViewController{
     @IBOutlet weak var displayLabel: UILabel!
     
-    var player : ENPlayer?
+    var player : TextPlayer?
     var datas : [StudyData]?
     var lan : Language = .en_us
     var playContents  = [String]()
@@ -24,7 +24,7 @@ class PlayerViewController : UIViewController{
         super.viewDidLoad()
         
         
-        self.player = ENPlayer(lan: self.lan)
+        self.player = TextPlayer(lan: self.lan)
         self.player?.delegate = self
                 
         self.datas = [
@@ -37,6 +37,9 @@ class PlayerViewController : UIViewController{
 
         // 准备数据
         self.startPlay()
+        
+
+
     }
     
     
@@ -65,13 +68,24 @@ class PlayerViewController : UIViewController{
         }) ?? [String]()
 
         self.playNext(index: 0)
+
+        DispatchQueue.global().asyncAfter(deadline: .now()+0.5) {
+            self.playNext(index: 1)
+
+            DispatchQueue.global().asyncAfter(deadline: .now()+0.5) {
+                self.playNext(index: 2)
+            }
+        }
+
     }
     
     func playNext(index : Int){
         self.playIndex = index
         let pinyin = self.displayContents[index]
-        self.displayLabel.text = pinyin
-        self.player?.play(content: self.playContents[index])
+        DispatchQueue.main.async {
+            self.displayLabel.text = pinyin
+        }
+        self.player?.playNext(content: self.playContents[index])
     }
     
     deinit{
@@ -100,9 +114,9 @@ extension PlayerViewController : PlayerDelegate{
         }
         waitTime += 2
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + waitTime) {[weak self] in
-            self?.playNext(index: (self?.playIndex ?? 0)+1)
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + waitTime) {[weak self] in
+//            self?.playNext(index: (self?.playIndex ?? 0)+1)
+//        }
     }
 
 }

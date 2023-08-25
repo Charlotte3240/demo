@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  BroadcastDemo
 //
-//  Created by 360-jr on 2022/10/21.
+//  Created by Charlotte on 2022/10/21.
 //
 
 import UIKit
@@ -105,6 +105,9 @@ class ViewController: UIViewController {
     
     // 开始应用内录制
     @IBAction func startInAppRecord(_ sender: Any){
+        if RPScreenRecorder.shared().isRecording{
+            RPScreenRecorder.shared().stopCapture()
+        }
         
         RPScreenRecorder.shared().startCapture { buffer, type, error in
             switch type{

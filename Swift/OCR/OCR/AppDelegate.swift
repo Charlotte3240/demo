@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  OCR
 //
-//  Created by 360-jr on 2023/2/2.
+//  Created by Charlotte on 2023/2/2.
 //
 
 import UIKit
@@ -15,10 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = ViewController()
-        self.window?.makeKeyAndVisible()
-        
+        guard let url = URL(string: "https://www.baidu.com")else{
+            return true
+        }
+        let req = URLRequest(url: url )
+        URLSession.shared.dataTask(with: req) { data, res, err in
+            
+        }.resume()
         
         return true
     }

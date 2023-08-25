@@ -2,7 +2,7 @@
 //  SampleMessage.swift
 //  VideoConference
 //
-//  Created by 360-jr on 2022/11/8.
+//  Created by Charlotte on 2022/11/8.
 //
 
 import Foundation

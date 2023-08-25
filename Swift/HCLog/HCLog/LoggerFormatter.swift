@@ -2,7 +2,7 @@
 //  LoggerFormatter.swift
 //  HCLog
 //
-//  Created by 360-jr on 2021/11/9.
+//  Created by Charlotte on 2021/11/9.
 //
 
 import Foundation

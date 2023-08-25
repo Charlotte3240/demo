@@ -2,7 +2,7 @@
 //  QRScanViewController.swift
 //  DesktopExtension
 //
-//  Created by 360-jr on 2022/12/2.
+//  Created by Charlotte on 2022/12/2.
 //
 
 import UIKit

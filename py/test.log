@@ -1,0 +1,24 @@
+23-44-2023 16:44:21 root:ERROR:Exception occurred
+Traceback (most recent call last):
+  File "/Users/jr/Documents/demo/py/exception_test.py", line 7, in <module>
+    c = a / b
+        ~~^~~
+ZeroDivisionError: division by zero
+23-44-2023 16:44:21 root:ERROR:Exception occurred
+Traceback (most recent call last):
+  File "/Users/jr/Documents/demo/py/exception_test.py", line 7, in <module>
+    c = a / b
+        ~~^~~
+ZeroDivisionError: division by zero
+23-44-2023 16:44:21 root:DEBUG:Exception occurred
+Traceback (most recent call last):
+  File "/Users/jr/Documents/demo/py/exception_test.py", line 7, in <module>
+    c = a / b
+        ~~^~~
+ZeroDivisionError: division by zero
+23-44-2023 16:44:21 root:ERROR:exception happened
+Traceback (most recent call last):
+  File "/Users/jr/Documents/demo/py/exception_test.py", line 7, in <module>
+    c = a / b
+        ~~^~~
+ZeroDivisionError: division by zero

@@ -1,0 +1,6 @@
+2023-08-16 17:16:02,444 [logtest.py:10] INFO	hello	conf_key
+2023-08-16 17:16:27,547 [logtest.py:10] INFO	hello	conf_key
+2023-08-23 14:27:55,455 [logtest.py:11] INFO	hello	conf_key
+2023-08-23 14:27:55,455 [charlotte.py:8] INFO	hello world charlotte
+2023-08-23 14:27:55,455 [charlotte.py:9] INFO	hello world charlotte
+2023-08-23 14:27:55,455 [charlotte.py:10] INFO	hello world charlotte

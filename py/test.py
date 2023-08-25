@@ -1,5 +1,5 @@
 # from moudel import *
-
+import logging
 from dataclasses import dataclass, asdict
 from typing import List, Any
 
@@ -82,13 +82,32 @@ print(p)
 
 import hc_charlotte as h
 
-h.hc.foo()
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+logger = logging.getLogger('test')
+
+# h.hc.foo()
 h.charlotte.foo()
 
-l = [1, 2, 3, 4, 5]
+logger.info("hello")
 
-result = filter(lambda x: x > 2, l)
-print(list(result))
-result = map(lambda item: item * item, l)
-print(list(result))
-print(l)
+# l = [1, 2, 3, 4, 5]
+#
+# result = filter(lambda x: x > 2, l)
+# print(list(result))
+# result = map(lambda item: item * item, l)
+# print(list(result))
+# print(l)
+#
+#
+# my_gen = (i for i in range(3))
+# print(next(my_gen))
+# print(next(my_gen))
+# print(next(my_gen))
+#
+# a = [1, 2, 3]
+# b = [4, 5, 6, 7]  # zip 函数 短的list 结束后就返回结果了
+# c = zip(a, b)
+# print(list(c))
+#
+# print('end')

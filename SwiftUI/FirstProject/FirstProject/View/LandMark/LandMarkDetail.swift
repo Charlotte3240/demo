@@ -2,7 +2,7 @@
 //  LandMarkDetail.swift
 //  FirstProject
 //
-//  Created by 360-jr on 2022/1/5.
+//  Created by Charlotte on 2022/1/5.
 //
 
 import SwiftUI

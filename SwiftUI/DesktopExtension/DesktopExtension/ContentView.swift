@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  DesktopExtension
 //
-//  Created by 360-jr on 2022/8/23.
+//  Created by Charlotte on 2022/8/23.
 //
 
 import SwiftUI

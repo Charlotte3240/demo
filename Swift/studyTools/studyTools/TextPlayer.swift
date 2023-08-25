@@ -2,7 +2,7 @@
 //  PlayZHContent.swift
 //  studyTools
 //
-//  Created by 360-jr on 2023/6/14.
+//  Created by Charlotte on 2023/6/14.
 //
 
 import Foundation
@@ -18,7 +18,7 @@ enum Language : String{
     case en_us = "en-US"
 }
 
-class ENPlayer : NSObject{
+class TextPlayer : NSObject{
     weak var delegate  : PlayerDelegate?
     var curContent : String?
     var synthesizer: AVSpeechSynthesizer?
@@ -33,37 +33,42 @@ class ENPlayer : NSObject{
 
     }
     
-    func play(content: String) {
-        self.curContent = content
-        
-        let utterance = AVSpeechUtterance(string: content)
-        if self.language == .en_us{
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        }else{
-            utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
-        }
-        
-        self.synthesizer?.speak(utterance)
-
+    /// 播放合成音频，取消上一个播放内容
+    /// - Parameter content: 语音合成内容
+    func playNext(content: String) {
+        self.stop()
+        self.addPlayList(content: content)
     }
     
-//    func stop (){
-//        self.synthesizer?.stopSpeaking(at: .immediate)
-//    }
+    /// 播放合成音频，排队播放
+    /// - Parameter content: 语音合成内容
+    func addPlayList(content : String){
+        self.curContent = content
+        autoreleasepool {
+            let utterance = AVSpeechUtterance(string: content)
+            if self.language == .en_us{
+                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            }else{
+                utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
+            }
+            
+            self.synthesizer?.speak(utterance)
+        }
+    }
+    
+    
+    /// 停止播放合成音频
+    func stop (){
+        self.synthesizer?.stopSpeaking(at: .immediate)
+    }
     
 
     
 }
 
-extension ENPlayer :  AVSpeechSynthesizerDelegate{
+extension TextPlayer :  AVSpeechSynthesizerDelegate{
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         self.delegate?.finish(content: self.curContent ?? "")
     }
 
 }
-
-
-
-//struct ZHPlayer : NSObject, AVSpeechSynthesizerDelegate{
-//
-//}

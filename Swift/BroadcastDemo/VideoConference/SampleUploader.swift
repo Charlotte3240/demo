@@ -2,7 +2,7 @@
 //  SampleUploader.swift
 //  VideoConference
 //
-//  Created by 360-jr on 2022/10/28.
+//  Created by Charlotte on 2022/10/28.
 //
 
 import Foundation

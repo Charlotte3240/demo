@@ -2,7 +2,7 @@
 //  HCLog.swift
 //  HCLog
 //
-//  Created by 360-jr on 2021/11/30.
+//  Created by Charlotte on 2021/11/30.
 //
 
 import Foundation
