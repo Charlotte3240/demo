@@ -1,0 +1,5 @@
+[17:10:06] INFO - 这是一条普通的信息日志
+[17:10:06] WARNING - 这是一条警告日志
+[17:10:06] ERROR - 这是一条错误日志
+[17:10:06] ERROR - Call intent model error (%s,)
+%s
