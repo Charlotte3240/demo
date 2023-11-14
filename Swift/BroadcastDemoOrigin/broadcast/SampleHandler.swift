@@ -2,13 +2,14 @@
 //  SampleHandler.swift
 //  Broadcast
 //
-//  Created by chunqi.liu on 2022/10/21.
+//  Created by Charlotte on 2022/10/21.
 //
 
 import ReplayKit
 
 import VideoToolbox
 import CoreMedia
+import VideoConference
 
 
 enum BroadcastError : Error{
@@ -28,12 +29,14 @@ class SampleHandler: RPBroadcastSampleHandler {
             
             uploader = SamplerUploader(connection: conn)
         }
+        VCMeet.shared.initBroadcast()
+        
     }
     
 
     override func broadcastStarted(withSetupInfo setupInfo: [String : NSObject]?) {
         // User has requested to start the broadcast. Setup info from the UI extension can be supplied but optional.
-        Event.startBroadcast()
+        VCMeet.shared.startBroadcast()
         self.openConnection()
     }
     
@@ -52,7 +55,7 @@ class SampleHandler: RPBroadcastSampleHandler {
     override func broadcastFinished() {
         // User has requested to finish the broadcast.
         debugPrint("Broadcast finished")
-        Event.stopBroadcast()
+        VCMeet.shared.stopBroadcast()
         
     }
     
@@ -60,6 +63,7 @@ class SampleHandler: RPBroadcastSampleHandler {
         switch sampleBufferType {
         case RPSampleBufferType.video:
             // Handle video sample buffer
+//            VCMeet.shared.sendSampleBuffer(buffer: sampleBuffer, type: sampleBufferType)
             self.uploader?.send(buffer: sampleBuffer)
 
             break
