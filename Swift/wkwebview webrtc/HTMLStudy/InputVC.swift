@@ -37,7 +37,8 @@ class InputVC: UIViewController {
         btn.addTarget(self, action: #selector(toWEB), for: .touchUpInside)
         
 
-        urlTextFiled.text = "https://appr.tc/"
+//        urlTextFiled.text = "https://appr.tc/"
+        urlTextFiled.text = "https://support-uat.360-jr.com/360jr-callcenter/jssip-demo.html"
         
     }
     

@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum CalculatorButtonItem{
+enum CalculatorButtonItem {
     enum Op : String{
         case plus = "+"
         case minus = "-"
-        case multipy = "x"
+        case multiply = "x"
         case divide = "÷"
         case equal = "="
     }
@@ -68,3 +68,19 @@ extension CalculatorButtonItem{
 }
 
 extension CalculatorButtonItem : Hashable{}
+
+extension CalculatorButtonItem : CustomStringConvertible{
+    var description: String{
+        switch self{
+        case .digit(let num):
+            return "\(num)"
+        case .command(let command):
+            return command.rawValue
+        case .dot:
+            return "."
+        case .op(let op):
+            return op.rawValue
+        }
+        
+    }
+}

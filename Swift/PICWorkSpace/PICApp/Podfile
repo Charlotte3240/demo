@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+
+
+platform :ios, '12.0'
+workspace 'PICApp'
+inhibit_all_warnings!
+use_frameworks!
+
+# app pod
+target 'PICApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+
+  # Pods for PICApp
+
+end
+
+
+# sdk pod
+target 'PIC' do
+  project 'PIC/PIC.xcodeproj'
+  
+
+end

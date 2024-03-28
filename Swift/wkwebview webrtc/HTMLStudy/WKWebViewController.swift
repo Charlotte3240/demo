@@ -102,13 +102,13 @@ class WKWebViewController: UIViewController {
     
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "title"{
-            self.navigationItem.title = self.webView.title
-        }else if keyPath == "estimatedProgress"{
-            progressLayer.progressChanged(withWKWebViewProgress: self.webView.estimatedProgress)
-        }else{
-            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-        }
+//        if keyPath == "title"{
+//            self.navigationItem.title = self.webView.title
+//        }else if keyPath == "estimatedProgress"{
+//            progressLayer.progressChanged(withWKWebViewProgress: self.webView.estimatedProgress)
+//        }else{
+//            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+//        }
     }
     
     

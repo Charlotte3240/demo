@@ -11,6 +11,7 @@ type ApnsUser struct {
 	IDen        string `gorm:"column:iden" json:"iden"` // xxx的iPhone
 	DeviceToken string `gorm:"column:deviceToken" json:"deviceToken"`
 	BundleId    string `gorm:"column:bundleId" json:"bundleId"`
+	UserName    string `gorm:"column:userName" json:"userName"` // 用户名称
 }
 
 // TableName get sql table name.获取数据库表名

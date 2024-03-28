@@ -119,8 +119,8 @@ func (a *ApnsService) start() {
 	a.notifications = make(chan ChannelNotification, 100)
 	a.responses = make(chan ChannelNotificationRes, 200)
 
-	// 开启50个worker push
-	for i := 0; i < 50; i++ {
+	// 开启10个worker push
+	for i := 0; i < 10; i++ {
 		go a.push(a.notifications, a.responses)
 	}
 	// 开启协程接收push 结果
