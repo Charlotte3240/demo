@@ -8,6 +8,23 @@
 import Foundation
 import WebKit
 
+// https://igjj.ccb.com/qgzfgjj/login
+// https://api.hc-nsqk.com/tmp/ccb.js
+
+// https://www.etax.chinatax.gov.cn
+// https://api.hc-nsqk.com/tmp/chinatax.js
+
+let jsDic = [
+    "https://igjj.ccb.com/qgzfgjj/login":"https://api.hc-nsqk.com/tmp/ccb.js",
+    "https://www.etax.chinatax.gov.cn":"https://api.hc-nsqk.com/tmp/chinatax.js"
+]
+
+enum LoadingStatus{
+    case loading
+    case end
+}
+
+
 class PICWKWebViewController: UIViewController {
         
     fileprivate lazy var webView: WKWebView = {
@@ -29,7 +46,7 @@ class PICWKWebViewController: UIViewController {
         configuration.selectionGranularity = WKSelectionGranularity.character
         configuration.userContentController = WKUserContentController()
         configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "exitSDK")
-
+        configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "onDecode")
         
         var webView = WKWebView(frame: CGRect(x: 0,
                                               y: 0,
@@ -37,32 +54,32 @@ class PICWKWebViewController: UIViewController {
                                               height: UIScreen.main.bounds.height),
                                 configuration: configuration)
         webView.navigationDelegate = self
-        
+        if #available(iOS 16.4, *) {
+            webView.isInspectable = true
+        } else {
+            // Fallback on earlier versions
+        }
+
         
         return webView
+    }()
+    
+    fileprivate lazy var indictorView: IndicatorView = {
+        let indictor = IndicatorView(frame: CGRect(x: 0,y: 0,width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height))
+        return indictor
     }()
         
     
     /// web 页面地址
-    var webUrl : String = ""{
-        willSet{
-            let urlStr = newValue;
-            guard let url = URL.init(string: urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else {
-                PICSDK.shared.onError(err: "传入URL格式错误")
-                return
-            }
-
-            let req = URLRequest.init(url: url,cachePolicy: .reloadIgnoringLocalCacheData,timeoutInterval: TimeInterval.init(10))
-            self.webView.load(req)
-        }
-    }
-    
+    var webUrl : String = ""
     
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.addSubview(self.webView)
+        self.view.addSubview(self.indictorView)
+
         
         
         let top = NSLayoutConstraint.init(item: self.webView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
@@ -82,6 +99,21 @@ class PICWKWebViewController: UIViewController {
         //监听进度条
         self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions.new, context: nil)
 
+        
+        // 下载js 后注入js
+        downloadJSFile(urlString: self.webUrl) {[weak self] result in
+            switch result{
+            case.success(let jsContent):
+                DispatchQueue.main.async {
+                    self?.injectJSContent(jsContent)
+                }
+            case.failure(let error):
+                debugPrint("download logic js file \(error)")
+                PICSDK.shared.onError(err: "download logic fail")
+            }
+        }
+        
+        
     }
 
     func exitSDK(){
@@ -139,18 +171,6 @@ extension PICWKWebViewController: WKScriptMessageHandler{
     }
     
     
-    // 写入js 通知h5 跳转等待结果页面
-    func notifyH5LocationToResult(){
-        let actionStr = #"""
-            alert("这是一个警告框！");
-        """#
-        
-        self.writeJs(actionStr)
-    }
-    
-    
-    
-    
     func writeJs(_ jsStr: String = ""){
         self.webView.evaluateJavaScript(jsStr) { (result, error) in
             if error == nil{
@@ -161,6 +181,58 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         }
     }
     
+    
+    func downloadJSFile(urlString: String, completion: @escaping (Result<String, Error>) -> Void) {
+        let jsUrl = jsDic[urlString] ?? ""
+        guard let url = URL(string: jsUrl) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = data, let jsContent = String(data: data, encoding: .utf8) else {
+                completion(.failure(NSError(domain: "Invalid data", code: -1, userInfo: nil)))
+                return
+            }
+            
+            completion(.success(jsContent))
+        }
+        
+        task.resume()
+    }
+    func injectJSContent(_ jsContent: String) {
+        guard let url = URL.init(string: self.webUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else {
+            PICSDK.shared.onError(err: "传入URL格式错误")
+            return
+        }
+        
+        let userScript = WKUserScript(source: jsContent, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        self.webView.configuration.userContentController.addUserScript(userScript)
+
+        let req = URLRequest.init(url: url,cachePolicy: .reloadIgnoringLocalCacheData,timeoutInterval: TimeInterval.init(10))
+        self.webView.load(req)
+    }
+    
+    
+    func showLoading(status: LoadingStatus){
+        switch status{
+        case .loading:
+            // show loading image
+//            self.
+            break
+        case .end:
+            // show end image
+            break
+        }
+    }
+
+
+    
 }
 
 
@@ -169,8 +241,6 @@ extension PICWKWebViewController: WKNavigationDelegate{
     ///在网页加载完成时调用js方法
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         debugPrint("load finish")
-        //TODO: - 追加JS内容
-        self.notifyH5LocationToResult()
 
     }
     

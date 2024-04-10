@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B5FD92F2BC4085D00CBF4A3 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD92E2BC4085D00CBF4A3 /* IndicatorView.swift */; };
+		2B5FD9372BC408A500CBF4A3 /* NSImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD9302BC408A500CBF4A3 /* NSImage+SwiftyGif.swift */; };
+		2B5FD9382BC408A500CBF4A3 /* NSImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD9312BC408A500CBF4A3 /* NSImageView+SwiftyGif.swift */; };
+		2B5FD9392BC408A500CBF4A3 /* ObjcAssociatedWeakObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD9322BC408A500CBF4A3 /* ObjcAssociatedWeakObject.swift */; };
+		2B5FD93A2BC408A500CBF4A3 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD9332BC408A500CBF4A3 /* SwiftyGifManager.swift */; };
+		2B5FD93B2BC408A500CBF4A3 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD9342BC408A500CBF4A3 /* UIImage+SwiftyGif.swift */; };
+		2B5FD93C2BC408A500CBF4A3 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD9352BC408A500CBF4A3 /* UIImageView+SwiftyGif.swift */; };
 		2BA5E4702BB558C9009E8C5A /* PIC.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA5E46F2BB558C9009E8C5A /* PIC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BA5E4772BB559B3009E8C5A /* PICSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5E4762BB559B3009E8C5A /* PICSDK.swift */; };
 		2BA5E47D2BB55AC6009E8C5A /* PICWKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5E47C2BB55AC6009E8C5A /* PICWKWebViewController.swift */; };
@@ -16,6 +23,13 @@
 
 /* Begin PBXFileReference section */
 		01DA6D7BF0A4C8CF9A1B212D /* Pods_PIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B5FD92E2BC4085D00CBF4A3 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		2B5FD9302BC408A500CBF4A3 /* NSImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+SwiftyGif.swift"; sourceTree = "<group>"; };
+		2B5FD9312BC408A500CBF4A3 /* NSImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
+		2B5FD9322BC408A500CBF4A3 /* ObjcAssociatedWeakObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjcAssociatedWeakObject.swift; sourceTree = "<group>"; };
+		2B5FD9332BC408A500CBF4A3 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
+		2B5FD9342BC408A500CBF4A3 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
+		2B5FD9352BC408A500CBF4A3 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
 		2BA5E46C2BB558C9009E8C5A /* PIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA5E46F2BB558C9009E8C5A /* PIC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIC.h; sourceTree = "<group>"; };
 		2BA5E4762BB559B3009E8C5A /* PICSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PICSDK.swift; sourceTree = "<group>"; };
@@ -37,6 +51,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5FD9362BC408A500CBF4A3 /* SwiftyGif */ = {
+			isa = PBXGroup;
+			children = (
+				2B5FD9302BC408A500CBF4A3 /* NSImage+SwiftyGif.swift */,
+				2B5FD9312BC408A500CBF4A3 /* NSImageView+SwiftyGif.swift */,
+				2B5FD9322BC408A500CBF4A3 /* ObjcAssociatedWeakObject.swift */,
+				2B5FD9332BC408A500CBF4A3 /* SwiftyGifManager.swift */,
+				2B5FD9342BC408A500CBF4A3 /* UIImage+SwiftyGif.swift */,
+				2B5FD9352BC408A500CBF4A3 /* UIImageView+SwiftyGif.swift */,
+			);
+			path = SwiftyGif;
+			sourceTree = "<group>";
+		};
 		2BA5E4622BB558C9009E8C5A = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +88,9 @@
 				2BA5E46F2BB558C9009E8C5A /* PIC.h */,
 				2BA5E4762BB559B3009E8C5A /* PICSDK.swift */,
 				2BA5E47C2BB55AC6009E8C5A /* PICWKWebViewController.swift */,
+				2B5FD92E2BC4085D00CBF4A3 /* IndicatorView.swift */,
 				2BA5E47E2BB55E5B009E8C5A /* Ex.swift */,
+				2B5FD9362BC408A500CBF4A3 /* SwiftyGif */,
 			);
 			path = PIC;
 			sourceTree = "<group>";
@@ -190,9 +219,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B5FD93A2BC408A500CBF4A3 /* SwiftyGifManager.swift in Sources */,
 				2BA5E47D2BB55AC6009E8C5A /* PICWKWebViewController.swift in Sources */,
+				2B5FD9392BC408A500CBF4A3 /* ObjcAssociatedWeakObject.swift in Sources */,
 				2BA5E4772BB559B3009E8C5A /* PICSDK.swift in Sources */,
+				2B5FD93B2BC408A500CBF4A3 /* UIImage+SwiftyGif.swift in Sources */,
+				2B5FD92F2BC4085D00CBF4A3 /* IndicatorView.swift in Sources */,
+				2B5FD9372BC408A500CBF4A3 /* NSImage+SwiftyGif.swift in Sources */,
+				2B5FD9382BC408A500CBF4A3 /* NSImageView+SwiftyGif.swift in Sources */,
 				2BA5E47F2BB55E5B009E8C5A /* Ex.swift in Sources */,
+				2B5FD93C2BC408A500CBF4A3 /* UIImageView+SwiftyGif.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

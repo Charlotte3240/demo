@@ -8,6 +8,11 @@
 import UIKit
 import PIC
 
+enum SDKUrl : String{
+    case gjj = "https://igjj.ccb.com/qgzfgjj/login"
+    case tax = "https://www.etax.chinatax.gov.cn"
+}
+
 
 class ViewController: UIViewController {
 
@@ -16,22 +21,22 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .white
         
-        let btn = UIButton(type: .system)
-        btn.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        btn.setTitle("打开SDK", for: .normal)
-        btn.addTarget(self, action: #selector(openSDK), for: .touchUpInside)
-        self.view.addSubview(btn)
-        btn.center = self.view.center
-
         
     }
-
+    @IBAction func gjjAction(_ sender: Any) {
+        openSDK(url: .gjj)
+    }
     
-    @objc func openSDK(){
-        PICSDK.shared.openPIC(urlStr: "https://www.baidu.com") { success in
+    
+    @IBAction func grsdsAction(_ sender: Any) {
+        openSDK(url: .tax)
+    }
+    
+    
+    func openSDK(url: SDKUrl){
+        PICSDK.shared.openPIC(urlStr: url.rawValue) { success in
             debugPrint("open success \(success)")
         }
     }
 
 }
-

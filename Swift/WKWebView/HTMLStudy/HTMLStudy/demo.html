@@ -26,9 +26,8 @@
     <body>
         <h1>加载本地html测试</h1>
 
-        
+        <!--        getLocalData 为iOS 暴露给js的方法名称，未暴露的方法名称调用无效果-->
         <button onclick="javascript:window.webkit.messageHandlers['getLoaclData'].postMessage({key:value});">js调用原生代码有参数</button>
-
         <button onclick="javascript:window.webkit.messageHandlers['getLoaclData'].postMessage({});">js调用原生代码无参数</button>
         <button onclick="javascript:window.webkit.messageHandlers['getLoaclData'].postMessage('字符串');">js调用原生代码字符串参数</button>
 
@@ -36,6 +35,17 @@
 
         <button onclick="javascript:window.location.href='https://www.baidu.com'">跳转页面</button>
 
+        
+        <script>
+            function sendToIOS(data){
+                window.webkit.messageHandlers['sendMessage'].postMessage('字符串');
+            }
+            
+            function recvFromIOS(data){
+                console.log(`receive message from ios`)
+            }
+            
+        </script>
         
     </body>
 
