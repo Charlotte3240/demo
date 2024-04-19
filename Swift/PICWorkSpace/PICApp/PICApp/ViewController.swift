@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  PICApp
 //
-//  Created by 360-jr on 2024/3/28.
+//  Created by m1 on 2024/3/28.
 //
 
 import UIKit
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
     
     func openSDK(url: SDKUrl){
-        PICSDK.shared.openPIC(urlStr: url.rawValue) { success in
+        PICSDK.shared.openPIC(urlStr: url.rawValue, key: "", secret: "", id: "") { success in
             debugPrint("open success \(success)")
         }
     }

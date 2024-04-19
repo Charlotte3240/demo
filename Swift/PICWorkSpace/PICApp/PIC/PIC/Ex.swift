@@ -2,7 +2,7 @@
 //  Ex.swift
 //  PIC
 //
-//  Created by 360-jr on 2024/3/28.
+//  Created by m1 on 2024/3/28.
 //
 
 import Foundation
@@ -56,5 +56,21 @@ extension UIApplication {
                 return nil
             }
         }
+    }
+}
+
+
+extension String{
+    
+    /// check string cellection is whiteSpace
+    var isBlank : Bool{
+        return allSatisfy({$0.isWhitespace})
+    }
+}
+
+
+extension Optional where Wrapped == String{
+    var isBlank : Bool{
+        return self?.isBlank ?? true
     }
 }

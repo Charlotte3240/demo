@@ -2,7 +2,7 @@
 //  PICWKWebViewController.swift
 //  PIC
 //
-//  Created by 360-jr on 2024/3/28.
+//  Created by m1 on 2024/3/28.
 //
 
 import Foundation
@@ -19,14 +19,28 @@ let jsDic = [
     "https://www.etax.chinatax.gov.cn":"https://api.hc-nsqk.com/tmp/chinatax.js"
 ]
 
+
 enum LoadingStatus{
     case loading
     case end
 }
 
+// onDecode 使用
+struct BridgeModel : Codable{
+    var uuid : String?
+    var data : String?
+}
+
+let nullValue: Any? = nil
+
 
 class PICWKWebViewController: UIViewController {
         
+    let jsBridgeFuncNames = ["exitSDK","onLog","onStatus","onDecode","onData","onDataAppend","onStartActivityUrl"]
+
+    var callStarted = false
+    
+    
     fileprivate lazy var webView: WKWebView = {
         
         //与js交互配置
@@ -45,8 +59,10 @@ class PICWKWebViewController: UIViewController {
         
         configuration.selectionGranularity = WKSelectionGranularity.character
         configuration.userContentController = WKUserContentController()
-        configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "exitSDK")
-        configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "onDecode")
+        // 添加所有交互方法
+        self.jsBridgeFuncNames.forEach({
+            configuration.userContentController.add(WeakScriptMessageDelegate(self), name: $0)
+        })
         
         var webView = WKWebView(frame: CGRect(x: 0,
                                               y: 0,
@@ -54,6 +70,8 @@ class PICWKWebViewController: UIViewController {
                                               height: UIScreen.main.bounds.height),
                                 configuration: configuration)
         webView.navigationDelegate = self
+        
+        //TODO: - 上线后移除
         if #available(iOS 16.4, *) {
             webView.isInspectable = true
         } else {
@@ -78,8 +96,8 @@ class PICWKWebViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.addSubview(self.webView)
-        self.view.addSubview(self.indictorView)
-
+//        self.view.addSubview(self.indictorView)
+//        self.indictorView.showIndictor(status: .loading)
         
         
         let top = NSLayoutConstraint.init(item: self.webView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
@@ -105,7 +123,8 @@ class PICWKWebViewController: UIViewController {
             switch result{
             case.success(let jsContent):
                 DispatchQueue.main.async {
-                    self?.injectJSContent(jsContent)
+                    debugPrint(jsContent)
+                    self?.injectJSContent(jsContent.replacingOccurrences(of: #"platform: "android""#, with: #"platform: "ios""#))
                 }
             case.failure(let error):
                 debugPrint("download logic js file \(error)")
@@ -116,15 +135,6 @@ class PICWKWebViewController: UIViewController {
         
     }
 
-    func exitSDK(){
-        DispatchQueue.main.async {[weak self] in
-            self?.dismiss(animated: true) {
-                
-            }
-        }
-    }
-    
-    
 
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "title"{
@@ -135,41 +145,6 @@ class PICWKWebViewController: UIViewController {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
-    
-    
-    
-    
-    deinit {
-        self.webView.removeObserver(self, forKeyPath: "title")
-        self.webView.removeObserver(self, forKeyPath: "estimatedProgress")
-        
-        //移除监听app will terminate , pip 相关通知
-        NotificationCenter.default.removeObserver(self)
-        debugPrint("webview deinit")
-        
-    }
-    
-}
-
-
-
-
-// MARK: - WKScriptMessageHandler
-extension PICWKWebViewController: WKScriptMessageHandler{
-    ///接收js调用方法
-    func userContentController(_ userContentController: WKUserContentController,
-                               didReceive message: WKScriptMessage) {
-        switch message.name {
-            
-        case "exitSDK":
-            self.exitSDK()
-            
-        default:
-            break
-            
-        }
-    }
-    
     
     func writeJs(_ jsStr: String = ""){
         self.webView.evaluateJavaScript(jsStr) { (result, error) in
@@ -220,10 +195,11 @@ extension PICWKWebViewController: WKScriptMessageHandler{
     
     
     func showLoading(status: LoadingStatus){
+        
         switch status{
         case .loading:
             // show loading image
-//            self.
+            self.indictorView.showIndictor(status: .loading)
             break
         case .end:
             // show end image
@@ -231,17 +207,176 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         }
     }
 
-
+    
+    
+    deinit {
+        self.webView.removeObserver(self, forKeyPath: "title")
+        self.webView.removeObserver(self, forKeyPath: "estimatedProgress")
+        // 移除所有方法
+        self.jsBridgeFuncNames.forEach {[weak self] funcName in
+            self?.webView.configuration.userContentController.removeScriptMessageHandler(forName: funcName)
+        }
+                
+        //移除监听
+        NotificationCenter.default.removeObserver(self)
+        debugPrint("webview deinit")
+        
+    }
     
 }
 
+
+
+
+// MARK: - WKScriptMessageHandler  js交互
+extension PICWKWebViewController: WKScriptMessageHandler{
+    ///接收js调用方法
+    func userContentController(_ userContentController: WKUserContentController,
+                               didReceive message: WKScriptMessage) {
+        
+        debugPrint("recv message handler func: \(message.name), body: \(message.body)")
+
+        switch message.name {
+        case "exitSDK":
+            self.exitSDK()
+        case "onLog":
+            self.onLog(data: message.body as? String ?? "")
+        case "onStatus":
+            self.onStatus(data: message.body as? Int ?? 0)
+        case "onDecode":
+            self.onDecode(data: message.body as? [String:String] ?? [String:String]())
+        case "onData":
+            self.onData(data: message.body as? String ?? "")
+        case "onDataAppend":
+            self.onDataAppend(data: message.body as? String ?? "")
+        case "onStartActivityUrl":
+            self.onStartActivityUrl(data: message.body as? String ?? "")
+            
+        default:
+            break
+            
+        }
+    }
+    
+    func onStartActivityUrl(data: String){
+        if let url = URL(string: data){
+            let req = URLRequest(url: url)
+            self.webView.load(req)
+        }
+    }
+    
+    func onDataAppend(data : String){
+        
+    }
+    
+    func onData(data : String){
+        // json 字符串
+    }
+    
+    func onDecode(data : [String: String]?){
+        var jsStr = ""
+        let uuid = data?["uuid"] as? String ?? ""
+        let base64 = data?["data"] as? String ?? ""
+        let qrContent = self.getQrCodeContent(content: base64)
+        if qrContent.isEmpty{
+            debugPrint("解析onDecode json 数据失败")
+            jsStr = #"""
+                window.rpa.callback(\#(uuid),\#(qrContent),'not found qr code')
+            """#
+
+        }else{
+            jsStr = #"""
+                window.rpa.callback("\#(uuid)","\#(qrContent)")
+            """#
+        }
+        debugPrint("will write jsContent: \(jsStr)")
+        self.writeJs(jsStr)
+        
+    }
+    
+    func onStatus(data: Int){
+        
+    }
+
+    func onLog(data : String){
+        
+    }
+    
+    func exitSDK(){
+        DispatchQueue.main.async {[weak self] in
+            self?.dismiss(animated: true) {
+                
+            }
+        }
+    }
+
+    
+    func startRPA(){
+        // 执行rpa.start
+        self.writeJs(#"""
+    (function() {
+            if(window.rpa) {
+                window.rpa.start('\#(self.webView.url?.relativePath ?? "")');
+            }
+        }
+    )()
+    """#)
+
+    }
+    
+    func getQrCodeContent(content : String) -> String{
+        // 您的 Base64 图像字符串
+        let base64String = content
+
+        // 将 Base64 字符串解码为 Data
+        guard let imageData = Data(base64Encoded: base64String), let image = UIImage(data: imageData) else {
+            print("Invalid Base64 image string")
+            return ""
+        }
+        
+
+        // 将 UIImage 转换为 CIImage
+        guard let ciImage = CIImage(image: image) else {
+            print("Failed to create CIImage from UIImage")
+            return ""
+        }
+
+        // 创建 CIDetector 实例
+        let detector = CIDetector(ofType: CIDetectorTypeQRCode,
+                                   context: nil,
+                                   options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+
+        // 检测二维码特征
+        let features = detector?.features(in: ciImage)
+
+        // 遍历检测到的特征
+        for feature in features as? [CIQRCodeFeature] ?? [] {
+            if let messageString = feature.messageString {
+                print("Detected QR code message: \(messageString)")
+            }
+        }
+        
+        return (features?.first as? CIQRCodeFeature)?.messageString ?? ""
+
+    }
+    
+
+    
+}
+// MARK: - WKScriptMessageHandler 交互结束
 
 // 跳转代理
 extension PICWKWebViewController: WKNavigationDelegate{
     ///在网页加载完成时调用js方法
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         debugPrint("load finish")
-
+        if self.callStarted == true{
+            return
+        }
+        self.callStarted = true
+        self.startRPA()
+        
+        
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
@@ -277,7 +412,22 @@ extension PICWKWebViewController: WKNavigationDelegate{
                 
     }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        decisionHandler(.allow)
+        let absoluteString = navigationAction.request.url?.absoluteString.removingPercentEncoding ?? ""
+        debugPrint("current url is \(absoluteString)")
+        
+        if absoluteString.hasPrefix("alipays://") || absoluteString.hasPrefix("alipay://"){
+            guard let openUrl = navigationAction.request.url else{
+                debugPrint("alipay url foramatter error")
+                return
+            }
+            UIApplication.shared.open(openUrl) { success in
+                debugPrint("open alipay \(success)")
+            }
+            decisionHandler(.cancel)
+        }else{
+            decisionHandler(.allow)
+        }
+    
     }
     
     

@@ -2,12 +2,13 @@
 //  IndicatorView.swift
 //  PIC
 //
-//  Created by 360-jr on 2024/4/8.
+//  Created by m1 on 2024/4/8.
 //
 
 import UIKit
 
 enum IndicatorStatus{
+    case create
     case loading
     case end
 }
@@ -15,16 +16,19 @@ enum IndicatorStatus{
 class IndicatorView: UIView{
     var imageView: UIImageView?
     
+    var status : IndicatorStatus = .create
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         if self.imageView == nil{
             self.imageView = UIImageView()
-            self.imageView?.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+            self.imageView?.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
             self.addSubview(self.imageView!)
             
             self.imageView?.center = self.center
         }
+        self.backgroundColor = .white
         
     }
     required init?(coder aDecoder: NSCoder) {
@@ -33,20 +37,27 @@ class IndicatorView: UIView{
     
     
     func showIndictor(status: IndicatorStatus){
-        guard let indictor = self.imageView else{
-            return
-        }
-        let bundlePath = Bundle.init(for: IndicatorView.self).path(forResource: "VC", ofType: "bundle")
-        let vcBundle = Bundle.init(path: bundlePath!)!
+        DispatchQueue.main.async {[weak self] in
+            if self?.status == status{
+                return
+            }else{
+                self?.status = status
+            }
+            guard let indictor = self?.imageView else{
+                return
+            }
+            
 
-        let gifImg = try? UIImage(gifName: "fq2SpeakerGif.gif", bundle: vcBundle)
-        guard let gifImg else { return }
-
-        switch status{
-        case .loading:
-            indictor.setGifImage(gifImg, loopCount: -1)
-        case .end:
-            indictor.setGifImage(gifImg, loopCount: -1)
+            switch status{
+            case.create: break
+            case .loading:
+                let gifImg = try? UIImage(gifName: "loading.gif",bundle: Bundle.init(for: IndicatorView.self))
+                guard let gifImg else { return }
+                indictor.setGifImage(gifImg, loopCount: -1)
+            case .end:
+                indictor.stopAnimatingGif()
+                self?.isHidden = true
+            }
         }
     }
 

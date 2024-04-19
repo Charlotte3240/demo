@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  PICApp
 //
-//  Created by 360-jr on 2024/3/28.
+//  Created by m1 on 2024/3/28.
 //
 
 import UIKit
