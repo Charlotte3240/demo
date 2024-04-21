@@ -87,28 +87,37 @@ class HCEncrypt{
         }
         return str
     }
+//
+//    let key = "1234567890123456"
+//    let str = "46lOTeU+zB6IQQ598UiLktNByITvzGihIl5UlyPUfNE="
+//    let res = self.decrypt(psw: key, encryptedText: str)
+//    print(res)
 
     
-//    func decrypt(psw: String, base64Ciphertext: String) -> String? {
-//        guard let keyData = psw.data(using: .utf8),
-//              let encryptedData = Data(base64Encoded: base64Ciphertext) else { return nil }
-//
-//        // 截取前16字节作为IV
-//        let iv = encryptedData.prefix(16)
-//        let ciphertext = encryptedData.dropFirst(16)
-//        
-//        let aes = try? AES(key: psw, iv: String(data: encryptedData, encoding: .utf8) ?? "", padding: .pkcs7)
-//        aes?.decrypt(ciphertext)
-//        
-//        return nil
-//    }
-//
-//    // 使用PKCS#7解除填充
-//    func unpad(_ data: Data) -> Data {
-//        let padding = data.last!
-//        return data.dropLast(Int(padding))
-//    }
-    
+    func decrypt(psw: String, encryptedText: String) -> String? {
+        guard let keyData = psw.data(using: .utf8),
+              let encryptedData = Data(base64Encoded: encryptedText) else { return nil }
+        do {
+
+            let iv = encryptedData.prefix(16)
+            let ciphertext = encryptedData.dropFirst(16)
+
+            let aes = try AES(key: keyData.bytes, blockMode: CBC(iv: Data(iv).bytes),padding: .pkcs7)
+                                    
+            let decryptedBytes = try aes.decrypt(Data(ciphertext).bytes)
+            let decodeData = Data(decryptedBytes)
+            
+            if let decryptedText = String(data: decodeData, encoding: .utf8) {
+                return decryptedText
+            } else {
+                return nil
+            }
+        } catch let error {
+            print("Decryption error:", error)
+            return nil
+        }
+
+    }
     
 }
 
