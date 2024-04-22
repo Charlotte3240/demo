@@ -65,36 +65,10 @@ class HCEncrypt{
 //        }
 //        return str
 //    }
-    
-    static func decrypt(source : String) -> String{
-        if source.isBlank { return ""}
-        
-        let ivBytes = source.bytes.prefix(16)
-        let needDecrypto = source.bytes.dropFirst(16)
-        
-        let ivStr = String(bytes: ivBytes, encoding: .utf8) ?? ""
 
-        // 解密
-        var str = "decrypto error"
-        do {
-            aes = try AES(key: key, iv: ivStr, padding: .pkcs7)
-            if let decode = try aes?.decrypt(needDecrypto){
-                let decodeData = Data(decode)
-                str = String(data: decodeData, encoding: .utf8) ?? ""
-            }
-        } catch let error {
-            debugPrint("decode log message error,err:\(error)")
-        }
-        return str
-    }
-//
-//    let key = "1234567890123456"
-//    let str = "46lOTeU+zB6IQQ598UiLktNByITvzGihIl5UlyPUfNE="
-//    let res = self.decrypt(psw: key, encryptedText: str)
-//    print(res)
 
     
-    func decrypt(psw: String, encryptedText: String) -> String? {
+    static func decrypt(psw: String, encryptedText: String) -> String? {
         guard let keyData = psw.data(using: .utf8),
               let encryptedData = Data(base64Encoded: encryptedText) else { return nil }
         do {

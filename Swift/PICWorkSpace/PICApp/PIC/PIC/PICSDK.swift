@@ -19,20 +19,31 @@ public class PICSDK: NSObject{
     @objc public static let shared = PICSDK()
     @objc public var delegate : PICSDKDelegate?
     
-    @objc public func openPIC(urlStr: String, key: String, secret:String, id: String, complete: @escaping (_ success: Bool) -> Void){
+    var key : String? // aes key
+    var secret : String? // user secret
+    var token : String? // token = base64(key + secret)
+    var platFormId : Int? // 平台ID
+    
+    @objc public func openPIC(urlStr: String, key: String, secret:String, id: Int, complete: @escaping (_ success: Bool) -> Void){
         /*
          * url: 平台URL
          * key: 就是base64 那一串
          * secret: ase加密密钥
          * id: 平台id
          */
-        debugPrint("加密测试:",HCEncrypt.encrypt(source: "Hellow word"))
-        debugPrint("解密测试:",HCEncrypt.decrypt(source: "46lOTeU+zB6IQQ598UiLktNByITvzGihIl5UlyPUfNE="))
         
+        guard let data = "\(key):\(secret)".data(using: .utf8) else{
+            debugPrint("base64 encode fail")
+            complete(false)
+            return
+        }
+        let token = data.base64EncodedString()
+        
+        self.token = token
+        self.key = key
+        self.secret = secret
+        self.platFormId = id
 
-        complete(false)
-        return
-        
         guard URL.init(string: urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") != nil else {
             PICSDK.shared.onError(err: "传入URL格式错误")
             complete(false)

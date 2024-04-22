@@ -19,6 +19,9 @@ let jsDic = [
     "https://www.etax.chinatax.gov.cn":"https://api.hc-nsqk.com/tmp/chinatax.js"
 ]
 
+// 下载js文件链接
+let fetchJsUrl = "http://150.158.10.87/rpa/api/platform/resource"
+
 
 enum LoadingStatus{
     case loading
@@ -119,11 +122,10 @@ class PICWKWebViewController: UIViewController {
 
         
         // 下载js 后注入js
-        downloadJSFile(urlString: self.webUrl) {[weak self] result in
+        downloadJSFile() {[weak self] result in
             switch result{
             case.success(let jsContent):
                 DispatchQueue.main.async {
-                    debugPrint(jsContent)
                     self?.injectJSContent(jsContent.replacingOccurrences(of: #"platform: "android""#, with: #"platform: "ios""#))
                 }
             case.failure(let error):
@@ -156,26 +158,40 @@ class PICWKWebViewController: UIViewController {
         }
     }
     
-    
-    func downloadJSFile(urlString: String, completion: @escaping (Result<String, Error>) -> Void) {
-        let jsUrl = jsDic[urlString] ?? ""
-        guard let url = URL(string: jsUrl) else {
-            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+    // 下载js文件内容
+    func downloadJSFile(completion: @escaping (Result<String, Error>) -> Void) {
+        var request = URLRequest(url: URL(string: fetchJsUrl)!,timeoutInterval: 30)
+        let auth = PICSDK.shared.token ?? ""
+        let psw = "\(PICSDK.shared.secret?.prefix(16) ?? "")"
+        request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let parama: [String: Any] = [
+            "id":PICSDK.shared.platFormId ?? 0,
+            "device": HCTool.getDeiveName(),
+            "screen": "\(UIScreen.main.bounds.size.width),\(UIScreen.main.bounds.size.height)",
+            "package": HCTool.getMainBundleId(),
+            "isHarmony": "false"
+        ]
+        let jsonData = try? JSONSerialization.data(withJSONObject: parama, options: [])
+        request.httpBody = jsonData
+
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
             
-            guard let data = data, let jsContent = String(data: data, encoding: .utf8) else {
+            guard let data = data,
+                  let result = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any],
+                  let content = result["Data"] as? [String: Any],
+                  let jsStr = content["Js"] as? String,
+                  let result = HCEncrypt.decrypt(psw: psw, encryptedText: jsStr) else {
                 completion(.failure(NSError(domain: "Invalid data", code: -1, userInfo: nil)))
                 return
             }
             
-            completion(.success(jsContent))
+            completion(.success(result))
         }
         
         task.resume()

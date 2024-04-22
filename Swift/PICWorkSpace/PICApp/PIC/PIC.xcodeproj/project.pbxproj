@@ -97,6 +97,7 @@
 		2BC01D512BD2754C00CF11E9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D032BD2754C00CF11E9 /* Utils.swift */; };
 		2BC01D522BD2754C00CF11E9 /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D042BD2754C00CF11E9 /* ZeroPadding.swift */; };
 		2BC01D542BD2756B00CF11E9 /* HCEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D532BD2756B00CF11E9 /* HCEncrypt.swift */; };
+		2BC01D5A2BD6840600CF11E9 /* HCTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D592BD6840600CF11E9 /* HCTool.swift */; };
 		F2673A87D8FAFB47436DF80D /* Pods_PIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DA6D7BF0A4C8CF9A1B212D /* Pods_PIC.framework */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +194,7 @@
 		2BC01D032BD2754C00CF11E9 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		2BC01D042BD2754C00CF11E9 /* ZeroPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeroPadding.swift; sourceTree = "<group>"; };
 		2BC01D532BD2756B00CF11E9 /* HCEncrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCEncrypt.swift; sourceTree = "<group>"; };
+		2BC01D592BD6840600CF11E9 /* HCTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCTool.swift; sourceTree = "<group>"; };
 		2C60C5CDD57EFD0F062C4BF1 /* Pods-PIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIC.release.xcconfig"; path = "Target Support Files/Pods-PIC/Pods-PIC.release.xcconfig"; sourceTree = "<group>"; };
 		850BD0930860E20C9605AF46 /* Pods-PIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIC.debug.xcconfig"; path = "Target Support Files/Pods-PIC/Pods-PIC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +259,7 @@
 				2B5FD92E2BC4085D00CBF4A3 /* IndicatorView.swift */,
 				2BA5E47E2BB55E5B009E8C5A /* Ex.swift */,
 				2BC01D532BD2756B00CF11E9 /* HCEncrypt.swift */,
+				2BC01D592BD6840600CF11E9 /* HCTool.swift */,
 				2BC01CB32BD2752000CF11E9 /* third */,
 				2B61D8EB2BC775530090B88D /* res */,
 			);
@@ -540,6 +543,7 @@
 				2BC01D102BD2754C00CF11E9 /* GCM.swift in Sources */,
 				2BC01D152BD2754C00CF11E9 /* Array+Foundation.swift in Sources */,
 				2BC01D542BD2756B00CF11E9 /* HCEncrypt.swift in Sources */,
+				2BC01D5A2BD6840600CF11E9 /* HCTool.swift in Sources */,
 				2BC01D0A2BD2754C00CF11E9 /* CBC.swift in Sources */,
 				2BC01D472BD2754C00CF11E9 /* SHA3.swift in Sources */,
 				2BC01D4C2BD2754C00CF11E9 /* UInt16+Extension.swift in Sources */,
