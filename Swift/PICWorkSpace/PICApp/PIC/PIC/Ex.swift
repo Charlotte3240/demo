@@ -74,3 +74,19 @@ extension Optional where Wrapped == String{
         return self?.isBlank ?? true
     }
 }
+
+
+extension DispatchTime: ExpressibleByIntegerLiteral {
+    
+    /// 从现在起延迟几秒
+    /// - Parameter value: 秒数
+    public init(integerLiteral value: Int) {
+        self = DispatchTime.now() + .seconds(value)
+    }
+}
+
+extension DispatchTime: ExpressibleByFloatLiteral {
+    public init(floatLiteral value: Double) {
+        self = DispatchTime.now() + .milliseconds(Int(value * 1000))
+    }
+}

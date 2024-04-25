@@ -26,6 +26,9 @@ class ViewController: UIViewController {
         // fetch platform list
         PICSDK.shared.fetchPlatForm(urlStr: sdkUrl, key: key, secret: secret) { list, err in
             if let list = list {
+                // list.first?.id
+                // list.first?.title
+                // list.first.url
                 self.dataList = list
                 DispatchQueue.main.async {[weak self] in
                     self?.tableView.reloadData()
@@ -57,8 +60,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let model = self.dataList[indexPath.row]
         let params : [String : Any] = [
             "IsCache": false,  // 是否缓存页面
-            "IsLogout": false, // 是否退出已登录状态
-            "TimeOut": 30      // 页面运行有效时间
+            "IsLogout": true, // 是否退出已登录状态
+            "TimeOut": 60      // 页面运行有效时间
         ]
         PICSDK.shared.delegate = self
         PICSDK.shared.openPIC(urlStr: model.url, key: key, secret: secret, id: model.id, parmas: params) { success in

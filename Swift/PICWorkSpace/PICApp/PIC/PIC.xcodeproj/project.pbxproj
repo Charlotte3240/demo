@@ -100,6 +100,9 @@
 		2BC01D5A2BD6840600CF11E9 /* HCTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D592BD6840600CF11E9 /* HCTool.swift */; };
 		2BC01D5C2BD6879D00CF11E9 /* HClog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D5B2BD6879D00CF11E9 /* HClog.swift */; };
 		2BC01D5E2BD9ECCA00CF11E9 /* PlatFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D5D2BD9ECCA00CF11E9 /* PlatFormModel.swift */; };
+		2BC01D622BDA57A400CF11E9 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC01D5F2BDA57A400CF11E9 /* loading.png */; };
+		2BC01D632BDA57A400CF11E9 /* success.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BC01D602BDA57A400CF11E9 /* success.jpg */; };
+		2BC01D642BDA57A400CF11E9 /* collecting.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2BC01D612BDA57A400CF11E9 /* collecting.gif */; };
 		F2673A87D8FAFB47436DF80D /* Pods_PIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DA6D7BF0A4C8CF9A1B212D /* Pods_PIC.framework */; };
 /* End PBXBuildFile section */
 
@@ -199,6 +202,9 @@
 		2BC01D592BD6840600CF11E9 /* HCTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCTool.swift; sourceTree = "<group>"; };
 		2BC01D5B2BD6879D00CF11E9 /* HClog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HClog.swift; sourceTree = "<group>"; };
 		2BC01D5D2BD9ECCA00CF11E9 /* PlatFormModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatFormModel.swift; sourceTree = "<group>"; };
+		2BC01D5F2BDA57A400CF11E9 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		2BC01D602BDA57A400CF11E9 /* success.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = success.jpg; sourceTree = "<group>"; };
+		2BC01D612BDA57A400CF11E9 /* collecting.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = collecting.gif; sourceTree = "<group>"; };
 		2C60C5CDD57EFD0F062C4BF1 /* Pods-PIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIC.release.xcconfig"; path = "Target Support Files/Pods-PIC/Pods-PIC.release.xcconfig"; sourceTree = "<group>"; };
 		850BD0930860E20C9605AF46 /* Pods-PIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIC.debug.xcconfig"; path = "Target Support Files/Pods-PIC/Pods-PIC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +237,9 @@
 		2B61D8EB2BC775530090B88D /* res */ = {
 			isa = PBXGroup;
 			children = (
+				2BC01D612BDA57A400CF11E9 /* collecting.gif */,
+				2BC01D5F2BDA57A400CF11E9 /* loading.png */,
+				2BC01D602BDA57A400CF11E9 /* success.jpg */,
 				2B61D8EC2BC775980090B88D /* loading.gif */,
 			);
 			path = res;
@@ -486,6 +495,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BC01D622BDA57A400CF11E9 /* loading.png in Resources */,
+				2BC01D632BDA57A400CF11E9 /* success.jpg in Resources */,
+				2BC01D642BDA57A400CF11E9 /* collecting.gif in Resources */,
 				2B61D8ED2BC775980090B88D /* loading.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

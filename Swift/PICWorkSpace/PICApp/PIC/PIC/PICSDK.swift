@@ -29,13 +29,16 @@ public class PICSDK: NSObject{
     @objc public static let shared = PICSDK()
     @objc public var delegate : PICSDKDelegate?
     
-    var isDebug = true
+    var isDebug = false
     
     var key : String? // aes key
     var secret : String? // user secret
     var token : String? // token = base64(key + secret)
     var platFormId : Int? // 平台ID
+    var platFormName : String? // 平台名称
     var params = [String: Any]()
+    
+    var platFormList = [PlatForm]()
     
     
     @objc public func fetchPlatForm(urlStr: String, key: String, secret: String, complete: @escaping (_ list: [PlatForm]?, _ err: String) -> Void){
@@ -69,6 +72,7 @@ public class PICSDK: NSObject{
             }
             do {
                 let model = try JSONDecoder().decode(FetchPlatform.self, from: data)
+                self.platFormList = model.Data.List
                 complete(model.Data.List, "")
             } catch let error {
                 complete(nil, "fetch platform unmarshal response fail: \(error.localizedDescription)")
@@ -99,6 +103,7 @@ public class PICSDK: NSObject{
         self.key = key
         self.secret = secret
         self.platFormId = id
+        self.platFormName = self.platFormList.filter({$0.id == self.platFormId}).first?.title
         self.params = parmas
         if parmas["IsCache"] as? Bool == nil{
             self.params["IsCache"] = false
@@ -106,7 +111,7 @@ public class PICSDK: NSObject{
         if parmas["IsLogout"] as? Bool == nil{
             self.params["IsLogout"] = true
         }
-        if parmas["TimeOut"] as? Bool == nil{
+        if parmas["TimeOut"] as? Int == nil{
             self.params["TimeOut"] = 60
         }
 

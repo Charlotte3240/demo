@@ -35,7 +35,6 @@ let nullValue: Any? = nil
 
 class PICWKWebViewController: UIViewController {
         
-//    let jsBridgeFuncNames = ["onLog","onStatus","onDecode","onData","onDataAppend","onStartActivityUrl"]
 
     var callStarted = false
     
@@ -73,12 +72,11 @@ class PICWKWebViewController: UIViewController {
                                 configuration: configuration)
         webView.navigationDelegate = self
         
-        //TODO: - 上线后移除
-        if #available(iOS 16.4, *) {
-            webView.isInspectable = true
-        } else {
-            // Fallback on earlier versions
-        }
+//        if #available(iOS 16.4, *) {
+//            webView.isInspectable = true
+//        } else {
+//            // Fallback on earlier versions
+//        }
 
         
         return webView
@@ -86,6 +84,7 @@ class PICWKWebViewController: UIViewController {
     
     fileprivate lazy var indictorView: IndicatorView = {
         let indictor = IndicatorView(frame: CGRect(x: 0,y: 0,width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height))
+        indictor.loadingText = PICSDK.shared.platFormName ?? ""
         return indictor
     }()
         
@@ -98,8 +97,17 @@ class PICWKWebViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.addSubview(self.webView)
-//        self.view.addSubview(self.indictorView)
-//        self.indictorView.showIndictor(status: .loading)
+        
+        self.view.addSubview(self.indictorView)
+        self.indictorView.showIndictor(status: .loading)
+                
+        
+        let timeoutAfter = PICSDK.shared.params["TimeOut"] as? Int ?? 60
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime(integerLiteral: timeoutAfter)) {[weak self] in
+            self?.exitSDK {
+                PICSDK.shared.onError(err: "timeout error")
+            }
+        }
         
         
         let top = NSLayoutConstraint.init(item: self.webView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
@@ -130,11 +138,12 @@ class PICWKWebViewController: UIViewController {
             case.failure(let error):
                 HClog.log("download logic js file \(error)")
                 PICSDK.shared.onError(err: "download logic file fail")
+                self?.onResultFail()
             }
         }
         
         // 监控app 再次进入前台
-        NotificationCenter.default.addObserver(self, selector: #selector(enterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(enterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
 
         
     }
@@ -189,11 +198,12 @@ class PICWKWebViewController: UIViewController {
                   let result = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any],
                   let content = result["Data"] as? [String: Any],
                   let jsStr = content["Js"] as? String,
+                  let jsFileName = content["Name"] as? String,
                   let result = HCEncrypt.decrypt(psw: psw, encryptedText: jsStr) else {
                 completion(.failure(NSError(domain: "Invalid data", code: -1, userInfo: nil)))
                 return
             }
-            
+            self.indictorView.loadingText = jsFileName
             completion(.success(result))
         }
         
@@ -202,6 +212,7 @@ class PICWKWebViewController: UIViewController {
     func injectJSContent(_ jsContent: String) {
         guard let url = URL.init(string: self.webUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else {
             PICSDK.shared.onError(err: "url formatter error")
+            self.onResultFail()
             return
         }
         
@@ -215,19 +226,6 @@ class PICWKWebViewController: UIViewController {
     }
     
     
-    func showLoading(status: LoadingStatus){
-        
-        switch status{
-        case .loading:
-            // show loading image
-            self.indictorView.showIndictor(status: .loading)
-            break
-        case .end:
-            // show end image
-            break
-        }
-    }
-
     
     
     deinit {
@@ -287,7 +285,7 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         }
     )()
     """#)
-        HClog.log("再次进入前台")
+        HClog.log("->>>>>>>>>>>enter foreground again")
     }
     
     func onStartActivityUrl(data: String){
@@ -338,11 +336,23 @@ extension PICWKWebViewController: WKScriptMessageHandler{
     }
     
     func onStatus(data: Int){
-        if data == 3{
-            //TODO: - 可能需要延迟2s后再退出界面
-            self.exitSDK {
-                PICSDK.shared.onResult(msg: "process complete", data: self.tmpData)
+        switch data{
+        case 0:
+            self.indictorView.showIndictor(status: .hidden)
+        case 1:
+            self.indictorView.showIndictor(status: .loading)
+        case 2:
+            self.indictorView.showIndictor(status: .collecting)
+        case 3:
+            self.indictorView.showIndictor(status: .end)
+            DispatchQueue.main.asyncAfter(deadline: .now()+2) { [weak self] in
+                self?.exitSDK {
+                    PICSDK.shared.onResult(msg: "success", data: self?.tmpData)
+                }
             }
+        default:
+            HClog.log("unknow status: \(data)")
+            break
         }
     }
 
@@ -384,6 +394,12 @@ extension PICWKWebViewController: WKScriptMessageHandler{
             self?.dismiss(animated: true) {
                 complete()
             }
+        }
+    }
+    
+    func onResultFail(){
+        self.exitSDK {
+            PICSDK.shared.onResult(msg: "fail", data: nil)
         }
     }
 
@@ -457,10 +473,10 @@ extension PICWKWebViewController: WKNavigationDelegate{
     ///在网页加载完成时调用js方法
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         PICSDK.shared.onNext(next: "load url finish")
-        if self.callStarted == true{
-            return
-        }
-        self.callStarted = true
+//        if self.callStarted == true{
+//            return
+//        }
+//        self.callStarted = true
         self.startRPA()
         
         
@@ -473,15 +489,13 @@ extension PICWKWebViewController: WKNavigationDelegate{
     
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        HClog.log("load error \(error)")
         PICSDK.shared.onError(err: "load error \(error)")
-
+        self.onResultFail()
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        HClog.log("navigation error \(error)")
         PICSDK.shared.onError(err: "navigation error \(error)")
-
+        
         // 超时 或者 加载失败 隔1s 重试
 //        let error  = error as NSError
 //        if error.code == URLError.notConnectedToInternet.rawValue || error.code == URLError.timedOut.rawValue{
