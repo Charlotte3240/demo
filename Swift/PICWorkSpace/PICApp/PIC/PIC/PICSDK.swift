@@ -9,8 +9,18 @@ import Foundation
 import UIKit
 
 @objc public protocol PICSDKDelegate : NSObjectProtocol{
-    func onNext(next: String)
-    func onError(err: String)
+    
+    /// 执行过程回调
+    /// - Parameter next: 回调参数
+    func onNext(msg: String)
+    
+    /// 错误回调
+    /// - Parameter err: 错误参数
+    func onError(msg: String)
+    
+    /// 结果回调
+    /// - Parameter ret: 结果参数
+    func onResult(msg: String, data: String?)
 }
 
 
@@ -19,21 +29,67 @@ public class PICSDK: NSObject{
     @objc public static let shared = PICSDK()
     @objc public var delegate : PICSDKDelegate?
     
+    var isDebug = true
+    
     var key : String? // aes key
     var secret : String? // user secret
     var token : String? // token = base64(key + secret)
     var platFormId : Int? // 平台ID
+    var params = [String: Any]()
     
-    @objc public func openPIC(urlStr: String, key: String, secret:String, id: Int, complete: @escaping (_ success: Bool) -> Void){
+    
+    @objc public func fetchPlatForm(urlStr: String, key: String, secret: String, complete: @escaping (_ list: [PlatForm]?, _ err: String) -> Void){
         /*
-         * url: 平台URL
+         * urlStr: 平台URL的前半部分
+         * key: 就是base64 那一串
+         * secret: ase加密密钥
+         * id: 平台id
+         */
+        let fetchUrlStr = urlStr + "/api/platform/list"
+        let user = #"\#(key):\#(secret)"#
+        guard let data = user.data(using: .utf8) else{
+            complete(nil, "key or secret wrong")
+            return
+        }
+        let base64Str = data.base64EncodedString()
+        
+        guard let url = URL(string: fetchUrlStr) else{
+            complete(nil, "fetch platform url wrong")
+            return
+        }
+        var request = URLRequest(url: url,timeoutInterval: 30)
+        request.addValue("Basic \(base64Str)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "GET"
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                complete(nil, "fetch platform data fail: \(error?.localizedDescription ?? "")")
+                return
+            }
+            do {
+                let model = try JSONDecoder().decode(FetchPlatform.self, from: data)
+                complete(model.Data.List, "")
+            } catch let error {
+                complete(nil, "fetch platform unmarshal response fail: \(error.localizedDescription)")
+            }
+            
+        }
+
+        task.resume()
+        
+    }
+    
+    @objc public func openPIC(urlStr: String, key: String, secret:String, id: Int, parmas: [String: Any], complete: @escaping (_ success: Bool) -> Void){
+        /*
+         * urlStr: 平台URL
          * key: 就是base64 那一串
          * secret: ase加密密钥
          * id: 平台id
          */
         
         guard let data = "\(key):\(secret)".data(using: .utf8) else{
-            debugPrint("base64 encode fail")
+            HClog.log("base64 encode fail")
             complete(false)
             return
         }
@@ -43,9 +99,19 @@ public class PICSDK: NSObject{
         self.key = key
         self.secret = secret
         self.platFormId = id
+        self.params = parmas
+        if parmas["IsCache"] as? Bool == nil{
+            self.params["IsCache"] = false
+        }
+        if parmas["IsLogout"] as? Bool == nil{
+            self.params["IsLogout"] = true
+        }
+        if parmas["TimeOut"] as? Bool == nil{
+            self.params["TimeOut"] = 60
+        }
 
         guard URL.init(string: urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") != nil else {
-            PICSDK.shared.onError(err: "传入URL格式错误")
+            PICSDK.shared.onError(err: "open pic url param formatter wrong")
             complete(false)
             return
         }
@@ -58,11 +124,21 @@ public class PICSDK: NSObject{
     
     
     func onError(err: String){
-        self.delegate?.onError(err: err)
+        if let delegate = PICSDK.shared.delegate, delegate.responds(to: #selector(delegate.onError(msg:))){
+            delegate.onError(msg: err)
+        }
     }
     
     func onNext(next: String){
-        self.delegate?.onNext(next: next)
+        if let delegate = PICSDK.shared.delegate, delegate.responds(to: #selector(delegate.onNext(msg:))){
+            delegate.onNext(msg: next)
+        }
+    }
+    
+    func onResult(msg : String, data: String?){
+        if let delegate = PICSDK.shared.delegate, delegate.responds(to: #selector(delegate.onResult(msg:data:))){
+            delegate.onResult(msg: msg, data: data)
+        }
     }
     
     

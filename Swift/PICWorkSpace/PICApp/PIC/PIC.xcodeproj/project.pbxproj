@@ -98,6 +98,8 @@
 		2BC01D522BD2754C00CF11E9 /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D042BD2754C00CF11E9 /* ZeroPadding.swift */; };
 		2BC01D542BD2756B00CF11E9 /* HCEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D532BD2756B00CF11E9 /* HCEncrypt.swift */; };
 		2BC01D5A2BD6840600CF11E9 /* HCTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D592BD6840600CF11E9 /* HCTool.swift */; };
+		2BC01D5C2BD6879D00CF11E9 /* HClog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D5B2BD6879D00CF11E9 /* HClog.swift */; };
+		2BC01D5E2BD9ECCA00CF11E9 /* PlatFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D5D2BD9ECCA00CF11E9 /* PlatFormModel.swift */; };
 		F2673A87D8FAFB47436DF80D /* Pods_PIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DA6D7BF0A4C8CF9A1B212D /* Pods_PIC.framework */; };
 /* End PBXBuildFile section */
 
@@ -195,6 +197,8 @@
 		2BC01D042BD2754C00CF11E9 /* ZeroPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeroPadding.swift; sourceTree = "<group>"; };
 		2BC01D532BD2756B00CF11E9 /* HCEncrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCEncrypt.swift; sourceTree = "<group>"; };
 		2BC01D592BD6840600CF11E9 /* HCTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCTool.swift; sourceTree = "<group>"; };
+		2BC01D5B2BD6879D00CF11E9 /* HClog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HClog.swift; sourceTree = "<group>"; };
+		2BC01D5D2BD9ECCA00CF11E9 /* PlatFormModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatFormModel.swift; sourceTree = "<group>"; };
 		2C60C5CDD57EFD0F062C4BF1 /* Pods-PIC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIC.release.xcconfig"; path = "Target Support Files/Pods-PIC/Pods-PIC.release.xcconfig"; sourceTree = "<group>"; };
 		850BD0930860E20C9605AF46 /* Pods-PIC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIC.debug.xcconfig"; path = "Target Support Files/Pods-PIC/Pods-PIC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -255,11 +259,13 @@
 			children = (
 				2BA5E46F2BB558C9009E8C5A /* PIC.h */,
 				2BA5E4762BB559B3009E8C5A /* PICSDK.swift */,
+				2BC01D5D2BD9ECCA00CF11E9 /* PlatFormModel.swift */,
 				2BA5E47C2BB55AC6009E8C5A /* PICWKWebViewController.swift */,
 				2B5FD92E2BC4085D00CBF4A3 /* IndicatorView.swift */,
 				2BA5E47E2BB55E5B009E8C5A /* Ex.swift */,
 				2BC01D532BD2756B00CF11E9 /* HCEncrypt.swift */,
 				2BC01D592BD6840600CF11E9 /* HCTool.swift */,
+				2BC01D5B2BD6879D00CF11E9 /* HClog.swift */,
 				2BC01CB32BD2752000CF11E9 /* third */,
 				2B61D8EB2BC775530090B88D /* res */,
 			);
@@ -523,6 +529,7 @@
 				2BC01D392BD2754C00CF11E9 /* HMAC.swift in Sources */,
 				2BC01D3A2BD2754C00CF11E9 /* Int+Extension.swift in Sources */,
 				2BC01D2C2BD2754C00CF11E9 /* CBCMAC.swift in Sources */,
+				2BC01D5E2BD9ECCA00CF11E9 /* PlatFormModel.swift in Sources */,
 				2BC01D222BD2754C00CF11E9 /* AES.Cryptors.swift in Sources */,
 				2BA5E47D2BB55AC6009E8C5A /* PICWKWebViewController.swift in Sources */,
 				2BC01D1B2BD2754C00CF11E9 /* String+FoundationExtension.swift in Sources */,
@@ -579,6 +586,7 @@
 				2BC01D462BD2754C00CF11E9 /* SHA2.swift in Sources */,
 				2BC01D282BD2754C00CF11E9 /* BlockCipher.swift in Sources */,
 				2BC01D1F2BD2754C00CF11E9 /* PKCS5.swift in Sources */,
+				2BC01D5C2BD6879D00CF11E9 /* HClog.swift in Sources */,
 				2BC01D162BD2754C00CF11E9 /* Blowfish+Foundation.swift in Sources */,
 				2B5FD9382BC408A500CBF4A3 /* NSImageView+SwiftyGif.swift in Sources */,
 				2BC01D362BD2754C00CF11E9 /* DigestType.swift in Sources */,
@@ -752,7 +760,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -788,7 +796,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

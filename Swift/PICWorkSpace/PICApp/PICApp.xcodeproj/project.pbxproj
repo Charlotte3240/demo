@@ -14,7 +14,6 @@
 		2BA5E45B2BB55760009E8C5A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2BA5E45A2BB55760009E8C5A /* Base */; };
 		2BA5E4792BB559CC009E8C5A /* PIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA5E4782BB559CC009E8C5A /* PIC.framework */; };
 		2BA5E47A2BB559CC009E8C5A /* PIC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA5E4782BB559CC009E8C5A /* PIC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2BC01D562BD6112400CF11E9 /* PlatFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D552BD6112400CF11E9 /* PlatFormModel.swift */; };
 		2BC01D582BD63DC700CF11E9 /* PlatformCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC01D572BD63DC700CF11E9 /* PlatformCell.swift */; };
 		360BEE0D72A732634F20421A /* Pods_PICApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BC5E0EAB643664B4797736 /* Pods_PICApp.framework */; };
 /* End PBXBuildFile section */
@@ -44,7 +43,6 @@
 		2BA5E45A2BB55760009E8C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BA5E45C2BB55760009E8C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA5E4782BB559CC009E8C5A /* PIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BC01D552BD6112400CF11E9 /* PlatFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatFormModel.swift; sourceTree = "<group>"; };
 		2BC01D572BD63DC700CF11E9 /* PlatformCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCell.swift; sourceTree = "<group>"; };
 		685934E03147D1ADAEE061D6 /* Pods-PICApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PICApp.release.xcconfig"; path = "Target Support Files/Pods-PICApp/Pods-PICApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +83,6 @@
 			children = (
 				2BA5E44E2BB5575F009E8C5A /* AppDelegate.swift */,
 				2BA5E4522BB5575F009E8C5A /* ViewController.swift */,
-				2BC01D552BD6112400CF11E9 /* PlatFormModel.swift */,
 				2BC01D572BD63DC700CF11E9 /* PlatformCell.swift */,
 				2BA5E4542BB5575F009E8C5A /* Main.storyboard */,
 				2BA5E4572BB55760009E8C5A /* Assets.xcassets */,
@@ -211,7 +208,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BC01D562BD6112400CF11E9 /* PlatFormModel.swift in Sources */,
 				2BA5E4532BB5575F009E8C5A /* ViewController.swift in Sources */,
 				2BC01D582BD63DC700CF11E9 /* PlatformCell.swift in Sources */,
 				2BA5E44F2BB5575F009E8C5A /* AppDelegate.swift in Sources */,
@@ -374,7 +370,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -403,7 +399,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

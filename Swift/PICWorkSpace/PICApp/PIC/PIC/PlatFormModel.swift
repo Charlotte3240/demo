@@ -14,14 +14,12 @@ struct FetchPlatform: Codable{
 
 // MARK: - DataClass
 struct DataClass: Codable {
-    let List: [List]
+    let List: [PlatForm]
 }
 
 // MARK: - List
-struct List: Codable {
-    let id: Int
-    let created_at, updated_at: String
-    let title, file: String
-    let url: String
-    let enable: Bool
+public class PlatForm: NSObject, Codable {
+    public let id: Int
+    public let title: String
+    public let url: String
 }

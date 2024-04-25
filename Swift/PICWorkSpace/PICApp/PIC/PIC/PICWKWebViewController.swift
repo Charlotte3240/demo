@@ -8,19 +8,14 @@
 import Foundation
 import WebKit
 
-// https://igjj.ccb.com/qgzfgjj/login
-// https://api.hc-nsqk.com/tmp/ccb.js
-
-// https://www.etax.chinatax.gov.cn
-// https://api.hc-nsqk.com/tmp/chinatax.js
-
-let jsDic = [
-    "https://igjj.ccb.com/qgzfgjj/login":"https://api.hc-nsqk.com/tmp/ccb.js",
-    "https://www.etax.chinatax.gov.cn":"https://api.hc-nsqk.com/tmp/chinatax.js"
-]
-
 // 下载js文件链接
-let fetchJsUrl = "http://150.158.10.87/rpa/api/platform/resource"
+fileprivate let fetchJsUrl = "http://150.158.10.87/rpa/api/platform/resource"
+
+// 上传log 链接
+fileprivate let uploadLogUrl = "http://150.158.10.87/rpa/api/log/save"
+
+
+fileprivate let jsBridgeFuncNames = ["onLog","onStatus","onDecode","onData","onDataAppend","onStartActivityUrl"]
 
 
 enum LoadingStatus{
@@ -37,11 +32,15 @@ struct BridgeModel : Codable{
 let nullValue: Any? = nil
 
 
+
 class PICWKWebViewController: UIViewController {
         
-    let jsBridgeFuncNames = ["exitSDK","onLog","onStatus","onDecode","onData","onDataAppend","onStartActivityUrl"]
+//    let jsBridgeFuncNames = ["onLog","onStatus","onDecode","onData","onDataAppend","onStartActivityUrl"]
 
     var callStarted = false
+    
+    // on data append 会替换这个字符串
+    var tmpData: String = ""
     
     
     fileprivate lazy var webView: WKWebView = {
@@ -63,7 +62,7 @@ class PICWKWebViewController: UIViewController {
         configuration.selectionGranularity = WKSelectionGranularity.character
         configuration.userContentController = WKUserContentController()
         // 添加所有交互方法
-        self.jsBridgeFuncNames.forEach({
+        jsBridgeFuncNames.forEach({
             configuration.userContentController.add(WeakScriptMessageDelegate(self), name: $0)
         })
         
@@ -129,11 +128,14 @@ class PICWKWebViewController: UIViewController {
                     self?.injectJSContent(jsContent.replacingOccurrences(of: #"platform: "android""#, with: #"platform: "ios""#))
                 }
             case.failure(let error):
-                debugPrint("download logic js file \(error)")
-                PICSDK.shared.onError(err: "download logic fail")
+                HClog.log("download logic js file \(error)")
+                PICSDK.shared.onError(err: "download logic file fail")
             }
         }
         
+        // 监控app 再次进入前台
+        NotificationCenter.default.addObserver(self, selector: #selector(enterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+
         
     }
 
@@ -142,7 +144,7 @@ class PICWKWebViewController: UIViewController {
         if keyPath == "title"{
             self.navigationItem.title = self.webView.title
         }else if keyPath == "estimatedProgress"{
-            debugPrint(self.webView.estimatedProgress)
+            HClog.log("load progress: \(self.webView.estimatedProgress)")
         }else{
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
@@ -151,9 +153,9 @@ class PICWKWebViewController: UIViewController {
     func writeJs(_ jsStr: String = ""){
         self.webView.evaluateJavaScript(jsStr) { (result, error) in
             if error == nil{
-                debugPrint("write js success : \(jsStr)")
+                HClog.log("write js success : \(jsStr)")
             }else{
-                debugPrint("write js error is \(error?.localizedDescription ?? "")")
+                HClog.log("write js error is \(jsStr) , \(error)")
             }
         }
     }
@@ -163,6 +165,7 @@ class PICWKWebViewController: UIViewController {
         var request = URLRequest(url: URL(string: fetchJsUrl)!,timeoutInterval: 30)
         let auth = PICSDK.shared.token ?? ""
         let psw = "\(PICSDK.shared.secret?.prefix(16) ?? "")"
+        let param = try? JSONSerialization.data(withJSONObject: PICSDK.shared.params, options: [])
         request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
@@ -171,7 +174,7 @@ class PICWKWebViewController: UIViewController {
             "device": HCTool.getDeiveName(),
             "screen": "\(UIScreen.main.bounds.size.width),\(UIScreen.main.bounds.size.height)",
             "package": HCTool.getMainBundleId(),
-            "isHarmony": "false"
+            "params": String(data: param ?? Data(), encoding: .utf8) ?? ""
         ]
         let jsonData = try? JSONSerialization.data(withJSONObject: parama, options: [])
         request.httpBody = jsonData
@@ -198,14 +201,16 @@ class PICWKWebViewController: UIViewController {
     }
     func injectJSContent(_ jsContent: String) {
         guard let url = URL.init(string: self.webUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else {
-            PICSDK.shared.onError(err: "传入URL格式错误")
+            PICSDK.shared.onError(err: "url formatter error")
             return
         }
         
         let userScript = WKUserScript(source: jsContent, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
         self.webView.configuration.userContentController.addUserScript(userScript)
 
-        let req = URLRequest.init(url: url,cachePolicy: .reloadIgnoringLocalCacheData,timeoutInterval: TimeInterval.init(10))
+        let req = URLRequest.init(url: url,cachePolicy: .reloadIgnoringLocalCacheData,timeoutInterval: TimeInterval.init(30))
+        
+        PICSDK.shared.onNext(next: "init webview")
         self.webView.load(req)
     }
     
@@ -229,13 +234,13 @@ class PICWKWebViewController: UIViewController {
         self.webView.removeObserver(self, forKeyPath: "title")
         self.webView.removeObserver(self, forKeyPath: "estimatedProgress")
         // 移除所有方法
-        self.jsBridgeFuncNames.forEach {[weak self] funcName in
-            self?.webView.configuration.userContentController.removeScriptMessageHandler(forName: funcName)
+        for funcName in jsBridgeFuncNames{
+            self.webView.configuration.userContentController.removeScriptMessageHandler(forName: funcName)
         }
-                
+                        
         //移除监听
         NotificationCenter.default.removeObserver(self)
-        debugPrint("webview deinit")
+        HClog.log("webview deinit")
         
     }
     
@@ -250,11 +255,9 @@ extension PICWKWebViewController: WKScriptMessageHandler{
     func userContentController(_ userContentController: WKUserContentController,
                                didReceive message: WKScriptMessage) {
         
-        debugPrint("recv message handler func: \(message.name), body: \(message.body)")
+        HClog.log("recv message handler func: \(message.name), body: \(message.body)")
 
         switch message.name {
-        case "exitSDK":
-            self.exitSDK()
         case "onLog":
             self.onLog(data: message.body as? String ?? "")
         case "onStatus":
@@ -262,7 +265,7 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         case "onDecode":
             self.onDecode(data: message.body as? [String:String] ?? [String:String]())
         case "onData":
-            self.onData(data: message.body as? String ?? "")
+            self.onData(data: message.body as? [String: String] ?? [String: String]())
         case "onDataAppend":
             self.onDataAppend(data: message.body as? String ?? "")
         case "onStartActivityUrl":
@@ -274,6 +277,19 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         }
     }
     
+    @objc func enterForeground(){
+        // 执行rpa.start
+        self.writeJs(#"""
+    (function() {
+            if(window.rpa) {
+                window.rpa.start();
+            }
+        }
+    )()
+    """#)
+        HClog.log("再次进入前台")
+    }
+    
     func onStartActivityUrl(data: String){
         if let url = URL(string: data){
             let req = URLRequest(url: url)
@@ -282,11 +298,24 @@ extension PICWKWebViewController: WKScriptMessageHandler{
     }
     
     func onDataAppend(data : String){
-        
+        self.tmpData = data
     }
     
-    func onData(data : String){
-        // json 字符串
+    func onData(data : [String: String]){
+        // 解析uuid
+        let uuid = data["uuid"] ?? ""
+        if uuid.isBlank{
+            PICSDK.shared.onError(err: "onData uuid is blank")
+            return
+        }
+        
+
+        // 组装 js 字符串
+        let jsStr = #"""
+            window.rpa.callback("\#(uuid)",'\#(self.tmpData)')
+        """#
+        self.writeJs(jsStr)
+
     }
     
     func onDecode(data : [String: String]?){
@@ -294,40 +323,82 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         let uuid = data?["uuid"] as? String ?? ""
         let base64 = data?["data"] as? String ?? ""
         let qrContent = self.getQrCodeContent(content: base64)
-        if qrContent.isEmpty{
-            debugPrint("解析onDecode json 数据失败")
+        if qrContent.isBlank{
+            PICSDK.shared.onError(err: "parse onDecode data fail")
             jsStr = #"""
                 window.rpa.callback(\#(uuid),\#(qrContent),'not found qr code')
             """#
-
         }else{
             jsStr = #"""
                 window.rpa.callback("\#(uuid)","\#(qrContent)")
             """#
         }
-        debugPrint("will write jsContent: \(jsStr)")
         self.writeJs(jsStr)
         
     }
     
     func onStatus(data: Int){
-        
+        if data == 3{
+            //TODO: - 可能需要延迟2s后再退出界面
+            self.exitSDK {
+                PICSDK.shared.onResult(msg: "process complete", data: self.tmpData)
+            }
+        }
     }
 
     func onLog(data : String){
+        if data.isBlank{
+            return
+        }
+        // 上传日志到服务器
+        var request = URLRequest(url: URL(string: uploadLogUrl)!,timeoutInterval: 30)
+        let auth = PICSDK.shared.token ?? ""
+        request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        // 获取当前时间戳
+        let timestamp = Int(Date().timeIntervalSince1970 * 1000)
+        let parama = [["\(timestamp)":data]]
+        let jsonData = try? JSONSerialization.data(withJSONObject: parama, options: [])
+
+        let body: [String:Any] = [
+            "id":PICSDK.shared.platFormId ?? 0,
+            "logs":String(data: jsonData ?? Data(), encoding: .utf8) ?? ""
+        ]
+        let bodyData = try? JSONSerialization.data(withJSONObject: body, options: [])
+        request.httpBody = bodyData
         
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+              HClog.log("上传日志失败: \(error?.localizedDescription ?? "")")
+              return
+          }
+            HClog.log("上传日志: \(String(data: data, encoding: .utf8) ?? "")")
+        }
+
+        task.resume()
     }
     
-    func exitSDK(){
+    func exitSDK(complete: @escaping () -> Void){
         DispatchQueue.main.async {[weak self] in
             self?.dismiss(animated: true) {
-                
+                complete()
             }
         }
     }
 
     
     func startRPA(){
+        // 注入parmas
+        let parma = PICSDK.shared.params
+        if let jsonData = try? JSONSerialization.data(withJSONObject: parma, options: []),
+           let jsonString = String(data: jsonData, encoding: .utf8){
+            self.writeJs(#"""
+        (function() {try{Object.assign(window.rpa, {platform: 'ios', params: \#(jsonString)});}catch(e){console.log(e);} })();
+        """#)
+        }
+        
+        
         // 执行rpa.start
         self.writeJs(#"""
     (function() {
@@ -346,14 +417,14 @@ extension PICWKWebViewController: WKScriptMessageHandler{
 
         // 将 Base64 字符串解码为 Data
         guard let imageData = Data(base64Encoded: base64String), let image = UIImage(data: imageData) else {
-            print("Invalid Base64 image string")
+            HClog.log("Invalid Base64 image string")
             return ""
         }
         
 
         // 将 UIImage 转换为 CIImage
         guard let ciImage = CIImage(image: image) else {
-            print("Failed to create CIImage from UIImage")
+            HClog.log("Failed to create CIImage from UIImage")
             return ""
         }
 
@@ -368,7 +439,7 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         // 遍历检测到的特征
         for feature in features as? [CIQRCodeFeature] ?? [] {
             if let messageString = feature.messageString {
-                print("Detected QR code message: \(messageString)")
+                HClog.log("Detected QR code message: \(messageString)")
             }
         }
         
@@ -385,7 +456,7 @@ extension PICWKWebViewController: WKScriptMessageHandler{
 extension PICWKWebViewController: WKNavigationDelegate{
     ///在网页加载完成时调用js方法
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        debugPrint("load finish")
+        PICSDK.shared.onNext(next: "load url finish")
         if self.callStarted == true{
             return
         }
@@ -396,19 +467,19 @@ extension PICWKWebViewController: WKNavigationDelegate{
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        debugPrint("start load")
+        PICSDK.shared.onNext(next: "start load url")
     }
     
     
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        debugPrint("load error \(error)")
+        HClog.log("load error \(error)")
         PICSDK.shared.onError(err: "load error \(error)")
 
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        debugPrint("navigation error \(error)")
+        HClog.log("navigation error \(error)")
         PICSDK.shared.onError(err: "navigation error \(error)")
 
         // 超时 或者 加载失败 隔1s 重试
@@ -429,15 +500,15 @@ extension PICWKWebViewController: WKNavigationDelegate{
     }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let absoluteString = navigationAction.request.url?.absoluteString.removingPercentEncoding ?? ""
-        debugPrint("current url is \(absoluteString)")
+        HClog.log("current url is \(absoluteString)")
         
         if absoluteString.hasPrefix("alipays://") || absoluteString.hasPrefix("alipay://"){
             guard let openUrl = navigationAction.request.url else{
-                debugPrint("alipay url foramatter error")
+                HClog.log("alipay url foramatter error")
                 return
             }
             UIApplication.shared.open(openUrl) { success in
-                debugPrint("open alipay \(success)")
+                HClog.log("open third platform \(success)")
             }
             decisionHandler(.cancel)
         }else{
@@ -527,6 +598,6 @@ class WeakScriptMessageDelegate: NSObject, WKScriptMessageHandler {
         scriptDelegate?.userContentController(userContentController, didReceive: message)
     }
     deinit {
-        debugPrint("WeakScriptMessageDelegate is deinit")
+        HClog.log("WeakScriptMessageDelegate is deinit")
     }
 }

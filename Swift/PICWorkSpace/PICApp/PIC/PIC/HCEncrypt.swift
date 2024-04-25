@@ -20,7 +20,7 @@ class HCEncrypt{
             aes = try AES(key: key, iv: iv, padding: .pkcs7)
             return aes
         } catch let error {
-            debugPrint("init aes instance error,err:\(error)")
+            HClog.log("init aes instance error,err:\(error)")
         }
         return nil
     }
@@ -38,35 +38,11 @@ class HCEncrypt{
         do {
             encrypted = try aes.encrypt(source.bytes)
         } catch let error{
-            debugPrint("encrypted message error ,err:\(error)")
+            HClog.log("encrypted message error ,err:\(error)")
         }
         // 转base64
         return encrypted.toBase64()
     }
-    
-//    static func decrypt(source : String) -> String{
-//        if source.isBlank { return ""}
-//        if aes == nil{
-//            let _ = initAES()
-//        }
-//                
-//        guard let aes = aes else{
-//            return source
-//        }
-//        // 解密
-//        let needDecrypto = [UInt8](base64: source)
-//        var str = "decrypto error"
-//        do {
-//            let decode = try aes.decrypt(needDecrypto)
-//            let decodeData = Data(decode)
-//            str = String(data: decodeData, encoding: .utf8) ?? ""
-//        } catch let error {
-//            debugPrint("decode log message error,err:\(error)")
-//        }
-//        return str
-//    }
-
-
     
     static func decrypt(psw: String, encryptedText: String) -> String? {
         guard let keyData = psw.data(using: .utf8),
