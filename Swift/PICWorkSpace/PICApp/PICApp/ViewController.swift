@@ -10,7 +10,8 @@ import PIC
 
 let key = "keyuser"
 let secret = "JHyzA6VQhNNdDNMcDRrXq48wH1YDNw5"
-let sdkUrl = "http://150.158.10.87/rpa"
+//let sdkUrl = "http://150.158.10.87/rpa"
+let sdkUrl = "https://rpa.lingdiman.com"
 
 
 class ViewController: UIViewController {
@@ -61,7 +62,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let params : [String : Any] = [
             "IsCache": false,  // 是否缓存页面
             "IsLogout": true, // 是否退出已登录状态
-            "TimeOut": 60      // 页面运行有效时间
+            "TimeOut": 120      // 页面运行有效时间
         ]
         PICSDK.shared.delegate = self
         PICSDK.shared.openPIC(urlStr: model.url, key: key, secret: secret, id: model.id, parmas: params) { success in

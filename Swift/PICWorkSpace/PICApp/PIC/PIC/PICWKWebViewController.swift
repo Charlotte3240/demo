@@ -9,10 +9,10 @@ import Foundation
 import WebKit
 
 // 下载js文件链接
-fileprivate let fetchJsUrl = "http://150.158.10.87/rpa/api/platform/resource"
+fileprivate let fetchJsUrl = "https://rpa.lingdiman.com/api/platform/resource"
 
 // 上传log 链接
-fileprivate let uploadLogUrl = "http://150.158.10.87/rpa/api/log/save"
+fileprivate let uploadLogUrl = "https://rpa.lingdiman.com/api/log/save"
 
 
 fileprivate let jsBridgeFuncNames = ["onLog","onStatus","onDecode","onData","onDataAppend","onStartActivityUrl"]
