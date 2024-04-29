@@ -9,13 +9,13 @@ import Foundation
 import WebKit
 
 // 下载js文件链接
-fileprivate let fetchJsUrl = "https://rpa.lingdiman.com/api/platform/resource"
+fileprivate let fetchJsUrl = "/api/platform/resource"
 
 // 上传log 链接
-fileprivate let uploadLogUrl = "https://rpa.lingdiman.com/api/log/save"
+fileprivate let uploadLogUrl = "/api/log/save"
 
-
-fileprivate let jsBridgeFuncNames = ["onLog","onStatus","onDecode","onData","onDataAppend","onStartActivityUrl"]
+// 交互方法
+fileprivate let jsBridgeFuncNames = ["onLog","onStatus","onDecode","onData","onDataAppend","onStartActivityUrl","onCallJs"]
 
 
 enum LoadingStatus{
@@ -129,7 +129,8 @@ class PICWKWebViewController: UIViewController {
 
         
         // 下载js 后注入js
-        downloadJSFile() {[weak self] result in
+        let url = "\(PICSDK.shared.serviceUrl ?? "")\(fetchJsUrl)"
+        downloadJSFile(url: url) {[weak self] result in
             switch result{
             case.success(let jsContent):
                 DispatchQueue.main.async {
@@ -170,8 +171,13 @@ class PICWKWebViewController: UIViewController {
     }
     
     // 下载js文件内容
-    func downloadJSFile(completion: @escaping (Result<String, Error>) -> Void) {
-        var request = URLRequest(url: URL(string: fetchJsUrl)!,timeoutInterval: 30)
+    func downloadJSFile(url: String, completion: @escaping (Result<String, Error>) -> Void) {
+        guard let url = URL(string: url) else{
+            PICSDK.shared.onError(err: "logic file url formatter error")
+            self.onResultFail()
+            return
+        }
+        var request = URLRequest(url: url, timeoutInterval: 30)
         let auth = PICSDK.shared.token ?? ""
         let psw = "\(PICSDK.shared.secret?.prefix(16) ?? "")"
         let param = try? JSONSerialization.data(withJSONObject: PICSDK.shared.params, options: [])
@@ -268,11 +274,63 @@ extension PICWKWebViewController: WKScriptMessageHandler{
             self.onDataAppend(data: message.body as? String ?? "")
         case "onStartActivityUrl":
             self.onStartActivityUrl(data: message.body as? String ?? "")
+        case "onCallJs":
+            self.onCallJs(data: message.body as? [String: String] ?? [String: String]())
             
         default:
             break
             
         }
+    }
+    
+    func onCallJs(data : [String: String]){
+        // 解析uuid
+        let uuid = data["uuid"] ?? ""
+        if uuid.isBlank{
+            PICSDK.shared.onError(err: "onData uuid is blank")
+            return
+        }
+        
+        let jsFileName = data["data"] ?? ""
+        if jsFileName.isBlank {
+            HClog.log("onCallJs fileName is blank")
+            return
+        }
+        
+        let urlStr = "\(PICSDK.shared.serviceUrl ?? "")/static/js/\(jsFileName)"
+        guard let url = URL(string: urlStr) else{
+            PICSDK.shared.onError(err: "oncall logic file url formatter error")
+            return
+        }
+        var request = URLRequest(url: url, timeoutInterval: 30)
+        let auth = PICSDK.shared.token ?? ""
+        request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                HClog.log("download oncall logic js file \(error)")
+                PICSDK.shared.onError(err: "download oncall logic file fail")
+                return
+            }
+            guard let data = data,
+                  let jsContent = String(data: data, encoding: .utf8) else {
+                HClog.log("oncall logic js file data problem")
+                PICSDK.shared.onError(err: "oncall logic js file data problem")
+                return
+            }
+            DispatchQueue.main.async {[weak self] in
+                let jsStr = #"""
+                \#(jsContent);
+                    window.rpa.callback("\#(uuid)",true);
+                """#
+                self?.writeJs(jsStr)
+
+                
+            }
+        }
+        
+        task.resume()
     }
     
     @objc func enterForeground(){
@@ -361,7 +419,11 @@ extension PICWKWebViewController: WKScriptMessageHandler{
             return
         }
         // 上传日志到服务器
-        var request = URLRequest(url: URL(string: uploadLogUrl)!,timeoutInterval: 30)
+        guard let url = URL(string: "\(PICSDK.shared.serviceUrl ?? "")\(uploadLogUrl)") else{
+            HClog.log("logi file url formatter error")
+            return
+        }
+        var request = URLRequest(url: url, timeoutInterval: 30)
         let auth = PICSDK.shared.token ?? ""
         request.addValue("Basic \(auth)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

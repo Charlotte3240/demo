@@ -33,6 +33,9 @@ public class PICSDK: NSObject{
     
     var key : String? // aes key
     var secret : String? // user secret
+    
+    var serviceUrl : String?
+    
     var token : String? // token = base64(key + secret)
     var platFormId : Int? // 平台ID
     var platFormName : String? // 平台名称
@@ -73,6 +76,7 @@ public class PICSDK: NSObject{
             do {
                 let model = try JSONDecoder().decode(FetchPlatform.self, from: data)
                 self.platFormList = model.Data.List
+                self.serviceUrl = urlStr
                 complete(model.Data.List, "")
             } catch let error {
                 complete(nil, "fetch platform unmarshal response fail: \(error.localizedDescription)")
