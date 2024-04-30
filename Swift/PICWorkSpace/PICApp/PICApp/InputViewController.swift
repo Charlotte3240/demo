@@ -18,6 +18,9 @@ class InputVC : UIViewController{
     }
     
     @IBAction func showPlatfromAction(_ sender: Any) {
+        if self.keyInput.text?.lengthOfBytes(using: .utf8) == 0{
+            return
+        }
         self.performSegue(withIdentifier: "showPlatform", sender: nil)
     }
     

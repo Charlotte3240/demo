@@ -27,12 +27,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .white
         
-        if self.key.isEmpty{
-            self.key = "keyuser"
-        }
-        if self.secret.isEmpty{
-            self.secret = "JHyzA6VQhNNdDNMcDRrXq48wH1YDNw5"
-        }
         
         // fetch platform list
         PICSDK.shared.fetchPlatForm(urlStr: sdkUrl, key: key, secret: secret) { list, err in
