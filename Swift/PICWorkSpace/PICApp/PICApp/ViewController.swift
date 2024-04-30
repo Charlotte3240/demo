@@ -8,13 +8,16 @@
 import UIKit
 import PIC
 
-let key = "keyuser"
-let secret = "JHyzA6VQhNNdDNMcDRrXq48wH1YDNw5"
+//let key = "keyuser"
+//let secret = "JHyzA6VQhNNdDNMcDRrXq48wH1YDNw5"
 //let sdkUrl = "http://150.158.10.87/rpa"
 let sdkUrl = "https://rpa.lingdiman.com"
 
 
 class ViewController: UIViewController {
+    var key = ""
+    var secret = ""
+    
     @IBOutlet weak var tableView: UITableView!
     
     var dataList = [PlatForm]()
@@ -23,6 +26,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .white
+        
+        if self.key.isEmpty{
+            self.key = "keyuser"
+        }
+        if self.secret.isEmpty{
+            self.secret = "JHyzA6VQhNNdDNMcDRrXq48wH1YDNw5"
+        }
         
         // fetch platform list
         PICSDK.shared.fetchPlatForm(urlStr: sdkUrl, key: key, secret: secret) { list, err in

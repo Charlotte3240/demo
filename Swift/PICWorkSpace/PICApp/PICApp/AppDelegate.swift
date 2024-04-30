@@ -14,12 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        
-        let vc = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        self.window?.rootViewController = vc
-        self.window?.makeKeyAndVisible()
         
         // 首次安装app 弹出允许网络
         let webview = WKWebView()
@@ -30,5 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+
+extension UIViewController {
+// Ends editing view when touches to view
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      super.touchesBegan(touches, with: event)
+      self.view.endEditing(true)
+    }
 }
 

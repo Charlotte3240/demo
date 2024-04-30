@@ -2,7 +2,7 @@
 //  PlatformCell.swift
 //  PICApp
 //
-//  Created by 360-jr on 2024/4/22.
+//  Created by m1 on 2024/4/22.
 //
 
 import Foundation
