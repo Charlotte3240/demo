@@ -209,6 +209,14 @@ class PICWKWebViewController: UIViewController {
                 completion(.failure(NSError(domain: "Invalid data", code: -1, userInfo: nil)))
                 return
             }
+                        
+            // 和 PICSDK.shared.params 进行合并, 以params 为主
+            if let sourceParams = content["Params"] as? [String: Any]{
+                for (key,value) in sourceParams{
+                    PICSDK.shared.params[key] = value
+                }
+            }
+            
             self.indictorView.loadingText = jsFileName
             completion(.success(result))
         }
