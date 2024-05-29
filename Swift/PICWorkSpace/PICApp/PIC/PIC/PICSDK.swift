@@ -124,9 +124,12 @@ public class PICSDK: NSObject{
             complete(false)
             return
         }
+        
+        self.serviceUrl = urlStr
+        
         let wkVc = PICWKWebViewController()
         wkVc.modalPresentationStyle = .fullScreen
-        wkVc.webUrl = urlStr
+//        wkVc.webUrl = urlStr
         UIViewController.current()?.present(wkVc, animated: true)
         complete(true)
     }

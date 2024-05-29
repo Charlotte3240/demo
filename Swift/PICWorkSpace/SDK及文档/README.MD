@@ -7,9 +7,18 @@ PicRPA SDK 提供了一系列接口，用于与PicRPA平台进行交互，包括
 
 ## 配置
 在开始使用SDK之前，需要配置以下参数：
-- `url`：服务地址，用于SDK与PicRPA平台通信。
+- `sdkUrl`：服务地址，用于SDK与PicRPA平台通信。
 - `key`：授权键，用于验证客户端的合法性。
 - `secret`：授权码，用于进一步加强安全性。
+
+
+
+## 接入SDK
+
+* 在工程中直接加入`PIC.xcframework` 
+* 在Frameworks, Libraries, and Embedded Content 中 将 `PIC.xcframework` 设置为 `Embed & Sign`
+
+<img src="./embedSetting.png" alt="embedSetting.png" style="zoom:50%;" />
 
 ## 接口方法
 
@@ -32,7 +41,6 @@ PicRPA SDK 提供了一系列接口，用于与PicRPA平台进行交互，包括
 |-------|-----|--------|------|
 | id    | 是    | int    | 平台ID |
 | title | 是   | string | 平台名称 |
-| url | 是 | string | 平台链接 |
 ###### Swift代码示例：
 ```swift
 // fetch platform list
@@ -40,7 +48,6 @@ PICSDK.shared.fetchPlatForm(urlStr: sdkUrl, key: key, secret: secret) { list, er
     if let list = list {
         // list.first?.id
         // list.first?.title
-        // list.first.url
     }else{
         debugPrint(err)
     }
@@ -68,7 +75,7 @@ PICSDK.shared.fetchPlatForm(urlStr: sdkUrl, key: key, secret: secret) { list, er
 // 设置SDK 回调
 PICSDK.shared.delegate = self
 // 打开SDK
-PICSDK.shared.openPIC(urlStr: model.url, key: key, secret: secret, id: model.id, parmas: params) { success in
+PICSDK.shared.openPIC(urlStr: sdkUrl, key: key, secret: secret, id: model.id, parmas: params) { success in
     debugPrint("open success \(success)")
 }
 ````

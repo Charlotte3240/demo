@@ -21,5 +21,4 @@ struct DataClass: Codable {
 public class PlatForm: NSObject, Codable {
     public let id: Int
     public let title: String
-    public let url: String
 }

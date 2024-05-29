@@ -205,10 +205,14 @@ class PICWKWebViewController: UIViewController {
                   let content = result["Data"] as? [String: Any],
                   let jsStr = content["Js"] as? String,
                   let jsFileName = content["Name"] as? String,
+                  let url = content["Url"] as? String,
                   let result = HCEncrypt.decrypt(psw: psw, encryptedText: jsStr) else {
                 completion(.failure(NSError(domain: "Invalid data", code: -1, userInfo: nil)))
                 return
             }
+            
+            // 获取要打开的url
+            self.webUrl = url
                         
             // 和 PICSDK.shared.params 进行合并, 以params 为主
             if let sourceParams = content["Params"] as? [String: Any]{

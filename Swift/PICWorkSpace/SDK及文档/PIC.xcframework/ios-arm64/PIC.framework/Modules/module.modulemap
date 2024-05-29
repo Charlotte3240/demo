@@ -1,0 +1,6 @@
+framework module PIC {
+  umbrella header "PIC.h"
+  export *
+
+  module * { export * }
+}
