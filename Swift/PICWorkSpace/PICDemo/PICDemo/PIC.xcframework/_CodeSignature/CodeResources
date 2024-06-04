@@ -14,11 +14,11 @@
 		</data>
 		<key>ios-arm64/PIC.framework/Modules/PIC.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		OVYWP6XsMSwI5sYlptSFzEqM53U=
+		ZDIV+qXJZyxGJKQdtJMBhqV5TFs=
 		</data>
 		<key>ios-arm64/PIC.framework/Modules/PIC.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		e+dDi29zPlpRrnQ4tJWZvAq3rTU=
+		r6qGqXx/qJKOC7HtU+L4rRLMyYo=
 		</data>
 		<key>ios-arm64/PIC.framework/Modules/PIC.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>ios-arm64/PIC.framework/Modules/PIC.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		e+dDi29zPlpRrnQ4tJWZvAq3rTU=
+		r6qGqXx/qJKOC7HtU+L4rRLMyYo=
 		</data>
 		<key>ios-arm64/PIC.framework/Modules/module.modulemap</key>
 		<data>
@@ -34,7 +34,15 @@
 		</data>
 		<key>ios-arm64/PIC.framework/PIC</key>
 		<data>
-		DDCcyxRlaTeDtbA/8BMtHQwyXoA=
+		nYTg+GNwiKtJ2Jdzxi6oQJSCF7I=
+		</data>
+		<key>ios-arm64/PIC.framework/back.png</key>
+		<data>
+		v9JsUS0ogHrPZ/+53uJzlhS7ruE=
+		</data>
+		<key>ios-arm64/PIC.framework/close.png</key>
+		<data>
+		r8C3tX6WKCnyqDAzmyeu+fSLg/o=
 		</data>
 		<key>ios-arm64/PIC.framework/collecting.gif</key>
 		<data>
@@ -81,22 +89,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OVYWP6XsMSwI5sYlptSFzEqM53U=
+			ZDIV+qXJZyxGJKQdtJMBhqV5TFs=
 			</data>
 			<key>hash2</key>
 			<data>
-			WEDYmmlLLgd69qNC+MsG/dErvRz7KGiJYoKvBoxeQRQ=
+			eKc8b/IW8GaFL76cLdYN630ugPWZziZagtLYb26sIFg=
 			</data>
 		</dict>
 		<key>ios-arm64/PIC.framework/Modules/PIC.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			e+dDi29zPlpRrnQ4tJWZvAq3rTU=
+			r6qGqXx/qJKOC7HtU+L4rRLMyYo=
 			</data>
 			<key>hash2</key>
 			<data>
-			iPjxg70pZW/L6C4CLPwWJZQEJWSySPxghzLUmLDeewI=
+			iMOxNvwsE/EgL0RlJhoqXZxC9kvamAP4s83P2JWgA1M=
 			</data>
 		</dict>
 		<key>ios-arm64/PIC.framework/Modules/PIC.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -114,11 +122,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			e+dDi29zPlpRrnQ4tJWZvAq3rTU=
+			r6qGqXx/qJKOC7HtU+L4rRLMyYo=
 			</data>
 			<key>hash2</key>
 			<data>
-			iPjxg70pZW/L6C4CLPwWJZQEJWSySPxghzLUmLDeewI=
+			iMOxNvwsE/EgL0RlJhoqXZxC9kvamAP4s83P2JWgA1M=
 			</data>
 		</dict>
 		<key>ios-arm64/PIC.framework/Modules/module.modulemap</key>
@@ -136,11 +144,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DDCcyxRlaTeDtbA/8BMtHQwyXoA=
+			nYTg+GNwiKtJ2Jdzxi6oQJSCF7I=
 			</data>
 			<key>hash2</key>
 			<data>
-			3edhFg4nMPXa62vMdljJJZeZ0tMCJnprxFdlJ9Lkh9E=
+			K6DCKE1eKPej82hN0jY7dA/rJeQiCn5fW8AWmokxkaA=
+			</data>
+		</dict>
+		<key>ios-arm64/PIC.framework/back.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			v9JsUS0ogHrPZ/+53uJzlhS7ruE=
+			</data>
+			<key>hash2</key>
+			<data>
+			1301NQluPKQgnurA6aordYlK7+qAOyYTdTfRv6p0ei4=
+			</data>
+		</dict>
+		<key>ios-arm64/PIC.framework/close.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			r8C3tX6WKCnyqDAzmyeu+fSLg/o=
+			</data>
+			<key>hash2</key>
+			<data>
+			HwFtfijYDTJ/A94Ab5zcS2CpJj0IVGdgmqokKy8hHsY=
 			</data>
 		</dict>
 		<key>ios-arm64/PIC.framework/collecting.gif</key>

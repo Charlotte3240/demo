@@ -31,7 +31,7 @@ PicRPA SDK 提供了一系列接口，用于与PicRPA平台进行交互，包括
 ##### 请求参数
 | 参数名称 | 是否必填 | 字段类型   | 参数说明 |
 |------|------|--------|------|
-| url   | 是    | string | 服务器地址 |
+| urlStr | 是    | string | 服务器地址 |
 | key   | 是    | string | 授权键  |
 | secret   | 是    | string | 授权码  |
 
@@ -64,7 +64,7 @@ PICSDK.shared.fetchPlatForm(urlStr: sdkUrl, key: key, secret: secret) { list, er
 ##### 请求参数
 | 参数名称 | 是否必填 | 字段类型     | 参数说明            |
 |------|------|----------|-----------------|
-| url   | 是    | string   | 服务器地址           |
+| urlStr | 是    | string   | 服务器地址           |
 | key   | 是    | string   | 授权键             |
 | secret   | 是    | string   | 授权码             |
 | id   | 是    | int      | 平台ID            |
@@ -114,14 +114,29 @@ let params : [String : Any] = [
 ```swift
 // 前面设置过代理 PICSDK.shared.delegate = self
 extension ViewController: PICSDKDelegate{
+  /*
+  * 用于回调执行过程中的事件: 容器 > 方法名 > 参数
+  * 打开三方App事件  onNext: WebView > onStartActivityUrl > url
+  * 其他事件回调     onNext: WebView > onEvent > 字符串"
+  */
     func onNext(msg: String) {
         debugPrint("===============> onNext: \(msg)")
     }
+  
+  /*
+  * 用于回调执行过程中的错误: 容器 > 方法名 > 参数
+  * 打开三方App失败  onError: WebView > onStartActivityUrl > Error: url
+  */
     func onError(msg: String) {
         debugPrint("===============> onError: \(msg)")
     }
-  	// 成功时msg是"success",data为返回的信息
-  	// 失败时msg是"fail",data为nil
+  
+  /*
+  * 用于回调执行完毕后的结果:
+  * 成功时msg是"success",data为返回的信息
+  * 失败时msg是"fail",data为nil
+  * 取消时msg是"cancel",data为nil
+	*/
     func onResult(msg: String, data: String?) {
         debugPrint("===============> onResult: \(msg), data: \(data ?? "")")
     }

@@ -28,7 +28,7 @@
         <!--输入key secret-->
         <scene sceneID="Qsr-jV-a4W">
             <objects>
-                <viewController storyboardIdentifier="InputVC" id="z5C-jn-jCI" customClass="InputVC" customModule="PICApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputVC" id="z5C-jn-jCI" customClass="InputVC" customModule="PICDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dwP-Ws-YSy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,6 +69,15 @@
                                     <action selector="showPlatfromAction:" destination="z5C-jn-jCI" eventType="touchUpInside" id="NlN-yb-Y67"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7k5-6R-LK8">
+                                <rect key="frame" x="135" y="453.66666666666669" width="123" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="直接打开sdk"/>
+                                <connections>
+                                    <action selector="openSDK:" destination="z5C-jn-jCI" eventType="touchUpInside" id="V3m-DW-PuN"/>
+                                    <action selector="showPlatfromAction:" destination="z5C-jn-jCI" eventType="touchUpInside" id="YuP-vq-Bpo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JuP-dl-aFj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,10 +86,12 @@
                             <constraint firstItem="1R0-RI-dwE" firstAttribute="leading" secondItem="JuP-dl-aFj" secondAttribute="leading" constant="15" id="81N-vD-1AS"/>
                             <constraint firstItem="8A8-Qg-rih" firstAttribute="centerY" secondItem="EWl-ff-hc7" secondAttribute="centerY" id="9Ec-Qr-ewC"/>
                             <constraint firstItem="2U1-Cr-JOv" firstAttribute="centerX" secondItem="dwP-Ws-YSy" secondAttribute="centerX" id="EQe-sJ-uXX"/>
+                            <constraint firstItem="7k5-6R-LK8" firstAttribute="centerX" secondItem="2U1-Cr-JOv" secondAttribute="centerX" id="NCv-br-fmy"/>
                             <constraint firstItem="EWl-ff-hc7" firstAttribute="top" secondItem="1R0-RI-dwE" secondAttribute="bottom" constant="20" id="Opj-8e-8jR"/>
                             <constraint firstItem="1R0-RI-dwE" firstAttribute="top" secondItem="JuP-dl-aFj" secondAttribute="top" constant="120" id="V7d-LD-mAd"/>
                             <constraint firstItem="JuP-dl-aFj" firstAttribute="trailing" secondItem="hmX-Cq-HM8" secondAttribute="trailing" constant="15" id="Z4L-QW-zTt"/>
                             <constraint firstItem="EWl-ff-hc7" firstAttribute="leading" secondItem="JuP-dl-aFj" secondAttribute="leading" constant="15" id="dec-Fj-oRW"/>
+                            <constraint firstItem="7k5-6R-LK8" firstAttribute="top" secondItem="2U1-Cr-JOv" secondAttribute="bottom" constant="10" id="jgr-W7-uKy"/>
                             <constraint firstItem="hmX-Cq-HM8" firstAttribute="leading" secondItem="1R0-RI-dwE" secondAttribute="trailing" constant="15" id="qLe-0d-IUb"/>
                             <constraint firstItem="8A8-Qg-rih" firstAttribute="leading" secondItem="EWl-ff-hc7" secondAttribute="trailing" constant="15" id="qpj-OP-KIN"/>
                             <constraint firstItem="2U1-Cr-JOv" firstAttribute="centerY" secondItem="dwP-Ws-YSy" secondAttribute="centerY" id="qqa-M1-iRm"/>
@@ -101,7 +112,7 @@
         <!--平台列表-->
         <scene sceneID="3A8-It-aZ4">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="fKb-kW-BHn" customClass="ViewController" customModule="PICApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="fKb-kW-BHn" customClass="ViewController" customModule="PICDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9aY-EX-bc1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,7 +121,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="platformCell" textLabel="kOi-ZX-BYd" style="IBUITableViewCellStyleDefault" id="Isq-nU-Krt" customClass="PlatformCell" customModule="PICApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="platformCell" textLabel="kOi-ZX-BYd" style="IBUITableViewCellStyleDefault" id="Isq-nU-Krt" customClass="PlatformCell" customModule="PICDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Isq-nU-Krt" id="Rb1-ld-h2H">

@@ -8,8 +8,6 @@
 import UIKit
 import PIC
 
-let sdkUrl = "https://rpa.lingdiman.com"
-
 
 class ViewController: UIViewController {
     var key = ""
@@ -66,7 +64,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             "TimeOut": 120      // 页面运行有效时间
         ]
         PICSDK.shared.delegate = self
-        PICSDK.shared.openPIC(urlStr: model.url, key: key, secret: secret, id: model.id, parmas: params) { success in
+        PICSDK.shared.openPIC(urlStr: sdkUrl, key: key, secret: secret, id: model.id, parmas: params) { success in
             debugPrint("open success \(success)")
         }
     }

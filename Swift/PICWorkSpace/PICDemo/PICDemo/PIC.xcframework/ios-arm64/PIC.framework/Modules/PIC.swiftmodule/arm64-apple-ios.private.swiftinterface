@@ -153,7 +153,6 @@ extension Swift.FixedWidthInteger {
 @objc public class PlatForm : ObjectiveC.NSObject, Swift.Codable {
   final public let id: Swift.Int
   final public let title: Swift.String
-  final public let url: Swift.String
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws

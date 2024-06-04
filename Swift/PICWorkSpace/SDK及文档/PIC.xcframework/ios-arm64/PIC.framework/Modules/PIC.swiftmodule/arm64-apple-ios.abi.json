@@ -2385,54 +2385,6 @@
             ]
           },
           {
-            "kind": "Var",
-            "name": "url",
-            "printedName": "url",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:3PIC8PlatFormC3urlSSvp",
-            "mangledName": "$s3PIC8PlatFormC3urlSSvp",
-            "moduleName": "PIC",
-            "declAttributes": [
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:3PIC8PlatFormC3urlSSvg",
-                "mangledName": "$s3PIC8PlatFormC3urlSSvg",
-                "moduleName": "PIC",
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -34644,90 +34596,90 @@
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "Array",
       "offset": 315,
-      "length": 87,
-      "value": "[\"onLog\", \"onStatus\", \"onDecode\", \"onData\", \"onDataAppend\", \"onStartActivityUrl\", \"onCallJs\"]"
+      "length": 108,
+      "value": "[\"onLog\", \"onStatus\", \"onDecode\", \"onData\", \"onDataAppend\", \"onStartActivityUrl\", \"onCallJs\", \"onEvent\", \"onIsBack\"]"
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 666,
+      "offset": 687,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 750,
+      "offset": 771,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1016,
+      "offset": 1037,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1207,
+      "offset": 1228,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1656,
+      "offset": 1677,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1708,
+      "offset": 1729,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2305,
+      "offset": 2326,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2310,
+      "offset": 2331,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2445,
+      "offset": 2466,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2545,
+      "offset": 2566,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5990,
+      "offset": 8107,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 24457,
+      "offset": 28859,
       "length": 25,
       "value": "\"PIC.WeakScriptMessageDelegate\""
     },
