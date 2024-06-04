@@ -15,7 +15,7 @@ fileprivate let fetchJsUrl = "/api/platform/resource"
 fileprivate let uploadLogUrl = "/api/log/save"
 
 // 交互方法
-fileprivate let jsBridgeFuncNames = ["onLog","onStatus","onDecode","onData","onDataAppend","onStartActivityUrl","onCallJs"]
+fileprivate let jsBridgeFuncNames = ["onLog","onStatus","onDecode","onData","onDataAppend","onStartActivityUrl","onCallJs","onEvent","onIsBack"]
 
 
 enum LoadingStatus{
@@ -100,12 +100,38 @@ class PICWKWebViewController: UIViewController {
         
         self.view.addSubview(self.indictorView)
         self.indictorView.showIndictor(status: .loading)
-                
+        
+        // 添加退出按钮
+        let exitButton = UIButton(type: .custom)
+        let curBundle = Bundle.init(for: PICWKWebViewController.self)
+        let exitImgPath = curBundle.path(forResource: "close", ofType: "png")
+        exitButton.setImage(UIImage(contentsOfFile: exitImgPath!), for: .normal)
+        exitButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30) // 设置按钮大小
+        exitButton.addTarget(self, action: #selector(exitButtonTapped), for: .touchUpInside)
+        let rightButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        rightButtonView.addSubview(exitButton)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButtonView)
+        
+        
+        // 添加返回按钮
+        let backButton = UIButton(type: .custom)
+        let backImgPath = curBundle.path(forResource: "back", ofType: "png")
+        backButton.setImage(UIImage(contentsOfFile: backImgPath!), for: .normal)
+        backButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30) // 设置按钮大小
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        let leftButtonView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        leftButtonView.addSubview(backButton)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButtonView)
+        
+        backButton.isHidden = true
+        
+        
         
         let timeoutAfter = PICSDK.shared.params["TimeOut"] as? Int ?? 60
         DispatchQueue.main.asyncAfter(deadline: DispatchTime(integerLiteral: timeoutAfter)) {[weak self] in
             self?.exitSDK {
-                PICSDK.shared.onError(err: "timeout error")
+                PICSDK.shared.onError(err: "WebView > start > 请求服务获取平台失败(\(PICSDK.shared.platFormId ?? 0)): timeout error")
+                PICSDK.shared.onResult(msg: "fail", data: nil)
             }
         }
         
@@ -138,7 +164,7 @@ class PICWKWebViewController: UIViewController {
                 }
             case.failure(let error):
                 HClog.log("download logic js file \(error)")
-                PICSDK.shared.onError(err: "download logic file fail")
+                PICSDK.shared.onError(err: "WebView > start > 请求服务获取平台失败(\(PICSDK.shared.platFormId ?? 0)): timeout error")
                 self?.onResultFail()
             }
         }
@@ -149,10 +175,29 @@ class PICWKWebViewController: UIViewController {
         
     }
 
+    // 调用js 返回方法
+    @objc func backButtonTapped(){
+        let jsStr = #"""
+            window.rpa.onBack()
+        """#
+        self.writeJs(jsStr)
+    
+    }
+    
+    @objc func exitButtonTapped() {
+        // 返回按钮的点击事件处理
+        DispatchQueue.main.async {[weak self] in
+            self?.exitSDK {
+                PICSDK.shared.onResult(msg: "cancel", data: nil)
+            }
+        }
+    }
+
+    
 
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "title"{
-            self.navigationItem.title = self.webView.title
+//            self.navigationItem.title = self.webView.title
         }else if keyPath == "estimatedProgress"{
             HClog.log("load progress: \(self.webView.estimatedProgress)")
         }else{
@@ -173,7 +218,7 @@ class PICWKWebViewController: UIViewController {
     // 下载js文件内容
     func downloadJSFile(url: String, completion: @escaping (Result<String, Error>) -> Void) {
         guard let url = URL(string: url) else{
-            PICSDK.shared.onError(err: "logic file url formatter error")
+            PICSDK.shared.onError(err: "WebView > start > 请求服务获取平台失败(\(PICSDK.shared.platFormId ?? 0)): logic file url formatter error")
             self.onResultFail()
             return
         }
@@ -211,6 +256,10 @@ class PICWKWebViewController: UIViewController {
                 return
             }
             
+            DispatchQueue.main.async {
+                self.navigationItem.title = jsFileName
+            }
+            
             // 获取要打开的url
             self.webUrl = url
                         
@@ -229,7 +278,7 @@ class PICWKWebViewController: UIViewController {
     }
     func injectJSContent(_ jsContent: String) {
         guard let url = URL.init(string: self.webUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else {
-            PICSDK.shared.onError(err: "url formatter error")
+            PICSDK.shared.onError(err: "WebView > start > 请求服务获取平台失败(\(PICSDK.shared.platFormId ?? 0)): url formatter error")
             self.onResultFail()
             return
         }
@@ -239,7 +288,7 @@ class PICWKWebViewController: UIViewController {
 
         let req = URLRequest.init(url: url,cachePolicy: .reloadIgnoringLocalCacheData,timeoutInterval: TimeInterval.init(30))
         
-        PICSDK.shared.onNext(next: "init webview")
+        HClog.log("init webview")
         self.webView.load(req)
     }
     
@@ -276,30 +325,59 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         switch message.name {
         case "onLog":
             self.onLog(data: message.body as? String ?? "")
-        case "onStatus":
-            self.onStatus(data: message.body as? Int ?? 0)
-        case "onDecode":
-            self.onDecode(data: message.body as? [String:String] ?? [String:String]())
+        case "onStatus": // 需要回传APP
+            let data = message.body as? Int ?? 0
+            PICSDK.shared.onNext(next: #"WebView > \#(message.name) > \#(data)"#)
+            self.onStatus(data: data)
+        case "onDecode": // 需要回传APP
+            let data = message.body as? [String:String] ?? [String:String]()
+            PICSDK.shared.onNext(next: #"WebView > \#(message.name) > \#(data)"#)
+            self.onDecode(data: data)
         case "onData":
             self.onData(data: message.body as? [String: String] ?? [String: String]())
         case "onDataAppend":
             self.onDataAppend(data: message.body as? String ?? "")
-        case "onStartActivityUrl":
-            self.onStartActivityUrl(data: message.body as? String ?? "")
-        case "onCallJs":
-            self.onCallJs(data: message.body as? [String: String] ?? [String: String]())
-            
+        case "onStartActivityUrl": // 需要回传APP
+            let data = message.body as? String ?? ""
+            PICSDK.shared.onNext(next: #"WebView > \#(message.name) > \#(data)"#)
+            self.onStartActivityUrl(data: data)
+        case "onCallJs": // 需要回传APP
+            let data = message.body as? [String: String] ?? [String: String]()
+            PICSDK.shared.onNext(next: #"WebView > \#(message.name) > \#(data)"#)
+            self.onCallJs(data: data)
+        case "onEvent":
+            let data = message.body as? String ?? ""
+            PICSDK.shared.onNext(next: #"WebView > \#(message.name) > \#(data)"#)
+        case "onIsBack":
+            self.onIsBack(data: message.body as? Int ?? 0)
         default:
             break
             
         }
     }
     
+    func onIsBack(data : Int){
+        DispatchQueue.main.async {[weak self] in
+            if data == 0{
+                // 隐藏返回按钮
+                self?.navigationItem.leftBarButtonItem?.customView?.subviews.forEach({
+                    $0.isHidden = true
+                })
+            }else{
+                // 显示返回按钮
+                self?.navigationItem.leftBarButtonItem?.customView?.subviews.forEach({
+                    $0.isHidden = false
+                })
+            }
+
+        }
+    }
+        
     func onCallJs(data : [String: String]){
         // 解析uuid
         let uuid = data["uuid"] ?? ""
         if uuid.isBlank{
-            PICSDK.shared.onError(err: "onData uuid is blank")
+            PICSDK.shared.onError(err: "WebView > onCallJs > onData uuid is blank")
             return
         }
         
@@ -311,7 +389,7 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         
         let urlStr = "\(PICSDK.shared.serviceUrl ?? "")/static/js/\(jsFileName)"
         guard let url = URL(string: urlStr) else{
-            PICSDK.shared.onError(err: "oncall logic file url formatter error")
+            PICSDK.shared.onError(err: "WebView > onCallJs > logic file url formatter error")
             return
         }
         var request = URLRequest(url: url, timeoutInterval: 30)
@@ -322,13 +400,13 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 HClog.log("download oncall logic js file \(error)")
-                PICSDK.shared.onError(err: "download oncall logic file fail")
+                PICSDK.shared.onError(err: "WebView > onCallJs > download oncall logic file fail")
                 return
             }
             guard let data = data,
                   let jsContent = String(data: data, encoding: .utf8) else {
                 HClog.log("oncall logic js file data problem")
-                PICSDK.shared.onError(err: "oncall logic js file data problem")
+                PICSDK.shared.onError(err: "WebView > onCallJs > oncall logic js file data problem")
                 return
             }
             DispatchQueue.main.async {[weak self] in
@@ -373,7 +451,7 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         // 解析uuid
         let uuid = data["uuid"] ?? ""
         if uuid.isBlank{
-            PICSDK.shared.onError(err: "onData uuid is blank")
+            PICSDK.shared.onError(err: "WebView > onData > uuid is blank")
             return
         }
         
@@ -392,7 +470,7 @@ extension PICWKWebViewController: WKScriptMessageHandler{
         let base64 = data?["data"] as? String ?? ""
         let qrContent = self.getQrCodeContent(content: base64)
         if qrContent.isBlank{
-            PICSDK.shared.onError(err: "parse onDecode data fail")
+            PICSDK.shared.onError(err: "WebView > onDecode > parse onDecode data fail")
             jsStr = #"""
                 window.rpa.callback(\#(uuid),\#(qrContent),'not found qr code')
             """#
@@ -546,7 +624,7 @@ extension PICWKWebViewController: WKScriptMessageHandler{
 extension PICWKWebViewController: WKNavigationDelegate{
     ///在网页加载完成时调用js方法
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        PICSDK.shared.onNext(next: "load url finish")
+        HClog.log("load url finish")
 //        if self.callStarted == true{
 //            return
 //        }
@@ -557,18 +635,18 @@ extension PICWKWebViewController: WKNavigationDelegate{
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        PICSDK.shared.onNext(next: "start load url")
+        HClog.log("start load url")
     }
     
     
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        PICSDK.shared.onError(err: "load error \(error)")
+        PICSDK.shared.onError(err: "WebView > navigation > load error \(error)")
         self.onResultFail()
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        PICSDK.shared.onError(err: "navigation error \(error)")
+        PICSDK.shared.onError(err: "WebView > didFailProvisionalNavigation > navigation error \(error)")
         
         // 超时 或者 加载失败 隔1s 重试
 //        let error  = error as NSError
@@ -593,10 +671,18 @@ extension PICWKWebViewController: WKNavigationDelegate{
         if absoluteString.hasPrefix("alipays://") || absoluteString.hasPrefix("alipay://"){
             guard let openUrl = navigationAction.request.url else{
                 HClog.log("alipay url foramatter error")
+                PICSDK.shared.onError(err: "WebView > onStartActivityUrl > Error: \(absoluteString)")
                 return
             }
+            
+//            let installed = UIApplication.shared.canOpenURL(openUrl)
+//            debugPrint("是否安装了三方平台 \(installed)")
+            
             UIApplication.shared.open(openUrl) { success in
                 HClog.log("open third platform \(success)")
+                if success == false{
+                    PICSDK.shared.onError(err: "WebView > onStartActivityUrl > Error: \(absoluteString)")
+                }
             }
             decisionHandler(.cancel)
         }else{
@@ -614,7 +700,7 @@ extension PICWKWebViewController: WKNavigationDelegate{
             decisionHandler(.allow)
         }else{
             decisionHandler(.cancel)
-            PICSDK.shared.onError(err: "navigation error \(response.debugDescription)")
+            PICSDK.shared.onError(err: "WebView > navigationResponse > navigation error \(response.debugDescription)")
         }
         
     }

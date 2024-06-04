@@ -6,7 +6,9 @@
 //
 
 import UIKit
+import PIC
 
+public let sdkUrl = "https://rpa.lingdiman.com"
 class InputVC : UIViewController{
     
     @IBOutlet weak var keyInput: UITextField!
@@ -21,7 +23,21 @@ class InputVC : UIViewController{
         if self.keyInput.text?.lengthOfBytes(using: .utf8) == 0{
             return
         }
-        self.performSegue(withIdentifier: "showPlatform", sender: nil)
+//        self.performSegue(withIdentifier: "showPlatform", sender: nil)
+        let params : [String : Any] = [
+            "IsCache": false,  // 是否缓存页面
+            "IsLogout": true, // 是否退出已登录状态
+            "TimeOut": 120      // 页面运行有效时间
+        ]
+        let key = self.keyInput.text ?? ""
+        let secret = self.secretInput.text ?? ""
+        
+        PICSDK.shared.delegate = self
+        PICSDK.shared.openPIC(urlStr: sdkUrl, key: key, secret: secret, id: 1, parmas: params) { success in
+            debugPrint("open success \(success)")
+        }
+
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -35,5 +51,25 @@ class InputVC : UIViewController{
         }
 
     }
+    
+}
+
+
+
+extension InputVC: PICSDKDelegate{
+
+    
+    func onNext(msg: String) {
+        debugPrint("===============> onNext: \(msg)")
+    }
+    
+    func onError(msg: String) {
+        debugPrint("===============> onError: \(msg)")
+    }
+    
+    func onResult(msg: String, data: String?) {
+        debugPrint("===============> onResult: \(msg), data: \(data ?? "")")
+    }
+        
     
 }

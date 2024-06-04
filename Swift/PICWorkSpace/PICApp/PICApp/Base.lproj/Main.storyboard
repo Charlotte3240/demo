@@ -62,9 +62,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVf-ut-lvw">
-                                <rect key="frame" x="132.66666666666666" y="408.66666666666669" width="127.99999999999997" height="35"/>
+                                <rect key="frame" x="149.66666666666666" y="408.66666666666669" width="94" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="请求平台列表"/>
+                                <buttonConfiguration key="configuration" style="plain" title="唤起SDK"/>
                                 <connections>
                                     <action selector="showPlatfromAction:" destination="o7S-r7-niS" eventType="touchUpInside" id="ZMZ-qT-EaQ"/>
                                 </connections>

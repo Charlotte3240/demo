@@ -11,7 +11,6 @@ import PIC
 //let key = "keyuser"
 //let secret = "JHyzA6VQhNNdDNMcDRrXq48wH1YDNw5"
 //let sdkUrl = "http://150.158.10.87/rpa"
-let sdkUrl = "https://rpa.lingdiman.com"
 
 
 class ViewController: UIViewController {
@@ -28,19 +27,31 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .white
         
         
-        // fetch platform list
-        PICSDK.shared.fetchPlatForm(urlStr: sdkUrl, key: key, secret: secret) { list, err in
-            if let list = list {
-                // list.first?.id
-                // list.first?.title
-                self.dataList = list
-                DispatchQueue.main.async {[weak self] in
-                    self?.tableView.reloadData()
-                }
-            }else{
-                debugPrint(err)
-            }
+        let params : [String : Any] = [
+            "IsCache": false,  // 是否缓存页面
+            "IsLogout": true, // 是否退出已登录状态
+            "TimeOut": 120      // 页面运行有效时间
+        ]
+        PICSDK.shared.delegate = self
+        PICSDK.shared.openPIC(urlStr: sdkUrl, key: key, secret: secret, id: 1, parmas: params) { success in
+            debugPrint("open success \(success)")
         }
+
+        
+        
+        // fetch platform list
+//        PICSDK.shared.fetchPlatForm(urlStr: sdkUrl, key: key, secret: secret) { list, err in
+//            if let list = list {
+//                // list.first?.id
+//                // list.first?.title
+//                self.dataList = list
+//                DispatchQueue.main.async {[weak self] in
+//                    self?.tableView.reloadData()
+//                }
+//            }else{
+//                debugPrint(err)
+//            }
+//        }
         
     }
 

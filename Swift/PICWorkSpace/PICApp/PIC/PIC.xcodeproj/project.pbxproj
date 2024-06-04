@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1ADED62C0F185D009C8B0A /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1ADED52C0F185D009C8B0A /* close.png */; };
+		2B1ADED82C0F3875009C8B0A /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1ADED72C0F3875009C8B0A /* back.png */; };
 		2B5FD92F2BC4085D00CBF4A3 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD92E2BC4085D00CBF4A3 /* IndicatorView.swift */; };
 		2B5FD9372BC408A500CBF4A3 /* NSImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD9302BC408A500CBF4A3 /* NSImage+SwiftyGif.swift */; };
 		2B5FD9382BC408A500CBF4A3 /* NSImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FD9312BC408A500CBF4A3 /* NSImageView+SwiftyGif.swift */; };
@@ -108,6 +110,8 @@
 
 /* Begin PBXFileReference section */
 		01DA6D7BF0A4C8CF9A1B212D /* Pods_PIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B1ADED52C0F185D009C8B0A /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		2B1ADED72C0F3875009C8B0A /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		2B5FD92E2BC4085D00CBF4A3 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		2B5FD9302BC408A500CBF4A3 /* NSImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+SwiftyGif.swift"; sourceTree = "<group>"; };
 		2B5FD9312BC408A500CBF4A3 /* NSImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
@@ -237,7 +241,9 @@
 		2B61D8EB2BC775530090B88D /* res */ = {
 			isa = PBXGroup;
 			children = (
+				2B1ADED52C0F185D009C8B0A /* close.png */,
 				2BC01D612BDA57A400CF11E9 /* collecting.gif */,
+				2B1ADED72C0F3875009C8B0A /* back.png */,
 				2BC01D5F2BDA57A400CF11E9 /* loading.png */,
 				2BC01D602BDA57A400CF11E9 /* success.jpg */,
 				2B61D8EC2BC775980090B88D /* loading.gif */,
@@ -497,7 +503,9 @@
 			files = (
 				2BC01D622BDA57A400CF11E9 /* loading.png in Resources */,
 				2BC01D632BDA57A400CF11E9 /* success.jpg in Resources */,
+				2B1ADED82C0F3875009C8B0A /* back.png in Resources */,
 				2BC01D642BDA57A400CF11E9 /* collecting.gif in Resources */,
+				2B1ADED62C0F185D009C8B0A /* close.png in Resources */,
 				2B61D8ED2BC775980090B88D /* loading.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

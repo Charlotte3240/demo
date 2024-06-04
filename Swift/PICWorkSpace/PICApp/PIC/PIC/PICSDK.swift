@@ -120,7 +120,7 @@ public class PICSDK: NSObject{
         }
 
         guard URL.init(string: urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") != nil else {
-            PICSDK.shared.onError(err: "open pic url param formatter wrong")
+            PICSDK.shared.onError(err: #"WebView > start > platform url formatter wrong"#)
             complete(false)
             return
         }
@@ -128,9 +128,9 @@ public class PICSDK: NSObject{
         self.serviceUrl = urlStr
         
         let wkVc = PICWKWebViewController()
-        wkVc.modalPresentationStyle = .fullScreen
-//        wkVc.webUrl = urlStr
-        UIViewController.current()?.present(wkVc, animated: true)
+        let nav = UINavigationController(rootViewController: wkVc)
+        nav.modalPresentationStyle = .fullScreen
+        UIViewController.current()?.present(nav, animated: true)
         complete(true)
     }
     
