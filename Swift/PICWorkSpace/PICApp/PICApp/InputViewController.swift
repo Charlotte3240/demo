@@ -23,7 +23,6 @@ class InputVC : UIViewController{
         if self.keyInput.text?.lengthOfBytes(using: .utf8) == 0{
             return
         }
-//        self.performSegue(withIdentifier: "showPlatform", sender: nil)
         let params : [String : Any] = [
             "IsCache": false,  // 是否缓存页面
             "IsLogout": true, // 是否退出已登录状态
@@ -38,6 +37,9 @@ class InputVC : UIViewController{
         }
 
         
+    }
+    @IBAction func platformListAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "showPlatform", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

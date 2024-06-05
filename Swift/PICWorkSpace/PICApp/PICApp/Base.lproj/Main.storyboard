@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -69,12 +69,21 @@
                                     <action selector="showPlatfromAction:" destination="o7S-r7-niS" eventType="touchUpInside" id="ZMZ-qT-EaQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoJ-7S-NJp">
+                                <rect key="frame" x="149.66666666666666" y="453.66666666666669" width="94" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="平台列表"/>
+                                <connections>
+                                    <action selector="platformListAction:" destination="o7S-r7-niS" eventType="touchUpInside" id="1OB-QB-Xu1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yZh-dR-M2G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VVf-ut-lvw" firstAttribute="centerY" secondItem="y6S-Y5-NpO" secondAttribute="centerY" id="0IC-G2-khh"/>
                             <constraint firstItem="p6r-GA-gT2" firstAttribute="leading" secondItem="sKj-Wf-Gvc" secondAttribute="trailing" constant="15" id="7ha-eP-ti8"/>
+                            <constraint firstItem="EoJ-7S-NJp" firstAttribute="top" secondItem="VVf-ut-lvw" secondAttribute="bottom" constant="10" id="EcE-WT-tA6"/>
                             <constraint firstItem="yZh-dR-M2G" firstAttribute="trailing" secondItem="9R3-tw-rbd" secondAttribute="trailing" constant="15" id="JoO-LL-miD"/>
                             <constraint firstItem="p6r-GA-gT2" firstAttribute="centerY" secondItem="sKj-Wf-Gvc" secondAttribute="centerY" id="S94-O2-z1L"/>
                             <constraint firstItem="sKj-Wf-Gvc" firstAttribute="top" secondItem="yZh-dR-M2G" secondAttribute="top" constant="120" id="ThJ-OT-4mq"/>
@@ -82,6 +91,7 @@
                             <constraint firstItem="HSf-fw-TcH" firstAttribute="top" secondItem="sKj-Wf-Gvc" secondAttribute="bottom" constant="20" id="XIy-uY-Jtn"/>
                             <constraint firstItem="HSf-fw-TcH" firstAttribute="leading" secondItem="yZh-dR-M2G" secondAttribute="leading" constant="15" id="bVN-d2-Cv1"/>
                             <constraint firstItem="sKj-Wf-Gvc" firstAttribute="leading" secondItem="yZh-dR-M2G" secondAttribute="leading" constant="15" id="d71-A8-IUx"/>
+                            <constraint firstItem="EoJ-7S-NJp" firstAttribute="centerX" secondItem="VVf-ut-lvw" secondAttribute="centerX" id="h0B-vh-fbT"/>
                             <constraint firstItem="yZh-dR-M2G" firstAttribute="trailing" secondItem="p6r-GA-gT2" secondAttribute="trailing" constant="15" id="khe-ca-tx7"/>
                             <constraint firstItem="9R3-tw-rbd" firstAttribute="centerY" secondItem="HSf-fw-TcH" secondAttribute="centerY" id="vXQ-Y1-PZE"/>
                             <constraint firstItem="9R3-tw-rbd" firstAttribute="leading" secondItem="HSf-fw-TcH" secondAttribute="trailing" constant="15" id="ysM-b9-iBE"/>
