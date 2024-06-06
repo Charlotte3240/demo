@@ -125,6 +125,16 @@ class PICWKWebViewController: UIViewController {
         
         backButton.isHidden = true
         
+        if let navBar = self.navigationController?.navigationBar {
+            // 创建一个字典来定义标题的文本属性
+            let titleTextAttributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.black
+            ]
+            // 将文本属性应用到导航栏的标题
+            navBar.titleTextAttributes = titleTextAttributes
+        }
+
+        
         
         
         let timeoutAfter = PICSDK.shared.params["TimeOut"] as? Int ?? 60
