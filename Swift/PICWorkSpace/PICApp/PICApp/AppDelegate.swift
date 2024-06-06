@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 首次安装app 弹出允许网络
         let webview = WKWebView()
         webview.load(URLRequest(url: URL(string: "https://www.baidu.com")!))
+        
+        
+        let installed = UIApplication.shared.canOpenURL(URL(string: "alipay://")!)
+        debugPrint("是否安装了三方平台 \(installed)")
 
         
         return true

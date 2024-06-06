@@ -19,7 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let webview = WKWebView()
         webview.load(URLRequest(url: URL(string: "https://www.baidu.com")!))
 
+        var installed = UIApplication.shared.canOpenURL(URL(string: "alipay://")!)
+        debugPrint("是否安装了三方平台 \(installed)")
         
+        installed = UIApplication.shared.canOpenURL(URL(string: "weixin://")!)
+        debugPrint("是否安装了三方平台 \(installed)")
+
+
         return true
     }
 

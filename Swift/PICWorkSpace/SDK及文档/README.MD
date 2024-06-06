@@ -20,6 +20,12 @@ PicRPA SDK 提供了一系列接口，用于与PicRPA平台进行交互，包括
 
 <img src="./embedSetting.png" alt="embedSetting.png" style="zoom:50%;" />
 
+* info.plist 中 设置`LSApplicationQueriesSchemes`  对应平台的值，如支付宝：`alipay`
+
+![image-20240605100004510](./queryUrlScheme.png)
+
+
+
 ## 接口方法
 
 

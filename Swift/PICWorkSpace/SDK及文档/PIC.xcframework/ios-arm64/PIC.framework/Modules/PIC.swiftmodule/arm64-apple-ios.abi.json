@@ -34672,14 +34672,14 @@
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 8107,
+      "offset": 8510,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jr\/Documents\/demo\/Swift\/PICWorkSpace\/PICApp\/PIC\/PIC\/PICWKWebViewController.swift",
       "kind": "StringLiteral",
-      "offset": 28859,
+      "offset": 29262,
       "length": 25,
       "value": "\"PIC.WeakScriptMessageDelegate\""
     },
