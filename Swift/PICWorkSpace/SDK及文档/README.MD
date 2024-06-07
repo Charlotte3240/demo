@@ -148,3 +148,33 @@ extension ViewController: PICSDKDelegate{
     }
 }
 ````
+
+
+
+
+
+##### 代理回调详细说明
+
+
+
+###### onError
+
+| 回调方式 | 回调内容                                                     | 介绍                    |
+| -------- | ------------------------------------------------------------ | ----------------------- |
+| onError  | WebView > start > platform url formatter wrong               | 传入的 sdkUrl 格式有误  |
+| onError  | "WebView > start > 请求服务获取平台失败(平台ID): timeout error | 超时                    |
+| onError  | WebView > start > 请求服务获取平台失败(平台ID): logic file url formatter error | 请求平台逻辑代码URL错误 |
+| onError  | WebView > start > 请求服务获取平台失败(平台ID): url formatter error | 打开平台URL格式错误     |
+| onError  | WebView > onCallJs > onData uuid is blank                    | 内部错误                |
+| onError  | WebView > onCallJs > logic file url formatter error          | 内部错误                |
+| onError  | WebView > onCallJs > download oncall logic file fail         | 内部错误                |
+| onError  | WebView > onCallJs > oncall logic js file data problem       | 内部错误                |
+| onError  | WebView > onData > uuid is blank                             | 内部错误                |
+| onError  | WebView > onDecode > parse onDecode data fail                | 内部错误                |
+| onError  | WebView > navigation > load error \(error)                   | 打开链接错误            |
+| onError  | WebView > didFailProvisionalNavigation > navigation error \(error) | 打开链接跳转错误        |
+| onError  | WebView > onStartActivityUrl > Error: \(absoluteString)      | 打开外部app链接错误     |
+| onError  | WebView > navigationResponse > navigation error              | 打开链接跳转错误        |
+
+
+
