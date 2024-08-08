@@ -1,22 +1,55 @@
-import React, {useEffect} from "react";
+import React, {useCallback, useEffect} from "react";
 import ChartsView from "./ChartsView";
 function App() {
     const [data , setData] = React.useState(null);
+    const transformApplicationName = useCallback((appCode) => {
+        switch (appCode) {
+            case "webchat_dxld":
+                return "电销联动";
+            case "webchat_laokedxld":
+                return "老客电销联动";
+            case "webchat_high_act":
+                return "高价值-活跃户";
+            case "webchat_grow_act":
+                return "成长型-活跃户";
+            case "webchat_new_act":
+                return "23年后新客-活跃户";
+            case "webchat_by_new_act":
+                return "百应-23年后新客-活跃户"
+            case "webchat_94_new_act":
+                return "九四-23年后新客-活跃户"
+            default:
+                return "ignore";
+        }
+    }, []);
+
+    const refactorDataToShow = useCallback((data) => {
+        data = data['yesterday'];
+        console.log('过滤前')
+        console.info(data);
+        data = Array.from(data).filter(e => transformApplicationName(e.appCode) !== "ignore");
+        console.log('过滤后');
+        console.info(data);
+        return data && data.map(item => {
+            return <ChartsView key={item.appCode} data={item} />;
+        });
+    }, [transformApplicationName]);
+
     useEffect(() => {
         const fetchData = async () => {
-            try{
+            try {
                 const syncRes = await syncPlatformDeviceGroup();
-                console.log(syncRes)
-                const data = await getDashboardInfo();
-                console.log(data)
-                setData(data)
-            }catch (e){
+                console.log(syncRes);
+                let dashboard_data = await getDashboardInfo();
+                const data = refactorDataToShow(dashboard_data);
+                setData(data);
+            } catch (e) {
                 console.error(e);
             }
-        }
-        fetchData()
+        };
+        fetchData();
+    }, [refactorDataToShow]); // 将 refactorDataToShow 添加到依赖数组中
 
-    }, []); // 空数组作为第二个参数，表示只在组件挂载时执行一次
 
     async function syncPlatformDeviceGroup() {
         try {
@@ -40,34 +73,15 @@ function App() {
 
     }
 
-    function transformApplicationName(appCode) {
-        switch (appCode) {
-            case "webchat":
-                return "企业微信"
-            case "webchat_yjq":
-                return "已结清"
-            case "webchat_zd":
-                return "老客在贷"
-            case "webchat_dxld":
-                return "电销联动"
-            case "webchat_laokedxld":
-                return "老客电销联动"
-            case "webchat_dxqw":
-                return "电销企微融合销售"
-            default:
-                return "未知业务类型"
-        }
-    }
+
+
     return (
         <div className="App">
             <div>
                 <h1 style={{textAlign:"center"}}>昨日数据</h1>
                 <div style={{display: "flex"}}>
                     {
-                        data && Array.from(data['yesterday']).map(item => {
-                            item.appCode = transformApplicationName(item.appCode);
-                            return <ChartsView key={item.appCode} data={item}/>
-                        })
+                        data
                     }
                 </div>
             </div>

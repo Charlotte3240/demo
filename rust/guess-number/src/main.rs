@@ -10,6 +10,7 @@ fn main() {
 
     let secret_num = rand::thread_rng().gen_range(1..=100);
 
+
     loop { // 创建循环，和golang for{} 类似
         let mut guess = String::new();
 

@@ -70,6 +70,7 @@ class PICWKWebViewController: UIViewController {
                                               width: UIScreen.main.bounds.width,
                                               height: UIScreen.main.bounds.height),
                                 configuration: configuration)
+        webView.scrollView.isScrollEnabled = false
         webView.navigationDelegate = self
         
 //        if #available(iOS 16.4, *) {

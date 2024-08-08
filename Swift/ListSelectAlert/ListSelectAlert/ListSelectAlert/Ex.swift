@@ -1,0 +1,92 @@
+//
+//  Ex.swift
+//  PIC
+//
+//  Created by m1 on 2024/3/28.
+//
+
+import Foundation
+import UIKit
+
+extension UIViewController {
+    /// 找到当前显示的viewcontroller
+    /// - Parameter base: rootVC
+    /// - Returns: 当前VC
+    class func current(base: UIViewController? = UIApplication.shared.currentWindow?.rootViewController) -> UIViewController? {
+        
+        if let nav = base as? UINavigationController {
+            return current(base: nav.visibleViewController)
+        }
+        if let tab = base as? UITabBarController {
+            return current(base: tab.selectedViewController)
+        }
+        if let presented = base?.presentedViewController {
+            return current(base: presented)
+        }
+        if let split = base as? UISplitViewController{
+            return current(base: split.presentingViewController)
+        }
+        return base
+    }
+    
+
+}
+
+extension UIApplication {
+    
+    /// 当前window
+    var currentWindow: UIWindow? {
+        if #available(iOS 13.0, *) {
+            if let window = connectedScenes
+                .filter({$0.activationState == .foregroundActive})
+                .map({$0 as? UIWindowScene})
+                .compactMap({$0})
+                .first?.windows
+                .filter({$0.isKeyWindow}).first{
+                return window
+            }else if let window = UIApplication.shared.delegate?.window{
+                return window
+            }else{
+                return nil
+            }
+        } else {
+            if let window = UIApplication.shared.delegate?.window{
+                return window
+            }else{
+                return nil
+            }
+        }
+    }
+}
+
+
+extension String{
+    
+    /// check string cellection is whiteSpace
+    var isBlank : Bool{
+        return allSatisfy({$0.isWhitespace})
+    }
+}
+
+
+extension Optional where Wrapped == String{
+    var isBlank : Bool{
+        return self?.isBlank ?? true
+    }
+}
+
+
+extension DispatchTime: ExpressibleByIntegerLiteral {
+    
+    /// 从现在起延迟几秒
+    /// - Parameter value: 秒数
+    public init(integerLiteral value: Int) {
+        self = DispatchTime.now() + .seconds(value)
+    }
+}
+
+extension DispatchTime: ExpressibleByFloatLiteral {
+    public init(floatLiteral value: Double) {
+        self = DispatchTime.now() + .milliseconds(Int(value * 1000))
+    }
+}
