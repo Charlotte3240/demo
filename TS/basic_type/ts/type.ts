@@ -11,7 +11,16 @@
 // console.log(arr,arr2,nums)
 // // 元祖
 // let tuple1 : [string , number, boolean] = ["a",123,false]
+// // boolean 是可选的
+// let tuple2 : [string , number, boolean?] = ["a",123]
+// // ...string[] 可以插入无限制数量的字符串
+// let tuple3 : [string , number, ...string[], boolean] = ["a",123,"1","2","3",false]
+// let tuple4 : [string , number, ...string[], boolean] = ["a",123,false]
+
 // console.log(tuple1)
+// console.log(tuple2)
+// console.log(tuple3)
+// console.log(tuple4)
 // // 枚举 0 1 2 
 // enum Color {red , yellow, green}
 // let c1 = Color.green
@@ -245,3 +254,15 @@
 // type UCombineT2 = ('a'|'b') &('a' | string) // 'a' | 'b'
 // let uc2 : UCombineT2 = 'a' //不能把d设置到uc2上去 ，类型只有 a或b
 // console.log(typeof uc2)
+
+// 索引签名
+let person : {name: string, age: number, [key:string]: any}
+
+// 除了name 和 age 可以随意添加属性到 class 中
+
+let p = {
+    name : 'charlotte',
+    age : 18,
+    height : 170
+}
+console.info(p)

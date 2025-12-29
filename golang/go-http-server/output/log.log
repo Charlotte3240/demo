@@ -1,0 +1,31 @@
+2025-11-07 17:42:44.248	INFO	go-http-server/main.go:14	log init Success !
+2025-11-07 17:43:12.992	INFO	logger/logger.go:87	request: /paramsTest	{"query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.49.1", "method": "POST", "body": "{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:43:12.994	INFO	logger/logger.go:103	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 3, "body": "{\"Reader\":{}}"}
+2025-11-07 17:44:46.605	INFO	go-http-server/main.go:14	log init Success !
+2025-11-07 17:44:49.024	INFO	logger/logger.go:87	request: /paramsTest	{"query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.49.1", "method": "POST", "body": "{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:44:49.024	INFO	logger/logger.go:103	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 0, "body": "{\"Reader\":{}}"}
+2025-11-07 17:45:00.200	INFO	go-http-server/main.go:14	log init Success !
+2025-11-07 17:45:02.152	INFO	logger/logger.go:87	request: /paramsTest	{"query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.49.1", "method": "POST", "body": "ewogICAgIjEyMyI6IjQ1NiIKfQ=="}
+2025-11-07 17:45:02.153	INFO	logger/logger.go:103	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 0, "body": "{\"Reader\":{}}"}
+2025-11-07 17:47:56.272	INFO	go-http-server/main.go:14	log init Success !
+2025-11-07 17:48:03.912	INFO	logger/logger.go:87	request: /paramsTest	{"query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.49.1", "method": "POST", "body": "{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:48:03.912	INFO	logger/logger.go:103	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 0, "body": "{\"Reader\":{}}"}
+2025-11-07 17:48:22.961	INFO	logger/logger.go:87	request: /paramsTest	{"query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.49.1", "method": "POST", "body": "{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:48:22.962	INFO	logger/logger.go:103	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 0, "body": "{\"Reader\":{}}"}
+2025-11-07 17:48:57.949	INFO	go-http-server/main.go:14	log init Success !
+2025-11-07 17:49:34.559	INFO	logger/logger.go:87	request: /paramsTest	{"query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.49.1", "method": "POST", "body": "{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:49:34.560	INFO	logger/logger.go:103	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 24609, "body": "{\"Reader\":{}}"}
+2025-11-07 17:52:06.253	INFO	go-http-server/main.go:14	log init Success !
+2025-11-07 17:52:09.550	INFO	logger/logger.go:86	request: /paramsTest	{"query": "/paramsTest", "ip": "::1", "user-agent": "PostmanRuntime/7.49.1", "method": "POST", "body": "{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:52:09.550	INFO	logger/logger.go:102	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 0, "body": ""}
+2025-11-07 17:52:45.258	INFO	go-http-server/main.go:14	log init Success !
+2025-11-07 17:52:55.677	INFO	logger/logger.go:86	request: /paramsTest	{"query": "/paramsTest", "ip": "::1", "user-agent": "PostmanRuntime/7.49.1", "method": "POST", "body": "{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:52:55.677	INFO	logger/logger.go:102	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 0, "body": "=== Headers ===\nUser-Agent: PostmanRuntime/7.49.1\nConnection: keep-alive\nAccept: */*\nCache-Control: no-cache\nPostman-Token: 12254079-c61d-4d41-baef-64a11765e0a5\nAccept-Encoding: gzip, deflate, br\nContent-Length: 19\nH1: v1\nContent-Type: application/json\n\n=== Body ===\n{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:53:11.545	INFO	logger/logger.go:86	request: /paramsTest	{"query": "/paramsTest", "ip": "::1", "user-agent": "curl/8.7.1", "method": "POST", "body": "{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:53:11.545	INFO	logger/logger.go:102	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 0, "body": "=== Headers ===\nContent-Length: 19\nUser-Agent: curl/8.7.1\nAccept: */*\nH1: v1\nContent-Type: application/json\n\n=== Body ===\n{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:54:06.958	INFO	go-http-server/main.go:14	log init Success !
+2025-11-07 17:54:10.273	INFO	logger/logger.go:86	request: /paramsTest	{"query": "/paramsTest", "ip": "::1", "user-agent": "PostmanRuntime/7.49.1", "method": "POST", "body": "{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:54:10.274	INFO	logger/logger.go:102	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 0, "body": "=== Headers ===\nConnection: keep-alive\nContent-Length: 19\nUser-Agent: PostmanRuntime/7.49.1\nAccept: */*\nCache-Control: no-cache\nPostman-Token: 157d728c-fc47-4bc1-b251-f1851e595b63\nAccept-Encoding: gzip, deflate, br\nH1: v1\nContent-Type: application/json\n\n=== Body ===\n{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:56:19.344	INFO	go-http-server/main.go:14	log init Success !
+2025-11-07 17:56:20.491	INFO	logger/logger.go:92	request: /paramsTest	{"query": "/paramsTest", "ip": "::1", "user-agent": "PostmanRuntime/7.49.1", "method": "POST", "header": "Content-Type:application/json;Accept:*/*;Postman-Token:2aef0121-4a18-4104-80a3-0ca34ee636d5;H1:v1;User-Agent:PostmanRuntime/7.49.1;Cache-Control:no-cache;Accept-Encoding:gzip, deflate, br;Connection:keep-alive;Content-Length:19;", "body": "{\n    \"123\":\"456\"\n}"}
+2025-11-07 17:56:20.491	INFO	logger/logger.go:109	response: /paramsTest	{"status": 200, "method": "POST", "errors": "", "cost": 0, "body": "=== Headers ===\nContent-Length: 19\nH1: v1\nUser-Agent: PostmanRuntime/7.49.1\nCache-Control: no-cache\nAccept-Encoding: gzip, deflate, br\nConnection: keep-alive\nContent-Type: application/json\nAccept: */*\nPostman-Token: 2aef0121-4a18-4104-80a3-0ca34ee636d5\n\n=== Body ===\n{\n    \"123\":\"456\"\n}"}

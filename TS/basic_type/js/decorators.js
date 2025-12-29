@@ -13,13 +13,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-// 1. 类装饰器      Class Decorator
-// 2. 方法装饰器    Method Decorator
-// 3. 属性装饰器    Property Decorator
-// 4. 参数装饰器    Parameter Decorator
+function LogTime(target) {
+    // 如果装饰器中 return 了 就会替换被修饰的类
+    return class extends target {
+        constructor(...args) {
+            super(...args);
+            this.createdTime = new Date();
+        }
+        getCreatedTime() {
+            console.log(this.createdTime.toLocaleString());
+        }
+    };
+}
+let Person = class Person {
+    constructor(name, age) {
+        this.name = name;
+    }
+};
+Person = __decorate([
+    LogTime,
+    __metadata("design:paramtypes", [String, Number])
+], Person);
+const p1 = new Person("charlotte", 18);
+p1.getCreatedTime();
 const MoveDecorator = (constructor) => {
     // 先执行装饰器，再执行其他方法
-    console.log('Move class Decorator');
+    console.log("Move class Decorator");
     constructor.prototype.getPosition = () => {
         return { x: 100, y: 100 };
     };
@@ -34,7 +53,7 @@ let Tank = class Tank {
     getPosition() { }
     // public playNext () {}
     constructor() {
-        console.log('class constructor');
+        console.log("class constructor");
     }
 };
 Tank = __decorate([
@@ -50,15 +69,15 @@ let t1 = new Tank();
 console.log(t1.getPosition());
 const MessageDecorator = (constructor) => {
     constructor.prototype.message = (msg) => {
-        let ele = document.createElement('h2');
+        let ele = document.createElement("h2");
         ele.innerText = `${msg}`;
-        document.body.insertAdjacentElement('afterbegin', ele);
+        document.body.insertAdjacentElement("afterbegin", ele);
     };
 };
 let LoginController = class LoginController {
     login() {
-        console.log('登录逻辑');
-        this.message('login success');
+        console.log("登录逻辑");
+        this.message("login success");
     }
 };
 LoginController = __decorate([
@@ -69,7 +88,7 @@ loginVc.login();
 //MARK: - 装饰器工厂
 const MusicDecorator = (type) => {
     switch (type) {
-        case 'player':
+        case "player":
             return (constructor) => {
                 constructor.prototype.play = () => {
                     console.log(`play player's sing`);
@@ -84,25 +103,24 @@ const MusicDecorator = (type) => {
     }
 };
 let Webpage = class Webpage {
-    constructor() {
-    }
+    constructor() { }
 };
 Webpage = __decorate([
-    MusicDecorator('o'),
+    MusicDecorator("o"),
     __metadata("design:paramtypes", [])
 ], Webpage);
 const web = new Webpage();
 console.log(web.play());
-console.log('Method Decorator');
+console.log("Method Decorator");
 //MARK: - 方法装饰器
 /*
-* 方法装饰器有三个参数
-* 1. target : 普通方法是构造参数的原型对象Prototype ， 静态方法是构造函数
-* 2. 方法名称
-* 3. 属性描述
-* */
+ * 方法装饰器有三个参数
+ * 1. target : 普通方法是构造参数的原型对象Prototype ， 静态方法是构造函数
+ * 2. 方法名称
+ * 3. 属性描述
+ * */
 const ShowDecorator = (target, propertyKey, descriptor) => {
-    console.log('normal method decorator');
+    console.log("normal method decorator");
     //对象
     console.dir(target);
     //方法名称
@@ -113,11 +131,11 @@ const ShowDecorator = (target, propertyKey, descriptor) => {
     descriptor.writable = false;
     // 覆盖方法的方法体
     descriptor.value = () => {
-        console.log('charlotte descriptor');
+        console.log("charlotte descriptor");
     };
 };
 const ShowStaticDecorator = (target, propertyKey, descriptor) => {
-    console.log('static method decorator');
+    console.log("static method decorator");
     //对象
     console.dir(target);
     //方法名称
@@ -128,11 +146,11 @@ const ShowStaticDecorator = (target, propertyKey, descriptor) => {
 };
 class Charlotte {
     show() {
-        console.log('show method');
-        alert('test');
+        console.log("show method");
+        alert("test");
     }
     static present() {
-        console.log('present method');
+        console.log("present method");
     }
 }
 __decorate([
@@ -164,7 +182,7 @@ const HighlightCodeDecorator = (target, propertyKey, descriptor) => {
 };
 class CodeSample {
     codeLineDisplay() {
-        return 'code show';
+        return "code show";
     }
 }
 __decorate([
@@ -174,7 +192,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], CodeSample.prototype, "codeLineDisplay", null);
 const codeSample = new CodeSample();
-document.body.insertAdjacentHTML('afterend', codeSample.codeLineDisplay());
+document.body.insertAdjacentHTML("afterend", codeSample.codeLineDisplay());
 // const DelayMethod: MethodDecorator = (
 // target, propertyKey, descriptor: PropertyDescriptor) =>{
 //     const method = descriptor.value
@@ -196,7 +214,7 @@ const DelayMethod = (time) => (...args) => {
 };
 class User {
     delayTest() {
-        console.log('delay function print', ((new Date()).getTime()));
+        console.log("delay function print", new Date().getTime());
     }
 }
 __decorate([
@@ -206,7 +224,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], User.prototype, "delayTest", null);
 const u = new User();
-console.log((new Date()).getTime());
+console.log(new Date().getTime());
 u.delayTest();
 // 自定义错误
 // const ErrorDecorator : MethodDecorator = (
@@ -254,7 +272,7 @@ errClass.showErr();
 const user = {
     name: `charlotte`,
     signed: true,
-    permissions: ["store", "message"]
+    permissions: ["store", "message"],
 };
 // 登陆验证
 const AccessDecorator = (target, propertyKey, descriptor) => {
@@ -319,11 +337,11 @@ msgCenter.showStore();
 const RequestDecorator = (url) => {
     return (target, propertyKey, descriptor) => {
         const method = descriptor.value;
-        new Promise(resolve => {
+        new Promise((resolve) => {
             setTimeout(() => {
                 resolve([{ name: "charlotte" }, { name: `hc-nsqk` }]);
             }, 2000);
-        }).then(user => {
+        }).then((user) => {
             method(user);
         });
     };
@@ -340,13 +358,13 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UserList.prototype, "getUser", null);
 const userList = new UserList();
-userList.getUser([{ name: 'all' }]);
+userList.getUser([{ name: "all" }]);
 //MARK: - 属性装饰器
 /*
-* 比方法装饰器少一个descriptor参数
-* 1.target: 普通方法是构造函数的原型对象Prototype, 静态方法是构造函数
-* 2.propertyKey: 属性名称
-* */
+ * 比方法装饰器少一个descriptor参数
+ * 1.target: 普通方法是构造函数的原型对象Prototype, 静态方法是构造函数
+ * 2.propertyKey: 属性名称
+ * */
 const PropertyDecorator = (target, propertyKey) => {
     console.log(`target:`, target);
     console.log(`propertyKey:`, propertyKey);
@@ -361,46 +379,45 @@ __decorate([
     __metadata("design:type", Object)
 ], PropertyClass.prototype, "name", void 0);
 const propertyCls = new PropertyClass();
-console.log('property decorator', propertyCls.name);
+console.log("property decorator", propertyCls.name);
 propertyCls.name = `hc-nsqk`;
-console.log('property decorator', propertyCls.name);
+console.log("property decorator", propertyCls.name);
 const RandomPropertyDecorator = (target, propertyKey) => {
-    const colors = ['red', 'green', 'blue', '#333'];
+    const colors = ["red", "green", "blue", "#333"];
     Object.defineProperty(target, propertyKey, {
         get: () => {
             return colors[Math.floor(Math.random() * colors.length)];
-        }
+        },
     });
 };
 class ColorCls {
     draw() {
-        document.body.insertAdjacentHTML('beforeend', `<div style="display: inline-block;width: 200px;height:200px;background-color: ${this.color}">charlotte</div>`);
+        document.body.insertAdjacentHTML("beforeend", `<div style="display: inline-block;width: 200px;height:200px;background-color: ${this.color}">charlotte</div>`);
     }
 }
 __decorate([
     RandomPropertyDecorator,
     __metadata("design:type", Object)
 ], ColorCls.prototype, "color", void 0);
-console.log('color decorator');
+console.log("color decorator");
 const colorCls = new ColorCls();
 for (var i = 0; i < 10; i++) {
     colorCls.draw();
 }
-console.log('color decorator end');
+console.log("color decorator end");
 //参数装饰器
 /*
-* 对方法中对参数设置装饰器,参数装饰器的返回参数被忽略
-* 1. 普通方法是构造函数中的原型对象Prototype, 静态方法是构造函数
-* 2. 方法名称
-* 3. 参数所在索引位置
-* */
+ * 对方法中对参数设置装饰器,参数装饰器的返回参数被忽略
+ * 1. 普通方法是构造函数中的原型对象Prototype, 静态方法是构造函数
+ * 2. 方法名称
+ * 3. 参数所在索引位置
+ * */
 const HCParamDecorator = (target, propertyKey, parameterIndex) => {
     console.log(`ParamterDecorator`);
     console.log(target, propertyKey, parameterIndex);
 };
 class HCParam {
-    encode(args) {
-    }
+    encode(args) { }
 }
 __decorate([
     __param(0, HCParamDecorator),
@@ -417,3 +434,37 @@ hcParam.encode([`charlotte`, `hc-nsqk`]);
 // let value = Reflect.getMetadata('xj',hc)
 //
 // console.log(value)
+// 先从上到下执行装饰器工厂， 再从下到上执行装饰器
+// 执行顺序为  test2工厂方法 -> test3工厂方法 -> test4方法 -> test3方法 -> test2方法 -> test1方法
+// @test1
+// @test2()
+// @test3()
+// @test4
+// class HC{}
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+function StopWatch(target, propertyKey, descriptor) {
+    let originMethod = descriptor.value;
+    let startDate = new Date();
+    descriptor.value = function (...args) {
+        console.log(`stopwatch ${propertyKey} start`);
+        // const result = originMethod.call(this, ...args) // call 和 apply 区别， call 参数要一个一个传入，apply 可以传入一个数组
+        const result = originMethod.apply(this, args);
+        console.log(`stopwatch ${propertyKey} end ${new Date().getTime() - startDate.getTime()}`);
+        return result;
+    };
+}
+class HC {
+    fooFunction() {
+        console.log("foo function");
+    }
+}
+__decorate([
+    StopWatch,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], HC.prototype, "fooFunction", null);
+let hc = new HC();
+hc.fooFunction();
